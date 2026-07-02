@@ -16,7 +16,7 @@ jobs:
       - name: 🚀 Deploy to MBVM
         uses: appleboy/ssh-action@v1.2.0
         with:
-          host: ${{ secrets.SSH_HOST }}
+          host: 82.112.239.155
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.HOSTINGER_SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
