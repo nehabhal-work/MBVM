@@ -13,7 +13,7 @@ jobs:
       - name: 📥 Checkout Repository
         uses: actions/checkout@v4
 
-      - name: 🚀 Deploy to SIES
+      - name: 🚀 Deploy to MBVM
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -56,4 +56,4 @@ jobs:
             $PHP_BIN artisan route:cache
             $PHP_BIN artisan view:cache
 
-            echo "✅ SIES ERP Deployment completed!"
+            echo "✅ MBVM website Deployment completed!"
