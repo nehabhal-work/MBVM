@@ -3,8 +3,8 @@
 @section('content')
     <div>
         <!--
-    Welcome Slider
-    ==================================== -->
+        Welcome Slider
+        ==================================== -->
 
         <section class="hero-area">
             <div class="container">
@@ -35,8 +35,8 @@
 
 
         <!--
-    Start About Section
-    ==================================== -->
+        Start About Section
+        ==================================== -->
         <section class="about" id="about">
             <div class="container">
                 <div class="row">
@@ -77,14 +77,14 @@
                                 मार्गदर्शन</li>
                             <li> <i class="tf-ion-android-checkmark-circle"></i> रिट याचिका वा जनहित याचिका दाखल करणे.</li>
                         </ul>
-                        <a href="#" class="btn btn-main mt-20"></a>
+                        <a href="#" class="btn btn-main mt-20">अधिक जाणून घ्या</a>
                     </div>
                 </div> <!-- End row -->
             </div> <!-- End container -->
         </section> <!-- End section -->
         <!--
-    Start Call To Action
-    ==================================== -->
+        Start Call To Action
+        ==================================== -->
         <section class="call-to-action-2 section">
             <div class="container">
                 <div class="row">
@@ -100,7 +100,7 @@
 
 
         <!-- Start Services Section
-      ==================================== -->
+          ==================================== -->
 
         <section class="services" id="services">
             <div class="container">
@@ -218,8 +218,8 @@
 
 
         <!--
-    Start Call To Action
-    ==================================== -->
+        Start Call To Action
+        ==================================== -->
         <section class="call-to-action section">
             <div class="container">
                 <div class="row">
@@ -236,7 +236,7 @@
 
 
         <!-- Start Team Skills
-      =========================================== -->
+          =========================================== -->
 
         <section class="team-skills section-sm" id="skills">
             <div class="container">
@@ -324,8 +324,8 @@
 
 
         <!--
-      Start Counter Section
-      ==================================== -->
+          Start Counter Section
+          ==================================== -->
 
         <section class="counter-wrapper section-sm">
             <div class="container">
@@ -390,7 +390,7 @@
             </div> <!-- end container -->
         </section> <!-- end section -->
         <!-- Start Portfolio Section
-      =========================================== -->
+          =========================================== -->
 
         <section class="portfolio section-sm" id="portfolio">
             <div class="container-fluid">
@@ -521,7 +521,7 @@
 
 
         <!-- Start Our Team
-      =========================================== -->
+          =========================================== -->
         <section class="team" id="team">
             <div class="container">
                 <div class="row">
@@ -643,7 +643,7 @@
 
 
         <!-- Start Pricing section
-      =========================================== -->
+          =========================================== -->
         <section class="pricing-table " id="pricing">
             <div class="container">
                 <div class="row">
@@ -761,7 +761,7 @@
 
 
         <!-- Start Testimonial
-    =========================================== -->
+        =========================================== -->
 
         <section class="testimonial section" id="testimonial">
             <div class="container">
@@ -850,7 +850,7 @@
 
 
         <!--Start Blog Section
-      =========================================== -->
+          =========================================== -->
 
         <section class="blog" id="blog">
             <div class="container">
@@ -928,7 +928,7 @@
 
 
         <!--Start Contact Us
-     =========================================== -->
+         =========================================== -->
         <section class="contact-us" id="contact">
             <div class="container">
                 <div class="row">

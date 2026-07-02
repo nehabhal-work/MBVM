@@ -1,0 +1,59 @@
+name: 🚀 Deploy to MBVM website
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 🚀 Deploy to SIES
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.HOSTINGER_SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            set -e
+
+            export PATH=/opt/alt/php84/usr/bin:$PATH
+            cd ~/domains/mbvm.in/public_html
+
+            PHP_BIN="/opt/alt/php84/usr/bin/php"
+            COMPOSER_BIN="/usr/local/bin/composer"
+
+            # Get latest code
+            git fetch origin main
+            git reset --hard origin/main
+
+            # Install dependencies
+            $PHP_BIN $COMPOSER_BIN install \
+              --no-dev \
+              --optimize-autoloader \
+              --no-interaction
+
+            # Ensure permissions
+            chmod -R 775 storage bootstrap/cache
+
+            # Database changes
+            $PHP_BIN artisan migrate --force
+
+            # Storage link
+            $PHP_BIN artisan storage:link || true
+
+            # Clear old caches
+            $PHP_BIN artisan optimize:clear
+
+            # Rebuild caches for production
+            $PHP_BIN artisan config:cache
+            $PHP_BIN artisan route:cache
+            $PHP_BIN artisan view:cache
+
+            echo "✅ SIES ERP Deployment completed!"
