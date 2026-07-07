@@ -1,121 +1,52 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html> <!--<![endif]-->
+<html lang="en">
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="description" content="Bingo One page parallax responsive HTML Template ">
+@include('layouts.header')
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi:ital@0;1&family=Mukta:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <meta name="author" content="Themefisher.com">
-
-    <title>@yield('title')</title>
-
-    <!-- Mobile Specific Meta
-  ================================================== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/favicon.png') }}" />
-
-    <!-- CSS
-  ================================================== -->
-    <!-- Themefisher Icon font -->
-    <link rel="stylesheet" href="{{ asset('plugins/themefisher-font/style.css') }}">
-    <!-- bootstrap.min css -->
-    <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.min.css') }}">
-    <!-- Lightbox.min css -->
-    <link rel="stylesheet" href="{{ asset('plugins/lightbox2/dist/css/lightbox.min.css') }}">
-    <!-- animation css -->
-    <link rel="stylesheet" href="{{ asset('plugins/animate/animate.css') }}">
-    <!-- Slick Carousel -->
-    <link rel="stylesheet" href="{{ asset('plugins/slick/slick.css') }}">
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-
-</head>
-
-<body id="body">
-
-    <!--
-  Start Preloader
-  ==================================== -->
-    <div id="preloader">
-        <div class='preloader'>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border position-relative text-primary" style="width: 6rem; height: 6rem;" role="status">
         </div>
+        <img class="position-absolute top-50 start-50 translate-middle" src="img/icons/icon-1.png" alt="Icon">
     </div>
-    <!--
-  End Preloader
-  ==================================== -->
+    <!-- Spinner End -->
 
 
 
 
-    <!--
-Fixed Navigation
-==================================== -->
-    @includeIf('layouts.header')
-    <!--
-End Fixed Navigation
-==================================== -->
-
-    @yield('content')
+    <!-- Navbar Start -->
+    @include('layouts.navbar')
+    <!-- Navbar End -->
 
 
 
 
-    <!--================================
-=            Footer section            =
-=================================-->
 
+    <!-- Footer Start -->
     @include('layouts.footer')
+    <!-- Footer End -->
 
 
-    <!-- end Footer Area
-    ========================================== -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
-    <!--
-    Essential Scripts
-    =====================================-->
-    <!-- Main jQuery -->
-    <script src="plugins/jquery/jquery.min.js"></script>
-    <!-- Google Map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
-    <script src="plugins/google-map/gmap.js"></script>
-
-    <!-- Form Validation -->
-    <script src="plugins/form-validation/jquery.form.js"></script>
-    <script src="plugins/form-validation/jquery.validate.min.js"></script>
-
-    <!-- Bootstrap4 -->
-    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-    <!-- Parallax -->
-    <script src="plugins/parallax/jquery.parallax-1.1.3.js"></script>
-    <!-- lightbox -->
-    <script src="plugins/lightbox2/dist/js/lightbox.min.js"></script>
-    <!-- Owl Carousel -->
-    <script src="plugins/slick/slick.min.js"></script>
-    <!-- filter -->
-    <script src="plugins/filterizr/jquery.filterizr.min.js"></script>
-    <!-- Smooth Scroll js -->
-    <script src="plugins/smooth-scroll/smooth-scroll.min.js"></script>
-
-    <!-- Custom js -->
-    <script src="js/script.js"></script>
-
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
 </body>
 
 </html>

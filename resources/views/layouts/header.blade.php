@@ -1,53 +1,32 @@
-<header class="navigation fixed-top">
-    <div class="container">
-        <!-- main nav -->
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <!-- logo -->
-            <a class="navbar-brand logo" href="{{ route('home') }}">
-                <img class="logo-default" src="images/logo-mbvm.png" alt="logo" width="100" />
-                <img class="logo-white" src="images/logo-mbvm.png" alt="logo" width="100">
-            </a>
-            <span class="logo-default text-center">
-                <h3>MBVM</h3>
-                <h4>मराठी बांधकाम व्यावसायिक महासंघ</h4>
-                <h5></h5>
-            </span>
-            <span class="logo-white text-white text-center">
-                <h3>MBVM</h3>
-                <h4>मराठी बांधकाम व्यावसायिक महासंघ</h4>
-                <h5></h5>
-            </span>
-            <!-- /logo -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
-                aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<head>
+    <meta charset="utf-8">
+    <title>Arkitektur - Architecture HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-            <div class="collapse navbar-collapse" id="navigation">
-                <ul class="navbar-nav ml-auto text-center">
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
 
-                    <li class="nav-item ">
-                        <a class="nav-link" href="about.html">परिचय (About-us)</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="service.html">सेवा (Services)</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="portfolio.html">कार्यविभाग (Portfolio)</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="team.html">कार्यकारिणी (Team)</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="pricing.html">ब्लॉग (Blogs)</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="contact.html">संपर्क (Contact)</a>
-                    </li>
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Teko:wght@400;500;600&display=swap"
+        rel="stylesheet">
 
-                </ul>
-            </div>
-        </nav>
-        <!-- /main nav -->
-    </div>
-</header>
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
