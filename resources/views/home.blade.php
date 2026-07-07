@@ -234,8 +234,8 @@
             <div class="container">
                 <div class="row g-5">
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <h4 class="section-title">Why Choose Us!</h4>
-                        <h1 class="display-5 mb-4">Why You Should Trust Us? Learn More About Us!</h1>
+                        <h4 class="section-title">उद्देश</h4>
+                        <h1 class="display-5 mb-4">महासंघाचे उद्देश</h1>
                         <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam
                             et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat
                             amet</p>
@@ -244,9 +244,10 @@
                                 <div class="d-flex align-items-start">
                                     <img class="flex-shrink-0" src="img/icons/icon-2.png" alt="Icon">
                                     <div class="ms-4">
-                                        <h3>Design Approach</h3>
-                                        <p class="mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem
-                                            sed diam stet diam sed stet.</p>
+                                        <h3>विश्वासाचे नाते </h3>
+                                        <p class="mb-0">मराठी बांधकाम व्यावसायिक व मालमत्ता खरेदीदार यांच्यात विश्वासाचे
+                                            नाते निर्माण करणे, खरेदीदारांमध्ये जागरूकता निर्माण करणे व खरेदीदरम्यानच्या
+                                            समस्यांबाबत माहिती उपलब्ध करून देणे.</p>
                                     </div>
                                 </div>
                             </div>
@@ -254,9 +255,9 @@
                                 <div class="d-flex align-items-start">
                                     <img class="flex-shrink-0" src="img/icons/icon-3.png" alt="Icon">
                                     <div class="ms-4">
-                                        <h3>Innovative Solutions</h3>
-                                        <p class="mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem
-                                            sed diam stet diam sed stet.</p>
+                                        <h3>प्रोत्साहन देणे</h3>
+                                        <p class="mb-0">सर्वसामान्यांना परवडणारी घरे उपलब्ध करून देण्यासाठी प्रयत्न करणे
+                                            आणि परवडणारी घरे बांधणाऱ्या मराठी व्यावसायिकांना प्रोत्साहन देणे.</p>
                                     </div>
                                 </div>
                             </div>
@@ -264,9 +265,21 @@
                                 <div class="d-flex align-items-start">
                                     <img class="flex-shrink-0" src="img/icons/icon-4.png" alt="Icon">
                                     <div class="ms-4">
-                                        <h3>Project Management</h3>
-                                        <p class="mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem
-                                            sed diam stet diam sed stet.</p>
+                                        <h3>प्रश्न संघटितरीत्या सोडवणे </h3>
+                                        <p class="mb-0">शासकीय व निमशासकीय प्राधिकरणांकडे एकत्रित पाठपुरावा, कायदेशीर व
+                                            आर्थिक अडचणींवर मार्गदर्शन, आणि गरज पडल्यास न्यायालयात दावे, रिट याचिका वा जनहित
+                                            याचिका दाखल करणे.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="d-flex align-items-start">
+                                    <img class="flex-shrink-0" src="img/icons/icon-4.png" alt="Icon">
+                                    <div class="ms-4">
+                                        <h3>नवीन उद्योजकांना मार्गदर्शन </h3>
+                                        <p class="mb-0">अधिकाधिक मराठी तरुणांना बांधकाम व्यवसायात येण्यास प्रवृत्त करणे
+                                            आणि अनुभवी मराठी व्यावसायिकांकडून नवीन उद्योजकांना मार्गदर्शन व सल्ला उपलब्ध
+                                            करून देणे.</p>
                                     </div>
                                 </div>
                             </div>
