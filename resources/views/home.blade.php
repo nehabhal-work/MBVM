@@ -2,1026 +2,606 @@
 
 @section('content')
     <div>
-        <!--
-                Welcome Slider
-                ==================================== -->
-
-        <section class="hero-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="block">
-                            <h1 class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".3s">महाराष्ट्रातील मराठी
-                                विकासकांना <br> एकत्र आणणारे व्यासपीठ</h1>
-                            <div class="sub">मराठी सारे एकत्र येऊ… आपण सारे एकत्र होऊ… सर्वसामान्यांना घर देऊ…</div>
-                            <p class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".5s">मराठी विकासक, बिल्डर्स,
-                                लँड
-                                डेव्हलपर्स, अभियंते, वास्तुविशारद, सल्लागार, कंत्राटदार व पुरवठादार यांची राज्यस्तरीय शिखर
-                                संघटना. प्रत्येक जिल्ह्यात असोसिएशन — प्रत्येक विकासक सदस्य.
-                            </p>
-                            <ul class="list-inline wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".7s">
-                                <li class="list-inline-item">
-                                    <a data-scroll href="#services" class="btn btn-main">सदस्य व्हा →</a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a data-scroll href="#team" class="btn btn-transparent">अधिक जाणून घ्या</a>
-                                </li>
-                            </ul>
+        <!-- Carousel Start -->
+        <div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="owl-carousel header-carousel position-relative">
+                <div class="owl-carousel-item position-relative" data-dot="<img src='img/carousel-1.jpg'>">
+                    <img class="img-fluid" src="img/carousel-1.jpg" alt="">
+                    <div class="owl-carousel-inner">
+                        <div class="container">
+                            <div class="row justify-content-start">
+                                <div class="col-10 col-lg-8">
+                                    <h1 class="display-1 text-white animated slideInDown">महाराष्ट्रातील मराठी विकासकांना
+                                        एकत्र आणणारे व्यासपीठ</h1>
+                                    <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor
+                                        at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea
+                                        elitr.</p>
+                                    <a href="" class="btn btn-primary py-3 px-5 animated slideInLeft">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="owl-carousel-item position-relative" data-dot="<img src='img/carousel-2.jpg'>">
+                    <img class="img-fluid" src="img/carousel-2.jpg" alt="">
+                    <div class="owl-carousel-inner">
+                        <div class="container">
+                            <div class="row justify-content-start">
+                                <div class="col-10 col-lg-8">
+                                    <h1 class="display-1 text-white animated slideInDown">मराठी सारे एकत्र येऊ…
+                                        सर्वसामान्यांना घर देऊ…</h1>
+                                    <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor
+                                        at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea
+                                        elitr.</p>
+                                    <a href="" class="btn btn-primary py-3 px-5 animated slideInLeft">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="owl-carousel-item position-relative" data-dot="<img src='img/carousel-3.jpg'>">
+                    <img class="img-fluid" src="img/carousel-3.jpg" alt="">
+                    <div class="owl-carousel-inner">
+                        <div class="container">
+                            <div class="row justify-content-start">
+                                <div class="col-10 col-lg-8">
+                                    <h1 class="display-1 text-white animated slideInDown">एकत्रित बळ, एकत्रित आवाज
+                                    </h1>
+                                    <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor
+                                        at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea
+                                        elitr.</p>
+                                    <a href="" class="btn btn-primary py-3 px-5 animated slideInLeft">Read More</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+        <!-- Carousel End -->
 
 
-        <!--
-                Start About Section
-                ==================================== -->
-        <section class="about" id="about">
-            <div class="container">
-                <div class="row">
-
-                    <!-- section title -->
-                    <div class="title text-center">
-                        <h2>महासंघाबद्दल</h2>
-                        <p>प्रत्येक जिल्ह्यात मराठी बाांधकाम व्यवसाययक असोससएशन स्थापन करून ववकासकाांच्या प्रशनाांसाठी
-                            प्रभावी राज्यस्तरीय
-                            व्यासपीठ उभारणार</p>
-                        <div class="border"></div>
-                    </div>
-                    <!-- /section title -->
-
-                    <div class="col-md-6">
-                        <img src="images/about-us.jpg" class="img-fluid" alt="">
-                    </div>
-                    <div class="col-md-6">
-                        <p>मराठी बांधकाम व्यावसायिक महासंघ ही महाराष्ट्रातील मराठी विकासक व बांधकाम क्षेत्राशी संबंधित सर्व
-                            घटकांची
-                            राज्यस्तरीय शिखर संघटना आहे. प्रत्येक जिल्ह्यात असोसिएशन स्थापन करून सर्व विकासकांना एकत्रित
-                            व्यासपीठ देणे आणि
-                            शासन व उद्योग यांच्यात प्रभावी समन्वय निर्माण करणे हे महासंघाचे ध्येय आहे.</p>
-
-                        <p>मराठी बाांधकाम व्यायसायिक महासांघाला महाराष्ट्रातील सर्वात
-                            सक्षम आणण प्रभावी राज्यस्तरीय शिखर सांघटना म्हणून विकसित करण्यासाठी व्यापक सांघटन विस्तार अभियान
-                            राबविण्यात
-                            येईल.</p>
-                        <h4>महासंघाचे उद्देश</h4>
-                        <ul class="feature-list">
-                            <li> <i class="tf-ion-android-checkmark-circle"></i> व्यावसायिक व मालमत्ता खरेदीदार यांच्यात
-                                विश्वासाचे नाते निर्माण करणे,</li>
-                            <li> <i class="tf-ion-android-checkmark-circle"></i> सर्वसामान्यांना परवडणारी घरे उपलब्ध देणे.
-                            </li>
-                            <li> <i class="tf-ion-android-checkmark-circle"></i> कायदेशीर व आर्थिक अडचणींवर मार्गदर्शन,
-                            </li>
-                            <li> <i class="tf-ion-android-checkmark-circle"></i> मराठी व्यावसायिकांकडून नवीन उद्योजकांना
-                                मार्गदर्शन</li>
-                            <li> <i class="tf-ion-android-checkmark-circle"></i> रिट याचिका वा जनहित याचिका दाखल करणे.</li>
-                        </ul>
-                        <a href="#" class="btn btn-main mt-20">अधिक जाणून घ्या</a>
-                    </div>
-                </div> <!-- End row -->
-            </div> <!-- End container -->
-        </section> <!-- End section -->
-        <!--
-                Start Call To Action
-                ==================================== -->
-        <section class="call-to-action-2 section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <h2>मराठी बांधकाम व्यावसायिक महासंघ (महाराष्ट्र)</h2>
-                        <h2 class="sub">मराठी विकासकांची शिखर संघटना</h2>
-                        <h4>स्थापना २०२२</h4>
-                    </div>
-                </div> <!-- End row -->
-            </div> <!-- End container -->
-        </section> <!-- End section -->
-
-
-
-        <!-- Start Services Section
-                  ==================================== -->
-
-        <section class="services" id="services">
-            <div class="container">
-                <div class="row no-gutters">
-                    <!-- section title -->
-                    <div class="col-12">
-                        <div class="title text-center">
-                            <!-- <h2>Our Services</h2> -->
-                            <h2>सदस्य सेवा व शासन समन्वय</h2>
-                            <p>महासंघ राज्यभरातील असोसिएशनकडून येणाऱ्या प्रश्नांचे वर्गीकरण करून शासन व संबंधित विभागांकडे
-                                एकत्रित पाठपुरावा करतो, तसेच
-                                सदस्यांना मार्गदर्शन उपलब्ध करून देतो.</p>
-                            <div class="border"></div>
-                        </div>
-                    </div>
-                    <!-- /section title -->
-
-                    <!-- Single Service Item -->
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                        <div class="service-block p-4 color-bg text-center">
-                            <div class="service-icon text-center">
-                                <i class="tf-ion-ios-copy-outline"></i>
+        <!-- Facts Start -->
+        <div class="container-xxl py-5">
+            <div class="container pt-5">
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="fact-item text-center bg-light h-100 p-5 pt-0">
+                            <div class="fact-icon">
+                                <img src="img/icons/icon-2.png" alt="Icon">
                             </div>
-                            <h3>शासन समन्वय</h3>
-                            <ul>
-                                <li>शासनाकडे निवेदने व धोरणात्मक सूचना</li>
-                                <li>उद्योगाचे एकत्रित प्रतिनिधित्व</li>
-                                <li>सामायिक प्रश्नांवर राज्यस्तरीय पाठपुरावा</li>
-                                <li>शासन निर्णयांचे विश्लेषण</li>
-                            </ul>
+                            <h3 class="mb-3">Design Approach</h3>
+                            <p class="mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet
+                                diam sed stet.</p>
                         </div>
                     </div>
-                    <!-- End Single Service Item -->
-
-                    <!-- Single Service Item -->
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                        <div class="service-block p-4 text-center">
-                            <div class="service-icon text-center">
-                                <i class="tf-ion-ios-alarm-outline"></i>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="fact-item text-center bg-light h-100 p-5 pt-0">
+                            <div class="fact-icon">
+                                <img src="img/icons/icon-3.png" alt="Icon">
                             </div>
-                            <h3>कायदेशीर मार्गदर्शन</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur.. Sed id lorem eget orci dictum facilisis vel id
-                                tellus. Nullam
-                                iaculis arcu at mauris dapibus consectetur.</p>
+                            <h3 class="mb-3">Innovative Solutions</h3>
+                            <p class="mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet
+                                diam sed stet.</p>
                         </div>
                     </div>
-                    <!-- End Single Service Item -->
-
-                    <!-- Single Service Item -->
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                        <div class="service-block p-4 color-bg text-center">
-                            <div class="service-icon text-center">
-                                <i class="tf-ion-ios-book-outline"></i>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="fact-item text-center bg-light h-100 p-5 pt-0">
+                            <div class="fact-icon">
+                                <img src="img/icons/icon-4.png" alt="Icon">
                             </div>
-                            <h3>कायदेशीर मार्गदर्शन</h3>
-                            <ul>
-                                <li>RERA मार्गदर्शन</li>
-                                <li>UDCPR अद्ययावत माहिती</li>
-                                <li>MRTP विषयक माहिती</li>
-                                <li>Development Permissions</li>
-                            </ul>
+                            <h3 class="mb-3">Project Management</h3>
+                            <p class="mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet
+                                diam sed stet.</p>
                         </div>
-                    </div>
-                    <!-- End Single Service Item -->
-
-                    <!-- Single Service Item -->
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                        <div class="service-block p-4  text-center">
-                            <div class="service-icon text-center">
-                                <i class="tf-ion-ios-briefcase-outline"></i>
-                            </div>
-                            <h3>Graphic Design</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur.. Sed id lorem eget orci dictum facilisis vel id
-                                tellus. Nullam
-                                iaculis arcu at mauris dapibus consectetur.</p>
-                        </div>
-                    </div>
-                    <!-- End Single Service Item -->
-
-                    <!-- Single Service Item -->
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                        <div class="service-block p-4 color-bg text-center">
-                            <div class="service-icon text-center">
-                                <i class="tf-ion-ios-crop"></i>
-                            </div>
-                            <h3>Apps Development</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur.. Sed id lorem eget orci dictum facilisis vel id
-                                tellus. Nullam
-                                iaculis arcu at mauris dapibus consectetur.</p>
-                        </div>
-                    </div>
-                    <!-- End Single Service Item -->
-
-                    <!-- Single Service Item -->
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                        <div class="service-block p-4 text-center">
-                            <div class="service-icon text-center">
-                                <i class="tf-ion-ios-home-outline"></i>
-                            </div>
-                            <h3>माहिती व नेटवर्किंग</h3>
-                            <ul>
-                                <li>शासन निर्णय (GR) लायब्ररी</li>
-                                <li>पर्यावरण विषयक मार्गदर्शन</li>
-                                <li>प्रशिक्षण व कार्यशाळा</li>
-                                <li>व्यवसाय नेटवर्किंग</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- End Single Service Item -->
-
-                </div> <!-- End row -->
-            </div> <!-- End container -->
-        </section> <!-- End section -->
-
-
-
-        <!--
-                Start Call To Action
-                ==================================== -->
-        <section class="call-to-action section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <h2>राज्यभरातील वाटचाल</h2>
-                        <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicudin bibendum auctor, <br> nisi elit
-                            consequat ipsum, nesagittis sem nid elit. Duis sed odio sitain elit.</p>
-
-                        <a href="" class="btn btn-main">Contact Us</a>
-                    </div>
-                </div> <!-- End row -->
-            </div> <!-- End container -->
-        </section> <!-- End section -->
-
-
-
-        <!-- Start Team Skills
-                  =========================================== -->
-
-        <section class="team-skills section-sm" id="skills">
-            <div class="container">
-                <div class="row">
-
-                    <!-- section title -->
-                    <div class="col-12">
-                        <div class="title text-center">
-                            <h2>Our Skills</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus fugiat, vel veniam, eos
-                                et
-                                delectus eveniet molestiae. Esse, voluptas ratione.</p>
-                            <div class="border"></div>
-                        </div>
-                    </div>
-                    <!-- /section title -->
-
-                    <div class="col-md-5">
-                        <div class="team-skills-content">
-                            <h2>Simple To Start</h2>
-                            <p>Vestibulum nisl tortor, consectetur quis imperdiet bium, letcu. Sedndime ntumiaculis ex, in
-                                faucibus lorem accumsan non. Donec mattis tin unt metuorbi sed tort Igor aman luctus
-                                dignissim.
-                                Vestibulum nisl tortor, consectetur quis imperdiet bium, letcu. Sedndime ntumiaculis ex, in
-                                faucibus lorem accumsan non.</p>
-                            <a href="" class="btn btn-main mt-20">Contact Us</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-md-offset-1">
-                        <div class="progress-block">
-                            <ul>
-                                <li>
-                                    <span>Photoshop</span>
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 90%;">
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span>Web Application</span>
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 85%;">
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span>Andriod Application</span>
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 92%;">
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span>IOS Development</span>
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 78%;">
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-
-                        </div>
-                    </div>
-                </div> <!-- End row -->
-                <div class="row">
-                    <div class="col-md-12">
-                        <div id="clients-slider" class="clients-logo-slider">
-                            <img src="images/client-logo/logo1.png" alt="">
-                            <img src="images/client-logo/logo-2.png" alt="">
-                            <img src="images/client-logo/logo-3.png" alt="">
-                            <img src="images/client-logo/logo-4.png" alt="">
-                            <img src="images/client-logo/logo-5.png" alt="">
-                            <img src="images/client-logo/logo1.png" alt="">
-                            <img src="images/client-logo/logo-2.png" alt="">
-                            <img src="images/client-logo/logo-3.png" alt="">
-                            <img src="images/client-logo/logo-4.png" alt="">
-                            <img src="images/client-logo/logo-5.png" alt="">
-                        </div>
-
                     </div>
                 </div>
-            </div> <!-- End container -->
-        </section> <!-- End section -->
+            </div>
+        </div>
+        <!-- Facts End -->
 
 
-
-        <!--
-                  Start Counter Section
-                  ==================================== -->
-
-        <section class="counter-wrapper section-sm">
+        <!-- About Start -->
+        <div class="container-xxl py-5">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <div class="title">
-                            <h2>Award-Winning Agency</h2>
-                            <p>Vestibulum nisl tortor, consectetur quis imperdiet bibendum, laoreet sed arcu. Sed
-                                condimentum iaculis ex, in faucibus lorem accumsan non. Donec mattis tincidunt metus. Morbi
-                                sed tortor a risus luctus dignissim.</p>
+                <div class="row g-5">
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                        <div class="about-img">
+                            <img class="img-fluid" src="img/about-1.jpg" alt="">
+                            <img class="img-fluid" src="img/about-2.jpg" alt="">
                         </div>
                     </div>
-                    <!-- first count item -->
-                    <div class="col-md-3 col-sm-6 col-xs-6 text-center ">
-                        <div class="counters-item">
-                            <i class="tf-ion-ios-alarm-outline"></i>
-                            <div>
-                                <span class="counter" data-count="150">0</span>
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                        <h4 class="section-title">परिचय</h4>
+                        <h1 class="display-5 mb-4">महासंघाबद्दल</h1>
+                        <p>मराठी बांधकाम व्यावसायिक महासंघ ही महाराष्ट्रातील मराठी विकासक व बांधकाम क्षेत्राशी संबंधित सर्व
+                            घटकांची राज्यस्तरीय शिखर संघटना आहे. प्रत्येक जिल्ह्यात असोसिएशन स्थापन करून सर्व विकासकांना
+                            एकत्रित व्यासपीठ देणे आणि शासन व उद्योग यांच्यात प्रभावी समन्वय निर्माण करणे हे महासंघाचे ध्येय
+                            आहे.</p>
+                        <div class="d-flex align-items-center mb-5">
+                            <div class="d-flex flex-shrink-0 align-items-center justify-content-center border border-5 border-primary"
+                                style="width: 120px; height: 120px;">
+                                <h1 class="display-1 mb-n2" data-toggle="counter-up">25</h1>
                             </div>
-                            <h3>Happy Clients</h3>
+                            <div class="ps-4">
+                                <h3>Years</h3>
+                                <h3>Working</h3>
+                                <h3 class="mb-0">Experience</h3>
+                            </div>
                         </div>
+                        <a class="btn btn-primary py-3 px-5" href="">Read More</a>
                     </div>
-                    <!-- end first count item -->
-
-                    <!-- second count item -->
-                    <div class="col-md-3 col-sm-6 col-xs-6 text-center ">
-                        <div class="counters-item">
-                            <i class="tf-ion-ios-analytics-outline"></i>
-                            <div>
-                                <span class="counter" data-count="130">0</span>
-                            </div>
-                            <h3>Projects completed</h3>
-                        </div>
-                    </div>
-                    <!-- end second count item -->
-
-                    <!-- third count item -->
-                    <div class="col-md-3 col-sm-6 col-xs-6 text-center ">
-                        <div class="counters-item">
-                            <i class="tf-ion-ios-compose-outline"></i>
-                            <div>
-                                <span class="counter" data-count="99">0</span>
-                            </div>
-                            <h3>Positive feedback</h3>
-
-                        </div>
-                    </div>
-                    <!-- end third count item -->
-
-                    <!-- fourth count item -->
-                    <div class="col-md-3 col-sm-6 col-xs-6 text-center ">
-                        <div class="counters-item kill-border">
-                            <i class="tf-ion-ios-bolt-outline"></i>
-                            <div>
-                                <span class="counter" data-count="250">0</span>
-                            </div>
-                            <h3>Cups of Coffee</h3>
-                        </div>
-                    </div>
-                    <!-- end fourth count item -->
-                </div> <!-- end row -->
-            </div> <!-- end container -->
-        </section> <!-- end section -->
-        <!-- Start Portfolio Section
-                  =========================================== -->
-
-        <section class="portfolio section-sm" id="portfolio">
-            <div class="container-fluid">
-                <div class="row ">
-                    <div class="col-lg-12">
-
-                        <!-- section title -->
-                        <div class="title text-center">
-                            <h2>Our Works</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, veritatis. Lorem ipsum dolor
-                                sit amet,
-                                consectetur adipisicing elit. Minima, vitae? </p>
-                            <div class="border"></div>
-                        </div>
-                        <!-- /section title -->
-
-                        <div class="portfolio-filter">
-                            <button type="button" data-filter="all">All</button>
-                            <button type="button" data-filter="photography">Photography</button>
-                            <button type="button" data-filter="ios">IOS App</button>
-                            <button type="button" data-filter="development">Development</button>
-                            <button type="button" data-filter="design">Design</button>
-                        </div>
-
-                        <div class="row filtr-container">
-                            <div class="col-md-3 col-sm-6 col-xs-6 filtr-item " data-category="mix, design">
-                                <div class="portfolio-block">
-                                    <img class="img-fluid" src="images/portfolio/portfolio-1.jpg" alt="">
-                                    <div class="caption">
-                                        <a class="search-icon" href="images/portfolio/portfolio-1.jpg"
-                                            data-lightbox="image-1">
-                                            <i class="tf-ion-ios-search-strong"></i>
-                                        </a>
-                                        <h4><a href="">AirBnB Postcard</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-6 filtr-item " data-category="mix, design, ios">
-                                <div class="portfolio-block">
-                                    <img class="img-fluid" src="images/portfolio/portfolio-2.jpg" alt="">
-                                    <div class="caption">
-                                        <a class="search-icon" href="images/portfolio/portfolio-2.jpg"
-                                            data-lightbox="image-1">
-                                            <i class="tf-ion-ios-search-strong"></i>
-                                        </a>
-                                        <h4><a href="">AirBnB Postcard</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-6 filtr-item "
-                                data-category="mix, photography, development">
-                                <div class="portfolio-block">
-                                    <img class="img-fluid" src="images/portfolio/portfolio-3.jpg" alt="">
-                                    <div class="caption">
-                                        <a class="search-icon" href="images/portfolio/portfolio-3.jpg"
-                                            data-lightbox="image-1">
-                                            <i class="tf-ion-ios-search-strong"></i>
-                                        </a>
-                                        <h4><a href="">AirBnB Postcard</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-6 filtr-item " data-category="mix, photography, ios">
-                                <div class="portfolio-block">
-                                    <img class="img-fluid" src="images/portfolio/portfolio-4.jpg" alt="">
-                                    <div class="caption">
-                                        <a class="search-icon" href="images/portfolio/portfolio-4.jpg"
-                                            data-lightbox="image-1">
-                                            <i class="tf-ion-ios-search-strong"></i>
-                                        </a>
-                                        <h4><a href="">AirBnB Postcard</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-6 filtr-item " data-category="mix, design">
-                                <div class="portfolio-block">
-                                    <img class="img-fluid" src="images/portfolio/portfolio-5.jpg" alt="">
-                                    <div class="caption">
-                                        <a class="search-icon" href="images/portfolio/portfolio-5.jpg"
-                                            data-lightbox="image-1">
-                                            <i class="tf-ion-ios-search-strong"></i>
-                                        </a>
-                                        <h4><a href="">AirBnB Postcard</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-6 filtr-item " data-category="mix, design, development">
-                                <div class="portfolio-block">
-                                    <img class="img-fluid" src="images/portfolio/portfolio-6.jpg" alt="">
-                                    <div class="caption">
-                                        <a class="search-icon" href="images/portfolio/portfolio-6.jpg"
-                                            data-lightbox="image-1">
-                                            <i class="tf-ion-ios-search-strong"></i>
-                                        </a>
-                                        <h4><a href="">AirBnB Postcard</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-6 filtr-item " data-category="mix, photography">
-                                <div class="portfolio-block">
-                                    <img class="img-fluid" src="images/portfolio/portfolio-7.jpg" alt="">
-                                    <div class="caption">
-                                        <a class="search-icon" href="images/portfolio/portfolio-7.jpg"
-                                            data-lightbox="image-1">
-                                            <i class="tf-ion-ios-search-strong"></i>
-                                        </a>
-                                        <h4><a href="">AirBnB Postcard</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-6 filtr-item " data-category="mix, design, development">
-                                <div class="portfolio-block">
-                                    <img class="img-fluid" src="images/portfolio/portfolio-1.jpg" alt="">
-                                    <div class="caption">
-                                        <a class="search-icon" href="images/portfolio/portfolio-1.jpg"
-                                            data-lightbox="image-1">
-                                            <i class="tf-ion-ios-search-strong"></i>
-                                        </a>
-                                        <h4><a href="">AirBnB Postcard</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- /end col-lg-12 -->
-                </div> <!-- end row -->
-            </div> <!-- end container -->
-        </section> <!-- End section -->
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
 
 
-        <!-- Start Our Team
-                  =========================================== -->
-        <section class="team" id="team">
+        <!-- Service Start -->
+        <div class="container-xxl py-5">
             <div class="container">
-                <div class="row">
-
-                    <!-- section title -->
-                    <div class="col-12">
-                        <div class="title text-center ">
-                            <h2>विद्यमान कार्यकारी मंडळ</h2>
-                            <p>कार्यकारी मंडळाची निवड दर दोन वर्षांनी वार्षिक सर्वसाधारण सभेत गुप्त मतदान पद्धतीने होते.
-                                रिक्त पदे राहिलेल्या
-                                सदस्यांकडून बहुमताने भरली जातात व त्याची नोंद सहाय्यक धर्मादाय आयुक्त, ठाणे यांच्याकडे केली
-                                जाते.</p>
-                            <div class="border"></div>
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h4 class="section-title">सेवा</h4>
+                    <h1 class="display-5 mb-4">सदस्य सेवा व शासन समन्वय</h1>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-1.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/icons/icon-5.png" alt="Icon">
+                                <h3 class="mb-3">शासन समन्वय</h3>
+                                <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
+                                    stet diam sed stet.</p>
+                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read
+                                    More</a>
+                            </div>
                         </div>
                     </div>
-                    <!-- /section title -->
-
-                    <!-- team member -->
-                    <div class="col-md-4 col-sm-6 ">
-                        <div class="team-member text-center">
-                            <div class="member-photo">
-                                <!-- member photo -->
-                                <img class="img-fluid" src="images/team/member-1.jpg" alt="Meghna">
-                                <!-- /member photo -->
-
-                                <!-- member social profile -->
-                                <div class="mask">
-                                    <ul class="clearfix">
-                                        <li><a href="#"><i class="tf-ion-social-facebook"></i></a></li>
-                                        <li><a href="#"><i class="tf-ion-social-twitter"></i></a></li>
-                                        <li><a href="#"><i class="tf-ion-social-google-outline"></i></a></li>
-                                        <li><a href="#"><i class="tf-ion-social-dribbble"></i></a></li>
-                                    </ul>
-                                </div>
-                                <!-- /member social profile -->
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-2.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/icons/icon-6.png" alt="Icon">
+                                <h3 class="mb-3">कायदेशीर मार्गदर्शन</h3>
+                                <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
+                                    stet diam sed stet.</p>
+                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read
+                                    More</a>
                             </div>
-
-                            <!-- member name & designation -->
-                            <div class="member-content">
-                                <h3>श्री. प्रविण दरेकर</h3>
-                                <span>आमदार, विधानपरिषद · अध्यक्ष, मुंबई बँक</span>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam,
-                                    culpa odio.</p>
-                            </div>
-                            <!-- /member name & designation -->
-
                         </div>
                     </div>
-                    <!-- end team member -->
-
-                    <!-- team member -->
-                    <div class="col-md-4 col-sm-6 ">
-                        <div class="team-member text-center">
-                            <div class="member-photo">
-                                <!-- member photo -->
-                                <img class="img-fluid" src="images/team/member-2.jpg" alt="Meghna">
-                                <!-- /member photo -->
-
-                                <!-- member social profile -->
-                                <div class="mask">
-                                    <ul class="clearfix">
-                                        <li><a href="#"><i class="tf-ion-social-facebook"></i></a></li>
-                                        <li><a href="#"><i class="tf-ion-social-twitter"></i></a></li>
-                                        <li><a href="#"><i class="tf-ion-social-google-outline"></i></a></li>
-                                        <li><a href="#"><i class="tf-ion-social-dribbble"></i></a></li>
-                                    </ul>
-                                </div>
-                                <!-- /member social profile -->
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-3.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/icons/icon-7.png" alt="Icon">
+                                <h3 class="mb-3">माहिती व नेटवर्किंग</h3>
+                                <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
+                                    stet diam sed stet.</p>
+                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read
+                                    More</a>
                             </div>
-
-                            <!-- member name & designation -->
-                            <div class="member-content">
-                                <h3>श्री. गजानन कीर्तिकर</h3>
-                                <span>महासंघ मार्गदर्शक</span>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam,
-                                    culpa odio.</p>
-                            </div>
-                            <!-- /member name & designation -->
                         </div>
                     </div>
-                    <!-- end team member -->
-
-                    <!-- team member -->
-                    <div class="col-md-4 col-sm-6 ">
-                        <div class="team-member text-center">
-                            <div class="member-photo">
-                                <!-- member photo -->
-                                <img class="img-fluid" src="images/team/member-3.jpg" alt="Meghna">
-                                <!-- /member photo -->
-
-                                <!-- member social profile -->
-                                <div class="mask">
-                                    <ul class="clearfix">
-                                        <li><a href="#"><i class="tf-ion-social-facebook"></i></a></li>
-                                        <li><a href="#"><i class="tf-ion-social-twitter"></i></a></li>
-                                        <li><a href="#"><i class="tf-ion-social-google-outline"></i></a></li>
-                                        <li><a href="#"><i class="tf-ion-social-dribbble"></i></a></li>
-                                    </ul>
-                                </div>
-                                <!-- /member social profile -->
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-4.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/icons/icon-8.png" alt="Icon">
+                                <h3 class="mb-3">Seva 1</h3>
+                                <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
+                                    stet diam sed stet.</p>
+                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read
+                                    More</a>
                             </div>
-
-                            <!-- member name & designation -->
-                            <div class="member-content">
-                                <h3>श्री. सतीश मगर</h3>
-                                <span>महासंघ सल्लागार</span>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam,
-                                    culpa odio.</p>
-                            </div>
-                            <!-- /member name & designation -->
-
                         </div>
                     </div>
-                    <!-- end team member -->
-                </div> <!-- End row -->
-            </div> <!-- End container -->
-        </section> <!-- End section -->
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-5.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/icons/icon-9.png" alt="Icon">
+                                <h3 class="mb-3">Seva 2</h3>
+                                <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
+                                    stet diam sed stet.</p>
+                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read
+                                    More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-6.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/icons/icon-10.png" alt="Icon">
+                                <h3 class="mb-3">Seva 3</h3>
+                                <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
+                                    stet diam sed stet.</p>
+                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read
+                                    More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Service End -->
 
 
-
-        <!-- Start Pricing section
-                  =========================================== -->
-        <section class="pricing-table " id="pricing">
+        <!-- Feature Start -->
+        <div class="container-xxl py-5">
             <div class="container">
-                <div class="row">
-
-                    <!-- section title -->
-                    <div class="col-12">
-                        <div class="title title-white text-center ">
-                            <h2>Our Greatest Plans</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium soluta deserunt eaque,
-                                est, quia hic
-                                odit sed incidunt officiis quidem.</p>
-                            <div class="border"></div>
-                        </div>
-                    </div>
-                    <!-- /section title -->
-
-                    <!-- single pricing table -->
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="pricing-item">
-
-                            <!-- plan name & value -->
-                            <div class="price-title">
-                                <h3>Basic</h3>
-                                <strong class="value">$19</strong>
-                                <p>Perfect for single freelancers who work by themselves</p>
+                <div class="row g-5">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <h4 class="section-title">Why Choose Us!</h4>
+                        <h1 class="display-5 mb-4">Why You Should Trust Us? Learn More About Us!</h1>
+                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam
+                            et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat
+                            amet</p>
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="d-flex align-items-start">
+                                    <img class="flex-shrink-0" src="img/icons/icon-2.png" alt="Icon">
+                                    <div class="ms-4">
+                                        <h3>Design Approach</h3>
+                                        <p class="mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem
+                                            sed diam stet diam sed stet.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <!-- /plan name & value -->
-
-                            <!-- plan description -->
-                            <ul>
-                                <li><i class="tf-ion-ios-arrow-forward"></i> 1GB Disk Space</li>
-                                <li><i class="tf-ion-ios-arrow-forward"></i> 10 Email Account</li>
-                                <li><i class="tf-ion-ios-arrow-forward"></i> Script Installer</li>
-                                <li><i class="tf-ion-ios-arrow-forward"></i> 1 GB Storage</li>
-                                <li><i class="tf-ion-ios-arrow-forward"></i> 2 GB Bandwidth</li>
-                                <li><i class="tf-ion-ios-arrow-forward"></i> 24/7 Tech Support</li>
-                            </ul>
-                            <!-- /plan description -->
-
-                            <!-- signup button -->
-                            <a class="btn btn-main" href="#">Signup</a>
-                            <!-- /signup button -->
-
-                        </div>
-                    </div>
-                    <!-- end single pricing table -->
-
-                    <!-- single pricing table -->
-                    <div class="col-md-4 col-sm-6 col-xs-12  ">
-                        <div class="pricing-item">
-
-                            <!-- plan name & value -->
-                            <div class="price-title">
-                                <h3>Standard</h3>
-                                <strong class="value">$39</strong>
-                                <p>Suitable for small businesses with up to 5 employees</p>
+                            <div class="col-12">
+                                <div class="d-flex align-items-start">
+                                    <img class="flex-shrink-0" src="img/icons/icon-3.png" alt="Icon">
+                                    <div class="ms-4">
+                                        <h3>Innovative Solutions</h3>
+                                        <p class="mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem
+                                            sed diam stet diam sed stet.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <!-- /plan name & value -->
-
-                            <!-- plan description -->
-                            <ul>
-                                <li><i class="tf-ion-ios-arrow-forward"></i> 1GB Disk Space</li>
-                                <li><i class="tf-ion-ios-arrow-forward"></i> 50 Email Account</li>
-                                <li><i class="tf-ion-ios-arrow-forward"></i> Script Installer</li>
-                                <li><i class="tf-ion-ios-arrow-forward"></i> 1 GB Storage</li>
-                                <li><i class="tf-ion-ios-arrow-forward"></i> 10 GB Bandwidth</li>
-                                <li><i class="tf-ion-ios-arrow-forward"></i> 24/7 Tech Support</li>
-                            </ul>
-                            <!-- /plan description -->
-
-                            <!-- signup button -->
-                            <a class="btn btn-main" href="#">Signup</a>
-                            <!-- /signup button -->
-
-                        </div>
-                    </div>
-                    <!-- end single pricing table -->
-
-                    <!-- single pricing table -->
-                    <div class="col-md-4 col-sm-6 col-xs-12 ">
-                        <div class="pricing-item">
-
-                            <!-- plan name & value -->
-                            <div class="price-title">
-                                <h3>Enterprise</h3>
-                                <strong class="value">$59</strong>
-                                <p>Great for large businesses with more than 5 employees</p>
+                            <div class="col-12">
+                                <div class="d-flex align-items-start">
+                                    <img class="flex-shrink-0" src="img/icons/icon-4.png" alt="Icon">
+                                    <div class="ms-4">
+                                        <h3>Project Management</h3>
+                                        <p class="mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem
+                                            sed diam stet diam sed stet.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <!-- /plan name & value -->
-
-                            <!-- plan description -->
-                            <ul>
-                                <li><i class="tf-ion-ios-arrow-forward"></i> Unlimited Disk Space</li>
-                                <li><i class="tf-ion-ios-arrow-forward"></i> Unlimited Email Account</li>
-                                <li><i class="tf-ion-ios-arrow-forward"></i> Script Installer</li>
-                                <li><i class="tf-ion-ios-arrow-forward"></i> Unlimited Storage</li>
-                                <li><i class="tf-ion-ios-arrow-forward"></i> Unlimited Bandwidth</li>
-                                <li><i class="tf-ion-ios-arrow-forward"></i> 24/7 Tech Support</li>
-                            </ul>
-                            <!-- /plan description -->
-
-                            <!-- signup button -->
-                            <a class="btn btn-main" href="#">Signup</a>
-                            <!-- /signup button -->
-
                         </div>
                     </div>
-                    <!-- end single pricing table -->
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="feature-img">
+                            <img class="img-fluid" src="img/about-2.jpg" alt="">
+                            <img class="img-fluid" src="img/about-1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Feature End -->
 
 
-                </div> <!-- End row -->
-            </div> <!-- End container -->
-        </section> <!-- End section -->
-
-
-
-        <!-- Start Testimonial
-                =========================================== -->
-
-        <section class="testimonial section" id="testimonial">
+        <!-- Project Start -->
+        <div class="container-xxl project py-5">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <!-- testimonial wrapper -->
-                        <div class="testimonial-slider">
-                            <!-- testimonial single -->
-                            <div class="item text-center">
-                                <i class="tf-ion-chatbubbles"></i>
-                                <!-- client info -->
-                                <div class="client-details">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum nulla, soluta dolorum.
-                                        Eos earum, magni asperiores, unde corporis labore, enim, voluptatum officiis
-                                        voluptates alias natus. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                        Quia, officia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, quia?
-                                    </p>
-                                </div>
-                                <!-- /client info -->
-                                <!-- client photo -->
-                                <div class="client-thumb">
-                                    <img src="images/client-logo/clients-1.jpg" class="img-fluid" alt="">
-                                </div>
-                                <div class="client-meta">
-                                    <h3>William Martin</h3>
-                                    <span>CEO , Company Name</span>
-                                </div>
-                                <!-- /client photo -->
-                            </div>
-                            <!-- /testimonial single -->
-
-                            <!-- testimonial single -->
-                            <div class="item text-center">
-                                <i class="tf-ion-chatbubbles"></i>
-                                <!-- client info -->
-                                <div class="client-details">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum nulla, soluta dolorum.
-                                        Eos earum, magni asperiores, unde corporis labore, enim, voluptatum officiis
-                                        voluptates alias natus. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                        Quia, officia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, quia?
-                                    </p>
-                                </div>
-                                <!-- /client info -->
-                                <!-- client photo -->
-                                <div class="client-thumb">
-                                    <img src="images/client-logo/clients-2.jpg" class="img-fluid" alt="">
-                                </div>
-                                <div class="client-meta">
-                                    <h3>Emma Harrison</h3>
-                                    <span>CEO , Company Name</span>
-                                </div>
-                                <!-- /client photo -->
-                            </div>
-                            <!-- /testimonial single -->
-
-                            <!-- testimonial single -->
-                            <div class="item text-center">
-                                <i class="tf-ion-chatbubbles"></i>
-                                <!-- client info -->
-                                <div class="client-details">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum nulla, soluta dolorum.
-                                        Eos earum, magni asperiores, unde corporis labore, enim, voluptatum officiis
-                                        voluptates alias natus. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                        Quia, officia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, quia?
-                                    </p>
-                                </div>
-                                <!-- /client info -->
-                                <!-- client photo -->
-                                <div class="client-thumb">
-                                    <img src="images/client-logo/clients-3.jpg" class="img-fluid" alt="">
-                                </div>
-                                <div class="client-meta">
-                                    <h3>Alexander Lucas</h3>
-                                    <span>CEO , Company Name</span>
-                                </div>
-                                <!-- /client photo -->
-                            </div>
-                            <!-- /testimonial single -->
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h4 class="section-title">Our Projects</h4>
+                    <h1 class="display-5 mb-4">Visit Our Latest Projects And Our Innovative Works</h1>
+                </div>
+                <div class="row g-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="col-lg-4">
+                        <div class="nav nav-pills d-flex justify-content-between w-100 h-100 me-4">
+                            <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4 active"
+                                data-bs-toggle="pill" data-bs-target="#tab-pane-1" type="button">
+                                <h3 class="m-0">01. Modern Complex</h3>
+                            </button>
+                            <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4"
+                                data-bs-toggle="pill" data-bs-target="#tab-pane-2" type="button">
+                                <h3 class="m-0">02. Royal Hotel</h3>
+                            </button>
+                            <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4"
+                                data-bs-toggle="pill" data-bs-target="#tab-pane-3" type="button">
+                                <h3 class="m-0">03. Mexwel Buiding</h3>
+                            </button>
+                            <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-0"
+                                data-bs-toggle="pill" data-bs-target="#tab-pane-4" type="button">
+                                <h3 class="m-0">04. Shopping Complex</h3>
+                            </button>
                         </div>
-                    </div> <!-- end col lg 12 -->
-                </div> <!-- End row -->
-            </div> <!-- End container -->
-        </section>
-        <!-- End Section -->
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="tab-content w-100">
+                            <div class="tab-pane fade show active" id="tab-pane-1">
+                                <div class="row g-4">
+                                    <div class="col-md-6" style="min-height: 350px;">
+                                        <div class="position-relative h-100">
+                                            <img class="position-absolute img-fluid w-100 h-100" src="img/project-1.jpg"
+                                                style="object-fit: cover;" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h1 class="mb-3">25 Years Of Experience In Architecture Industry</h1>
+                                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
+                                            Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem
+                                            sit clita duo justo magna dolore erat amet</p>
+                                        <p><i class="fa fa-check text-primary me-3"></i>Design Approach</p>
+                                        <p><i class="fa fa-check text-primary me-3"></i>Innovative Solutions</p>
+                                        <p><i class="fa fa-check text-primary me-3"></i>Project Management</p>
+                                        <a href="" class="btn btn-primary py-3 px-5 mt-3">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="tab-pane-2">
+                                <div class="row g-4">
+                                    <div class="col-md-6" style="min-height: 350px;">
+                                        <div class="position-relative h-100">
+                                            <img class="position-absolute img-fluid w-100 h-100" src="img/project-2.jpg"
+                                                style="object-fit: cover;" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h1 class="mb-3">25 Years Of Experience In Architecture Industry</h1>
+                                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
+                                            Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem
+                                            sit clita duo justo magna dolore erat amet</p>
+                                        <p><i class="fa fa-check text-primary me-3"></i>Design Approach</p>
+                                        <p><i class="fa fa-check text-primary me-3"></i>Innovative Solutions</p>
+                                        <p><i class="fa fa-check text-primary me-3"></i>Project Management</p>
+                                        <a href="" class="btn btn-primary py-3 px-5 mt-3">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="tab-pane-3">
+                                <div class="row g-4">
+                                    <div class="col-md-6" style="min-height: 350px;">
+                                        <div class="position-relative h-100">
+                                            <img class="position-absolute img-fluid w-100 h-100" src="img/project-3.jpg"
+                                                style="object-fit: cover;" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h1 class="mb-3">25 Years Of Experience In Architecture Industry</h1>
+                                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
+                                            Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem
+                                            sit clita duo justo magna dolore erat amet</p>
+                                        <p><i class="fa fa-check text-primary me-3"></i>Design Approach</p>
+                                        <p><i class="fa fa-check text-primary me-3"></i>Innovative Solutions</p>
+                                        <p><i class="fa fa-check text-primary me-3"></i>Project Management</p>
+                                        <a href="" class="btn btn-primary py-3 px-5 mt-3">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="tab-pane-4">
+                                <div class="row g-4">
+                                    <div class="col-md-6" style="min-height: 350px;">
+                                        <div class="position-relative h-100">
+                                            <img class="position-absolute img-fluid w-100 h-100" src="img/project-4.jpg"
+                                                style="object-fit: cover;" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h1 class="mb-3">25 Years Of Experience In Architecture Industry</h1>
+                                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
+                                            Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem
+                                            sit clita duo justo magna dolore erat amet</p>
+                                        <p><i class="fa fa-check text-primary me-3"></i>Design Approach</p>
+                                        <p><i class="fa fa-check text-primary me-3"></i>Innovative Solutions</p>
+                                        <p><i class="fa fa-check text-primary me-3"></i>Project Management</p>
+                                        <a href="" class="btn btn-primary py-3 px-5 mt-3">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Project End -->
 
 
-
-        <!--Start Blog Section
-                  =========================================== -->
-
-        <section class="blog" id="blog">
+        <!-- Team Start -->
+        <div class="container-xxl py-5">
             <div class="container">
-                <div class="row">
-
-                    <!-- section title -->
-                    <div class="col-12">
-                        <div class="title text-center ">
-                            <h2> Latest <span class="color">Posts</span></h2>
-                            <div class="border"></div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus facere accusamus,
-                                reprehenderit libero
-                                inventore nam.</p>
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h4 class="section-title">Team Members</h4>
+                    <h1 class="display-5 mb-4">We Are Creative Architecture Team For Your Dream Home</h1>
+                </div>
+                <div class="row g-0 team-items">
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="team-item position-relative">
+                            <div class="position-relative">
+                                <img class="img-fluid" src="img/team-1.jpg" alt="">
+                                <div class="team-social text-center">
+                                    <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="bg-light text-center p-4">
+                                <h3 class="mt-2">Architect Name</h3>
+                                <span class="text-primary">Designation</span>
+                            </div>
                         </div>
                     </div>
-                    <!-- /section title -->
-                    <!-- single blog post -->
-                    <article class="col-md-4 col-sm-6 col-xs-12 clearfix ">
-                        <div class="post-item">
-                            <div class="media-wrapper">
-                                <img src="images/blog/post-1.jpg" alt="amazing caves coverimage" class="img-fluid">
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="team-item position-relative">
+                            <div class="position-relative">
+                                <img class="img-fluid" src="img/team-2.jpg" alt="">
+                                <div class="team-social text-center">
+                                    <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                </div>
                             </div>
-
-                            <div class="content">
-                                <h3><a href="single-post.html">Reasons to Smile</a></h3>
-                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-                                    squid. 3 wolf
-                                    moon officia aute, non skateboard dolor brunch.</p>
-                                <a class="btn btn-main" href="single-post.html">Read more</a>
-                            </div>
-                        </div>
-                    </article>
-                    <!-- /single blog post -->
-
-                    <!-- single blog post -->
-                    <article class="col-md-4 col-sm-6 col-xs-12 ">
-                        <div class="post-item">
-                            <div class="media-wrapper">
-                                <img src="images/blog/post-2.jpg" alt="amazing caves coverimage" class="img-fluid">
-                            </div>
-
-                            <div class="content">
-                                <h3><a href="single-post.html">A Few Moments</a></h3>
-                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-                                    squid. 3 wolf
-                                    moon officia aute, non skateboard dolor brunch.</p>
-                                <a class="btn btn-main" href="single-post.html">Read more</a>
+                            <div class="bg-light text-center p-4">
+                                <h3 class="mt-2">Architect Name</h3>
+                                <span class="text-primary">Designation</span>
                             </div>
                         </div>
-                    </article>
-                    <!-- end single blog post -->
-
-                    <!-- single blog post -->
-                    <article class="col-md-4 col-sm-6 col-xs-12 ">
-                        <div class="post-item">
-                            <div class="media-wrapper">
-                                <img src="images/blog/post-3.jpg" alt="amazing caves coverimage" class="img-fluid">
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="team-item position-relative">
+                            <div class="position-relative">
+                                <img class="img-fluid" src="img/team-3.jpg" alt="">
+                                <div class="team-social text-center">
+                                    <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                </div>
                             </div>
-
-                            <div class="content">
-                                <h3><a href="single-post.html">Hints for Life</a></h3>
-                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-                                    squid. 3 wolf
-                                    moon officia aute, non skateboard dolor brunch.</p>
-                                <a class="btn btn-main" href="single-post.html">Read more</a>
+                            <div class="bg-light text-center p-4">
+                                <h3 class="mt-2">Architect Name</h3>
+                                <span class="text-primary">Designation</span>
                             </div>
                         </div>
-                    </article>
-                    <!-- end single blog post -->
-                </div> <!-- end row -->
-            </div> <!-- end container -->
-        </section>
-        <!-- end section -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="team-item position-relative">
+                            <div class="position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social text-center">
+                                    <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="bg-light text-center p-4">
+                                <h3 class="mt-2">Architect Name</h3>
+                                <span class="text-primary">Designation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Team End -->
 
 
-
-        <!--Start Contact Us
-                 =========================================== -->
-        <section class="contact-us" id="contact">
+        <!-- Appointment Start -->
+        <div class="container-xxl py-5">
             <div class="container">
-                <div class="row">
-
-                    <!-- section title -->
-                    <div class="col-12">
-                        <div class="title text-center">
-                            <h2>Get In Touch</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate facilis eveniet maiores
-                                ab maxime nam ut numquam molestiae quaerat incidunt?</p>
-                            <div class="border"></div>
+                <div class="row g-5">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <h4 class="section-title">Appointment</h4>
+                        <h1 class="display-5 mb-4">Make An Appointment To Start Your Dream Project</h1>
+                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam
+                            et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat
+                            amet</p>
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="d-flex">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-light"
+                                        style="width: 65px; height: 65px;">
+                                        <i class="fa fa-2x fa-phone-alt text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-2">Call Us Now</p>
+                                        <h3 class="mb-0">+012 345 6789</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="d-flex">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-light"
+                                        style="width: 65px; height: 65px;">
+                                        <i class="fa fa-2x fa-envelope-open text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-2">Mail Us Now</p>
+                                        <h3 class="mb-0">info@example.com</h3>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <!-- /section title -->
-
-                    <!-- Contact Details -->
-                    <div class="contact-details col-md-6 ">
-                        <h3>Contact Details</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, vero, provident, eum eligendi
-                            blanditiis ex explicabo vitae nostrum facilis asperiores dolorem illo officiis ratione vel
-                            fugiat dicta laboriosam labore adipisci.</p>
-                        <ul class="contact-short-info">
-                            <li>
-                                <i class="tf-ion-ios-home"></i>
-                                <span>Khaja Road, Bayzid, Chittagong, Bangladesh</span>
-                            </li>
-                            <li>
-                                <i class="tf-ion-android-phone-portrait"></i>
-                                <span>Phone: +880-31-000-000</span>
-                            </li>
-                            <li>
-                                <i class="tf-ion-android-globe"></i>
-                                <span>Fax: +880-31-000-000</span>
-                            </li>
-                            <li>
-                                <i class="tf-ion-android-mail"></i>
-                                <span>Email: hello@meghna.com</span>
-                            </li>
-                        </ul>
-                        <!-- Footer Social Links -->
-                        <div class="social-icon">
-                            <ul>
-                                <li><a href="#"><i class="tf-ion-social-facebook"></i></a></li>
-                                <li><a href="#"><i class="tf-ion-social-twitter"></i></a></li>
-                                <li><a href="#"><i class="tf-ion-social-dribbble-outline"></i></a></li>
-                                <li><a href="#"><i class="tf-ion-social-linkedin-outline"></i></a></li>
-                            </ul>
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="row g-3">
+                            <div class="col-12 col-sm-6">
+                                <input type="text" class="form-control" placeholder="Your Name"
+                                    style="height: 55px;">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input type="email" class="form-control" placeholder="Your Email"
+                                    style="height: 55px;">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input type="text" class="form-control" placeholder="Your Mobile"
+                                    style="height: 55px;">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <select class="form-select" style="height: 55px;">
+                                    <option selected>Choose Service</option>
+                                    <option value="1">Service 1</option>
+                                    <option value="2">Service 2</option>
+                                    <option value="3">Service 3</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="date" id="date" data-target-input="nearest">
+                                    <input type="text" class="form-control datetimepicker-input"
+                                        placeholder="Choose Date" data-target="#date" data-toggle="datetimepicker"
+                                        style="height: 55px;">
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="time" id="time" data-target-input="nearest">
+                                    <input type="text" class="form-control datetimepicker-input"
+                                        placeholder="Choose Date" data-target="#time" data-toggle="datetimepicker"
+                                        style="height: 55px;">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control" rows="5" placeholder="Message"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit">Book Appointment</button>
+                            </div>
                         </div>
-                        <!--/. End Footer Social Links -->
                     </div>
-                    <!-- / End Contact Details -->
+                </div>
+            </div>
+        </div>
+        <!-- Appointment End -->
 
-                    <!-- Contact Form -->
-                    <div class="contact-form col-md-6 ">
-                        <form id="contact-form" method="post" role="form">
-                            <div class="form-group">
-                                <input type="text" placeholder="Your Name" class="form-control" name="name"
-                                    id="name">
-                            </div>
 
-                            <div class="form-group">
-                                <input type="email" placeholder="Your Email" class="form-control" name="email"
-                                    id="email">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="text" placeholder="Subject" class="form-control" name="subject"
-                                    id="subject">
-                            </div>
-
-                            <div class="form-group">
-                                <textarea rows="6" placeholder="Message" class="form-control" name="message" id="message"></textarea>
-                            </div>
-
-                            <div id="success" class="success">
-                                Thank you. The Mailman is on His Way :)
-                            </div>
-
-                            <div id="error" class="error">
-                                Sorry, don't know what happened. Try later :(
-                            </div>
-                            <div id="cf-submit">
-                                <input type="submit" id="contact-submit" class="btn btn-transparent" value="Submit">
-                            </div>
-
-                        </form>
+        <!-- Testimonial Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h4 class="section-title">Testimonial</h4>
+                    <h1 class="display-5 mb-4">Thousands Of Customers Who Trust Us And Our Services</h1>
+                </div>
+                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="testimonial-item text-center"
+                        data-dot="<img class='img-fluid' src='img/testimonial-1.jpg' alt=''>">
+                        <p class="fs-5">Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed
+                            sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum
+                            justo sea clita.</p>
+                        <h3>Client Name</h3>
+                        <span class="text-primary">Profession</span>
                     </div>
-                    <!-- ./End Contact Form -->
-
-                </div> <!-- end row -->
-            </div> <!-- end container -->
-        </section>
-        <!-- end section -->
+                    <div class="testimonial-item text-center"
+                        data-dot="<img class='img-fluid' src='img/testimonial-2.jpg' alt=''>">
+                        <p class="fs-5">Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed
+                            sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum
+                            justo sea clita.</p>
+                        <h3>Client Name</h3>
+                        <span class="text-primary">Profession</span>
+                    </div>
+                    <div class="testimonial-item text-center"
+                        data-dot="<img class='img-fluid' src='img/testimonial-3.jpg' alt=''>">
+                        <p class="fs-5">Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed
+                            sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum
+                            justo sea clita.</p>
+                        <h3>Client Name</h3>
+                        <span class="text-primary">Profession</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial End -->
     </div>
 @endsection
