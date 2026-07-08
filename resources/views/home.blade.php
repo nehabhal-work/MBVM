@@ -1,6 +1,114 @@
 @extends('layouts.master')
 
 @section('content')
+    <style>
+        .fact-icon {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(184, 182, 182, 0.08);
+        }
+
+        .fact-icon i {
+            font-size: 42px;
+            color: #d35400;
+        }
+
+        .fact-icon {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, .08);
+        }
+
+        .fact-icon i {
+            font-size: 40px;
+            color: #d35400;
+        }
+
+        .feature-list li {
+            margin-bottom: 15px;
+            font-size: 17px;
+            color: #555;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-list li i {
+            color: #d35400;
+            font-size: 12px;
+            min-width: 20px;
+        }
+
+        .service-item {
+            border: 1px solid rgba(255, 255, 255, .12);
+            border-radius: 20px;
+            transition: .3s;
+        }
+
+        .service-item:hover {
+            transform: translateY(-6px);
+        }
+
+        .membership-badge {
+            background: #5d5144;
+            color: #dfb269;
+            border: 1px solid #a07b47;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .vote-yes {
+            color: #5bad7e;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+
+        .vote-no {
+            color: #d18975;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+
+        .vote-text i {
+            font-size: 10px;
+        }
+
+        .service-text h3 {
+            font-weight: 700;
+        }
+
+        .service-text p {
+            line-height: 1.8;
+        }
+
+        .executive-note {
+            background: #F8F8F8;
+            border-left: 4px solid #d39b54;
+            padding: 18px 24px;
+            font-size: 17px;
+            line-height: 1.8;
+            border-radius: 0 10px 10px 0;
+            margin-top: 2rem;
+        }
+
+        .executive-note strong {
+            color: #000000;
+            font-weight: 700;
+        }
+    </style>
     <div>
         <!-- Carousel Start -->
         <div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
@@ -61,47 +169,7 @@
         <!-- Carousel End -->
 
 
-        <!-- Facts Start -->
-        <div class="container-xxl py-5">
-            <div class="container pt-5">
-                <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="fact-item text-center bg-light h-100 p-5 pt-0">
-                            <div class="fact-icon">
-                                <img src="img/icons/icon-2.png" alt="Icon">
-                            </div>
-                            <h3 class="mb-3">Design Approach</h3>
-                            <p class="mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet
-                                diam sed stet.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="fact-item text-center bg-light h-100 p-5 pt-0">
-                            <div class="fact-icon">
-                                <img src="img/icons/icon-3.png" alt="Icon">
-                            </div>
-                            <h3 class="mb-3">Innovative Solutions</h3>
-                            <p class="mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet
-                                diam sed stet.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="fact-item text-center bg-light h-100 p-5 pt-0">
-                            <div class="fact-icon">
-                                <img src="img/icons/icon-4.png" alt="Icon">
-                            </div>
-                            <h3 class="mb-3">Project Management</h3>
-                            <p class="mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet
-                                diam sed stet.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Facts End -->
-
-
-        <!-- About Start -->
+        <!-- परिचय Start -->
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="row g-5">
@@ -134,102 +202,9 @@
                 </div>
             </div>
         </div>
-        <!-- About End -->
+        <!-- परिचय End -->
 
-
-        <!-- Service Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h4 class="section-title">सेवा</h4>
-                    <h1 class="display-5 mb-4">सदस्य सेवा व शासन समन्वय</h1>
-                </div>
-                <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item d-flex position-relative text-center h-100">
-                            <img class="bg-img" src="img/service-1.jpg" alt="">
-                            <div class="service-text p-5">
-                                <img class="mb-4" src="img/icons/icon-5.png" alt="Icon">
-                                <h3 class="mb-3">शासन समन्वय</h3>
-                                <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
-                                    stet diam sed stet.</p>
-                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read
-                                    More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item d-flex position-relative text-center h-100">
-                            <img class="bg-img" src="img/service-2.jpg" alt="">
-                            <div class="service-text p-5">
-                                <img class="mb-4" src="img/icons/icon-6.png" alt="Icon">
-                                <h3 class="mb-3">कायदेशीर मार्गदर्शन</h3>
-                                <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
-                                    stet diam sed stet.</p>
-                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read
-                                    More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="service-item d-flex position-relative text-center h-100">
-                            <img class="bg-img" src="img/service-3.jpg" alt="">
-                            <div class="service-text p-5">
-                                <img class="mb-4" src="img/icons/icon-7.png" alt="Icon">
-                                <h3 class="mb-3">माहिती व नेटवर्किंग</h3>
-                                <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
-                                    stet diam sed stet.</p>
-                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read
-                                    More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item d-flex position-relative text-center h-100">
-                            <img class="bg-img" src="img/service-4.jpg" alt="">
-                            <div class="service-text p-5">
-                                <img class="mb-4" src="img/icons/icon-8.png" alt="Icon">
-                                <h3 class="mb-3">Seva 1</h3>
-                                <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
-                                    stet diam sed stet.</p>
-                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read
-                                    More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item d-flex position-relative text-center h-100">
-                            <img class="bg-img" src="img/service-5.jpg" alt="">
-                            <div class="service-text p-5">
-                                <img class="mb-4" src="img/icons/icon-9.png" alt="Icon">
-                                <h3 class="mb-3">Seva 2</h3>
-                                <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
-                                    stet diam sed stet.</p>
-                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read
-                                    More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="service-item d-flex position-relative text-center h-100">
-                            <img class="bg-img" src="img/service-6.jpg" alt="">
-                            <div class="service-text p-5">
-                                <img class="mb-4" src="img/icons/icon-10.png" alt="Icon">
-                                <h3 class="mb-3">Seva 3</h3>
-                                <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
-                                    stet diam sed stet.</p>
-                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read
-                                    More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Service End -->
-
-
-        <!-- Feature Start -->
+        <!-- उद्देश Start -->
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="row g-5">
@@ -294,7 +269,231 @@
                 </div>
             </div>
         </div>
-        <!-- Feature End -->
+        <!-- उद्देश End -->
+
+        <!-- सदस्यत्व Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h4 class="section-title">सदस्यत्व</h4>
+                    <h1 class="display-5 mb-4">सदस्यत्वाचे प्रकार</h1>
+                    <p class="mb-5">नियमावलीनुसार महासंघात खालील प्रकारचे सभासद असतात. प्रत्येक प्रकारासाठी वेगळी
+                        पात्रता, शुल्क व अधिकार आहेत.
+                    </p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <div class="service-text p-4">
+                                <h3 class="mb-3">संस्थात्मक सभासद</h3>
+
+                                <p class="mb-4">
+                                    मराठी बांधकाम व्यावसायिकांचे प्रतिनिधित्व करणाऱ्या
+                                    जिल्हा/स्थानिक असोसिएशन.
+                                </p>
+
+                                <div class="mb-4">
+                                    <span class="badge rounded-pill px-3 py-2 membership-badge">
+                                        संघटना निकषानुसार
+                                    </span>
+                                </div>
+
+                                <p class="vote-text vote-yes">
+                                    <i class="fa-solid fa-circle me-2"></i>मतदानाचा हक्क — सदस्यसंख्येनुसार
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <div class="service-text p-4 ">
+                                <h3 class="mb-3">विशेष सभासद</h3>
+
+                                <p class="mb-4">
+                                    किमान २५ युनिटची इमारत भोगवटा प्रमाणपत्रासह पूर्ण
+                                    केलेले मराठी व्यावसायिक.
+                                </p>
+
+                                <div class="mb-4">
+                                    <span class="badge rounded-pill px-3 py-2 membership-badge">₹५,००० एकरकमी</span>
+                                    <span class="badge rounded-pill px-3 py-2 membership-badge">₹६,००० वार्षिक</span>
+                                </div>
+
+                                <p class="vote-text vote-no">
+                                    <i class="fa-regular fa-circle me-2"></i>मतदानाचा हक्क नाही
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <div class="service-text p-4 text-start">
+                                <h3 class="mb-3">हितचिंतक सभासद</h3>
+
+                                <p class="mb-4">
+                                    महासंघाला सक्रिय पाठिंबा देणारे,
+                                    बांधकाम क्षेत्राशी संबंधित मराठी व्यक्ती.
+                                </p>
+
+                                <div class="mb-4">
+                                    <span class="badge rounded-pill px-3 py-2 membership-badge">₹५,००० एकरकमी</span>
+                                    <span class="badge rounded-pill px-3 py-2 membership-badge">₹९,००० वार्षिक</span>
+                                </div>
+
+                                <p class="vote-text vote-no">
+                                    <i class="fa-regular fa-circle me-2"></i>मतदानाचा हक्क नाही
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <div class="service-text p-4 text-start">
+                                <h3 class="mb-3">सन्माननीय सभासद</h3>
+
+                                <p class="mb-4">
+                                    कार्यकारिणीने बहुमताने नेमलेली प्रतिष्ठित व्यक्ती.
+                                    जास्तीत जास्त २ सभासद.
+                                </p>
+
+                                <div class="mb-4">
+                                    <span class="badge rounded-pill px-3 py-2 membership-badge">
+                                        कार्यकारिणीद्वारे नियुक्ती
+                                    </span>
+                                </div>
+
+                                <p class="vote-text vote-no">
+                                    <i class="fa-regular fa-circle me-2"></i>मतदानाचा हक्क नाही
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <div class="service-text p-4 text-start">
+                                <h3 class="mb-3">सहयोगी सभासद</h3>
+
+                                <p class="mb-4">
+                                    बांधकाम क्षेत्रातील नेटवर्किंगसाठी —
+                                    फक्त महासंघाच्या मंजुरीने नियुक्ती.
+                                </p>
+
+                                <div class="mb-4">
+                                    <span class="badge rounded-pill px-3 py-2 membership-badge">
+                                        महासंघाच्या मंजुरीने
+                                    </span>
+                                </div>
+
+                                <p class="vote-text vote-no">
+                                    <i class="fa-regular fa-circle me-2"></i>मतदानाचा हक्क नाही
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <div class="service-text p-4 text-start">
+                                <h3 class="mb-3 text-warning">नोंद</h3>
+
+                                <p class="mb-0 fw-semibold">
+                                    सर्व सदस्यांना सभेला उपस्थित राहता येते,
+                                    परंतु मतदान फक्त संस्थात्मक सभासद व
+                                    पहिल्या २५ सदस्यांना.
+                                    एक सदस्य — एक मत.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="executive-note wow fadeInUp" data-wow-delay="0.1s">
+                    कार्यकारी मंडळाची मुदत <strong>२ वर्षे</strong> असून दर दोन वर्षांनी वार्षिक सर्वसाधारण सभेत गुप्त मतदान
+                    पद्धतीने नवीन कार्यकारिणीची निवड केली जाते.
+                </div>
+            </div>
+        </div>
+        <!-- सदस्यत्व End -->
+
+
+        <!-- सेवा Start -->
+        <div class="container-xxl py-5">
+            <div class="container pt-5">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h4 class="section-title">सेवा</h4>
+                    <h1 class="display-5 mb-3">सदस्य सेवा व शासन समन्वय</h1>
+                    <p class="mb-5">महासंघ राज्यभरातील असोसिएशनकडून येणाऱ्या प्रश्नांचे वर्गीकरण करून शासन व संबंधित
+                        विभागांकडे एकत्रित पाठपुरावा करतो, तसेच सदस्यांना मार्गदर्शन उपलब्ध करून देतो.
+
+                    </p>
+                </div>
+                <div class="row g-4 mt-3">
+
+                    <!-- शासन समन्वय -->
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="fact-item text-center bg-light h-100 p-5 pt-0">
+
+                            <div class="fact-icon">
+                                <i class="fa-solid fa-building-columns"></i>
+                            </div>
+
+                            <h3 class="mb-3">शासन समन्वय</h3>
+
+                            <ul class="list-unstyled feature-list">
+                                <li><i class="fa-regular fa-circle-dot me-2"></i> शासनाकडे निवेदन व धोरणात्मक सूचना</li>
+                                <li><i class="fa-regular fa-circle-dot me-2"></i> उद्योगांचे एकत्रित प्रतिनिधित्व</li>
+                                <li><i class="fa-regular fa-circle-dot me-2"></i> सामाजिक प्रश्नांवर राज्यस्तरीय पाठपुरावा
+                                </li>
+                                <li><i class="fa-regular fa-circle-dot me-2"></i> शासन निर्णयांचे विश्लेषण</li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <!-- कायदेशीर मार्गदर्शन -->
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="fact-item text-center bg-light h-100 p-5 pt-0">
+
+                            <div class="fact-icon">
+                                <i class="fa-solid fa-scale-balanced"></i>
+                            </div>
+
+                            <h3 class="mb-3">कायदेशीर मार्गदर्शन</h3>
+
+                            <ul class="list-unstyled feature-list">
+                                <li><i class="fa-regular fa-circle-dot me-2"></i> RERA मार्गदर्शन</li>
+                                <li><i class="fa-regular fa-circle-dot me-2"></i> UDCPR अध्ययावत माहिती</li>
+                                <li><i class="fa-regular fa-circle-dot me-2"></i> MRTP विषयक माहिती</li>
+                                <li><i class="fa-regular fa-circle-dot me-2"></i> Development Permissions</li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <!-- माहिती व नेटवर्किंग -->
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="fact-item text-center bg-light h-100 p-5 pt-0">
+
+                            <div class="fact-icon">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+
+                            <h3 class="mb-3">माहिती व नेटवर्किंग</h3>
+
+                            <ul class="list-unstyled feature-list">
+                                <li><i class="fa-regular fa-circle-dot me-2"></i> शासन निर्णय (GR) लायब्ररी</li>
+                                <li><i class="fa-regular fa-circle-dot me-2"></i> पर्यावरण विषयक मार्गदर्शन</li>
+                                <li><i class="fa-regular fa-circle-dot me-2"></i> प्रशिक्षण व कार्यशाळा</li>
+                                <li><i class="fa-regular fa-circle-dot me-2"></i> व्यवसाय नेटवर्किंग</li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- सेवा End -->
+
+
 
 
         <!-- Project Start -->
