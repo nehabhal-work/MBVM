@@ -1,235 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-    <style>
-        .fact-icon {
-            width: 90px;
-            height: 90px;
-            margin: 0 auto 25px;
-            border-radius: 50%;
-            background: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 5px 20px rgba(184, 182, 182, 0.08);
-        }
-
-        .fact-icon i {
-            font-size: 42px;
-            color: #d35400;
-        }
-
-        .fact-icon {
-            width: 90px;
-            height: 90px;
-            margin: 0 auto 25px;
-            border-radius: 50%;
-            background: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, .08);
-        }
-
-        .fact-icon i {
-            font-size: 40px;
-            color: #d35400;
-        }
-
-        .feature-list li {
-            margin-bottom: 15px;
-            font-size: 17px;
-            color: #555;
-            display: flex;
-            align-items: center;
-        }
-
-        .feature-list li i {
-            color: #d35400;
-            font-size: 12px;
-            min-width: 20px;
-        }
-
-        /* -------------------------- */
-        .service-item {
-            border: 1px solid rgba(255, 255, 255, .12);
-            border-radius: 20px;
-            transition: .3s;
-        }
-
-        .service-item:hover {
-            transform: translateY(-6px);
-        }
-
-        .membership-badge {
-            background: #5d5144;
-            color: #dfb269;
-            border: 1px solid #a07b47;
-            margin-right: 8px;
-            margin-bottom: 8px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .vote-yes {
-            color: #5bad7e;
-            font-weight: 600;
-            margin-bottom: 0;
-        }
-
-        .vote-no {
-            color: #d18975;
-            font-weight: 600;
-            margin-bottom: 0;
-        }
-
-        .vote-text i {
-            font-size: 10px;
-        }
-
-        .service-text h3 {
-            font-weight: 700;
-        }
-
-        .service-text p {
-            line-height: 1.8;
-        }
-
-        .executive-note {
-            background: #F8F8F8;
-            border-left: 4px solid #d39b54;
-            padding: 18px 24px;
-            font-size: 17px;
-            line-height: 1.8;
-            border-radius: 0 10px 10px 0;
-            margin-top: 2rem;
-        }
-
-        .executive-note strong {
-            color: #000000;
-            font-weight: 700;
-        }
-
-        /* ------------------------ */
-
-        .section-icon {
-            font-size: 170px;
-            color: #d45d2c;
-        }
-
-        .info-card {
-
-            background: #fff;
-            border-radius: 18px;
-            padding: 40px 25px;
-            box-shadow: 0 10px 35px rgba(0, 0, 0, .08);
-            transition: .3s;
-            height: 100%;
-        }
-
-        .info-card:hover {
-
-            transform: translateY(-8px);
-        }
-
-        .stat-icon {
-
-            font-size: 42px;
-            color: #B78D65;
-            margin-bottom: 20px;
-        }
-
-        .info-card h2 {
-
-            color: #B78D65;
-            font-size: 50px;
-            font-weight: 700;
-        }
-
-        .info-card p {
-
-            color: #666;
-            font-size: 17px;
-            margin-top: 15px;
-        }
-
-        .process-row {
-
-            position: relative;
-        }
-
-        .process-box {
-
-            position: relative;
-            padding: 20px;
-        }
-
-        .process-box::after {
-
-            content: "";
-            position: absolute;
-            top: 40px;
-            right: -50%;
-            width: 100%;
-            height: 2px;
-            background: #B78D65;
-        }
-
-        .process-box:last-child::after {
-
-            display: none;
-        }
-
-        .circle {
-
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background: #B78D65;
-            color: #fff;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            margin: auto;
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-
-        .process-box h6 {
-
-            color: #B78D65;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .process-box h4 {
-
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .process-box p {
-
-            color: #666;
-        }
-
-        .note-box {
-
-            background: #fff;
-            border-left: 5px solid #B78D65;
-            padding: 20px 25px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, .06);
-        }
-
-        .note-box i {
-
-            color: #B78D65;
-        }
-        /* ----------------------- */
-    </style>
     <div>
         <!-- Carousel Start -->
         <div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
@@ -291,42 +62,11 @@
 
 
         <!-- परिचय Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="row g-5">
-                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                        <div class="about-img">
-                            <img class="img-fluid" src="img/about-1.jpg" alt="">
-                            <img class="img-fluid" src="img/about-2.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                        <h4 class="section-title">परिचय</h4>
-                        <h1 class="display-5 mb-4">महासंघाबद्दल</h1>
-                        <p>मराठी बांधकाम व्यावसायिक महासंघ ही महाराष्ट्रातील मराठी विकासक व बांधकाम क्षेत्राशी संबंधित सर्व
-                            घटकांची राज्यस्तरीय शिखर संघटना आहे. प्रत्येक जिल्ह्यात असोसिएशन स्थापन करून सर्व विकासकांना
-                            एकत्रित व्यासपीठ देणे आणि शासन व उद्योग यांच्यात प्रभावी समन्वय निर्माण करणे हे महासंघाचे ध्येय
-                            आहे.</p>
-                        <div class="d-flex align-items-center mb-5">
-                            <div class="d-flex flex-shrink-0 align-items-center justify-content-center border border-5 border-primary"
-                                style="width: 120px; height: 120px;">
-                                <h1 class="display-1 mb-n2" data-toggle="counter-up">25</h1>
-                            </div>
-                            <div class="ps-4">
-                                <h3>Years</h3>
-                                <h3>Working</h3>
-                                <h3 class="mb-0">Experience</h3>
-                            </div>
-                        </div>
-                        <a class="btn btn-primary py-3 px-5" href="">Read More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @include('parichay')
         <!-- परिचय End -->
 
         <!-- उद्देश Start -->
-        <div class="container-xxl py-5">
+        <div class="container-fluid logo-bg-dark my-5 py-5">
             <div class="container">
                 <div class="row g-5">
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -536,7 +276,7 @@
 
 
         <!-- सेवा Start -->
-        <div class="container-xxl py-5">
+        <div class="container-fluid logo-bg-dark my-5 py-5">
             <div class="container pt-5">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h4 class="section-title">सेवा</h4>
@@ -758,7 +498,7 @@
 
         </div>
         <!-- जिल्हा असोसिएशन End -->
-        
+
 
         <!-- Project Start -->
         {{-- <div class="container-xxl project py-5">
@@ -879,7 +619,7 @@
 
 
         <!-- Team Start -->
-        <div class="container-xxl py-5">
+        <div class="container-fluid logo-bg-dark my-5 py-5">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h4 class="section-title">Team Members</h4>

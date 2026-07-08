@@ -46,4 +46,5 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/custom.css?v={{ time() }}">
 </head>

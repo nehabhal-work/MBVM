@@ -39,7 +39,7 @@
         <div class="navbar-nav ms-auto p-4 p-lg-0">
             <a href="{{ route('home') }}" class="nav-item nav-link active">Home</a>
             <a href="{{ route('about') }}" class="nav-item nav-link">परिचय</a>
-            <a href="service.html" class="nav-item nav-link">सेवा</a>
+            <a href="#" class="nav-item nav-link">सेवा</a>
             <a href="service.html" class="nav-item nav-link">सदस्यत्व</a>
             <a href="service.html" class="nav-item nav-link">कार्यकारिणी</a>
             <a href="service.html" class="nav-item nav-link">सेवा</a>
