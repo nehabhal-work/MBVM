@@ -50,6 +50,7 @@
             min-width: 20px;
         }
 
+        /* -------------------------- */
         .service-item {
             border: 1px solid rgba(255, 255, 255, .12);
             border-radius: 20px;
@@ -108,6 +109,126 @@
             color: #000000;
             font-weight: 700;
         }
+
+        /* ------------------------ */
+
+        .section-icon {
+            font-size: 170px;
+            color: #d45d2c;
+        }
+
+        .info-card {
+
+            background: #fff;
+            border-radius: 18px;
+            padding: 40px 25px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, .08);
+            transition: .3s;
+            height: 100%;
+        }
+
+        .info-card:hover {
+
+            transform: translateY(-8px);
+        }
+
+        .stat-icon {
+
+            font-size: 42px;
+            color: #B78D65;
+            margin-bottom: 20px;
+        }
+
+        .info-card h2 {
+
+            color: #B78D65;
+            font-size: 50px;
+            font-weight: 700;
+        }
+
+        .info-card p {
+
+            color: #666;
+            font-size: 17px;
+            margin-top: 15px;
+        }
+
+        .process-row {
+
+            position: relative;
+        }
+
+        .process-box {
+
+            position: relative;
+            padding: 20px;
+        }
+
+        .process-box::after {
+
+            content: "";
+            position: absolute;
+            top: 40px;
+            right: -50%;
+            width: 100%;
+            height: 2px;
+            background: #B78D65;
+        }
+
+        .process-box:last-child::after {
+
+            display: none;
+        }
+
+        .circle {
+
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #B78D65;
+            color: #fff;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: auto;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .process-box h6 {
+
+            color: #B78D65;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .process-box h4 {
+
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .process-box p {
+
+            color: #666;
+        }
+
+        .note-box {
+
+            background: #fff;
+            border-left: 5px solid #B78D65;
+            padding: 20px 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, .06);
+        }
+
+        .note-box i {
+
+            color: #B78D65;
+        }
+        /* ----------------------- */
     </style>
     <div>
         <!-- Carousel Start -->
@@ -493,11 +614,154 @@
         </div>
         <!-- सेवा End -->
 
+        <!-- जिल्हा असोसिएशन Start -->
+        <div class="container py-5">
+
+            <div class="row align-items-center mb-5">
+
+                <div class="col-lg-8">
+
+                    <h4 class="section-title">जिल्हा असोसिएशन</h4>
+                    <h1 class="display-5 mb-3">तुमच्या जिल्ह्यात असोसिएशन स्थापना करा</h1>
+                    <p class="mb-5"> महासंघ ही असोसिएशनची शिखर संघटना आहे. तुमच्या जिल्ह्यातील
+                        मराठी व्यावसायिकांची असोसिएशन महासंघाशी संलग्न करता येते.
+                        संलग्नता महासंघाच्या मंजुरीनंतर अधिकृत होते.
+
+                    </p>
+                </div>
+
+                <div class="col-lg-4 text-center">
+                    <i class="fa-solid fa-building-circle-check section-icon"></i>
+                </div>
+
+            </div>
 
 
+            <!-- Statistics -->
+
+            <div class="row g-4 mb-5">
+
+                <div class="col-md-4">
+                    <div class="info-card text-center">
+                        <i class="fa-solid fa-city stat-icon"></i>
+                        <h2>५०:२</h2>
+                        <p>पुणे · मुंबई · नागपूर यांसारखी मोठी शहरे</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="info-card text-center">
+                        <i class="fa-solid fa-users stat-icon"></i>
+                        <h2>२५+</h2>
+                        <p>महानगरपालिका / जिल्हा ठिकाणी सदस्य २५ किंवा अधिक</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="info-card text-center">
+                        <i class="fa-solid fa-user-group stat-icon"></i>
+                        <h2>१५+</h2>
+                        <p>नगरपालिका / तालुका ठिकाणी सदस्य १५ किंवा अधिक</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Timeline -->
+
+            <div class="row text-center process-row">
+
+                <div class="col-lg-3 process-box">
+
+                    <div class="circle">
+                        <i class="fa-solid fa-file-signature"></i>
+                    </div>
+
+                    <h6>पायरी ०१</h6>
+
+                    <h4>नोंदणी</h4>
+
+                    <p>
+                        तुमच्या जिल्ह्यात असोसिएशन नसल्यास
+                        महासंघाकडे नोंदणी करा.
+                    </p>
+
+                </div>
+
+                <div class="col-lg-3 process-box">
+
+                    <div class="circle">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <h6>पायरी ०२</h6>
+
+                    <h4>सदस्यसंख्या</h4>
+
+                    <p>
+                        आवश्यक सदस्यसंख्या पूर्ण झाल्यावर
+                        पुढील प्रक्रिया सुरू होते.
+                    </p>
+
+                </div>
+
+                <div class="col-lg-3 process-box">
+
+                    <div class="circle">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+
+                    <h6>पायरी ०३</h6>
+
+                    <h4>संलग्नता करार</h4>
+
+                    <p>
+                        संविधान व नियमांनुसार
+                        अधिकृत मंजुरी.
+                    </p>
+
+                </div>
+
+                <div class="col-lg-3 process-box">
+
+                    <div class="circle">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+
+                    <h6>पायरी ०४</h6>
+
+                    <h4>स्थापना</h4>
+
+                    <p>
+                        पदाधिकारी निवड,
+                        कार्यकारिणी रचना व उद्घाटन.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Note -->
+
+            <div class="note-box mt-5">
+
+                <i class="fa-solid fa-circle-info me-2"></i>
+
+                <strong>महत्त्वाची सूचना :</strong>
+
+                संलग्न होणाऱ्या असोसिएशनमधील सर्व सदस्य मराठी असावेत.
+                तसेच महासंघाची नियमावली पाळणे आवश्यक आहे.
+
+            </div>
+
+        </div>
+        <!-- जिल्हा असोसिएशन End -->
+        
 
         <!-- Project Start -->
-        <div class="container-xxl project py-5">
+        {{-- <div class="container-xxl project py-5">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h4 class="section-title">Our Projects</h4>
@@ -610,7 +874,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- Project End -->
 
 
