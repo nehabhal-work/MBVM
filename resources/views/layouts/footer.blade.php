@@ -48,12 +48,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a href="#">Your Site Name</a>, All Right Reserved.
+                    &copy; <a href="#">MBVM</a>, All Right Reserved.
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <!--/*** The author’s attribution link must remain intact in the template. ***/-->
                     <!--/*** If you wish to remove this credit link, please purchase the Buy Pro Version . ***/-->
-                    Designed By <a href="https://htmlcodex.com">HTML Codex</a>
+                    Developed By MBVM In-house IT Team
                 </div>
             </div>
         </div>
