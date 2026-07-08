@@ -43,7 +43,7 @@
             <a href="service.html" class="nav-item nav-link">सदस्यत्व</a>
             <a href="service.html" class="nav-item nav-link">कार्यकारिणी</a>
             <a href="service.html" class="nav-item nav-link">सेवा</a>
-            <a href="service.html" class="nav-item nav-link">संपर्क</a>
+            <a href="{{ route('contact') }}" class="nav-item nav-link">संपर्क</a>
         </div>
         <a href="https://htmlcodex.com/downloading/?item=2328" class="btn btn-primary py-2 px-4 d-none d-lg-block">सदस्य
             व्हा</a>
