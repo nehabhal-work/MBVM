@@ -22,6 +22,7 @@
             font-family: 'Mukta', sans-serif;
         }
 
+        p,
         h1,
         h2,
         h3,
