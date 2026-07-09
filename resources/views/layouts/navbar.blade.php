@@ -28,7 +28,7 @@
 
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
-    <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
+    <a href="{{ route('home') }}" class="navbar-brand ms-4 ms-lg-0 active">
         <h1 class="text-primary m-0"><img class="me-3" src="{{ asset('images/logo-mbvm.png') }}" width="100"
                 alt="Icon">मराठी बांधकाम व्यावसायिक महासंघ</h1>
     </a>
@@ -37,13 +37,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <a href="{{ route('home') }}" class="nav-item nav-link active">Home</a>
-            <a href="{{ route('about') }}" class="nav-item nav-link">परिचय</a>
-            <a href="#" class="nav-item nav-link">सेवा</a>
-            <a href="service.html" class="nav-item nav-link">सदस्यत्व</a>
-            <a href="service.html" class="nav-item nav-link">कार्यकारिणी</a>
-            <a href="service.html" class="nav-item nav-link">सेवा</a>
-            <a href="#" class="nav-item nav-link">संपर्क</a>
+            {{-- <a href="{{ route('home') }}" class="nav-item nav-link ">Home</a> --}}
+            <a href="#parichay" class="nav-item nav-link">परिचय</a>
+            <a href="#sadasyatva" class="nav-item nav-link">सदस्यत्व</a>
+            <a href="#jilha-asociation" class="nav-item nav-link">जिल्हा असोसिएशन</a>
+            <a href="#karyakarini" class="nav-item nav-link">कार्यकारिणी</a>
+            <a href="#seva" class="nav-item nav-link">सेवा</a>
+            <a href="#sampark" class="nav-item nav-link">संपर्क</a>
         </div>
         <a href="#" class="btn btn-primary py-2 px-4 d-none d-lg-block">सदस्य
             व्हा</a>

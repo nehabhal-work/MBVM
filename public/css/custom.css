@@ -243,3 +243,48 @@
 .service-item:hover .service-text {
     background: rgba(40, 20, 6, .9);
 } */
+ /* -------------------------------------- */
+ /* .map-box{
+    background:#fff;
+    border-radius:20px;
+    padding:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+} */
+
+.map-box img{
+    max-height:450px;
+}
+
+.stats-card{
+    background:#fff;
+    border-radius:18px;
+    padding:30px 20px;
+    text-align:center;
+    border:1px solid #ececec;
+    transition:.35s;
+    height:100%;
+}
+
+.stats-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+}
+
+.stats-card i{
+    font-size:32px;
+    color:#d57a34;
+    margin-bottom:15px;
+}
+
+.stats-card h2{
+    font-size:42px;
+    font-weight:700;
+    color:#1d2940;
+    margin-bottom:10px;
+}
+
+.stats-card p{
+    margin:0;
+    color:#666;
+    font-size:17px;
+}
