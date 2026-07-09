@@ -1,5 +1,5 @@
 <!-- Topbar Start -->
-<div class="container-fluid bg-dark p-0 wow fadeIn" data-wow-delay="0.1s">
+{{-- <div class="container-fluid bg-dark p-0 wow fadeIn" data-wow-delay="0.1s">
     <div class="row gx-0 d-none d-lg-flex">
         <div class="col-lg-7 px-5 text-start">
             <div class="h-100 d-inline-flex align-items-center py-3 me-3">
@@ -22,15 +22,15 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <!-- Topbar End -->
 
 
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
     <a href="{{ route('home') }}" class="navbar-brand ms-4 ms-lg-0 active">
-        <h1 class="text-primary m-0"><img class="me-3" src="{{ asset('images/logo-mbvm.png') }}" width="100"
-                alt="Icon">मराठी बांधकाम व्यावसायिक महासंघ</h1>
+        <h1 class="text-primary m-0" ><img class="me-3" src="{{ asset('images/logo-mbvm.png') }}" width="100"
+                alt="Icon"> <span style="color: #d45d2c;">मराठी बांधकाम व्यावसायिक महासंघ</span> </h1>
     </a>
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
