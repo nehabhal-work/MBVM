@@ -3083,6 +3083,7 @@ fieldset:disabled .btn {
 .btn-primary {
     color: #000;
     background-color: #d45d2c;
+    border-radius: 20px;
     border-color: #d45d2c
 }
 
