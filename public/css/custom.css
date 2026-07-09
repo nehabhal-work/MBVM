@@ -324,5 +324,7 @@
     font-size:14px;
     font-weight:500;
 }
-
+p{
+    font-size:17px!important;
+}
 /* --------navbar----------- */
