@@ -13,10 +13,10 @@
                                 <div class="col-10 col-lg-8">
                                     <h1 class="display-1 text-white animated slideInDown">महाराष्ट्रातील मराठी विकासकांना
                                         एकत्र आणणारे व्यासपीठ</h1>
-                                    <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor
+                                    {{-- <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor
                                         at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea
                                         elitr.</p>
-                                    <a href="" class="btn btn-primary py-3 px-5 animated slideInLeft">Read More</a>
+                                    <a href="" class="btn btn-primary py-3 px-5 animated slideInLeft">सदस्य व्हा</a>
                                 </div>
                             </div>
                         </div>
@@ -30,10 +30,10 @@
                                 <div class="col-10 col-lg-8">
                                     <h1 class="display-1 text-white animated slideInDown">मराठी सारे एकत्र येऊ…
                                         सर्वसामान्यांना घर देऊ…</h1>
-                                    <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor
+                                    {{-- <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor
                                         at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea
-                                        elitr.</p>
-                                    <a href="" class="btn btn-primary py-3 px-5 animated slideInLeft">Read More</a>
+                                        elitr.</p> --}}
+                                    <a href="" class="btn btn-primary py-3 px-5 animated slideInLeft">सदस्य व्हा</a>
                                 </div>
                             </div>
                         </div>
@@ -47,10 +47,10 @@
                                 <div class="col-10 col-lg-8">
                                     <h1 class="display-1 text-white animated slideInDown">एकत्रित बळ, एकत्रित आवाज
                                     </h1>
-                                    <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor
+                                    {{-- <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor
                                         at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea
-                                        elitr.</p>
-                                    <a href="" class="btn btn-primary py-3 px-5 animated slideInLeft">Read More</a>
+                                        elitr.</p> --}}
+                                    <a href="" class="btn btn-primary py-3 px-5 animated slideInLeft">सदस्य व्हा</a>
                                 </div>
                             </div>
                         </div>
@@ -72,9 +72,7 @@
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                         <h4 class="section-title">उद्देश</h4>
                         <h1 class="display-5 mb-4">महासंघाचे उद्देश</h1>
-                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam
-                            et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat
-                            amet</p>
+                       
                         <div class="row g-4">
                             <div class="col-12">
                                 <div class="d-flex align-items-start">
