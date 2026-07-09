@@ -15,7 +15,7 @@
                                         एकत्र आणणारे व्यासपीठ</h1>
                                     {{-- <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor
                                         at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea
-                                        elitr.</p>
+                                        elitr.</p>--}}
                                     <a href="" class="btn btn-primary py-3 px-5 animated slideInLeft">सदस्य व्हा</a>
                                 </div>
                             </div>
@@ -848,7 +848,7 @@
                             <div class="card-header bg-primary text-white text-center py-4 rounded-top-4 border-0"
                                 style="border-radius: 18px;">
                                 <i class="fa-solid fa-building fa-2x mb-3"></i>
-                                <h3 class="mb-1">नोंदणीकृत कार्यालय</h3>
+                                <h3 class="mb-1 text-white">नोंदणीकृत कार्यालय</h3>
                                 <small><i class="fa-solid fa-location-dot me-1"></i> वाशी, नवी मुंबई</small>
                             </div>
 
@@ -890,7 +890,7 @@
                             <div class="card-header bg-primary text-white text-center py-4 rounded-top-4 border-0"
                                 style="border-radius: 18px;">
                                 <i class="fa-solid fa-briefcase fa-2x mb-3"></i>
-                                <h3 class="mb-1">कार्यालय</h3>
+                                <h3 class="mb-1 text-white">कार्यालय</h3>
                                 <small><i class="fa-solid fa-location-dot me-1"></i> पुणे</small>
                             </div>
 
@@ -936,7 +936,7 @@
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h4 class="section-title">Testimonial</h4>
+                    <h4 class="section-title">अभिप्राय</h4>
                     <h1 class="display-5 mb-4">Thousands Of Customers Who Trust Us And Our Services</h1>
                 </div>
                 <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
