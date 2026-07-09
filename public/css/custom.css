@@ -288,3 +288,30 @@
     color:#666;
     font-size:17px;
 }
+/* ----------------------- */
+.executive-team .bg-light{
+    border-radius:15px;
+    transition:.3s;
+    border:1px solid #eee;
+}
+
+.executive-team .bg-light:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+.executive-team img{
+    border:1px solid #d45d2c;
+    flex-shrink:0;
+}
+
+.executive-team h6{
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:5px;
+}
+
+.executive-team span{
+    font-size:14px;
+    font-weight:500;
+}

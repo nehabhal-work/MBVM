@@ -72,7 +72,7 @@
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                         <h4 class="section-title">उद्देश</h4>
                         <h1 class="display-5 mb-4">महासंघाचे उद्देश</h1>
-                       
+
                         <div class="row g-4">
                             <div class="col-12">
                                 <div class="d-flex align-items-start">
@@ -278,7 +278,7 @@
         <!-- जिल्हा असोसिएशन Start -->
 
         <div class="container-fluid logo-bg-dark py-5" id="jilha-asociation">
-            <div class="container" >
+            <div class="container">
 
                 <div class="row align-items-center mb-5">
 
@@ -438,8 +438,8 @@
                 <div class="row g-4">
                     <!-- Leadership Card -->
                     <div class="col-lg-6">
-                        <div class="card shadow-sm border-0 h-100">
-                            <div class="card-header text-center py-3">
+                        <div class="card shadow border-1 h-100">
+                            <div class="card-header  text-center py-3">
                                 <h3 class="mb-0">नेतृत्व</h3>
                                 <small>महासंघाचे प्रमुख पदाधिकारी</small>
                             </div>
@@ -488,7 +488,7 @@
                     </div>
                     <!-- Executive Members Card -->
                     <div class="col-lg-6">
-                        <div class="card shadow-sm border-0 h-100">
+                        <div class="card shadow border-1 h-100">
 
                             <div class="card-header  text-center py-3">
                                 <h3 class="mb-0">कार्यकारिणी सदस्य</h3>
@@ -500,100 +500,144 @@
                                 <div class="row g-3">
 
                                     <div class="col-md-6">
-                                        <div class="team-item position-relative executive-team">
-                                            <div class="bg-light text-center p-3">
-                                                <h6 class="mb-1">श्री. सुरेश कारसिनाथ हावरे</h6>
-                                                <span class="text-primary">अध्यक्ष</span>
+                                        <div class="team-item executive-team">
+                                            <div class="bg-light p-3 d-flex align-items-center">
+                                                <img src="img/team-1.jpg" class="rounded-circle me-3" width="65"
+                                                    height="65" style="object-fit:cover;" alt="Member">
+                                                <div>
+                                                    <h6 class="mb-1">श्री. सुरेश कारसिनाथ हावरे</h6>
+                                                    <span class="text-primary">अध्यक्ष</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
-                                        <div class="team-item position-relative executive-team">
-                                            <div class="bg-light text-center p-3">
-                                                <h6 class="mb-1">श्री. संजय रामचंद्र कुलकर्णी</h6>
-                                                <span class="text-primary">कार्याध्यक्ष</span>
+                                        <div class="team-item executive-team">
+                                            <div class="bg-light p-3 d-flex align-items-center">
+                                                <img src="img/team-2.jpg" class="rounded-circle me-3" width="65"
+                                                    height="65" style="object-fit:cover;" alt="Member">
+                                                <div>
+                                                    <h6 class="mb-1">श्री. संजय रामचंद्र कुलकर्णी</h6>
+                                                    <span class="text-primary">कार्याध्यक्ष</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
-                                        <div class="team-item position-relative executive-team">
-                                            <div class="bg-light text-center p-3">
-                                                <h6 class="mb-1">श्री. अजित श्रीराम मराठे</h6>
-                                                <span class="text-primary">उपाध्यक्ष</span>
+                                        <div class="team-item executive-team">
+                                            <div class="bg-light p-3 d-flex align-items-center">
+                                                <img src="img/team-3.jpg" class="rounded-circle me-3" width="65"
+                                                    height="65" style="object-fit:cover;" alt="Member">
+                                                <div>
+                                                    <h6 class="mb-1">श्री. अजित श्रीराम मराठे</h6>
+                                                    <span class="text-primary">उपाध्यक्ष</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
-                                        <div class="team-item position-relative executive-team">
-                                            <div class="bg-light text-center p-3">
-                                                <h6 class="mb-1">श्री. गजेन्द्र दत्तात्रय पवार</h6>
-                                                <span class="text-primary">उपाध्यक्ष</span>
+                                        <div class="team-item executive-team">
+                                            <div class="bg-light p-3 d-flex align-items-center">
+                                                <img src="img/team-4.jpg" class="rounded-circle me-3" width="65"
+                                                    height="65" style="object-fit:cover;" alt="Member">
+                                                <div>
+                                                    <h6 class="mb-1">श्री. गजेन्द्र दत्तात्रय पवार</h6>
+                                                    <span class="text-primary">उपाध्यक्ष</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
-                                        <div class="team-item position-relative executive-team">
-                                            <div class="bg-light text-center p-3">
-                                                <h6 class="mb-1">श्री. प्रकाश भीमराव वाघस्कर</h6>
-                                                <span class="text-primary">महासचिव</span>
+                                        <div class="team-item executive-team">
+                                            <div class="bg-light p-3 d-flex align-items-center">
+                                                <img src="img/team-1.jpg" class="rounded-circle me-3" width="65"
+                                                    height="65" style="object-fit:cover;" alt="Member">
+                                                <div>
+                                                    <h6 class="mb-1">श्री. प्रकाश भीमराव वाघस्कर</h6>
+                                                    <span class="text-primary">महासचिव</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
-                                        <div class="team-item position-relative executive-team">
-                                            <div class="bg-light text-center p-3">
-                                                <h6 class="mb-1">श्री. संदीप मुकुंद कोलटकर</h6>
-                                                <span class="text-primary">सहसचिव</span>
+                                        <div class="team-item executive-team">
+                                            <div class="bg-light p-3 d-flex align-items-center">
+                                                <img src="img/team-2.jpg" class="rounded-circle me-3" width="65"
+                                                    height="65" style="object-fit:cover;" alt="Member">
+                                                <div>
+                                                    <h6 class="mb-1">श्री. संदीप मुकुंद कोलटकर</h6>
+                                                    <span class="text-primary">सहसचिव</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
-                                        <div class="team-item position-relative executive-team">
-                                            <div class="bg-light text-center p-3">
-                                                <h6 class="mb-1">श्री. कल्याण बाबूराव तावरे</h6>
-                                                <span class="text-primary">सहसचिव</span>
+                                        <div class="team-item executive-team">
+                                            <div class="bg-light p-3 d-flex align-items-center">
+                                                <img src="img/team-3.jpg" class="rounded-circle me-3" width="65"
+                                                    height="65" style="object-fit:cover;" alt="Member">
+                                                <div>
+                                                    <h6 class="mb-1">श्री. कल्याण बाबूराव तावरे</h6>
+                                                    <span class="text-primary">सहसचिव</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
-                                        <div class="team-item position-relative executive-team">
-                                            <div class="bg-light text-center p-3">
-                                                <h6 class="mb-1">श्री. बाबासाहेब महादेव भोसले</h6>
-                                                <span class="text-primary">खजिनदार</span>
+                                        <div class="team-item executive-team">
+                                            <div class="bg-light p-3 d-flex align-items-center">
+                                                <img src="img/team-4.jpg" class="rounded-circle me-3" width="65"
+                                                    height="65" style="object-fit:cover;" alt="Member">
+                                                <div>
+                                                    <h6 class="mb-1">श्री. बाबासाहेब महादेव भोसले</h6>
+                                                    <span class="text-primary">खजिनदार</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
-                                        <div class="team-item position-relative executive-team">
-                                            <div class="bg-light text-center p-3">
-                                                <h6 class="mb-1">श्री. प्रमोद पुरुषोत्तम पाटील</h6>
-                                                <span class="text-primary">सहखजिनदार</span>
+                                        <div class="team-item executive-team">
+                                            <div class="bg-light p-3 d-flex align-items-center">
+                                                <img src="img/team-1.jpg" class="rounded-circle me-3" width="65"
+                                                    height="65" style="object-fit:cover;" alt="Member">
+                                                <div>
+                                                    <h6 class="mb-1">श्री. प्रमोद पुरुषोत्तम पाटील</h6>
+                                                    <span class="text-primary">सहखजिनदार</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
-                                        <div class="team-item position-relative executive-team">
-                                            <div class="bg-light text-center p-3">
-                                                <h6 class="mb-1">श्री. संजय सदाशिव देसले</h6>
-                                                <span class="text-primary">सदस्य</span>
+                                        <div class="team-item executive-team">
+                                            <div class="bg-light p-3 d-flex align-items-center">
+                                                <img src="img/team-2.jpg" class="rounded-circle me-3" width="65"
+                                                    height="65" style="object-fit:cover;" alt="Member">
+                                                <div>
+                                                    <h6 class="mb-1">श्री. संजय सदाशिव देसले</h6>
+                                                    <span class="text-primary">सदस्य</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
-                                        <div class="team-item position-relative executive-team">
-                                            <div class="bg-light text-center p-3">
-                                                <h6 class="mb-1">श्री. मधु दौलतराव पाटील</h6>
-                                                <span class="text-primary">सदस्य</span>
+                                        <div class="team-item executive-team">
+                                            <div class="bg-light p-3 d-flex align-items-center">
+                                                <img src="img/team-3.jpg" class="rounded-circle me-3" width="65"
+                                                    height="65" style="object-fit:cover;" alt="Member">
+                                                <div>
+                                                    <h6 class="mb-1">श्री. मधु दौलतराव पाटील</h6>
+                                                    <span class="text-primary">सदस्य</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
