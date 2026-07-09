@@ -47,7 +47,7 @@
             <a href="#seva" class="nav-item nav-link">सेवा</a>
             <a href="#sampark" class="nav-item nav-link">संपर्क</a>
         </div>
-        <a href="#" class="btn btn-primary py-2 px-4 d-none d-lg-block">सदस्य
+        <a href="#contact" class="btn btn-primary py-2 px-4 d-none d-lg-block">सदस्य
             व्हा</a>
         {{-- <a href="https://htmlcodex.com/downloading/?item=2328" class="btn btn-primary py-2 px-4 d-none d-lg-block">सदस्य
             व्हा</a> --}}
