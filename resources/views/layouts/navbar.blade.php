@@ -63,12 +63,12 @@
 </div> --}}
 
 <!-- Logo Section -->
-<div class="container">
+{{-- <div class="container">
     <div class="row">
         <div class="col-12 text-center pt-3">
             <a href="{{ route('home') }}" class="navbar-brand m-0">
                 <h1 class="text-primary m-0 d-flex justify-content-center align-items-center">
-                    <img src="{{ asset('images/logo-mbvm.png') }}" width="100" alt="Logo" class="me-2">
+                    
                     <span style="color:#d45d2c;">
                         मराठी बांधकाम व्यावसायिक महासंघ
                     </span>
@@ -76,7 +76,7 @@
             </a>
         </div>
     </div>
-</div>
+</div> --}}
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top shadow-sm wow fadeIn" data-wow-delay="0.1s">
@@ -89,6 +89,19 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarCollapse">
+                {{-- <img src="{{ asset('images/logo-mbvm.png') }}" width="80" alt="Logo" class="me-2">
+                <h2 style="color:#d45d2c;">
+                    मराठी बांधकाम व्यावसायिक महासंघ
+                </h2> --}}
+
+                <a href="{{ route('home') }}" class="navbar-brand m-0 active">
+                    <h2 class="text-primary m-0 d-flex justify-content-center align-items-center">
+                        <img src="{{ asset('images/logo-mbvm.png') }}" width="80" alt="Logo" class="me-2">
+                        <span style="color:#d45d2c;">
+                            मराठी बांधकाम व्यावसायिक महासंघ
+                        </span>
+                    </h2>
+                </a>
 
                 <div class="navbar-nav mx-auto">
 
