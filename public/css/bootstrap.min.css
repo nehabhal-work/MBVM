@@ -2239,7 +2239,7 @@ progress {
     background-clip: padding-box;
     border: 1px solid #281406;
     appearance: none;
-    border-radius: 0px;
+    border-radius: 18px;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out
 }
 
@@ -2432,7 +2432,7 @@ textarea.form-control-lg {
     background-position: right .75rem center;
     background-size: 16px 12px;
     border: 1px solid #281406;
-    border-radius: 0px;
+    border-radius: 18px;
     appearance: none
 }
 
@@ -3083,15 +3083,14 @@ fieldset:disabled .btn {
 .btn-primary {
     color: #000;
     background-color: #d45d2c;
-    border-radius: 20px;
+    border-radius: 18px;
     border-color: #d45d2c
 }
 
 .btn-primary:hover {
     color: #000;
     background-color: #e1835b;
-        border-radius: 20px;
-
+    border-radius: 18px;
     border-color: #e1835b;
 }
 

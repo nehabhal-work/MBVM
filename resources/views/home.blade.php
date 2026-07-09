@@ -141,8 +141,8 @@
                     </p>
                 </div>
                 <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item d-flex position-relative text-center h-100">
+                    <div class="col-lg-4 col-md-6  wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item rounded-4 d-flex position-relative text-center h-100">
                             <div class="service-text p-4">
                                 <h3 class="mb-3">संस्थात्मक सभासद</h3>
 
@@ -438,30 +438,36 @@
                 <div class="row g-4">
                     <!-- Leadership Card -->
                     <div class="col-lg-6">
-                        <div class="card shadow border-1 h-100">
+                        <div class="card shadow border-1 h-100" style="border-radius: 15px;">
                             <div class="card-header  text-center py-3">
                                 <h3 class="mb-0">नेतृत्व</h3>
                                 <small>महासंघाचे प्रमुख पदाधिकारी</small>
                             </div>
 
-                            <div class="card-body">
+                            <div class="card-body ">
 
                                 <div class="row g-4">
 
-                                    <div class="col-md-6">
-                                        <div class="team-item position-relative">
-                                            <img src="img/team-1.jpg" class="img-fluid rounded" alt="">
+                                    <div class="col-md-7 text-center mx-auto">
+                                        <div class="team-item executive-team0 position-relative">
+
+                                            <!-- Placeholder Image -->
+                                            <img src="https://placehold.co/500x500?text=No+Image"
+                                                class="img-fluid rounded" alt="No Image Available">
+
                                             <div class="bg-light text-center p-3">
                                                 <h5 class="mb-1">श्री. प्रविण दरेकर</h5>
                                                 <span class="text-primary">संरक्षक</span>
                                                 <p>आमदार, विधानपरिषद · अध्यक्ष, मुंबई बँक</p>
-
                                             </div>
+
                                         </div>
                                     </div>
                                     <div class="col-md-6 ">
-                                        <div class="team-item position-relative">
-                                            <img src="img/team-2.jpg" class="img-fluid rounded" alt="">
+                                        <div class="team-item executive-team0 position-relative">
+                                            <img src="https://placehold.co/500x500?text=No+Image"
+                                                class="img-fluid rounded" alt="No Image Available">
+
                                             <div class="bg-light text-center p-3">
                                                 <h5 class="mb-1">श्री. गजानन कीर्तिकर</h5>
                                                 <span class="text-primary">प्रमुख मार्गदर्शक</span>
@@ -471,8 +477,9 @@
                                     </div>
 
                                     <div class="col-md-6 mx-auto">
-                                        <div class="team-item position-relative">
-                                            <img src="img/team-3.jpg" class="img-fluid rounded" alt="">
+                                        <div class="team-item executive-team0  position-relative">
+                                            <img src="https://placehold.co/500x500?text=No+Image"
+                                                class="img-fluid rounded" alt="No Image Available">
                                             <div class="bg-light text-center p-3">
                                                 <h5 class="mb-1">श्री. सतीश मगर</h5>
                                                 <span class="text-primary">सल्लागार</span>
@@ -488,7 +495,7 @@
                     </div>
                     <!-- Executive Members Card -->
                     <div class="col-lg-6">
-                        <div class="card shadow border-1 h-100">
+                        <div class="card shadow border-1 h-100" style="border-radius: 15px;">
 
                             <div class="card-header  text-center py-3">
                                 <h3 class="mb-0">कार्यकारिणी सदस्य</h3>
@@ -502,8 +509,11 @@
                                     <div class="col-md-6">
                                         <div class="team-item executive-team">
                                             <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="img/team-1.jpg" class="rounded-circle me-3" width="65"
-                                                    height="65" style="object-fit:cover;" alt="Member">
+                                                {{-- <img src="img/team-1.jpg" class="rounded-circle me-3" width="65"
+                                                    height="65" style="object-fit:cover;" alt="Member"> --}}
+                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"  height="65"
+                                                    class="rounded-circle me-3" alt="No Image Available" >
+
                                                 <div>
                                                     <h6 class="mb-1">श्री. सुरेश कारसिनाथ हावरे</h6>
                                                     <span class="text-primary">अध्यक्ष</span>
@@ -515,8 +525,8 @@
                                     <div class="col-md-6">
                                         <div class="team-item executive-team">
                                             <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="img/team-2.jpg" class="rounded-circle me-3" width="65"
-                                                    height="65" style="object-fit:cover;" alt="Member">
+                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"  height="65"
+                                                    class="rounded-circle me-3" alt="No Image Available" >
                                                 <div>
                                                     <h6 class="mb-1">श्री. संजय रामचंद्र कुलकर्णी</h6>
                                                     <span class="text-primary">कार्याध्यक्ष</span>
@@ -528,8 +538,8 @@
                                     <div class="col-md-6">
                                         <div class="team-item executive-team">
                                             <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="img/team-3.jpg" class="rounded-circle me-3" width="65"
-                                                    height="65" style="object-fit:cover;" alt="Member">
+                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"  height="65"
+                                                    class="rounded-circle me-3" alt="No Image Available" >
                                                 <div>
                                                     <h6 class="mb-1">श्री. अजित श्रीराम मराठे</h6>
                                                     <span class="text-primary">उपाध्यक्ष</span>
@@ -541,8 +551,8 @@
                                     <div class="col-md-6">
                                         <div class="team-item executive-team">
                                             <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="img/team-4.jpg" class="rounded-circle me-3" width="65"
-                                                    height="65" style="object-fit:cover;" alt="Member">
+                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"  height="65"
+                                                    class="rounded-circle me-3" alt="No Image Available" >
                                                 <div>
                                                     <h6 class="mb-1">श्री. गजेन्द्र दत्तात्रय पवार</h6>
                                                     <span class="text-primary">उपाध्यक्ष</span>
@@ -554,8 +564,8 @@
                                     <div class="col-md-6">
                                         <div class="team-item executive-team">
                                             <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="img/team-1.jpg" class="rounded-circle me-3" width="65"
-                                                    height="65" style="object-fit:cover;" alt="Member">
+                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"  height="65"
+                                                    class="rounded-circle me-3" alt="No Image Available" >
                                                 <div>
                                                     <h6 class="mb-1">श्री. प्रकाश भीमराव वाघस्कर</h6>
                                                     <span class="text-primary">महासचिव</span>
@@ -567,8 +577,8 @@
                                     <div class="col-md-6">
                                         <div class="team-item executive-team">
                                             <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="img/team-2.jpg" class="rounded-circle me-3" width="65"
-                                                    height="65" style="object-fit:cover;" alt="Member">
+                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"  height="65"
+                                                    class="rounded-circle me-3" alt="No Image Available" >
                                                 <div>
                                                     <h6 class="mb-1">श्री. संदीप मुकुंद कोलटकर</h6>
                                                     <span class="text-primary">सहसचिव</span>
@@ -580,8 +590,8 @@
                                     <div class="col-md-6">
                                         <div class="team-item executive-team">
                                             <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="img/team-3.jpg" class="rounded-circle me-3" width="65"
-                                                    height="65" style="object-fit:cover;" alt="Member">
+                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"  height="65"
+                                                    class="rounded-circle me-3" alt="No Image Available" >
                                                 <div>
                                                     <h6 class="mb-1">श्री. कल्याण बाबूराव तावरे</h6>
                                                     <span class="text-primary">सहसचिव</span>
@@ -593,8 +603,8 @@
                                     <div class="col-md-6">
                                         <div class="team-item executive-team">
                                             <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="img/team-4.jpg" class="rounded-circle me-3" width="65"
-                                                    height="65" style="object-fit:cover;" alt="Member">
+                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"  height="65"
+                                                    class="rounded-circle me-3" alt="No Image Available" >
                                                 <div>
                                                     <h6 class="mb-1">श्री. बाबासाहेब महादेव भोसले</h6>
                                                     <span class="text-primary">खजिनदार</span>
@@ -606,8 +616,8 @@
                                     <div class="col-md-6">
                                         <div class="team-item executive-team">
                                             <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="img/team-1.jpg" class="rounded-circle me-3" width="65"
-                                                    height="65" style="object-fit:cover;" alt="Member">
+                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"  height="65"
+                                                    class="rounded-circle me-3" alt="No Image Available" >
                                                 <div>
                                                     <h6 class="mb-1">श्री. प्रमोद पुरुषोत्तम पाटील</h6>
                                                     <span class="text-primary">सहखजिनदार</span>
@@ -619,8 +629,8 @@
                                     <div class="col-md-6">
                                         <div class="team-item executive-team">
                                             <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="img/team-2.jpg" class="rounded-circle me-3" width="65"
-                                                    height="65" style="object-fit:cover;" alt="Member">
+                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"  height="65"
+                                                    class="rounded-circle me-3" alt="No Image Available" >
                                                 <div>
                                                     <h6 class="mb-1">श्री. संजय सदाशिव देसले</h6>
                                                     <span class="text-primary">सदस्य</span>
@@ -632,8 +642,8 @@
                                     <div class="col-md-6">
                                         <div class="team-item executive-team">
                                             <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="img/team-3.jpg" class="rounded-circle me-3" width="65"
-                                                    height="65" style="object-fit:cover;" alt="Member">
+                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"  height="65"
+                                                    class="rounded-circle me-3" alt="No Image Available" >
                                                 <div>
                                                     <h6 class="mb-1">श्री. मधु दौलतराव पाटील</h6>
                                                     <span class="text-primary">सदस्य</span>
@@ -649,7 +659,7 @@
                     </div>
 
                 </div>
-                <div class="note-box mt-3">
+                <div class="note-box mt-3 shadow ">
 
                     <i class="fa-solid fa-circle-info me-2"></i>
                     कार्यकारी मंडळाची निवड दर दोन वर्षांनी वार्षिक सर्वसाधारण सभेत गुप्त मतदान पद्धतीने होते. रिक्त पदे
@@ -697,7 +707,7 @@
                         <div class="row g-4">
 
                             <div class="col-6">
-                                <div class="stats-card">
+                                <div class="stats-card shadow">
                                     <i class="fa-solid fa-map-location-dot"></i>
                                     <h2>36</h2>
                                     <p>एकूण जिल्हे</p>
@@ -705,7 +715,7 @@
                             </div>
 
                             <div class="col-6">
-                                <div class="stats-card">
+                                <div class="stats-card shadow">
                                     <i class="fa-solid fa-building"></i>
                                     <h2>24</h2>
                                     <p>कार्यरत असोसिएशन</p>
@@ -713,7 +723,7 @@
                             </div>
 
                             <div class="col-6">
-                                <div class="stats-card">
+                                <div class="stats-card shadow">
                                     <i class="fa-solid fa-location-dot"></i>
                                     <h2>08</h2>
                                     <p>प्रस्तावित असोसिएशन</p>
@@ -721,7 +731,7 @@
                             </div>
 
                             <div class="col-6">
-                                <div class="stats-card">
+                                <div class="stats-card shadow">
                                     <i class="fa-solid fa-users"></i>
                                     <h2>550+</h2>
                                     <p>नोंदणीकृत सदस्य</p>
@@ -752,7 +762,7 @@
                 <div class="row g-4 mt-3">
 
                     <!-- शासन समन्वय -->
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="col-lg-4 col-md-6 wow  fadeInUp" data-wow-delay="0.1s">
                         <div class="fact-item text-center bg-light h-100 p-5 pt-0">
 
                             <div class="fact-icon">
@@ -939,9 +949,10 @@
 
                     <!-- Registered Office -->
                     <div class="col-lg-6">
-                        <div class="card border-0 shadow-lg h-100 rounded-4">
+                        <div class="card border-0 shadow-lg h-100 " style="border-radius: 18px;">
 
-                            <div class="card-header bg-primary text-white text-center py-4 rounded-top-4 border-0">
+                            <div class="card-header bg-primary text-white text-center py-4 rounded-top-4 border-0"
+                                style="border-radius: 18px;">
                                 <i class="fa-solid fa-building fa-2x mb-3"></i>
                                 <h3 class="mb-1">नोंदणीकृत कार्यालय</h3>
                                 <small><i class="fa-solid fa-location-dot me-1"></i> वाशी, नवी मुंबई</small>
@@ -979,10 +990,11 @@
                     </div>
 
                     <!-- Pune Office -->
-                    <div class="col-lg-6">
-                        <div class="card border-0 shadow-lg h-100 rounded-4">
+                    <div class="col-lg-6 ">
+                        <div class="card border-0 shadow-lg h-100 " style="border-radius: 18px;">
 
-                            <div class="card-header bg-primary text-white text-center py-4 rounded-top-4 border-0">
+                            <div class="card-header bg-primary text-white text-center py-4 rounded-top-4 border-0"
+                                style="border-radius: 18px;">
                                 <i class="fa-solid fa-briefcase fa-2x mb-3"></i>
                                 <h3 class="mb-1">कार्यालय</h3>
                                 <small><i class="fa-solid fa-location-dot me-1"></i> पुणे</small>

@@ -46,11 +46,15 @@
     font-size: 12px;
     min-width: 20px;
 }
+.fact-item{
+    border-radius: 18px!important;
+}
 
 /* -------------------------- */
 .service-item {
     border: 1px solid rgba(255, 255, 255, .12);
-    border-radius: 20px;
+    border-radius: 18px !important;
+    overflow: hidden;
     transition: .3s;
 }
 
@@ -290,6 +294,11 @@
 }
 /* ----------------------- */
 .executive-team .bg-light{
+    border-radius:15px;
+    transition:.3s;
+    border:1px solid #eee;
+}
+.executive-team0{
     border-radius:15px;
     transition:.3s;
     border:1px solid #eee;
