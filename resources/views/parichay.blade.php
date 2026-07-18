@@ -3,8 +3,8 @@
          <div class="row g-5">
              <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                  <div class="about-img">
-                     <img class="img-fluid" src="img/about-1.jpg" alt="">
-                     <img class="img-fluid" src="img/about-2.jpg" alt="">
+                     <img class="img-fluid" src="img/IMG_7945.jpg" alt="">
+                     <img class="img-fluid" src="img/IMG_7575.jpg" alt="">
                  </div>
              </div>
              <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
