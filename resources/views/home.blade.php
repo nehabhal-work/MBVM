@@ -293,9 +293,9 @@
                         </p>
                     </div>
 
-                    <div class="col-lg-4 text-center">
+                    {{-- <div class="col-lg-4 text-center">
                         <i class="fa-solid fa-building-circle-check section-icon"></i>
-                    </div>
+                    </div> --}}
 
                 </div>
 
@@ -709,7 +709,7 @@
                             <div class="col-6">
                                 <div class="stats-card shadow">
                                     <i class="fa-solid fa-map-location-dot"></i>
-                                    <h2>36</h2>
+                                    <h2>३६</h2>
                                     <p>एकूण जिल्हे</p>
                                 </div>
                             </div>
@@ -717,7 +717,7 @@
                             <div class="col-6">
                                 <div class="stats-card shadow">
                                     <i class="fa-solid fa-building"></i>
-                                    <h2>24</h2>
+                                    <h2>२४</h2>
                                     <p>कार्यरत असोसिएशन</p>
                                 </div>
                             </div>
@@ -725,7 +725,7 @@
                             <div class="col-6">
                                 <div class="stats-card shadow">
                                     <i class="fa-solid fa-location-dot"></i>
-                                    <h2>08</h2>
+                                    <h2>०८</h2>
                                     <p>प्रस्तावित असोसिएशन</p>
                                 </div>
                             </div>
@@ -733,7 +733,7 @@
                             <div class="col-6">
                                 <div class="stats-card shadow">
                                     <i class="fa-solid fa-users"></i>
-                                    <h2>550+</h2>
+                                    <h2>५५०+</h2>
                                     <p>नोंदणीकृत सदस्य</p>
                                 </div>
                             </div>
@@ -873,7 +873,7 @@
                                         <a href="https://maps.app.goo.gl/9s1qmKS3w3kvSVYCA"
                                             class="btn btn-outline-primary rounded-pill" target="_blank">
                                             <i class="fa-solid fa-location-arrow me-2"></i>
-                                            View on Map
+                                            नकाशावर पहा
                                         </a>
                                     </div>
                                 </div>
@@ -915,7 +915,7 @@
                                         <a href="https://maps.app.goo.gl/fSTqoMu316xnjyah9"
                                             class="btn btn-outline-primary rounded-pill" target="_blank">
                                             <i class="fa-solid fa-location-arrow me-2"></i>
-                                            View on Map
+                                            नकाशावर पहा
                                         </a>
                                     </div>
                                 </div>
@@ -946,7 +946,7 @@
                             sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum
                             justo sea clita.</p>
                         <h3>भालचंद्र गायकवाड </h3>
-                        <span class="text-primary">Profession</span>
+                        <span class="text-primary">व्यवसाय</span>
                     </div>
                     <div class="testimonial-item text-center"
                         data-dot="<img class='img-fluid' src='https://placehold.co/500x500?text=No+Image' alt=''>">
@@ -954,7 +954,7 @@
                             sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum
                             justo sea clita.</p>
                         <h3>नेहा चौहान</h3>
-                        <span class="text-primary">Profession</span>
+                        <span class="text-primary">व्यवसाय</span>
                     </div>
                     <div class="testimonial-item text-center"
                         data-dot="<img class='img-fluid' src='https://placehold.co/500x500?text=No+Image' alt=''>">
@@ -962,7 +962,7 @@
                             sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum
                             justo sea clita.</p>
                         <h3>राहुल  पाटील</h3>
-                        <span class="text-primary">Profession</span>
+                        <span class="text-primary">व्यवसाय</span>
                     </div>
                 </div>
             </div>

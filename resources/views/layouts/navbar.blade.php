@@ -89,19 +89,19 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                {{-- <img src="{{ asset('images/logo-mbvm.png') }}" width="80" alt="Logo" class="me-2">
-                <h2 style="color:#d45d2c;">
+                <img src="{{ asset('images/logo-mbvm.png') }}" width="80" alt="Logo" class="me-2">
+                <h3 style="color:#d45d2c;">
                     मराठी बांधकाम व्यावसायिक महासंघ
-                </h2> --}}
+                </h3>
 
-                <a href="{{ route('home') }}" class="navbar-brand m-0 active">
+                {{-- <a href="{{ route('home') }}" class="navbar-brand m-0 active">
                     <h2 class="text-primary m-0 d-flex justify-content-center align-items-center">
                         <img src="{{ asset('images/logo-mbvm.png') }}" width="80" alt="Logo" class="me-2">
                         <span style="color:#d45d2c;">
                             मराठी बांधकाम व्यावसायिक महासंघ
                         </span>
                     </h2>
-                </a>
+                </a> --}}
 
                 <div class="navbar-nav mx-auto">
 

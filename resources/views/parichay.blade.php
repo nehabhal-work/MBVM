@@ -17,15 +17,15 @@
                  <div class="d-flex align-items-center mb-5">
                      <div class="d-flex flex-shrink-0 align-items-center justify-content-center border border-5 border-primary"
                          style="width: 120px; height: 120px;">
-                         <h1 class="display-1 mb-n2" data-toggle="counter-up">25</h1>
+                         <h1 class="display-1 mb-n2" data-toggle1="counter-up">२५</h1>
                      </div>
                      <div class="ps-4">
-                         <h3>Years</h3>
-                         <h3>Working</h3>
-                         <h3 class="mb-0">Experience</h3>
+                         <h3>वर्षांचा</h3>
+                         <h3>कामाचा</h3>
+                         <h3 class="mb-0">अनुभव</h3>
                      </div>
                  </div>
-                 <a class="btn btn-primary py-3 px-5" href="">Read More</a>
+                 <a class="btn btn-primary py-3 px-5" href="">अधिक वाचा</a>
              </div>
          </div>
      </div>

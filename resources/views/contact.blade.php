@@ -14,8 +14,9 @@
                                 <i class="fa fa-2x fa-phone-alt text-primary"></i>
                             </div>
                             <div class="ms-4">
-                                <p class="mb-2">Call Us Now</p>
-                                <h3 class="mb-0">+012 345 6789</h3>
+                                <p class="mb-2">आता कॉल करा</p>
+                                <h3 class="mb-0">+०१२ ३४५ ६७८९
+</h3>
                             </div>
                         </div>
                     </div>
@@ -26,7 +27,7 @@
                                 <i class="fa fa-2x fa-envelope-open text-primary"></i>
                             </div>
                             <div class="ms-4">
-                                <p class="mb-2">Mail Us Now</p>
+                                <p class="mb-2">आता मेल करा</p>
                                 <h3 class="mb-0">info@example.com</h3>
                             </div>
                         </div>
