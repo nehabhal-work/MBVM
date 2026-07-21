@@ -135,7 +135,7 @@
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h4 class="section-title">सदस्यत्व</h4>
-                    <h1 class="display-5 mb-5 mt-4">सदस्यत्वाचे प्रकार</h1>
+                    <h1 class="display-5 mb-3 mt-4">सदस्यत्वाचे प्रकार</h1>
                     <p class="mb-5">नियमावलीनुसार महासंघात खालील प्रकारचे सभासद असतात. प्रत्येक प्रकारासाठी वेगळी
                         पात्रता, शुल्क व अधिकार आहेत.
                     </p>
@@ -285,8 +285,8 @@
                     <div class="col-lg-8">
 
                         <h4 class="section-title">जिल्हा असोसिएशन</h4>
-                        <h1 class="display-5 mb-5 mt-4">तुमच्या जिल्ह्यात असोसिएशन स्थापना करा</h1>
-                        <p class="mb-5"> महासंघ ही असोसिएशनची शिखर संघटना आहे. तुमच्या जिल्ह्यातील
+                        <h1 class="display-5 mb-3 mt-4">तुमच्या जिल्ह्यात असोसिएशन स्थापना करा</h1>
+                        <p class="mb-2"> महासंघ ही असोसिएशनची शिखर संघटना आहे. तुमच्या जिल्ह्यातील
                             मराठी व्यावसायिकांची असोसिएशन महासंघाशी संलग्न करता येते.
                             संलग्नता महासंघाच्या मंजुरीनंतर अधिकृत होते.
 
@@ -431,7 +431,7 @@
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h4 class="section-title">कार्यकारिणी</h4>
-                    <h1 class="display-5 mb-5 mt-4">विद्यमान कार्यकारी मंडळ</h1>
+                    <h1 class="display-5 mb-3 mt-4">विद्यमान कार्यकारी मंडळ</h1>
                     <p class="mb-5">संस्था नोंदणी अधिनियम १८६० अन्वये नोंदणीकृत पहिले कार्यकारी मंडळ. कार्यकाळ — २ वर्षे.
                     </p>
                 </div>
@@ -674,7 +674,7 @@
                 <!-- Section Heading -->
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h4 class="section-title">जिल्हानिहाय स्थिती</h4>
-                    <h1 class="display-5 mb-5 mt-4">राज्यभरातील वाटचाल</h1>
+                    <h1 class="display-5 mb-3 mt-2">राज्यभरातील वाटचाल</h1>
                     <p class="mb-5">महाराष्ट्रातील विविध जिल्ह्यांमध्ये महासंघाचा विस्तार
                     </p>
                 </div>
@@ -753,7 +753,7 @@
             <div class="container pt-5">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h4 class="section-title">सेवा</h4>
-                    <h1 class="display-5 mb-5 mt-4">सदस्य सेवा व शासन समन्वय</h1>
+                    <h1 class="display-5 mb-3 mt-4">सदस्य सेवा व शासन समन्वय</h1>
                     <p class="mb-5">महासंघ राज्यभरातील असोसिएशनकडून येणाऱ्या प्रश्नांचे वर्गीकरण करून शासन व संबंधित
                         विभागांकडे एकत्रित पाठपुरावा करतो, तसेच सदस्यांना मार्गदर्शन उपलब्ध करून देतो.
 
@@ -836,7 +836,7 @@
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h4 class="section-title">संपर्क</h4>
-                    <h1 class="display-5 mb-5 mt-4">आमची कार्यालये</h1>
+                    <h1 class="display-5 mb-3 mt-4">आमची कार्यालये</h1>
 
                 </div>
                 <div class="row g-4">
@@ -937,7 +937,7 @@
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h4 class="section-title">अभिप्राय</h4>
-                    <h1 class="display-5 mb-5 mt-4"> आमच्याबद्दलच्या प्रतिक्रिया</h1>
+                    <h1 class="display-5 mb-3 mt-4"> आमच्याबद्दलच्या प्रतिक्रिया</h1>
                 </div>
                 <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
                     <div class="testimonial-item text-center"

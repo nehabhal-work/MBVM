@@ -3,7 +3,7 @@
         <div class="row g-5">
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                 <h4 class="section-title">सदस्य नोंदणी</h4>
-                <h1 class="display-5 mb-5 mt-4">आजच महासंघाशी जोडा</h1>
+                <h1 class="display-5 mb-3 mt-4">आजच महासंघाशी जोडा</h1>
                 <p class="mb-4">खालील माहिती भरा. नोंदणीनंतर महासंघाकडून तुमच्याशी संपर्क साधला जाईल आणि तुमच्या
                     जिल्ह्यातील स्थापना प्रक्रियेची माहिती दिली जाईल.</p>
                 <div class="row g-4">
