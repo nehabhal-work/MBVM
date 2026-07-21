@@ -36,7 +36,10 @@
                         </div>
                     </div>
 
-                    {!! QrCode::size(150)->generate('https://mbvm.in/#contact') !!}
+                    <div class="qrcodec">
+                        {!! QrCode::size(150)->generate('https://mbvm.in/#contact') !!}
+                        <span class="mx-3 fw-bold">नोंदणीसाठी स्कॅन करा</span>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-6 ">
