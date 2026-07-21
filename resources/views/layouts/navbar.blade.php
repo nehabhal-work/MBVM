@@ -103,7 +103,7 @@
                     </h2>
                 </a> --}}
 
-                <div class="navbar-nav" style="margin-left:200px;">
+                <div class="navbar-nav" style="margin-left:260px;">
 
                     <a href="#parichay" class="nav-item nav-link">परिचय</a>
 

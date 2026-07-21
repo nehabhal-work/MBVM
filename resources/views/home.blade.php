@@ -71,10 +71,10 @@
                 <div class="row g-5">
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                         <h4 class="section-title">उद्देश</h4>
-                        <h1 class="display-5 mb-4">महासंघाचे उद्देश</h1>
+                        <h1 class="display-5 mb-5 mt-4">महासंघाचे उद्देश</h1>
 
                         <div class="row g-4">
-                            <div class="col-12">
+                            <div class="col-12 mb-3">
                                 <div class="d-flex align-items-start">
                                     <img class="flex-shrink-0" src="img/icons/icon-2.png" alt="Icon">
                                     <div class="ms-4">
@@ -85,7 +85,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12">
+                            <div class="col-12 mb-3">
                                 <div class="d-flex align-items-start">
                                     <img class="flex-shrink-0" src="img/icons/icon-3.png" alt="Icon">
                                     <div class="ms-4">
@@ -95,7 +95,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12">
+                            <div class="col-12 mb-3">
                                 <div class="d-flex align-items-start">
                                     <img class="flex-shrink-0" src="img/icons/icon-4.png" alt="Icon">
                                     <div class="ms-4">
@@ -106,7 +106,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12">
+                            <div class="col-12 mb-3">
                                 <div class="d-flex align-items-start">
                                     <img class="flex-shrink-0" src="img/icons/icon-4.png" alt="Icon">
                                     <div class="ms-4">
