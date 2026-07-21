@@ -1,11 +1,14 @@
 <div id="contact" class="container-xxl py-5">
     <div class="container">
         <div class="row g-5">
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                <h4 class="section-title">सदस्य नोंदणी</h4>
-                <h1 class="display-5 mb-3 mt-4">आजच महासंघाशी जोडा</h1>
-                <p class="mb-4">खालील माहिती भरा. नोंदणीनंतर महासंघाकडून तुमच्याशी संपर्क साधला जाईल आणि तुमच्या
-                    जिल्ह्यातील स्थापना प्रक्रियेची माहिती दिली जाईल.</p>
+            <div class="col-lg-6">
+                <div class="wow fadeInUp" data-wow-delay="0.1s">
+
+                    <h4 class="section-title">सदस्य नोंदणी</h4>
+                    <h1 class="display-5 mb-3 mt-4">आजच महासंघाशी जोडा</h1>
+                    <p class="mb-4">खालील माहिती भरा. नोंदणीनंतर महासंघाकडून तुमच्याशी संपर्क साधला जाईल आणि तुमच्या
+                        जिल्ह्यातील स्थापना प्रक्रियेची माहिती दिली जाईल.</p>
+                </div>
                 <div class="row g-4">
                     <div class="col-12">
                         <div class="d-flex">
@@ -16,7 +19,7 @@
                             <div class="ms-4">
                                 <p class="mb-2">आता कॉल करा</p>
                                 <h3 class="mb-0">+०१२ ३४५ ६७८९
-</h3>
+                                </h3>
                             </div>
                         </div>
                     </div>
@@ -36,7 +39,7 @@
                     {!! QrCode::size(150)->generate('https://mbvm.in/#contact') !!}
                 </div>
             </div>
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="col-lg-6 ">
                 <div class="row g-3">
                     <div class="col-12 col-sm-6">
                         <input type="text" class="form-control" placeholder="पूर्ण नाव" style="height: 55px;">

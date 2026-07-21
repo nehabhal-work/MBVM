@@ -15,8 +15,9 @@
                                         एकत्र आणणारे व्यासपीठ </h4>
                                     {{-- <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor
                                         at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea
-                                        elitr.</p>--}}
-                                    <a href="" class="btn btn-primary py-3 mt-3 px-5 animated slideInLeft">सदस्य व्हा</a>
+                                        elitr.</p> --}}
+                                    <a href="" class="btn btn-primary py-3 mt-3 px-5 animated slideInLeft">सदस्य
+                                        व्हा</a>
                                 </div>
                             </div>
                         </div>
@@ -29,11 +30,12 @@
                             <div class="row justify-content-start">
                                 <div class="col-10 col-lg-8 homebannerhead">
                                     <h4 class="display-1 text-white animated slideInDown">मराठी सारे एकत्र येऊ…
-                                        सर्वसामान्यांना घर देऊ…  </h4>
+                                        सर्वसामान्यांना घर देऊ… </h4>
                                     {{-- <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor
                                         at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea
                                         elitr.</p> --}}
-                                    <a href="" class="btn btn-primary py-3 mt-3 px-5 animated slideInLeft">सदस्य व्हा</a>
+                                    <a href="" class="btn btn-primary py-3 mt-3 px-5 animated slideInLeft">सदस्य
+                                        व्हा</a>
                                 </div>
                             </div>
                         </div>
@@ -50,7 +52,8 @@
                                     {{-- <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor
                                         at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea
                                         elitr.</p> --}}
-                                    <a href="" class="btn btn-primary py-3 mt-3 px-5 animated slideInLeft">सदस्य व्हा</a>
+                                    <a href="" class="btn btn-primary py-3 mt-3 px-5 animated slideInLeft">सदस्य
+                                        व्हा</a>
                                 </div>
                             </div>
                         </div>
@@ -69,10 +72,11 @@
         <div class="container-fluid logo-bg-dark my-5 py-5">
             <div class="container">
                 <div class="row g-5">
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <h4 class="section-title">उद्देश</h4>
-                        <h1 class="display-5 mb-5 mt-4">महासंघाचे उद्देश</h1>
-
+                    <div class="col-lg-6 " >
+                        <div class="wow fadeInUp" data-wow-delay="0.1s">
+                            <h4 class="section-title">उद्देश</h4>
+                            <h1 class="display-5 mb-5 mt-4">महासंघाचे उद्देश</h1>
+                        </div>
                         <div class="row g-4">
                             <div class="col-12 mb-3">
                                 <div class="d-flex align-items-start">
@@ -119,7 +123,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="col-lg-6 ">
                         <div class="feature-img">
                             <img class="img-fluid" src="img/IMG_7940.jpg" alt="">
                             <img class="img-fluid" src="img/IMG_7880.jpg" alt="">
@@ -141,7 +145,7 @@
                     </p>
                 </div>
                 <div class="row g-4">
-                    <div class="col-lg-4 col-md-6  wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="col-lg-4 col-md-6  ">
                         <div class="service-item rounded-4 d-flex position-relative text-center h-100">
                             <div class="service-text p-4">
                                 <h3 class="mb-3">संस्थात्मक सभासद</h3>
@@ -163,7 +167,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="col-lg-4 col-md-6 ">
                         <div class="service-item d-flex position-relative text-center h-100">
                             <div class="service-text p-4 ">
                                 <h3 class="mb-3">विशेष सभासद</h3>
@@ -184,7 +188,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="col-lg-4 col-md-6 ">
                         <div class="service-item d-flex position-relative text-center h-100">
                             <div class="service-text p-4 text-start">
                                 <h3 class="mb-3">हितचिंतक सभासद</h3>
@@ -205,7 +209,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="col-lg-4 col-md-6 ">
                         <div class="service-item d-flex position-relative text-center h-100">
                             <div class="service-text p-4 text-start">
                                 <h3 class="mb-3">सन्माननीय सभासद</h3>
@@ -227,7 +231,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="col-lg-4 col-md-6 ">
                         <div class="service-item d-flex position-relative text-center h-100">
                             <div class="service-text p-4 text-start">
                                 <h3 class="mb-3">सहयोगी सभासद</h3>
@@ -249,7 +253,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="col-lg-4 col-md-6 ">
                         <div class="service-item d-flex position-relative text-center h-100">
                             <div class="service-text p-4 text-start">
                                 <h3 class="mb-3 text-warning">नोंद</h3>
@@ -264,7 +268,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="executive-note wow fadeInUp" data-wow-delay="0.1s">
+                <div class="executive-note ">
                     कार्यकारी मंडळाची मुदत <strong>२ वर्षे</strong> असून दर दोन वर्षांनी वार्षिक सर्वसाधारण सभेत गुप्त मतदान
                     पद्धतीने नवीन कार्यकारिणीची निवड केली जाते.
                 </div>
@@ -511,8 +515,8 @@
                                             <div class="bg-light p-3 d-flex align-items-center">
                                                 {{-- <img src="img/team-1.jpg" class="rounded-circle me-3" width="65"
                                                     height="65" style="object-fit:cover;" alt="Member"> --}}
-                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"  height="65"
-                                                    class="rounded-circle me-3" alt="No Image Available" >
+                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"
+                                                    height="65" class="rounded-circle me-3" alt="No Image Available">
 
                                                 <div>
                                                     <h6 class="mb-1">श्री. सुरेश कारसिनाथ हावरे</h6>
@@ -525,8 +529,8 @@
                                     <div class="col-md-6">
                                         <div class="team-item executive-team">
                                             <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"  height="65"
-                                                    class="rounded-circle me-3" alt="No Image Available" >
+                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"
+                                                    height="65" class="rounded-circle me-3" alt="No Image Available">
                                                 <div>
                                                     <h6 class="mb-1">श्री. संजय रामचंद्र कुलकर्णी</h6>
                                                     <span class="text-primary">कार्याध्यक्ष</span>
@@ -538,8 +542,8 @@
                                     <div class="col-md-6">
                                         <div class="team-item executive-team">
                                             <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"  height="65"
-                                                    class="rounded-circle me-3" alt="No Image Available" >
+                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"
+                                                    height="65" class="rounded-circle me-3" alt="No Image Available">
                                                 <div>
                                                     <h6 class="mb-1">श्री. अजित श्रीराम मराठे</h6>
                                                     <span class="text-primary">उपाध्यक्ष</span>
@@ -551,8 +555,8 @@
                                     <div class="col-md-6">
                                         <div class="team-item executive-team">
                                             <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"  height="65"
-                                                    class="rounded-circle me-3" alt="No Image Available" >
+                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"
+                                                    height="65" class="rounded-circle me-3" alt="No Image Available">
                                                 <div>
                                                     <h6 class="mb-1">श्री. गजेन्द्र दत्तात्रय पवार</h6>
                                                     <span class="text-primary">उपाध्यक्ष</span>
@@ -564,8 +568,8 @@
                                     <div class="col-md-6">
                                         <div class="team-item executive-team">
                                             <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"  height="65"
-                                                    class="rounded-circle me-3" alt="No Image Available" >
+                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"
+                                                    height="65" class="rounded-circle me-3" alt="No Image Available">
                                                 <div>
                                                     <h6 class="mb-1">श्री. प्रकाश भीमराव बाविस्कर</h6>
                                                     <span class="text-primary">महासचिव</span>
@@ -577,8 +581,8 @@
                                     <div class="col-md-6">
                                         <div class="team-item executive-team">
                                             <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"  height="65"
-                                                    class="rounded-circle me-3" alt="No Image Available" >
+                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"
+                                                    height="65" class="rounded-circle me-3" alt="No Image Available">
                                                 <div>
                                                     <h6 class="mb-1">श्री. संदीप मुकुंद कोलटकर</h6>
                                                     <span class="text-primary">सहसचिव</span>
@@ -590,8 +594,8 @@
                                     <div class="col-md-6">
                                         <div class="team-item executive-team">
                                             <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"  height="65"
-                                                    class="rounded-circle me-3" alt="No Image Available" >
+                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"
+                                                    height="65" class="rounded-circle me-3" alt="No Image Available">
                                                 <div>
                                                     <h6 class="mb-1">श्री. कल्याण बाबूराव तावरे</h6>
                                                     <span class="text-primary">सहसचिव</span>
@@ -603,8 +607,8 @@
                                     <div class="col-md-6">
                                         <div class="team-item executive-team">
                                             <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"  height="65"
-                                                    class="rounded-circle me-3" alt="No Image Available" >
+                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"
+                                                    height="65" class="rounded-circle me-3" alt="No Image Available">
                                                 <div>
                                                     <h6 class="mb-1">श्री. बाबासाहेब महादेव भोसले</h6>
                                                     <span class="text-primary">खजिनदार</span>
@@ -616,8 +620,8 @@
                                     <div class="col-md-6">
                                         <div class="team-item executive-team">
                                             <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"  height="65"
-                                                    class="rounded-circle me-3" alt="No Image Available" >
+                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"
+                                                    height="65" class="rounded-circle me-3" alt="No Image Available">
                                                 <div>
                                                     <h6 class="mb-1">श्री. प्रमोद पुरुषोत्तम पाटील</h6>
                                                     <span class="text-primary">सहखजिनदार</span>
@@ -629,8 +633,8 @@
                                     <div class="col-md-6">
                                         <div class="team-item executive-team">
                                             <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"  height="65"
-                                                    class="rounded-circle me-3" alt="No Image Available" >
+                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"
+                                                    height="65" class="rounded-circle me-3" alt="No Image Available">
                                                 <div>
                                                     <h6 class="mb-1">श्री. संजय सदाशिव देसले</h6>
                                                     <span class="text-primary">सदस्य</span>
@@ -642,8 +646,8 @@
                                     <div class="col-md-6">
                                         <div class="team-item executive-team">
                                             <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"  height="65"
-                                                    class="rounded-circle me-3" alt="No Image Available" >
+                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"
+                                                    height="65" class="rounded-circle me-3" alt="No Image Available">
                                                 <div>
                                                     <h6 class="mb-1">श्री. मधु दौलतराव पाटील</h6>
                                                     <span class="text-primary">सदस्य</span>
@@ -762,7 +766,7 @@
                 <div class="row g-4 mt-3">
 
                     <!-- शासन समन्वय -->
-                    <div class="col-lg-4 col-md-6 wow  fadeInUp" data-wow-delay="0.1s">
+                    <div class="col-lg-4 col-md-6">
                         <div class="fact-item text-center bg-light h-100 p-5 pt-0">
 
                             <div class="fact-icon">
@@ -783,7 +787,7 @@
                     </div>
 
                     <!-- कायदेशीर मार्गदर्शन -->
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="col-lg-4 col-md-6  ">
                         <div class="fact-item text-center bg-light h-100 p-5 pt-0">
 
                             <div class="fact-icon">
@@ -803,7 +807,7 @@
                     </div>
 
                     <!-- माहिती व नेटवर्किंग -->
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="col-lg-4 col-md-6  ">
                         <div class="fact-item text-center bg-light h-100 p-5 pt-0">
 
                             <div class="fact-icon">
@@ -939,7 +943,7 @@
                     <h4 class="section-title">अभिप्राय</h4>
                     <h1 class="display-5 mb-3 mt-4"> आमच्याबद्दलच्या प्रतिक्रिया</h1>
                 </div>
-                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                <div class="owl-carousel testimonial-carousel ">
                     <div class="testimonial-item text-center"
                         data-dot="<img class='img-fluid' src='https://placehold.co/500x500?text=No+Image' alt=''>">
                         <p class="fs-5">Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed
@@ -961,7 +965,7 @@
                         <p class="fs-5">Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed
                             sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum
                             justo sea clita.</p>
-                        <h3>राहुल  पाटील</h3>
+                        <h3>राहुल पाटील</h3>
                         <span class="text-primary">व्यवसाय</span>
                     </div>
                 </div>
