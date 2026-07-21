@@ -487,16 +487,21 @@ progress {
     font-size: 1.25rem;
     font-weight: 300
 }
+.homebannerhead{
+    margin-bottom: 200px;
+
+}
 
 .display-1 {
-    font-size: calc(1.625rem + 4.5vw);
-    font-weight: 600;
-    line-height: 1.2
+    /* font-size: calc(1.625rem + 4.5vw); */
+    font-size: 3.5rem;
+    font-weight: bold !important;
+    line-height: 1.2;
 }
 
 @media (min-width: 1200px) {
     .display-1 {
-        font-size: 5rem
+        font-size: 3.5rem
     }
 }
 
@@ -8371,7 +8376,7 @@ fieldset:disabled .btn {
 
 .bg-dark {
     background-color: #381801 !important
-    /* background-color: #281406 !important */
+        /* background-color: #281406 !important */
 }
 
 .bg-body {

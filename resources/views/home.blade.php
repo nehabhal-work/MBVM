@@ -10,13 +10,13 @@
                     <div class="owl-carousel-inner">
                         <div class="container">
                             <div class="row justify-content-start">
-                                <div class="col-10 col-lg-8">
-                                    <h1 class="display-1 text-white animated slideInDown">महाराष्ट्रातील मराठी विकासकांना
-                                        एकत्र आणणारे व्यासपीठ</h1>
+                                <div class="col-10 col-lg-8 homebannerhead">
+                                    <h4 class="display-1 text-white animated slideInDown ">महाराष्ट्रातील मराठी विकासकांना
+                                        एकत्र आणणारे व्यासपीठ </h4>
                                     {{-- <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor
                                         at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea
                                         elitr.</p>--}}
-                                    <a href="" class="btn btn-primary py-3 px-5 animated slideInLeft">सदस्य व्हा</a>
+                                    <a href="" class="btn btn-primary py-3 mt-3 px-5 animated slideInLeft">सदस्य व्हा</a>
                                 </div>
                             </div>
                         </div>
@@ -27,13 +27,13 @@
                     <div class="owl-carousel-inner">
                         <div class="container">
                             <div class="row justify-content-start">
-                                <div class="col-10 col-lg-8">
-                                    <h1 class="display-1 text-white animated slideInDown">मराठी सारे एकत्र येऊ…
-                                        सर्वसामान्यांना घर देऊ…</h1>
+                                <div class="col-10 col-lg-8 homebannerhead">
+                                    <h4 class="display-1 text-white animated slideInDown">मराठी सारे एकत्र येऊ…
+                                        सर्वसामान्यांना घर देऊ…  </h4>
                                     {{-- <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor
                                         at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea
                                         elitr.</p> --}}
-                                    <a href="" class="btn btn-primary py-3 px-5 animated slideInLeft">सदस्य व्हा</a>
+                                    <a href="" class="btn btn-primary py-3 mt-3 px-5 animated slideInLeft">सदस्य व्हा</a>
                                 </div>
                             </div>
                         </div>
@@ -44,13 +44,13 @@
                     <div class="owl-carousel-inner">
                         <div class="container">
                             <div class="row justify-content-start">
-                                <div class="col-10 col-lg-8">
-                                    <h1 class="display-1 text-white animated slideInDown">एकत्रित बळ, एकत्रित आवाज
-                                    </h1>
+                                <div class="col-10 col-lg-8 homebannerhead">
+                                    <h4 class="display-1 text-white animated slideInDown">एकत्रित बळ, एकत्रित आवाज
+                                    </h4>
                                     {{-- <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor
                                         at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea
                                         elitr.</p> --}}
-                                    <a href="" class="btn btn-primary py-3 px-5 animated slideInLeft">सदस्य व्हा</a>
+                                    <a href="" class="btn btn-primary py-3 mt-3 px-5 animated slideInLeft">सदस्य व्हा</a>
                                 </div>
                             </div>
                         </div>

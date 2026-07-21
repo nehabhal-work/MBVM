@@ -88,11 +88,11 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="collapse navbar-collapse p-2" id="navbarCollapse">
                 <img src="{{ asset('images/logo-mbvm.png') }}" width="80" alt="Logo" class="me-2">
-                <h3 style="color:#d45d2c;">
-                    मराठी बांधकाम व्यावसायिक महासंघ
-                </h3>
+                <span style="color:#d45d2c; font-size:25px;">
+                 <b>  मराठी बांधकाम व्यावसायिक <br> महासंघ </b> 
+                </span>
 
                 {{-- <a href="{{ route('home') }}" class="navbar-brand m-0 active">
                     <h2 class="text-primary m-0 d-flex justify-content-center align-items-center">
@@ -103,7 +103,7 @@
                     </h2>
                 </a> --}}
 
-                <div class="navbar-nav mx-auto">
+                <div class="navbar-nav" style="margin-left:200px;">
 
                     <a href="#parichay" class="nav-item nav-link">परिचय</a>
 
