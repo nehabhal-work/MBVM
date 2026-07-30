@@ -329,11 +329,15 @@
 }
 
 p {
-    font-size: 19px;
+    font-size: 20px;
     line-height: 1.8;
+    color: #1b1a1a;
 }
 .qrcodec{
         margin-left: 5.8rem !important;
         margin-top: 40px;
+}
+.footcolor{
+    color: #777777;
 }
 /* --------navbar----------- */

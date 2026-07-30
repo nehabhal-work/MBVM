@@ -2,13 +2,13 @@
 <div class="container-fluid bg-dark text-body footer mt-5 pt-5 px-0 wow fadeIn" data-wow-delay="0.1s">
     <div class="container py-5">
         <div class="row g-5">
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-6 ">
                 <h3 class="text-light mb-4">पत्ता</h3>
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>१७०२, हावरे इन्फोटेक पार्क,
+                <p class="mb-2 footcolor"><i class="fa fa-map-marker-alt text-primary me-3"></i>१७०२, हावरे इन्फोटेक पार्क,
                     सेक्टर ३०ए, वाशी, नवी मुंबई - ४००७०३
                 </p>
-                <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>+०१२ ३४५ ६७८९</p>
-                <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>info@example.com</p>
+                <p class="mb-2 footcolor"><i class="fa fa-phone-alt text-primary me-3"></i>+०१२ ३४५ ६७८९</p>
+                <p class="mb-2 footcolor"><i class="fa fa-envelope text-primary me-3"></i>info@example.com</p>
                 <div class="d-flex pt-2">
                     <a class="btn btn-square btn-outline-body me-1" href=""><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-square btn-outline-body me-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -34,7 +34,7 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <h3 class="text-light mb-4">बातमीपत्र</h3>
-                <p>सूचना: या वेबसाइटवरील माहिती केवळ सामान्य माहितीच्या उद्देशाने आहे. अधिकृत माहिती साठी कृपया
+                <p class="footcolor">सूचना: या वेबसाइटवरील माहिती केवळ सामान्य माहितीच्या उद्देशाने आहे. अधिकृत माहिती साठी कृपया
                     आमच्याशी संपर्क साधा.</p>
                 <div class="position-relative mx-auto" style="max-width: 400px;">
                     <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
@@ -54,7 +54,7 @@
                 <div class="col-md-6 text-center text-md-end">
                     <!--/*** The author’s attribution link must remain intact in the template. ***/-->
                     <!--/*** If you wish to remove this credit link, please purchase the Buy Pro Version . ***/-->
-                    Developed By MBVM In-house IT Team
+                    Developed By <a href="https://www.nbunify.com/" target="blank">NBUnify</a>
                 </div>
             </div>
         </div>

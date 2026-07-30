@@ -25,7 +25,6 @@
 </div> --}}
 <!-- Topbar End -->
 
-
 <!-- Navbar Start -->
 {{-- <div class="container">
      <div class="col-md-12">
@@ -103,7 +102,7 @@
                     </h2>
                 </a> --}}
 
-                <div class="navbar-nav" style="margin-left:260px;">
+                <div class="navbar-nav" style="margin-left:180px;">
 
                     <a href="#parichay" class="nav-item nav-link">परिचय</a>
 
