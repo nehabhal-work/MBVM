@@ -16,44 +16,41 @@ jobs:
       - name: 🚀 Deploy to MBVM
         uses: appleboy/ssh-action@v1.2.0
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.HOSTINGER_SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SSH_PORT }}
-          script: |
-            set -e
+            host: ${{ secrets.SSH_HOST }}
+            username: ${{ secrets.SSH_USERNAME }}
+            key: ${{ secrets.HOSTINGER_SSH_PRIVATE_KEY }}
+            port: ${{ secrets.SSH_PORT }}
+            timeout: 60s
+            command_timeout: 30m
+            
+         script: |
+          set -e
 
-            export PATH=/opt/alt/php84/usr/bin:$PATH
-            cd ~/domains/mbvm.in/public_html
+          export PATH=/opt/alt/php84/usr/bin:$PATH
 
-            PHP_BIN="/opt/alt/php84/usr/bin/php"
-            COMPOSER_BIN="/usr/local/bin/composer"
+          cd ~/domains/mbvm.in/public_html
 
-            # Get latest code
-            git fetch origin main
-            git reset --hard origin/main
+          PHP_BIN="/opt/alt/php84/usr/bin/php"
+          COMPOSER_BIN="/usr/local/bin/composer"
+   
+          git fetch origin main
+          git reset --hard origin/main
+   
+          $PHP_BIN $COMPOSER_BIN install \
+          --no-dev \
+          --optimize-autoloader \
+          --no-interaction
 
-            # Install dependencies
-            $PHP_BIN $COMPOSER_BIN install \
-              --no-dev \
-              --optimize-autoloader \
-              --no-interaction
-
-            # Ensure permissions
-            chmod -R 775 storage bootstrap/cache
-
-            # Database changes
-            $PHP_BIN artisan migrate --force
-
-            # Storage link
-            $PHP_BIN artisan storage:link || true
-
-            # Clear old caches
-            $PHP_BIN artisan optimize:clear
-
-            # Rebuild caches for production
-            $PHP_BIN artisan config:cache
-            $PHP_BIN artisan route:cache
-            $PHP_BIN artisan view:cache
-
-            echo "✅ MBVM website Deployment completed!"
+          chmod -R 775 storage bootstrap/cache
+   
+          $PHP_BIN artisan migrate --force
+   
+          $PHP_BIN artisan storage:link || true
+   
+          $PHP_BIN artisan optimize:clear
+   
+          $PHP_BIN artisan config:cache
+          $PHP_BIN artisan route:cache
+          $PHP_BIN artisan view:cache
+   
+          echo "✅ MBVM website Deployment completed!"ZS

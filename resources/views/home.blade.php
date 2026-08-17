@@ -72,7 +72,7 @@
         <div class="container-fluid logo-bg-dark my-5 py-5">
             <div class="container">
                 <div class="row g-5">
-                    <div class="col-lg-6 " >
+                    <div class="col-lg-6 ">
                         <div class="wow fadeInUp" data-wow-delay="0.1s">
                             <h4 class="section-title">उद्देश</h4>
                             <h1 class="display-5 mb-5 mt-4">महासंघाचे उद्देश</h1>
@@ -685,31 +685,29 @@
                 <div class="row align-items-center g-5">
 
                     <!-- Left Side : Maharashtra Map -->
-                   <div class="col-lg-7">
+                    <div class="col-lg-7">
 
-    <div class="map-box text-center">
+                        <div class="map-box text-center">
 
-        <img src="{{ asset('img/map.png') }}"
-             class="img-fluid map-img"
-             alt="Maharashtra Map">
+                            <img src="{{ asset('img/map.png') }}" class="img-fluid map-img" alt="Maharashtra Map">
 
-        <div class="mt-4 map-legend">
+                            <div class="mt-4 map-legend">
 
-            <span class="badge bg-success px-3 py-2 me-2">
-                <i class="fa-solid fa-circle me-1"></i>
-                कार्यरत जिल्हे
-            </span>
+                                <span class="badge bg-success px-3 py-2 me-2">
+                                    <i class="fa-solid fa-circle me-1"></i>
+                                    कार्यरत जिल्हे
+                                </span>
 
-            <span class="badge bg-warning text-dark px-3 py-2">
-                <i class="fa-solid fa-circle me-1"></i>
-                प्रस्तावित जिल्हे
-            </span>
+                                <span class="badge bg-warning text-dark px-3 py-2">
+                                    <i class="fa-solid fa-circle me-1"></i>
+                                    प्रस्तावित जिल्हे
+                                </span>
 
-        </div>
+                            </div>
 
-    </div>
+                        </div>
 
-</div>
+                    </div>
                     <!-- Right Side : Statistics -->
                     <div class="col-lg-5">
 
