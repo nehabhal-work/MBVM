@@ -685,26 +685,31 @@
                 <div class="row align-items-center g-5">
 
                     <!-- Left Side : Maharashtra Map -->
-                    <div class="col-lg-7">
+                   <div class="col-lg-7">
 
-                        <div class="map-box text-center">
+    <div class="map-box text-center">
 
-                            <img src="img/image.png" class="img" alt="Maharashtra Map">
+        <img src="{{ asset('img/map.png') }}"
+             class="img-fluid map-img"
+             alt="Maharashtra Map">
 
-                            <div class="mt-4">
-                                <span class="badge bg-success px-3 py-2 me-2">
-                                    <i class="fa-solid fa-circle me-1"></i> कार्यरत जिल्हे
-                                </span>
+        <div class="mt-4 map-legend">
 
-                                <span class="badge bg-warning text-dark px-3 py-2">
-                                    <i class="fa-solid fa-circle me-1"></i> प्रस्तावित जिल्हे
-                                </span>
-                            </div>
+            <span class="badge bg-success px-3 py-2 me-2">
+                <i class="fa-solid fa-circle me-1"></i>
+                कार्यरत जिल्हे
+            </span>
 
-                        </div>
+            <span class="badge bg-warning text-dark px-3 py-2">
+                <i class="fa-solid fa-circle me-1"></i>
+                प्रस्तावित जिल्हे
+            </span>
 
-                    </div>
+        </div>
 
+    </div>
+
+</div>
                     <!-- Right Side : Statistics -->
                     <div class="col-lg-5">
 

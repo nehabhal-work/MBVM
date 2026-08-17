@@ -16,4 +16,9 @@ Route::get('/about', function () {
 //     return view('contact');
 // })->name('contact');
 
+Route::get('/parichay-details', function () {
+    return view('parichay-details');
+})->name('parichay-details');
+
+
 Route::get('/contact-qr', [Controller::class, 'qr'])->name('contact.qr');

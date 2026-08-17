@@ -25,7 +25,7 @@
                          <h3 class="mb-0">अनुभव</h3> --}}
                      </div>
                  </div>
-                 <a class="btn btn-primary py-3 mt-4 px-5" href="">अधिक वाचा</a>
+                 <a class="btn btn-primary py-3 mt-4 px-5" href="{{ route('parichay-details') }}">अधिक वाचा</a>
              </div>
          </div>
      </div>
