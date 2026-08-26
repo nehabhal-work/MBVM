@@ -3,6 +3,11 @@
 @section('content')
     <div class="container-xxl py-5">
         <div class="container" style="max-width:700px;">
+            <div class="mb-4 text-start">
+                <a href="{{ route('members.index') }}" class="btn btn-primary px-4">
+                    <i class="fa fa-user-plus me-2"></i> Member list
+                </a>
+            </div>
             <div class="card shadow-sm p-4 ">
                 <h2 class="text-center section-title">सदस्य नोंदणी फॉर्म</h2>
                 <h5 class=" mb-4 mt-2 text-center">तुमच्या जवळच्या नियोजित संघटनेचे सदस्य होण्यासाठी आजच फॉर्म भरा!”
