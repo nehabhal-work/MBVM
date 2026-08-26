@@ -975,5 +975,24 @@
             </div>
         </div>
         <!-- Testimonial End -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center mx-auto mb-2 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h4 class="section-title">सदस्यत्व नोंदणी</h4>
+                    <p class="footcolor">जवळच्या नियोजित संघटनेचे सदस्य होण्यासाठी आजच फॉर्म भरा!</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data={{ urlencode(route('members.create')) }}"
+                        alt="Scan to add member" class="mb-3 bg-white p-2 rounded" width="140" height="140">
+
+                    <div>
+                        <a href="{{ route('members.create') }}" class="btn btn-primary px-4">
+                            <i class="fa fa-user-plus me-2"></i>Add Member
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </div>
 @endsection
