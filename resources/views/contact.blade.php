@@ -3,7 +3,6 @@
         <div class="row g-5">
             <div class="col-lg-6">
                 <div class="wow fadeInUp" data-wow-delay="0.1s">
-
                     <h4 class="section-title">सदस्य नोंदणी</h4>
                     <h1 class="display-5 mb-3 mt-4">आजच महासंघाशी जोडा</h1>
                     <p class="mb-4">खालील माहिती भरा. नोंदणीनंतर महासंघाकडून तुमच्याशी संपर्क साधला जाईल आणि तुमच्या
@@ -18,8 +17,7 @@
                             </div>
                             <div class="ms-4">
                                 <p class="mb-2">आता कॉल करा</p>
-                                <h3 class="mb-0">+०१२ ३४५ ६७८९
-                                </h3>
+                                <h3 class="mb-0">+०१२ ३४५ ६७८९</h3>
                             </div>
                         </div>
                     </div>
@@ -36,13 +34,13 @@
                         </div>
                     </div>
 
-                    <div class="qrcodec">
-                        {!! QrCode::size(150)->generate('https://mbvm.in/#contact') !!}
-                        <span class="mx-3 fw-bold">नोंदणीसाठी स्कॅन करा</span>
+                    <div class="qrcodec d-flex flex-column flex-sm-row align-items-center text-center text-sm-start gap-2">
+                        {!! QrCode::size(120)->generate('https://mbvm.in/#contact') !!}
+                        <span class="mx-sm-3 fw-bold">नोंदणीसाठी स्कॅन करा</span>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 ">
+            <div class="col-lg-6">
                 <div class="row g-3">
                     <div class="col-12 col-sm-6">
                         <input type="text" class="form-control" placeholder="पूर्ण नाव" style="height: 55px;">
@@ -95,8 +93,7 @@
 
                     <div class="form-foot">
                         <p class="privacy-mini">नोंदणीतील वैयक्तिक माहिती फक्त महासंघाच्या कामकाजासाठी वापरली जाईल
-                            व संमतीशिवाय
-                            सार्वजनिक केली जाणार नाही.</p>
+                            व संमतीशिवाय सार्वजनिक केली जाणार नाही.</p>
                         <div class="col-12">
                             <button class="btn btn-primary w-100 py-3" type="submit">नोंदणी पाठवा →</button>
                         </div>

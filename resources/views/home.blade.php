@@ -985,11 +985,11 @@
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data={{ urlencode(route('members.create')) }}"
                         alt="Scan to add member" class="mb-3 bg-white p-2 rounded" width="140" height="140">
 
-                    <div>
+                    {{-- <div>
                         <a href="{{ route('members.create') }}" class="btn btn-primary px-4">
                             <i class="fa fa-user-plus me-2"></i>Add Member
                         </a>
-                    </div>
+                    </div> --}}
                     
                 </div>
             </div>

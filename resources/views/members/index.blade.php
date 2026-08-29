@@ -3,10 +3,58 @@
 @section('content')
 <div class="container-xxl py-5">
     <div class="container">
-        <div class="wow fadeInUp" data-wow-delay="0.1s">
-            <h4 class="section-title">सदस्य यादी</h4>
-            <h1 class="display-6 mb-4 mt-2">नोंदणी झालेले सदस्य</h1>
+        <div class="wow fadeInUp d-flex justify-content-between align-items-center flex-wrap" data-wow-delay="0.1s">
+            <div>
+                <h4 class="section-title">सदस्य यादी</h4>
+                <h1 class="display-6 mb-4 mt-2">नोंदणी झालेले सदस्य</h1>
+            </div>
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit" class="btn btn-outline-danger">लॉगआऊट</button>
+            </form>
         </div>
+
+        {{-- District status summary — which districts reached 15 --}}
+        <div class="row g-3 mb-5">
+            @foreach ($districtCounts as $d)
+                <div class="col-md-3 col-sm-6">
+                    <div class="card p-3 text-center {{ $d->total >= 15 ? 'border-success border-2' : '' }}">
+                        <h5 class="mb-1">{{ $d->jilha }}</h5>
+                        <h2 class="mb-1 {{ $d->total >= 15 ? 'text-success' : 'text-primary' }}">{{ $d->total }}</h2>
+                        @if ($d->total >= 15)
+                            <span class="badge bg-success">✓ १५ सदस्य पूर्ण</span>
+                        @else
+                            <span class="badge bg-secondary">{{ 15 - $d->total }} बाकी</span>
+                        @endif
+                    </div>
+                </div>
+            @endforeach
+        </div>
+
+        {{-- Filters --}}
+        <form method="GET" action="{{ route('members.index') }}" class="row g-3 mb-4">
+            <div class="col-md-3">
+                <select name="jilha" class="form-select">
+                    <option value="">सर्व जिल्हे</option>
+                    @foreach ($allJilhas as $j)
+                        <option value="{{ $j }}" {{ request('jilha') == $j ? 'selected' : '' }}>{{ $j }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="col-md-3">
+                <input type="text" name="taluka" value="{{ request('taluka') }}" class="form-control" placeholder="तालुका">
+            </div>
+            <div class="col-md-3">
+                <input type="text" name="city" value="{{ request('city') }}" class="form-control" placeholder="शहर">
+            </div>
+            <div class="col-md-3">
+                <input type="text" name="search" value="{{ request('search') }}" class="form-control" placeholder="नाव / मोबाईल / ई-मेल शोधा">
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary px-4">फिल्टर लावा</button>
+                <a href="{{ route('members.index') }}" class="btn btn-outline-secondary px-4">रीसेट</a>
+            </div>
+        </form>
 
         <div class="table-responsive">
             <table class="table table-bordered table-striped align-middle">
@@ -45,7 +93,7 @@
             </table>
         </div>
 
-        {{ $members->links() }}
+        {{ $members->appends(request()->query())->links() }}
     </div>
 </div>
 @endsection
