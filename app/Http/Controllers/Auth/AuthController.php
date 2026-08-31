@@ -78,7 +78,9 @@ class AuthController extends Controller
         Auth::login($user);
         $request->session()->regenerate();
 
-        return redirect()->intended(route('members.index'))
+        $redirectTo = $user->role === 'admin' ? route('members.index') : route('home');
+
+        return redirect()->intended($redirectTo)
             ->with('success', 'यशस्वीरित्या लॉगिन झाले.');
     }
 

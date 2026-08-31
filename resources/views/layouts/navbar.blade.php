@@ -25,58 +25,6 @@
 </div> --}}
 <!-- Topbar End -->
 
-<!-- Navbar Start -->
-{{-- <div class="container">
-     <div class="col-md-12">
-            <a href="{{ route('home') }}" class="navbar-brand ms-4 ms-lg-0 active p-3">
-                <h1 class="text-primary m-0 d-flex align-items-center">
-                    <img src="{{ asset('images/logo-mbvm.png') }}" width="100" alt="Icon" class="me-2">
-                    <span style="color:#d45d2c;">मराठी
-                        बांधकाम व्यावसायिक महासंघ</span>
-                </h1>
-            </a>
-        </div>
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-lg-5 wow fadeIn"
-        data-wow-delay="0.1s">
-       
-        <div class="col-md-12">
-            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
-                data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="#parichay" class="nav-item nav-link">परिचय</a>
-                    <a href="#sadasyatva" class="nav-item nav-link">सदस्यत्व</a>
-                    <a href="#jilha-asociation" class="nav-item nav-link">जिल्हा असोसिएशन</a>
-                    <a href="#karyakarini" class="nav-item nav-link">कार्यकारिणी</a>
-                    <a href="#seva" class="nav-item nav-link">सेवा</a>
-                    <a href="#sampark" class="nav-item nav-link">संपर्क</a>
-                </div>
-                <a href="#contact" class="btn btn-primary py-2 px-4 d-none d-lg-block">सदस्य
-                    व्हा</a>
-             
-            </div>
-        </div>
-    </nav>
-</div> --}}
-
-<!-- Logo Section -->
-{{-- <div class="container">
-    <div class="row">
-        <div class="col-12 text-center pt-3">
-            <a href="{{ route('home') }}" class="navbar-brand m-0">
-                <h1 class="text-primary m-0 d-flex justify-content-center align-items-center">
-                    
-                    <span style="color:#d45d2c;">
-                        मराठी बांधकाम व्यावसायिक महासंघ
-                    </span>
-                </h1>
-            </a>
-        </div>
-    </div>
-</div> --}}
-
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top shadow-sm wow fadeIn" data-wow-delay="0.1s">
 
@@ -108,17 +56,26 @@
 
                 <div class="d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center gap-2 pb-3 pb-lg-0">
                     @guest
-                        <a href="{{ route('login.show') }}" class="btn btn-outline-primary">लॉगिन</a>
-                        <a href="{{ route('register.show') }}" class="btn btn-primary">नोंदणी करा</a>
+                        <a href="{{ route('login.show') }}" class="btn btn-outline-primary">Login</a>
+                        <a href="{{ route('register.show') }}" class="btn btn-primary">Register</a>
                     @else
-                        <a href="{{ route('members.index') }}" class="btn btn-outline-primary">सदस्य यादी</a>
+                        <span class="badge {{ auth()->user()->role === 'admin' ? 'bg-success' : 'bg-secondary' }} me-2" style="font-size:0.85rem; padding:8px 12px;">
+                            {{ auth()->user()->role === 'admin' ? '👑 Super Admin' : '👤 Member' }}
+                        </span>
+
+                        <a href="{{ route('members.index') }}" class="btn btn-outline-primary">Member List</a>
+
+                        @if (auth()->user()->role === 'admin')
+                            <a href="{{ route('admin.users.index') }}" class="btn btn-outline-primary">Registered Users</a>
+                        @endif
+
                         <form method="POST" action="{{ route('logout') }}" class="d-inline m-0">
                             @csrf
-                            <button type="submit" class="btn btn-primary">लॉगआऊट</button>
+                            <button type="submit" class="btn btn-primary">Logout</button>
                         </form>
                     @endguest
 
-                    <a href="{{ route('members.create') }}" class="btn btn-primary">
+                    <a href="#contact" class="btn btn-primary">
                         सदस्य व्हा
                     </a>
                 </div>

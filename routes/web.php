@@ -1,42 +1,41 @@
 <?php
 
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\OtpController;
 use App\Http\Controllers\Auth\PasswordResetController;
+use App\Http\Controllers\Admin\UserController;
 
+// ---------- STATIC PAGES ----------
 Route::get('/', function () {
     return view('home');
 })->name('home');
+
 Route::get('/home', function () {
     return view('home');
-})->name('home');
+})->name('home.alias');
+
 Route::get('/about', function () {
     return view('about');
 })->name('about');
-// Route::get('/contact', function () {
-//     return view('contact');
-// })->name('contact');
-Route::resource('members', MemberController::class)
-    ->only(['create', 'store', 'index']);
 
 Route::get('/parichay-details', function () {
     return view('parichay-details');
 })->name('parichay-details');
 
-
-Route::get('/contact-qr', [Controller::class, 'qr'])->name('contact.qr');
-
-
 // ---------- PUBLIC: member registration form ----------
 Route::get('/sadasyatva-form', [MemberController::class, 'create'])->name('members.create');
 Route::post('/sadasyatva-form', [MemberController::class, 'store'])->name('members.store');
 
-// ---------- PROTECTED: member list (login required) ----------
+// ---------- ANY LOGGED-IN USER: member list ----------
 Route::middleware('auth')->group(function () {
     Route::get('/sadasyatva-list', [MemberController::class, 'index'])->name('members.index');
+});
+
+// ---------- ADMIN ONLY: registered users list ----------
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/registered-users', [UserController::class, 'index'])->name('admin.users.index');
 });
 
 // ---------- GUEST-ONLY: register / login / password reset ----------
