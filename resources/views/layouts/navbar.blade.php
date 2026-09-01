@@ -54,7 +54,7 @@
                     <a href="#sampark" class="nav-item nav-link">संपर्क</a>
                 </div>
 
-                <div class="d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center gap-2 pb-3 pb-lg-0">
+                {{-- <div class="d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center gap-2 pb-3 pb-lg-0">
                     @guest
                         <a href="{{ route('login.show') }}" class="btn btn-outline-primary">Login</a>
                         <a href="{{ route('register.show') }}" class="btn btn-primary">Register</a>
@@ -78,7 +78,7 @@
                     <a href="#contact" class="btn btn-primary">
                         सदस्य व्हा
                     </a>
-                </div>
+                </div> --}}
 
             </div>
         </div>
