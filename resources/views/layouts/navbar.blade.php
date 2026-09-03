@@ -1,149 +1,402 @@
-<!-- Topbar Start -->
-{{-- <div class="container-fluid bg-dark p-0 wow fadeIn" data-wow-delay="0.1s">
-    <div class="row gx-0 d-none d-lg-flex">
-        <div class="col-lg-7 px-5 text-start">
-            <div class="h-100 d-inline-flex align-items-center py-3 me-3">
-                <a class="text-body px-2" href="tel:+0123456789"><i class="fa fa-phone-alt text-primary me-2"></i>+012 345
-                    6789</a>
-                <a class="text-body px-2" href="mailto:info@example.com"><i
-                        class="fa fa-envelope-open text-primary me-2"></i>info@example.com</a>
-            </div>
-        </div>
-        <div class="col-lg-5 px-5 text-end">
-            <div class="h-100 d-inline-flex align-items-center py-3 me-2">
-                <a class="text-body px-2" href="">Terms</a>
-                <a class="text-body px-2" href="">Privacy</a>
-            </div>
-            <div class="h-100 d-inline-flex align-items-center">
-                <a class="btn btn-sm-square btn-outline-body me-1" href=""><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-sm-square btn-outline-body me-1" href=""><i class="fab fa-twitter"></i></a>
-                <a class="btn btn-sm-square btn-outline-body me-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                <a class="btn btn-sm-square btn-outline-body me-0" href=""><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </div>
-</div> --}}
-<!-- Topbar End -->
-
 <!-- Navbar Start -->
-{{-- <div class="container">
-     <div class="col-md-12">
-            <a href="{{ route('home') }}" class="navbar-brand ms-4 ms-lg-0 active p-3">
-                <h1 class="text-primary m-0 d-flex align-items-center">
-                    <img src="{{ asset('images/logo-mbvm.png') }}" width="100" alt="Icon" class="me-2">
-                    <span style="color:#d45d2c;">मराठी
-                        बांधकाम व्यावसायिक महासंघ</span>
-                </h1>
-            </a>
-        </div>
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-lg-5 wow fadeIn"
-        data-wow-delay="0.1s">
-       
-        <div class="col-md-12">
-            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
-                data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="#parichay" class="nav-item nav-link">परिचय</a>
-                    <a href="#sadasyatva" class="nav-item nav-link">सदस्यत्व</a>
-                    <a href="#jilha-asociation" class="nav-item nav-link">जिल्हा असोसिएशन</a>
-                    <a href="#karyakarini" class="nav-item nav-link">कार्यकारिणी</a>
-                    <a href="#seva" class="nav-item nav-link">सेवा</a>
-                    <a href="#sampark" class="nav-item nav-link">संपर्क</a>
-                </div>
-                <a href="#contact" class="btn btn-primary py-2 px-4 d-none d-lg-block">सदस्य
-                    व्हा</a>
-             
-            </div>
-        </div>
-    </nav>
-</div> --}}
-
-<!-- Logo Section -->
-{{-- <div class="container">
-    <div class="row">
-        <div class="col-12 text-center pt-3">
-            <a href="{{ route('home') }}" class="navbar-brand m-0">
-                <h1 class="text-primary m-0 d-flex justify-content-center align-items-center">
-                    
-                    <span style="color:#d45d2c;">
-                        मराठी बांधकाम व्यावसायिक महासंघ
-                    </span>
-                </h1>
-            </a>
-        </div>
-    </div>
-</div> --}}
-
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top shadow-sm wow fadeIn" data-wow-delay="0.1s">
-
+<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top shadow-sm">
     <div class="container">
-        <div class="col-md-12">
-            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+
+        <!-- Logo + Organization Name -->
+        <a href="{{ route('home') }}"
+           class="navbar-brand d-flex align-items-center m-0 p-0">
+
+            <img src="{{ asset('images/logo-mbvm.png') }}"
+                 width="80"
+                 alt="MBVM Logo"
+                 class="me-2">
+
+            <span class="mbvm-logo-text">
+                <b>
+                    मराठी बांधकाम व्यावसायिक<br>
+                    महासंघ
+                </b>
+            </span>
+
+        </a>
+
+
+        <!-- Mobile Toggle -->
+        <button type="button"
+                class="navbar-toggler"
+                data-bs-toggle="collapse"
                 data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse p-2" id="navbarCollapse">
-                <a href="{{ route('home') }}" class="navbar-brand m-0 active d-flex align-items-center">
-                    <img src="{{ asset('images/logo-mbvm.png') }}" width="80" alt="MBVM Logo" class="me-2">
+            <span class="navbar-toggler-icon"></span>
 
-                    <span style="color: #d45d2c; font-size: 25px; line-height: 1.2;">
-                        <b>
-                            मराठी बांधकाम व्यावसायिक<br>
-                            महासंघ
-                        </b>
-                    </span>
+        </button>
+
+
+        <!-- Navbar Content -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+
+            <!-- Navigation Links -->
+            <div class="navbar-nav ms-auto align-items-lg-center">
+
+                <a href="#parichay" class="nav-item nav-link">
+                    परिचय
                 </a>
 
-                {{-- <a href="{{ route('home') }}" class="navbar-brand m-0 active">
-                    <img src="{{ asset('images/logo-mbvm.png') }}" width="80" alt="Logo" class="me-2">
-                    <span style="color:#d45d2c; font-size:25px;">
-                        <b> मराठी बांधकाम व्यावसायिक <br> महासंघ </b>
-                    </span>
-                </a> --}}
+                <a href="#sadasyatva" class="nav-item nav-link">
+                    सदस्यत्व
+                </a>
 
-                <div class="navbar-nav" style="margin-left:50px;">
+                <a href="#jilha-asociation" class="nav-item nav-link">
+                    जिल्हा असोसिएशन
+                </a>
 
-                    <a href="#parichay" class="nav-item nav-link">परिचय</a>
+                <a href="#karyakarini" class="nav-item nav-link">
+                    कार्यकारिणी
+                </a>
 
-                    <a href="#sadasyatva" class="nav-item nav-link">सदस्यत्व</a>
+                <a href="#seva" class="nav-item nav-link">
+                    सेवा
+                </a>
 
-                    <a href="#jilha-asociation" class="nav-item nav-link">जिल्हा असोसिएशन</a>
-
-                    <a href="#karyakarini" class="nav-item nav-link">कार्यकारिणी</a>
-
-                    <a href="#seva" class="nav-item nav-link">सेवा</a>
-
-                    <a href="#sampark" class="nav-item nav-link">संपर्क</a>
-
-                </div>
-                <div
-                    class="d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center gap-2 pb-3 pb-lg-0">
-                    @guest
-                        <a href="{{ route('login.show') }}" class="btn btn-primary">लॉगिन</a>
-                    @else
-                        {{-- <span class="badge {{ auth()->user()->role === 'admin' ? 'bg-success' : 'bg-secondary' }} me-2" style="font-size:0.85rem; padding:8px 12px;">
-            {{ auth()->user()->role === 'admin' ? '👑 Super Admin' : '👤 Member' }}
-        </span> --}}
-                        <a href="{{ route('members.index') }}" class="btn btn-primary">सदस्य यादी</a>
-                        <form method="POST" action="{{ route('logout') }}" class="d-inline m-0">
-                            @csrf
-                            {{-- <button type="submit" class="btn btn-primary">Logout</button> --}}
-                        </form>
-                    @endguest
-                    <a href="#contact" class="btn btn-primary">
-                        सदस्य व्हा
-                    </a>
-                </div>
+                <a href="#sampark" class="nav-item nav-link">
+                    संपर्क
+                </a>
 
             </div>
+
+
+            <!-- Login / Member Buttons -->
+            <div class="navbar-buttons d-flex align-items-center ms-lg-3">
+
+                @guest
+
+                    <a href="{{ route('login.show') }}"
+                       class="btn mbvm-btn">
+                        लॉगिन
+                    </a>
+
+                @else
+
+                    <a href="{{ route('members.index') }}"
+                       class="btn mbvm-btn">
+                        सदस्य यादी
+                    </a>
+
+                    <form method="POST"
+                          action="{{ route('logout') }}"
+                          class="d-inline m-0">
+
+                        @csrf
+
+                        <button type="submit"
+                                class="btn mbvm-btn">
+                            लॉगआऊट
+                        </button>
+
+                    </form>
+
+                @endguest
+
+
+                <a href="#contact"
+                   class="btn mbvm-btn ms-2">
+                    सदस्य व्हा
+                </a>
+
+            </div>
+
         </div>
 
     </div>
-
 </nav>
 <!-- Navbar End -->
+
+
+<style>
+
+/* =========================================
+   MBVM NAVBAR
+========================================= */
+
+.navbar {
+    background: #ffffff !important;
+    min-height: 125px;
+    padding: 10px 0;
+}
+
+
+/* =========================================
+   MAIN NAVBAR CONTAINER
+========================================= */
+
+.navbar > .container {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.navbar-brand img {
+    width: 80px;
+    height: auto;
+}
+
+.mbvm-logo-text {
+    color: #d45d2c;
+    font-size: 25px;
+    line-height: 1.15;
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   NAVBAR COLLAPSE
+========================================= */
+
+.navbar-collapse {
+    display: flex !important;
+    align-items: center;
+    flex-grow: 1;
+}
+
+
+/* =========================================
+   NAVIGATION LINKS
+========================================= */
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 5px;
+    margin-left: auto;
+}
+
+.navbar-nav .nav-link {
+    color: #17100d !important;
+    font-size: 16px;
+    font-weight: 500;
+
+    padding: 10px 8px !important;
+
+    white-space: nowrap;
+    text-decoration: none;
+
+    transition: all 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #d45d2c !important;
+}
+
+
+/* =========================================
+   BUTTON SECTION
+========================================= */
+
+.navbar-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    margin-left: 15px;
+    flex-shrink: 0;
+}
+
+
+/* =========================================
+   ORANGE BUTTON
+========================================= */
+
+.mbvm-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #d45d2c !important;
+    color: #ffffff !important;
+
+    border: none !important;
+    border-radius: 25px;
+
+    padding: 9px 18px;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    white-space: nowrap;
+    text-decoration: none;
+
+    transition: all 0.2s ease;
+}
+
+.mbvm-btn:hover {
+    background: #bd4e23 !important;
+    color: #ffffff !important;
+}
+
+
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media (min-width: 1200px) {
+
+    .navbar > .container {
+        max-width: 1250px;
+    }
+
+    .navbar-nav {
+        gap: 8px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 16px;
+        padding-left: 9px !important;
+        padding-right: 9px !important;
+    }
+
+}
+
+
+/* =========================================
+   MEDIUM DESKTOP / LAPTOP
+========================================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    .navbar > .container {
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .navbar-brand img {
+        width: 65px;
+    }
+
+    .mbvm-logo-text {
+        font-size: 20px;
+    }
+
+    .navbar-nav {
+        gap: 0;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 13px;
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+
+    .navbar-buttons {
+        margin-left: 8px;
+    }
+
+    .mbvm-btn {
+        padding: 7px 12px;
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 991px) {
+
+    .navbar {
+        min-height: auto;
+        padding: 10px 0;
+    }
+
+    .navbar > .container {
+        flex-wrap: wrap;
+    }
+
+    .navbar-brand img {
+        width: 60px;
+    }
+
+    .mbvm-logo-text {
+        font-size: 18px;
+    }
+
+    .navbar-toggler {
+        margin-left: auto;
+    }
+
+    .navbar-collapse {
+        display: none !important;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .navbar-collapse.show {
+        display: flex !important;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 15px;
+        gap: 0;
+    }
+
+    .navbar-nav .nav-link {
+        width: 100%;
+        padding: 8px 0 !important;
+    }
+
+    .navbar-buttons {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+        padding-bottom: 10px;
+
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .navbar-brand img {
+        width: 50px;
+    }
+
+    .mbvm-logo-text {
+        font-size: 15px;
+    }
+
+    .mbvm-btn {
+        padding: 7px 12px;
+        font-size: 13px;
+    }
+
+}
+
+</style>
