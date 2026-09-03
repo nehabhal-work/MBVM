@@ -6,6 +6,8 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\OtpController;
 use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\Admin\UserController;
+use App\Models\District;
+
 
 // ---------- STATIC PAGES ----------
 Route::get('/', function () {
@@ -37,6 +39,11 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/registered-users', [UserController::class, 'index'])->name('admin.users.index');
 });
+Route::get('/get-talukas/{district}', function (District $district) {
+    return response()->json(
+        $district->talukas()->orderBy('name')->pluck('name')
+    );
+})->name('talukas.byDistrict');
 
 // ---------- GUEST-ONLY: register / login / password reset ----------
 Route::middleware('guest')->group(function () {

@@ -11,12 +11,50 @@ use Illuminate\Support\Facades\Mail;
 class MemberController extends Controller
 {
     const DISTRICT_THRESHOLD = 15;
+    public function index(Request $request)
+    {
+        $query = Member::query();
 
+        if ($request->filled('jilha')) {
+            $query->where('jilha', $request->jilha);
+        }
+        if ($request->filled('taluka')) {
+            $query->where('taluka', 'like', '%' . $request->taluka . '%');
+        }
+        if ($request->filled('city')) {
+            $query->where('city', $request->city);
+        }
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                    ->orWhere('mobile', 'like', "%{$search}%")
+                    ->orWhere('email', 'like', "%{$search}%")
+                    ->orWhere('company_name', 'like', "%{$search}%");
+            });
+        }
+
+        $members = $query->latest()->paginate(20)->withQueryString();
+
+        $districtCounts = Member::selectRaw('jilha, COUNT(*) as total')
+            ->groupBy('jilha')
+            ->orderByDesc('total')
+            ->get();
+
+        $allJilhas = Member::select('jilha')->distinct()->orderBy('jilha')->pluck('jilha');
+        $allCities = Member::select('city')->distinct()->orderBy('city')->pluck('city');
+
+        return view('members.index', compact('members', 'districtCounts', 'allJilhas', 'allCities'));
+    }
     // Show the public form
     public function create()
     {
-        return view('members.create');
+        $districts = \App\Models\District::orderBy('name')->get(['id', 'name']);
+        $cities = \App\Models\City::orderBy('name')->pluck('name');
+
+        return view('members.create', compact('districts', 'cities'));
     }
+
 
     // Validate, store, and check district threshold
     public function store(Request $request)
@@ -45,43 +83,7 @@ class MemberController extends Controller
             ->with('success', 'तुमची नोंदणी यशस्वीरित्या झाली आहे!');
     }
 
-    // Listing page — with filters + email details + district status
-    public function index(Request $request)
-    {
-        $query = Member::query();
 
-        if ($request->filled('jilha')) {
-            $query->where('jilha', $request->jilha);
-        }
-        if ($request->filled('taluka')) {
-            $query->where('taluka', 'like', '%' . $request->taluka . '%');
-        }
-        if ($request->filled('city')) {
-            $query->where('city', 'like', '%' . $request->city . '%');
-        }
-        if ($request->filled('search')) {
-            $search = $request->search;
-            $query->where(function ($q) use ($search) {
-                $q->where('name', 'like', "%{$search}%")
-                  ->orWhere('mobile', 'like', "%{$search}%")
-                  ->orWhere('email', 'like', "%{$search}%")
-                  ->orWhere('company_name', 'like', "%{$search}%");
-            });
-        }
-
-        $members = $query->latest()->paginate(20)->withQueryString();
-
-        // District-wise counts, for the "reached 15" summary
-        $districtCounts = Member::selectRaw('jilha, COUNT(*) as total')
-            ->groupBy('jilha')
-            ->orderByDesc('total')
-            ->get();
-
-        // Distinct jilha list, for the filter dropdown
-        $allJilhas = Member::select('jilha')->distinct()->orderBy('jilha')->pluck('jilha');
-
-        return view('members.index', compact('members', 'districtCounts', 'allJilhas'));
-    }
 
     private function checkDistrictThreshold(string $jilha): void
     {

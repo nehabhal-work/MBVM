@@ -88,21 +88,25 @@
             </button>
 
             <div class="collapse navbar-collapse p-2" id="navbarCollapse">
-                <img src="{{ asset('images/logo-mbvm.png') }}" width="80" alt="Logo" class="me-2">
-                <span style="color:#d45d2c; font-size:25px;">
-                 <b>  मराठी बांधकाम व्यावसायिक <br> महासंघ </b> 
-                </span>
+                <a href="{{ route('home') }}" class="navbar-brand m-0 active d-flex align-items-center">
+                    <img src="{{ asset('images/logo-mbvm.png') }}" width="80" alt="MBVM Logo" class="me-2">
+
+                    <span style="color: #d45d2c; font-size: 25px; line-height: 1.2;">
+                        <b>
+                            मराठी बांधकाम व्यावसायिक<br>
+                            महासंघ
+                        </b>
+                    </span>
+                </a>
 
                 {{-- <a href="{{ route('home') }}" class="navbar-brand m-0 active">
-                    <h2 class="text-primary m-0 d-flex justify-content-center align-items-center">
-                        <img src="{{ asset('images/logo-mbvm.png') }}" width="80" alt="Logo" class="me-2">
-                        <span style="color:#d45d2c;">
-                            मराठी बांधकाम व्यावसायिक महासंघ
-                        </span>
-                    </h2>
+                    <img src="{{ asset('images/logo-mbvm.png') }}" width="80" alt="Logo" class="me-2">
+                    <span style="color:#d45d2c; font-size:25px;">
+                        <b> मराठी बांधकाम व्यावसायिक <br> महासंघ </b>
+                    </span>
                 </a> --}}
 
-                <div class="navbar-nav" style="margin-left:180px;">
+                <div class="navbar-nav" style="margin-left:50px;">
 
                     <a href="#parichay" class="nav-item nav-link">परिचय</a>
 
@@ -117,9 +121,24 @@
                     <a href="#sampark" class="nav-item nav-link">संपर्क</a>
 
                 </div>
-                <a href="#contact" class="btn btn-primary ms-lg-3 d-none d-lg-block">
-                    सदस्य व्हा
-                </a>
+                <div
+                    class="d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center gap-2 pb-3 pb-lg-0">
+                    @guest
+                        <a href="{{ route('login.show') }}" class="btn btn-primary">लॉगिन</a>
+                    @else
+                        {{-- <span class="badge {{ auth()->user()->role === 'admin' ? 'bg-success' : 'bg-secondary' }} me-2" style="font-size:0.85rem; padding:8px 12px;">
+            {{ auth()->user()->role === 'admin' ? '👑 Super Admin' : '👤 Member' }}
+        </span> --}}
+                        <a href="{{ route('members.index') }}" class="btn btn-primary">सदस्य यादी</a>
+                        <form method="POST" action="{{ route('logout') }}" class="d-inline m-0">
+                            @csrf
+                            {{-- <button type="submit" class="btn btn-primary">Logout</button> --}}
+                        </form>
+                    @endguest
+                    <a href="#contact" class="btn btn-primary">
+                        सदस्य व्हा
+                    </a>
+                </div>
 
             </div>
         </div>
