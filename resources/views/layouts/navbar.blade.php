@@ -98,7 +98,7 @@
                 @endguest
 
 
-                <a href="#contact"
+                <a href="{{ route('members.create') }}"
                    class="btn mbvm-btn ms-2">
                     सदस्य व्हा
                 </a>
