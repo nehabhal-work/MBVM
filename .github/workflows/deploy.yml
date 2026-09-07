@@ -44,6 +44,7 @@ jobs:
 
             # Database changes
             $PHP_BIN artisan migrate --force
+            $PHP_BIN artisan db:seed --force
 
             # Storage link
             $PHP_BIN artisan storage:link || true
