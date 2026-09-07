@@ -45,6 +45,12 @@ Route::get('/get-talukas/{district}', function (District $district) {
     );
 })->name('talukas.byDistrict');
 
+Route::get('/get-cities/{district}', function (District $district) {
+    return response()->json(
+        $district->cities()->orderBy('name')->pluck('name')
+    );
+})->name('cities.byDistrict');
+
 // ---------- GUEST-ONLY: register / login / password reset ----------
 Route::get('/register', [AuthController::class, 'showRegister'])->name('register.show');
 Route::post('/register', [AuthController::class, 'register'])->name('register.store');

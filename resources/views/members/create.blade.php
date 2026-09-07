@@ -72,11 +72,7 @@
                     <div class="mb-3">
                         <label class="form-label">शहर *</label>
                         <select name="city" id="city-select" class="form-select" style="width:100%;" required>
-                            <option value="">-- शहर निवडा --</option>
-                            @foreach ($cities as $city)
-                                <option value="{{ $city }}" {{ old('city') == $city ? 'selected' : '' }}>
-                                    {{ $city }}</option>
-                            @endforeach
+                            <option value="">-- आधी जिल्हा निवडा --</option>
                         </select>
                     </div>
 
@@ -91,22 +87,25 @@
             </div>
         </div>
     </div>
-    
+
 @endsection
 <script>
 $(document).ready(function () {
     $('#jilha-select').select2({ placeholder: '-- जिल्हा निवडा --', width: '100%' });
     $('#taluka-select').select2({ placeholder: '-- आधी जिल्हा निवडा --', width: '100%' });
-    $('#city-select').select2({ placeholder: '-- शहर निवडा --', width: '100%' });
+    $('#city-select').select2({ placeholder: '-- आधी जिल्हा निवडा --', width: '100%' });
 
     $('#jilha-select').on('change', function () {
         const districtId = $(this).find(':selected').data('id');
         const $taluka = $('#taluka-select');
+        const $city = $('#city-select');
 
         $taluka.empty().append('<option value="">लोड होत आहे...</option>').trigger('change');
+        $city.empty().append('<option value="">लोड होत आहे...</option>').trigger('change');
 
         if (!districtId) {
             $taluka.empty().append('<option value="">-- आधी जिल्हा निवडा --</option>').trigger('change');
+            $city.empty().append('<option value="">-- आधी जिल्हा निवडा --</option>').trigger('change');
             return;
         }
 
@@ -119,6 +118,17 @@ $(document).ready(function () {
             })
             .catch(() => {
                 $taluka.empty().append('<option value="">तालुका लोड करता आले नाहीत</option>').trigger('change');
+            });
+
+        fetch(`/get-cities/${districtId}`)
+            .then(res => res.json())
+            .then(cities => {
+                $city.empty().append('<option value="">-- शहर निवडा --</option>');
+                cities.forEach(c => $city.append(new Option(c, c)));
+                $city.trigger('change');
+            })
+            .catch(() => {
+                $city.empty().append('<option value="">शहर लोड करता आले नाहीत</option>').trigger('change');
             });
     });
 });

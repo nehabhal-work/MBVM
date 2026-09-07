@@ -12,4 +12,9 @@ class District extends Model
     {
         return $this->hasMany(Taluka::class);
     }
+
+    public function cities()
+    {
+        return $this->hasMany(City::class);
+    }
 }
