@@ -29,8 +29,8 @@
                 <button type="submit" class="btn btn-primary w-100 py-3">लॉगिन →</button>
             </form>
             <p class="text-center mt-3">
-                <a href="{{ route('password.forgot.show') }}">पासवर्ड विसरलात?</a> ·
-                <a href="{{ route('register.show') }}">नवीन खाते तयार करा</a>
+                <a href="{{ route('password.forgot.show') }}">पासवर्ड विसरलात?</a> 
+                {{-- <a href="{{ route('register.show') }}">नवीन खाते तयार करा</a> --}}
             </p>
         </div>
     </div>
