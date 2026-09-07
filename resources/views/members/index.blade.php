@@ -20,9 +20,9 @@
             {{-- Admin-only quick actions --}}
             @if (auth()->user()->role === 'admin')
                 <div class="d-flex flex-wrap gap-2 mb-4">
-                    <a href="{{ route('register.show') }}" class="btn btn-primary">
+                    {{-- <a href="{{ route('register.show') }}" class="btn btn-primary">
                         <i class="fa fa-user-plus me-2"></i>नवीन वापरकर्ता नोंदणी करा
-                    </a>
+                    </a> --}}
                     <a href="{{ route('admin.users.index') }}" class="btn btn-primary">
                         <i class="fa fa-users me-2"></i>नोंदणीकृत वापरकर्ते
                     </a>

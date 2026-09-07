@@ -46,7 +46,7 @@ Route::get('/get-talukas/{district}', function (District $district) {
 })->name('talukas.byDistrict');
 
 // ---------- GUEST-ONLY: register / login / password reset ----------
-Route::middleware('guest')->group(function () {
+Route::middleware('guest')->group(function  () {
     Route::get('/register', [AuthController::class, 'showRegister'])->name('register.show');
     Route::post('/register', [AuthController::class, 'register'])->name('register.store');
 
