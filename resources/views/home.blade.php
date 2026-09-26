@@ -6,7 +6,7 @@
         <div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
             <div class="owl-carousel header-carousel position-relative">
                 <div class="owl-carousel-item position-relative" data-dot="<img src='img/MBVM_Hero_First_4.jpg'>">
-                    <img class="img-fluid" src="img/MBVM_Hero_First_4.jpg" alt="" height="600px">
+                    <img class="img-fluid" src="img/MBVM_Hero_First_4.jpg" alt="">
                     <div class="owl-carousel-inner">
                         <div class="container">
                             <div class="row justify-content-start">
@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="owl-carousel-item position-relative" data-dot="<img src='img/MBVM_Hero_Second.jpg'>">
-                    <img class="img-fluid" src="img/MBVM_Hero_Second.jpg" alt="" height="600px">
+                    <img class="img-fluid" src="img/MBVM_Hero_Second.jpg" alt="">
                     <div class="owl-carousel-inner">
                         <div class="container">
                             <div class="row justify-content-start">
@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="owl-carousel-item position-relative" data-dot="<img src='img/MBVM_Hero_Third.png'>">
-                    <img class="img-fluid" src="img/MBVM_Hero_Third.png" alt="" height="600px">
+                    <img class="img-fluid" src="img/MBVM_Hero_Third.png" alt="">
                     <div class="owl-carousel-inner">
                         <div class="container">
                             <div class="row justify-content-start">
