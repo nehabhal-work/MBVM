@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="mr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>महासंघाचे कार्य / घडामोडी — मराठी बांधकाम व्यावसायिक महासंघ</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700&family=Tiro+Devanagari+Marathi&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/logo-mark.png" alt="MBVM"><span>मराठी बांधकाम व्यावसायिक महासंघ</span></a>
+    <button class="menu-btn" aria-label="मेनू" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="index.html">मुख्यपृष्ठ</a>
+      <a href="index.html#mahasangh">महासंघाविषयी</a>
+      <a href="index.html#karyapaddhati">कार्यपद्धती</a>
+      <a href="index.html#sanghatana">स्थानिक संघटना</a>
+      <a href="karya.html">आमचे कार्य</a>
+      <a href="dastaivaj.html">दस्तऐवज</a>
+      <a href="index.html#sampark">संपर्क</a>
+      <a class="btn small" href="nondani.html">नोंदणी करा</a>
+    </nav>
+  </div>
+</header>
+<div class="page-title"><div class="wrap"><div class="breadcrumb"><a href="index.html">मुख्यपृष्ठ</a> › महासंघाचे कार्य / घडामोडी</div><h1>महासंघाचे कार्य / घडामोडी</h1><p>शासनाकडे निवेदने, बैठका, धोरणात्मक प्रश्न, यश व संलग्न संघटनांचे उपक्रम</p></div></div>
+<main class="band">
+<div class="wrap">
+  <div class="tabs" id="catTabs"></div>
+  <div class="grid c3" id="postList"></div>
+  <h2 style="margin-top:48px">शासनाकडे निवेदने — स्थिती</h2>
+  <p class="lead">प्रत्येक निवेदनाचा विषय, प्राधिकरण आणि सद्यस्थिती — ब्लॉग नोंदीतूनच आपोआप तयार होणारी यादी.</p>
+  <div class="scroll card" style="padding:0"><table class="plain" id="repTable"><thead><tr><th>दिनांक</th><th>विषय</th><th>प्राधिकरण</th><th>स्थिती</th></tr></thead><tbody></tbody></table></div>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="cols">
+      <div><h4>पत्ता</h4>१७०२, हावरे इन्फोटेक पार्क, सेक्टर ३०ए, वाशी, नवी मुंबई – ४०० ७०५<br><br><a href="index.html#sampark">संपर्क →</a></div>
+      <div><h4>महत्त्वाचे दुवे</h4><ul><li><a href="index.html#mahasangh">महासंघाविषयी</a></li><li><a href="index.html#karyapaddhati">कार्यपद्धती</a></li><li><a href="index.html#sanghatana">स्थानिक संघटना</a></li><li><a href="karya.html">आमचे कार्य</a></li><li><a href="nondani.html">नोंदणी करा</a></li></ul></div>
+      <div><h4>दस्तऐवज व संधी</h4><ul><li><a href="dastaivaj.html">मसुदा MoU</a></li><li><a href="dastaivaj.html">मानक घटना</a></li><li><a href="sandhi.html">JV / JD संधी</a></li><li><a href="sandhi.html">जाहिरात दर</a></li><li><a href="admin.html">प्रशासन (नमुना)</a></li></ul></div>
+      <div><h4>माहिती</h4><p style="font-size:.95rem">या वेबसाइटवरील माहिती केवळ सामान्य माहितीच्या उद्देशाने आहे. अधिकृत माहितीसाठी महासंघ कार्यालयाशी संपर्क साधा.</p><ul><li><a href="#">गोपनीयता धोरण</a></li><li><a href="#">नियम व अटी</a></li></ul></div>
+    </div>
+    <div class="bottom"><span>© मराठी बांधकाम व्यावसायिक महासंघ · सर्व अधिकार सुरक्षित</span><span>संस्था नोंदणी अधिनियम १८६० अन्वये नोंदणीकृत</span></div>
+  </div>
+</footer>
+<script src="app.js"></script>
+<script>
+(function(){
+  const {q,data}=MBVM; const cats=["सर्व",...new Set(data.posts.map(p=>p.cat))]; let cur="सर्व";
+  function render(){
+    q("#catTabs").innerHTML=cats.map(c=>`<button type="button" class="${c===cur?'active':''}" data-c="${c}">${c}</button>`).join("");
+    q("#catTabs").querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{cur=b.dataset.c;render();}));
+    q("#postList").innerHTML=data.posts.filter(p=>cur==="सर्व"||p.cat===cur).map(p=>`<article class="card post"><div class="cover">${p.cat}</div><div class="body"><div class="date">${p.date}</div><h3>${p.title}</h3><p>${p.excerpt}</p><p style="margin-top:10px"><a href="#">पूर्ण वाचा →</a> · <a href="#">WhatsApp वर शेअर</a></p></div></article>`).join("");
+  }
+  render();
+  q("#repTable tbody").innerHTML=data.posts.filter(p=>p.authority).map(p=>`<tr><td>${p.date}</td><td>${p.title}</td><td>${p.authority}</td><td><span class="pill ${p.outcome==='निर्णय झाला'?'good':p.outcome==='बैठक झाली'?'warn':'grey'}">${p.outcome}</span></td></tr>`).join("");
+})();
+</script>
+
+</body>
+</html>

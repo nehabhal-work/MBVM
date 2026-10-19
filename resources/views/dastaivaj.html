@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="mr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>दस्तऐवज — मराठी बांधकाम व्यावसायिक महासंघ</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700&family=Tiro+Devanagari+Marathi&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html"><img src="img/logo-mark.png" alt="MBVM"><span>मराठी बांधकाम व्यावसायिक
+          महासंघ</span></a>
+      <button class="menu-btn" aria-label="मेनू" aria-expanded="false">☰</button>
+      <nav class="nav">
+        <a href="index.html">मुख्यपृष्ठ</a>
+        <a href="index.html#mahasangh">महासंघाविषयी</a>
+        <a href="index.html#karyapaddhati">कार्यपद्धती</a>
+        <a href="index.html#sanghatana">स्थानिक संघटना</a>
+        <a href="karya.html">आमचे कार्य</a>
+        <a href="dastaivaj.html">दस्तऐवज</a>
+        <a href="index.html#sampark">संपर्क</a>
+        <a class="btn small" href="nondani.html">नोंदणी करा</a>
+      </nav>
+    </div>
+  </header>
+  <div class="page-title">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="index.html">मुख्यपृष्ठ</a> › दस्तऐवज</div>
+      <h1>दस्तऐवज</h1>
+      <p>मसुदा MoU, मानक घटना, संघटना स्थापना मार्गदर्शिका व अर्ज नमुने</p>
+    </div>
+  </div>
+  <main class="band">
+    <div class="wrap" style="max-width:960px">
+      <p class="notice" style="margin-bottom:28px">मसुदा MoU व मसुदा घटना — अंतिम मजकूर महासंघाची कार्यकारिणी ठरवेल.
+        डाउनलोडसाठी लॉगिन आवश्यक नाही.</p>
+      <div id="docGroups"></div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <h4>पत्ता</h4>१७०२, हावरे इन्फोटेक पार्क, सेक्टर ३०ए, वाशी, नवी मुंबई – ४०० ७०५<br><br><a
+            href="index.html#sampark">संपर्क →</a>
+        </div>
+        <div>
+          <h4>महत्त्वाचे दुवे</h4>
+          <ul>
+            <li><a href="index.html#mahasangh">महासंघाविषयी</a></li>
+            <li><a href="index.html#karyapaddhati">कार्यपद्धती</a></li>
+            <li><a href="index.html#sanghatana">स्थानिक संघटना</a></li>
+            <li><a href="karya.html">आमचे कार्य</a></li>
+            <li><a href="nondani.html">नोंदणी करा</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>दस्तऐवज व संधी</h4>
+          <ul>
+            <li><a href="dastaivaj.html">मसुदा MoU</a></li>
+            <li><a href="dastaivaj.html">मानक घटना</a></li>
+            <li><a href="sandhi.html">JV / JD संधी</a></li>
+            <li><a href="sandhi.html">जाहिरात दर</a></li>
+            <li><a href="admin.html">प्रशासन (नमुना)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>माहिती</h4>
+          <p style="font-size:.95rem">या वेबसाइटवरील माहिती केवळ सामान्य माहितीच्या उद्देशाने आहे. अधिकृत माहितीसाठी
+            महासंघ कार्यालयाशी संपर्क साधा.</p>
+          <ul>
+            <li><a href="#">गोपनीयता धोरण</a></li>
+            <li><a href="#">नियम व अटी</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom"><span>© मराठी बांधकाम व्यावसायिक महासंघ · सर्व अधिकार सुरक्षित</span><span>संस्था नोंदणी
+          अधिनियम १८६० अन्वये नोंदणीकृत</span></div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+  <script>
+    (function () {
+      const { q, data } = MBVM; const groups = [...new Set(data.docs.map(d => d.group))];
+      q("#docGroups").innerHTML = groups.map(g => `<h2 style="text-align:left;font-size:1.4rem;margin:28px 0 14px">${g}</h2><div class="grid c2">${data.docs.filter(d => d.group === g).map(d => `<div class="card doc"><div class="ft">${d.type}</div><div style="min-width:0"><h3>${d.title}</h3><div class="meta">${d.desc}</div><div class="meta">${d.size} · ${d.ver}</div><button class="btn small" type="button" style="margin-top:8px" onclick="this.textContent='डाउनलोड सुरू (नमुना)'">डाउनलोड</button></div></div>`).join("")}</div>`).join("");
+    })();
+  </script>
+
+</body>
+
+</html>

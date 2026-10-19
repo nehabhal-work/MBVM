@@ -1,6 +1,492 @@
 @extends('layouts.master')
 
 @section('content')
+    <style>
+        #karyakarini .executive-eyebrow {
+            display: inline-block;
+            color: #d45d2c;
+            font-weight: 700;
+            letter-spacing: .04em;
+        }
+
+        #karyakarini .executive-heading {
+            margin: 8px 0 16px;
+            color: #1d2940;
+            font-weight: 700;
+        }
+
+        #karyakarini .permanent-trustees {
+            margin-bottom: 32px;
+            padding: 28px;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, .06);
+        }
+
+        #karyakarini .permanent-trustees__heading {
+            margin-bottom: 10px;
+            color: #1d2940;
+            font-weight: 700;
+        }
+
+        #karyakarini .permanent-trustees__heading span {
+            color: #6c757d;
+            font-size: .7em;
+            font-weight: 400;
+        }
+
+        #karyakarini .permanent-trustees__note {
+            margin-bottom: 22px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        #karyakarini .permanent-trustees__grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        #karyakarini .permanent-trustee {
+            padding: 18px 12px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        #karyakarini .permanent-trustee__photo {
+            display: grid;
+            width: 76px;
+            aspect-ratio: 1;
+            margin: 0 auto 12px;
+            place-items: center;
+            color: #6c757d;
+            background: #fff;
+            border: 1px dashed #ced4da;
+            border-radius: 50%;
+        }
+
+        #karyakarini .permanent-trustee b,
+        #karyakarini .permanent-trustee span,
+        #karyakarini .permanent-trustee small {
+            display: block;
+        }
+
+        #karyakarini .permanent-trustee b {
+            margin-bottom: 5px;
+            color: #1d2940;
+        }
+
+        #karyakarini .permanent-trustee span {
+            color: #d45d2c;
+        }
+
+        #karyakarini .permanent-trustee small {
+            margin-top: 4px;
+            color: #6c757d;
+        }
+
+        #karyakarini .exec-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 3fr) minmax(250px, 1fr);
+            gap: 24px;
+            align-items: start;
+        }
+
+        #karyakarini .sub {
+            padding: 26px;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, .06);
+        }
+
+        #karyakarini .subhead {
+            margin-bottom: 10px;
+            color: #1d2940;
+            font-size: 1.35rem;
+            font-weight: 700;
+        }
+
+        #karyakarini .subhead span {
+            color: #6c757d;
+            font-size: .68em;
+            font-weight: 400;
+        }
+
+        #karyakarini .subnote {
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        #karyakarini .president {
+            max-width: 240px;
+            margin: 0 auto 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border: 1px solid #eee;
+            border-top: 4px solid #d45d2c;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        #karyakarini .person .photo {
+            display: grid;
+            width: 72px;
+            aspect-ratio: 1;
+            margin: 0 auto 12px;
+            place-items: center;
+            color: #6c757d;
+            background: #fff;
+            border: 1px dashed #ced4da;
+            border-radius: 50%;
+        }
+
+        #karyakarini .president .photo {
+            width: 92px;
+        }
+
+        #karyakarini .person b,
+        #karyakarini .person span,
+        #karyakarini .person small {
+            display: block;
+        }
+
+        #karyakarini .person b {
+            color: #1d2940;
+        }
+
+        #karyakarini .person span {
+            margin-top: 5px;
+            color: #d45d2c;
+        }
+
+        #karyakarini .person small {
+            margin-top: 4px;
+            color: #6c757d;
+        }
+
+        #karyakarini .exec-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        #karyakarini .exec-grid .person,
+        #karyakarini .honorary .person {
+            padding: 18px 12px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        #karyakarini .person.pending {
+            border: 1px dashed #ced4da;
+        }
+
+        #karyakarini .person.pending b {
+            color: #6c757d;
+        }
+
+        #karyakarini .exec-sample {
+            margin: 20px 0 0;
+            color: #6c757d;
+            line-height: 1.7;
+        }
+
+        #karyakarini .honorary {
+            display: grid;
+            gap: 12px;
+        }
+
+        #karyakarini .honorary .subhead,
+        #karyakarini .honorary .subnote {
+            margin-bottom: 0;
+        }
+
+        #karyapaddhati {
+            background: #f8f9fa;
+        }
+
+        #karyapaddhati .process-chain {
+            max-width: 780px;
+            margin: 32px auto 0;
+        }
+
+        #karyapaddhati .process-step {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 20px;
+            background: #fff;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, .05);
+            font-weight: 600;
+        }
+
+        #karyapaddhati .process-step--main {
+            border-color: #d45d2c;
+        }
+
+        #karyapaddhati .process-number {
+            display: grid;
+            flex: 0 0 42px;
+            width: 42px;
+            height: 42px;
+            place-items: center;
+            color: #fff;
+            background: #d45d2c;
+            border-radius: 50%;
+            font-size: 1.15rem;
+        }
+
+        #karyapaddhati .process-arrow {
+            color: #d45d2c;
+            font-size: 1.5rem;
+            line-height: 1;
+            text-align: center;
+        }
+
+        #karyapaddhati .process-split,
+        #karyapaddhati .process-compare {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        #karyapaddhati .process-split .process-step {
+            display: block;
+        }
+
+        #karyapaddhati .process-split small,
+        #karyapaddhati .process-followup span {
+            display: block;
+            color: #6c757d;
+            font-weight: 400;
+        }
+
+        #karyapaddhati .process-followup {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        #karyapaddhati .process-followup>div {
+            height: 100%;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+        }
+
+        #karyapaddhati .process-followup b {
+            display: block;
+            margin-bottom: 6px;
+            color: #1d2940;
+        }
+
+        #karyapaddhati .process-compare .card {
+            height: 100%;
+            border-radius: 12px;
+        }
+
+        #karyapaddhati .process-compare h3 {
+            color: #1d2940;
+        }
+
+        #karyapaddhati .process-compare li {
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 767px) {
+            #karyapaddhati .process-followup {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 575px) {
+
+            #karyapaddhati .process-split,
+            #karyapaddhati .process-compare,
+            #karyapaddhati .process-followup {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 991px) {
+            #karyakarini .permanent-trustees__grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            #karyakarini .exec-layout {
+                grid-template-columns: 1fr;
+            }
+
+            #karyakarini .honorary {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            #karyakarini .honorary .subhead,
+            #karyakarini .honorary .subnote {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media (max-width: 575px) {
+            #karyakarini .permanent-trustees {
+                padding: 20px 16px;
+            }
+
+            #karyakarini .permanent-trustees__grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+            }
+
+            #karyakarini .permanent-trustee {
+                padding: 15px 9px;
+            }
+
+            #karyakarini .sub {
+                padding: 20px 16px;
+            }
+
+            #karyakarini .exec-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+            }
+
+            #karyakarini .honorary {
+                grid-template-columns: 1fr;
+            }
+
+            #karyakarini .honorary .subhead,
+            #karyakarini .honorary .subnote {
+                grid-column: auto;
+            }
+        }
+
+        .membership-cta {
+            position: relative;
+            overflow: hidden;
+            padding: clamp(48px, 7vw, 84px) 0;
+            color: #fff;
+            background: linear-gradient(120deg, #1d2940 0%, #33425d 48%, #d45d2c 100%);
+        }
+
+        .membership-cta__inner {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 36px;
+            padding: clamp(28px, 5vw, 52px);
+            border: 1px solid rgba(255, 255, 255, .25);
+            border-radius: 24px;
+            background: rgba(255, 255, 255, .08);
+            box-shadow: 0 20px 55px rgba(74, 12, 12, .18);
+        }
+
+        .membership-cta__content {
+            max-width: 690px;
+        }
+
+        .membership-cta__eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+            color: #ffe5d7;
+            font-size: .9rem;
+            font-weight: 700;
+            letter-spacing: .04em;
+        }
+
+        .membership-cta__title {
+            margin: 0 0 12px;
+            color: #fff;
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            font-weight: 700;
+            line-height: 1.25;
+        }
+
+        .membership-cta__description {
+            max-width: 650px;
+            margin: 0;
+            color: rgba(255, 255, 255, .9);
+            font-size: 1.05rem;
+            line-height: 1.75;
+        }
+
+        .membership-cta__actions {
+            display: flex;
+            flex: 0 0 auto;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .membership-cta__button {
+            display: inline-flex;
+            min-height: 50px;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 12px 20px;
+            border: 1px solid #fff;
+            border-radius: 999px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform .2s ease, background-color .2s ease, color .2s ease;
+        }
+
+        .membership-cta__button:hover {
+            transform: translateY(-2px);
+        }
+
+        .membership-cta__button--primary {
+            color: #1d2940;
+            background: #fff;
+        }
+
+        .membership-cta__button--primary:hover {
+            color: #bd4e23;
+            background: #fff8f4;
+        }
+
+        .membership-cta__button--secondary {
+            color: #fff;
+            background: transparent;
+        }
+
+        .membership-cta__button--secondary:hover {
+            color: #1d2940;
+            background: #fff;
+        }
+
+        @media (max-width: 767px) {
+            .membership-cta__inner {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .membership-cta__actions {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .membership-cta__actions {
+                flex-direction: column;
+            }
+
+            .membership-cta__button {
+                width: 100%;
+            }
+        }
+    </style>
     <div>
         <!-- Carousel Start -->
         <div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
@@ -11,13 +497,16 @@
                         <div class="container">
                             <div class="row justify-content-start">
                                 <div class="col-10 col-lg-8 homebannerhead">
-                                    <h4 class="display-1 text-white animated slideInDown ">महाराष्ट्रातील मराठी विकासकांना
-                                        एकत्र आणणारे व्यासपीठ </h4>
+                                    <h4 class="display-1 text-white animated slideInDown ">
+                                        महाराष्ट्रातील मराठी बांधकाम व्यावसायिकांची राज्यस्तरीय शिखर संघटना
+                                        {{-- महाराष्ट्रातील मराठी विकासकांना एकत्र आणणारे व्यासपीठ old  --}}
+                                    </h4>
                                     {{-- <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor
                                         at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea
                                         elitr.</p> --}}
-                                    <a href="#contact" class="btn btn-primary py-3 mt-3 px-5 animated slideInLeft">सदस्य
-                                        व्हा</a>
+                                    <a href="#contact" class="btn btn-primary py-3 mt-3 px-5 animated slideInLeft">
+                                        आपल्या भागातील संघटनेत सहभागी व्हा
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -29,13 +518,15 @@
                         <div class="container">
                             <div class="row justify-content-start">
                                 <div class="col-10 col-lg-8 homebannerhead">
-                                    <h4 class="display-1 text-white animated slideInDown">मराठी सारे एकत्र येऊ…
-                                        सर्वसामान्यांना घर देऊ… </h4>
+                                    <h4 class="display-1 text-white animated slideInDown">
+                                        महाराष्ट्रातील मराठी विकासकांना एकत्र आणणारे व्यासपीठ
+                                        {{-- मराठी सारे एकत्र येऊ… सर्वसामान्यांना घर देऊ…  --}}
+                                    </h4>
                                     {{-- <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor
                                         at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea
                                         elitr.</p> --}}
-                                    <a href="#contact" class="btn btn-primary py-3 mt-3 px-5 animated slideInLeft">सदस्य
-                                        व्हा</a>
+                                    <a href="#contact" class="btn btn-primary py-3 mt-3 px-5 animated slideInLeft">आपल्या
+                                        भागातील संघटनेत सहभागी व्हा</a>
                                 </div>
                             </div>
                         </div>
@@ -52,8 +543,8 @@
                                     {{-- <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor
                                         at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea
                                         elitr.</p> --}}
-                                    <a href="#contact" class="btn btn-primary py-3 mt-3 px-5 animated slideInLeft">सदस्य
-                                        व्हा</a>
+                                    <a href="#contact" class="btn btn-primary py-3 mt-3 px-5 animated slideInLeft">आपल्या
+                                        भागातील संघटनेत सहभागी व्हा</a>
                                 </div>
                             </div>
                         </div>
@@ -93,9 +584,8 @@
                                 <div class="d-flex align-items-start">
                                     <img class="flex-shrink-0" src="img/icons/icon-3.png" alt="Icon">
                                     <div class="ms-4">
-                                        <h3>प्रोत्साहन देणे</h3>
-                                        <p class="mb-0">सर्वसामान्यांना परवडणारी घरे उपलब्ध करून देण्यासाठी प्रयत्न करणे
-                                            आणि परवडणारी घरे बांधणाऱ्या मराठी व्यावसायिकांना प्रोत्साहन देणे.</p>
+                                        <h3>प्रभावी प्रतिनिधित्व</h3>
+                                        <p class="mb-0">राज्य व केंद्र शासनाकडे धोरणात्मक निवेदने व पाठपुरावा</p>
                                     </div>
                                 </div>
                             </div>
@@ -135,7 +625,7 @@
         <!-- उद्देश End -->
 
         <!-- सदस्यत्व Start -->
-        <div class="container-xxl py-5" id="sadasyatva">
+        {{-- <div class="container-xxl py-5" id="sadasyatva">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h4 class="section-title">सदस्यत्व</h4>
@@ -273,487 +763,314 @@
                     पद्धतीने नवीन कार्यकारिणीची निवड केली जाते.
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- सदस्यत्व End -->
-
-
-
-
-        <!-- जिल्हा असोसिएशन Start -->
-
-        <div class="container-fluid logo-bg-dark py-5" id="jilha-asociation">
-            <div class="container">
-
-                <div class="row align-items-center mb-5">
-
-                    <div class="col-lg-8">
-
-                        <h4 class="section-title">जिल्हा असोसिएशन</h4>
-                        <h1 class="display-5 mb-3 mt-4">तुमच्या जिल्ह्यात असोसिएशन स्थापना करा</h1>
-                        <p class="mb-2"> महासंघ ही असोसिएशनची शिखर संघटना आहे. तुमच्या जिल्ह्यातील
-                            मराठी व्यावसायिकांची असोसिएशन महासंघाशी संलग्न करता येते.
-                            संलग्नता महासंघाच्या मंजुरीनंतर अधिकृत होते.
-
-                        </p>
-                    </div>
-
-                    {{-- <div class="col-lg-4 text-center">
-                        <i class="fa-solid fa-building-circle-check section-icon"></i>
-                    </div> --}}
-
-                </div>
-
-
-                <!-- Statistics -->
-
-                <div class="row g-4 mb-5">
-
-                    <div class="col-md-4">
-                        <div class="info-card text-center">
-                            <i class="fa-solid fa-city stat-icon"></i>
-                            <h2>५०:२</h2>
-                            <p>पुणे · मुंबई · नागपूर यांसारखी मोठी शहरे</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="info-card text-center">
-                            <i class="fa-solid fa-users stat-icon"></i>
-                            <h2>२५+</h2>
-                            <p>महानगरपालिका / जिल्हा ठिकाणी सदस्य २५ किंवा अधिक</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="info-card text-center">
-                            <i class="fa-solid fa-user-group stat-icon"></i>
-                            <h2>१५+</h2>
-                            <p>नगरपालिका / तालुका ठिकाणी सदस्य १५ किंवा अधिक</p>
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <!-- Timeline -->
-
-                <div class="row text-center process-row">
-
-                    <div class="col-lg-3 process-box">
-
-                        <div class="circle">
-                            <i class="fa-solid fa-file-signature"></i>
-                        </div>
-
-                        <h6>पायरी ०१</h6>
-
-                        <h4>नोंदणी</h4>
-
-                        <p>
-                            तुमच्या जिल्ह्यात असोसिएशन नसल्यास
-                            महासंघाकडे नोंदणी करा.
-                        </p>
-
-                    </div>
-
-                    <div class="col-lg-3 process-box">
-
-                        <div class="circle">
-                            <i class="fa-solid fa-users"></i>
-                        </div>
-
-                        <h6>पायरी ०२</h6>
-
-                        <h4>सदस्यसंख्या</h4>
-
-                        <p>
-                            आवश्यक सदस्यसंख्या पूर्ण झाल्यावर
-                            पुढील प्रक्रिया सुरू होते.
-                        </p>
-
-                    </div>
-
-                    <div class="col-lg-3 process-box">
-
-                        <div class="circle">
-                            <i class="fa-solid fa-handshake"></i>
-                        </div>
-
-                        <h6>पायरी ०३</h6>
-
-                        <h4>संलग्नता करार</h4>
-
-                        <p>
-                            संविधान व नियमांनुसार
-                            अधिकृत मंजुरी.
-                        </p>
-
-                    </div>
-
-                    <div class="col-lg-3 process-box">
-
-                        <div class="circle">
-                            <i class="fa-solid fa-building"></i>
-                        </div>
-
-                        <h6>पायरी ०४</h6>
-
-                        <h4>स्थापना</h4>
-
-                        <p>
-                            पदाधिकारी निवड,
-                            कार्यकारिणी रचना व उद्घाटन.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Note -->
-
-                <div class="note-box mt-5">
-
-                    <i class="fa-solid fa-circle-info me-2"></i>
-
-                    <strong>महत्त्वाची सूचना :</strong>
-
-                    संलग्न होणाऱ्या असोसिएशनमधील सर्व सदस्य मराठी असावेत.
-                    तसेच महासंघाची नियमावली पाळणे आवश्यक आहे.
-
-                </div>
-
-            </div>
-        </div>
-        <!-- जिल्हा असोसिएशन End -->
-
 
 
 
         <!-- कार्यकारिणी Start -->
         <div class="container my-5 py-5" id="karyakarini">
             <div class="container">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h4 class="section-title">कार्यकारिणी</h4>
-                    <h1 class="display-5 mb-3 mt-4">विद्यमान कार्यकारी मंडळ</h1>
-                    <p class="mb-5">संस्था नोंदणी अधिनियम १८६० अन्वये नोंदणीकृत पहिले कार्यकारी मंडळ. कार्यकाळ — २ वर्षे.
-                    </p>
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <span class="executive-eyebrow">कार्यकारिणी</span>
+                    <h2 class="display-5 executive-heading">महासंघाची कार्यकारिणी</h2>
+                    <p class="mb-0">महासंघाचे कायमस्वरूपी विश्वस्त, विद्यमान राज्य कार्यकारिणी आणि सन्माननीय सभासद.</p>
                 </div>
-                <div class="row g-4">
-                    <!-- Leadership Card -->
-                    <div class="col-lg-6">
-                        <div class="card shadow border-1 h-100" style="border-radius: 15px;">
-                            <div class="card-header  text-center py-3">
-                                <h3 class="mb-0">नेतृत्व</h3>
-                                <small>महासंघाचे प्रमुख पदाधिकारी</small>
-                            </div>
 
-                            <div class="card-body ">
-
-                                <div class="row g-4">
-
-                                    <div class="col-md-7 text-center mx-auto">
-                                        <div class="team-item executive-team0 position-relative">
-
-                                            <!-- Placeholder Image -->
-                                            <img src="https://placehold.co/500x500?text=No+Image"
-                                                class="img-fluid rounded" alt="No Image Available">
-
-                                            <div class="bg-light text-center p-3">
-                                                <h5 class="mb-1">श्री. प्रविण दरेकर</h5>
-                                                <span class="text-primary">संरक्षक</span>
-                                                <p>आमदार, विधानपरिषद · अध्यक्ष, मुंबई बँक</p>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 ">
-                                        <div class="team-item executive-team0 position-relative">
-                                            <img src="https://placehold.co/500x500?text=No+Image"
-                                                class="img-fluid rounded" alt="No Image Available">
-
-                                            <div class="bg-light text-center p-3">
-                                                <h5 class="mb-1">श्री. गजानन कीर्तिकर</h5>
-                                                <span class="text-primary">प्रमुख मार्गदर्शक</span>
-                                                <p>महासंघ मार्गदर्शक</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6 mx-auto">
-                                        <div class="team-item executive-team0  position-relative">
-                                            <img src="https://placehold.co/500x500?text=No+Image"
-                                                class="img-fluid rounded" alt="No Image Available">
-                                            <div class="bg-light text-center p-3">
-                                                <h5 class="mb-1">श्री. सतीश मगर</h5>
-                                                <span class="text-primary">सल्लागार</span>
-                                                <p>महासंघ सल्लागार</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>
+                <div class="permanent-trustees">
+                    <h3 class="h4 permanent-trustees__heading">कायमस्वरूपी विश्वस्त <span>/ Permanent Trustees</span></h3>
+                    <p class="permanent-trustees__note">मूळ ज्ञापनावर (Memorandum of Association, नोंदणी क्र. महा/६६७/२०२२,
+                        दि. १९/०७/२०२२) क्रमांक १ ते ५ वर स्वाक्षरी करणारे विश्वस्त. विश्वस्तपद विद्यमान कार्यकारिणीतील
+                        बदलांपासून स्वतंत्र आहे.</p>
+                    <div class="permanent-trustees__grid">
+                        <div class="permanent-trustee">
+                            <div class="permanent-trustee__photo">फोटो</div>
+                            <b>श्री. सुरेश काशिनाथ हावरे</b>
+                            <span>कायमस्वरूपी विश्वस्त</span>
+                            <small>वाशी, नवी मुंबई</small>
+                        </div>
+                        <div class="permanent-trustee">
+                            <div class="permanent-trustee__photo">फोटो</div>
+                            <b>श्री. संजय रामचंद्र कुलकर्णी</b>
+                            <span>कायमस्वरूपी विश्वस्त</span>
+                            <small>पुणे</small>
+                        </div>
+                        <div class="permanent-trustee">
+                            <div class="permanent-trustee__photo">फोटो</div>
+                            <b>श्री. प्रकाश भिमराव बाविस्कर</b>
+                            <span>कायमस्वरूपी विश्वस्त</span>
+                            <small>सीबीडी बेलापूर, नवी मुंबई</small>
+                        </div>
+                        <div class="permanent-trustee">
+                            <div class="permanent-trustee__photo">फोटो</div>
+                            <b>श्री. अजित श्रीराम मराठे</b>
+                            <span>कायमस्वरूपी विश्वस्त</span>
+                            <small>अंधेरी, मुंबई</small>
+                        </div>
+                        <div class="permanent-trustee">
+                            <div class="permanent-trustee__photo">फोटो</div>
+                            <b>श्री. गजेंद्र दत्तात्रय पवार</b>
+                            <span>कायमस्वरूपी विश्वस्त</span>
+                            <small>पुणे</small>
                         </div>
                     </div>
-                    <!-- Executive Members Card -->
-                    <div class="col-lg-6">
-                        <div class="card shadow border-1 h-100" style="border-radius: 15px;">
+                </div>
+                <div class="exec-layout">
+                    <div class="sub exec">
+                        <h3 class="subhead">विद्यमान राज्य कार्यकारिणी व पदाधिकारी <span>/ Current State Executive
+                                Committee &amp; Office Bearers</span></h3>
+                        <p class="subnote">कार्यकाळ: <mark>[कार्यकाळ सुरुवात – समाप्ती: तारखा अद्ययावत करणे बाकी]</mark>
+                            (नियमावलीनुसार २ वर्षे) · कार्यकारिणी सदस्यसंख्या ९ ते २५</p>
 
-                            <div class="card-header  text-center py-3">
-                                <h3 class="mb-0">कार्यकारिणी सदस्य</h3>
-                                <small>महासंघाच्या विद्यमान कार्यकारिणीचे पदाधिकारी</small>
+                        <div class="person president">
+                            <div class="photo">फोटो</div>
+                            <b>श्री. प्रकाश भीमराव बाविस्कर</b>
+                            <span>अध्यक्ष / President</span>
+                            <small>नवी मुंबई</small>
+                        </div>
+
+                        <div class="exec-grid">
+                            <div class="person pending">
+                                <div class="photo">फोटो</div><b>[नाव अद्ययावत करणे बाकी]</b><span>कार्याध्यक्ष / Working
+                                    President</span><small>निवड / नियुक्ती बाकी</small>
                             </div>
-
-                            <div class="card-body">
-
-                                <div class="row g-3">
-
-                                    <div class="col-md-6">
-                                        <div class="team-item executive-team">
-                                            <div class="bg-light p-3 d-flex align-items-center">
-                                                {{-- <img src="img/team-1.jpg" class="rounded-circle me-3" width="65"
-                                                    height="65" style="object-fit:cover;" alt="Member"> --}}
-                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"
-                                                    height="65" class="rounded-circle me-3" alt="No Image Available">
-
-                                                <div>
-                                                    <h6 class="mb-1">श्री. सुरेश कारसिनाथ हावरे</h6>
-                                                    <span class="text-primary">अध्यक्ष</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="team-item executive-team">
-                                            <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"
-                                                    height="65" class="rounded-circle me-3" alt="No Image Available">
-                                                <div>
-                                                    <h6 class="mb-1">श्री. संजय रामचंद्र कुलकर्णी</h6>
-                                                    <span class="text-primary">कार्याध्यक्ष</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="team-item executive-team">
-                                            <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"
-                                                    height="65" class="rounded-circle me-3" alt="No Image Available">
-                                                <div>
-                                                    <h6 class="mb-1">श्री. अजित श्रीराम मराठे</h6>
-                                                    <span class="text-primary">उपाध्यक्ष</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="team-item executive-team">
-                                            <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"
-                                                    height="65" class="rounded-circle me-3" alt="No Image Available">
-                                                <div>
-                                                    <h6 class="mb-1">श्री. गजेन्द्र दत्तात्रय पवार</h6>
-                                                    <span class="text-primary">उपाध्यक्ष</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="team-item executive-team">
-                                            <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"
-                                                    height="65" class="rounded-circle me-3" alt="No Image Available">
-                                                <div>
-                                                    <h6 class="mb-1">श्री. प्रकाश भीमराव बाविस्कर</h6>
-                                                    <span class="text-primary">महासचिव</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="team-item executive-team">
-                                            <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"
-                                                    height="65" class="rounded-circle me-3" alt="No Image Available">
-                                                <div>
-                                                    <h6 class="mb-1">श्री. संदीप मुकुंद कोलटकर</h6>
-                                                    <span class="text-primary">सहसचिव</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="team-item executive-team">
-                                            <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"
-                                                    height="65" class="rounded-circle me-3" alt="No Image Available">
-                                                <div>
-                                                    <h6 class="mb-1">श्री. कल्याण बाबूराव तावरे</h6>
-                                                    <span class="text-primary">सहसचिव</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="team-item executive-team">
-                                            <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"
-                                                    height="65" class="rounded-circle me-3" alt="No Image Available">
-                                                <div>
-                                                    <h6 class="mb-1">श्री. बाबासाहेब महादेव भोसले</h6>
-                                                    <span class="text-primary">खजिनदार</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="team-item executive-team">
-                                            <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"
-                                                    height="65" class="rounded-circle me-3" alt="No Image Available">
-                                                <div>
-                                                    <h6 class="mb-1">श्री. प्रमोद पुरुषोत्तम पाटील</h6>
-                                                    <span class="text-primary">सहखजिनदार</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="team-item executive-team">
-                                            <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"
-                                                    height="65" class="rounded-circle me-3" alt="No Image Available">
-                                                <div>
-                                                    <h6 class="mb-1">श्री. संजय सदाशिव देसले</h6>
-                                                    <span class="text-primary">सदस्य</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="team-item executive-team">
-                                            <div class="bg-light p-3 d-flex align-items-center">
-                                                <img src="https://placehold.co/500x500?text=No+Image" width="65"
-                                                    height="65" class="rounded-circle me-3" alt="No Image Available">
-                                                <div>
-                                                    <h6 class="mb-1">श्री. मधु दौलतराव पाटील</h6>
-                                                    <span class="text-primary">सदस्य</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
+                            <div class="person pending">
+                                <div class="photo">फोटो</div><b>[नाव अद्ययावत करणे बाकी]</b><span>उपाध्यक्ष / Vice
+                                    President</span><small>निवड / नियुक्ती बाकी</small>
+                            </div>
+                            <div class="person pending">
+                                <div class="photo">फोटो</div><b>[नाव अद्ययावत करणे बाकी]</b><span>उपाध्यक्ष / Vice
+                                    President</span><small>निवड / नियुक्ती बाकी</small>
+                            </div>
+                            <div class="person pending">
+                                <div class="photo">फोटो</div><b>[नाव अद्ययावत करणे बाकी]</b><span>महासचिव / General
+                                    Secretary</span><small>निवड / नियुक्ती बाकी</small>
+                            </div>
+                            <div class="person pending">
+                                <div class="photo">फोटो</div><b>[नाव अद्ययावत करणे बाकी]</b><span>सहसचिव / Joint
+                                    Secretary</span><small>निवड / नियुक्ती बाकी</small>
+                            </div>
+                            <div class="person pending">
+                                <div class="photo">फोटो</div><b>[नाव अद्ययावत करणे बाकी]</b><span>सहसचिव / Joint
+                                    Secretary</span><small>निवड / नियुक्ती बाकी</small>
+                            </div>
+                            <div class="person pending">
+                                <div class="photo">फोटो</div><b>[नाव अद्ययावत करणे बाकी]</b><span>खजिनदार /
+                                    Treasurer</span><small>निवड / नियुक्ती बाकी</small>
+                            </div>
+                            <div class="person pending">
+                                <div class="photo">फोटो</div><b>[नाव अद्ययावत करणे बाकी]</b><span>सहखजिनदार / Joint
+                                    Treasurer</span><small>निवड / नियुक्ती बाकी</small>
+                            </div>
+                            <div class="person pending">
+                                <div class="photo">फोटो</div><b>[नाव अद्ययावत करणे बाकी]</b><span>कार्यकारिणी सदस्य / EC
+                                    Member</span><small>निवड / नियुक्ती बाकी</small>
                             </div>
                         </div>
+
+                        <p class="exec-sample">सध्या केवळ अध्यक्षपदाची निवड झाली आहे; उर्वरित पदांवरील नावे
+                            निवड/नियुक्तीनंतर प्रशासन पॅनेलमधून अद्ययावत करावीत.</p>
                     </div>
 
-                </div>
-                <div class="note-box mt-3 shadow ">
-
-                    <i class="fa-solid fa-circle-info me-2"></i>
-                    कार्यकारी मंडळाची निवड दर दोन वर्षांनी वार्षिक सर्वसाधारण सभेत गुप्त मतदान पद्धतीने होते. रिक्त पदे
-                    राहिलेल्या सदस्यांकडून बहुमताने भरली जातात व त्याची नोंद सहाय्यक धर्मादाय आयुक्त, ठाणे यांच्याकडे केली
-                    जाते.
-
+                    <aside class="sub honorary">
+                        <h3 class="subhead">सन्माननीय सभासद <span>/ Honorary Members</span></h3>
+                        <p class="subnote">कार्यकारिणीद्वारे नियुक्त.</p>
+                        <div class="person">
+                            <div class="photo">फोटो</div>
+                            <b>श्री. प्रविण दरेकर</b>
+                            <span>सन्माननीय सभासद</span>
+                            <small>आमदार, विधानपरिषद · अध्यक्ष, मुंबई बँक</small>
+                        </div>
+                        <div class="person">
+                            <div class="photo">फोटो</div>
+                            <b>श्री. गजानन कीर्तिकर</b>
+                            <span>सन्माननीय सभासद</span>
+                        </div>
+                        <div class="person">
+                            <div class="photo">फोटो</div>
+                            <b>श्री. सतीश मगर</b>
+                            <span>सन्माननीय सभासद</span>
+                        </div>
+                        <div class="person pending">
+                            <div class="photo">फोटो</div>
+                            <b>[नियुक्ती बाकी]</b>
+                            <span>सन्माननीय सभासद</span>
+                        </div>
+                        <div class="person pending">
+                            <div class="photo">फोटो</div>
+                            <b>[नियुक्ती बाकी]</b>
+                            <span>सन्माननीय सभासद</span>
+                        </div>
+                    </aside>
                 </div>
             </div>
 
-            <div class="container py-5">
-
-                <!-- Section Heading -->
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h4 class="section-title">जिल्हानिहाय स्थिती</h4>
-                    <h1 class="display-5 mb-3 mt-2">राज्यभरातील वाटचाल</h1>
-                    <p class="mb-5">महाराष्ट्रातील विविध जिल्ह्यांमध्ये महासंघाचा विस्तार
-                    </p>
-                </div>
-                <div class="row align-items-center g-5">
-
-                    <!-- Left Side : Maharashtra Map -->
-                    <div class="col-lg-7">
-
-                        <div class="map-box text-center">
-
-                            <img src="{{ asset('img/map.png') }}" class="img-fluid map-img" alt="Maharashtra Map">
-
-                            <div class="mt-4 map-legend">
-
-                                <span class="badge bg-success px-3 py-2 me-2">
-                                    <i class="fa-solid fa-circle me-1"></i>
-                                    कार्यरत जिल्हे
-                                </span>
-
-                                <span class="badge bg-warning text-dark px-3 py-2">
-                                    <i class="fa-solid fa-circle me-1"></i>
-                                    प्रस्तावित जिल्हे
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <!-- Right Side : Statistics -->
-                    <div class="col-lg-5">
-
-                        <div class="row g-4">
-
-                            <div class="col-6">
-                                <div class="stats-card shadow">
-                                    <i class="fa-solid fa-map-location-dot"></i>
-                                    <h2>३६</h2>
-                                    <p>एकूण जिल्हे</p>
-                                </div>
-                            </div>
-
-                            <div class="col-6">
-                                <div class="stats-card shadow">
-                                    <i class="fa-solid fa-building"></i>
-                                    <h2>२४</h2>
-                                    <p>कार्यरत असोसिएशन</p>
-                                </div>
-                            </div>
-
-                            <div class="col-6">
-                                <div class="stats-card shadow">
-                                    <i class="fa-solid fa-location-dot"></i>
-                                    <h2>०८</h2>
-                                    <p>प्रस्तावित असोसिएशन</p>
-                                </div>
-                            </div>
-
-                            <div class="col-6">
-                                <div class="stats-card shadow">
-                                    <i class="fa-solid fa-users"></i>
-                                    <h2>५५०+</h2>
-                                    <p>नोंदणीकृत सदस्य</p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
+            <div class="text-center mt-4">
+                <a class="btn btn-primary d-inline-flex flex-column align-items-center" href="{{ route('pratinidhi') }}">
+                    <span>संलग्न संस्था व अधिकृत प्रतिनिधी पहा</span>
+                    <small class="fw-normal">View Affiliated Associations &amp; Authorized Representatives</small>
+                </a>
             </div>
+
+
+
+
         </div>
         <!-- कार्यकारिणी End -->
+
+
+
+
+        <!-- कार्यपद्धती Start -->
+        <section class="ccontainer-fluid logo-bg-dark my-5 py-5" id="karyapaddhati">
+            <div class="container">
+                <div class="text-center mx-auto mb-5">
+                    <h4 class="section-title">कार्यपद्धती</h4>
+                    <h2 class="display-5 mb-3">अशी होते संघटना — स्थानिक विकासक ते शिखर संघटना</h2>
+                    <p class="text-muted fs-5 mb-0">
+                        एकाच भागातील मराठी विकासक एकत्र येतात, “मराठी बांधकाम व्यावसायिक संघटना,
+                        [जिल्हा / शहर / तालुका]” या नावाने स्थानिक संघटना स्थापन करतात आणि ती महासंघाशी संलग्न होते.
+                    </p>
+                </div>
+
+                <div class="process-chain">
+                    <div class="process-step process-step--main">
+                        <span class="process-number">१</span>
+                        <span>इच्छुक विकासकांची नोंदणी</span>
+                    </div>
+                    <div class="process-arrow" aria-hidden="true">↓</div>
+                    <div class="process-step">
+                        <span class="process-number">२</span>
+                        <span>१० / १५ / २५ / ५० / १०० स्थानिक विकासक</span>
+                    </div>
+                    <div class="process-arrow" aria-hidden="true">↓</div>
+                    <div class="process-step">
+                        <span class="process-number">३</span>
+                        <span>स्थानिक संघटनेची स्थापना</span>
+                    </div>
+                    <div class="process-arrow" aria-hidden="true">↓</div>
+                    <div class="process-step">
+                        <span class="process-number">४</span>
+                        <span>कार्यकारिणी + नोंदणी + घटना</span>
+                    </div>
+                    <div class="process-arrow" aria-hidden="true">↓</div>
+                    <div class="process-step process-step--main">
+                        <span class="process-number">५</span>
+                        <span>MBVM सोबत MoU / संलग्नता</span>
+                    </div>
+                    <div class="process-arrow" aria-hidden="true">↓</div>
+                    <div class="process-split">
+                        <div class="process-step">
+                            <small>स्थानिक प्रश्न</small>
+                            → स्थानिक संघटना
+                        </div>
+                        <div class="process-step">
+                            <small>राज्य / केंद्र प्रश्न</small>
+                            → MBVM शिखर संघटना
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5 pt-3">
+                    <div class="text-center mx-auto mb-4" style="max-width: 760px">
+                        <h2 class="display-6 mb-3">पुरेसे सदस्य नोंदल्यानंतर काय होते?</h2>
+                        <p class="text-muted fs-5 mb-0">
+                            प्रथम बैठकीत महासंघाचे पदाधिकारी सहभागी होऊन संघटना स्थापनेसाठी मार्गदर्शन करतात.
+                        </p>
+                    </div>
+
+                    <div class="process-followup">
+                        <div><b>इच्छुक विकासकांची ऑनलाइन नोंदणी</b><span>या वेबसाइटवरील नोंदणी फॉर्मद्वारे</span></div>
+                        <div><b>एकाच परिसरातील विकासकांची संख्या पूर्ण</b><span>जिल्हा / तालुका / शहरनिहाय गणना</span></div>
+                        <div><b>MBVM कडून संपर्क</b><span>नोंदणी केलेल्या सर्वांशी फोन / WhatsApp</span></div>
+                        <div><b>त्या भागात प्रथम बैठक</b><span>महासंघ पदाधिकाऱ्यांच्या उपस्थितीत</span></div>
+                        <div><b>स्थानिक कमिटीची स्थापना</b><span>अध्यक्ष, सचिव, खजिनदार व सदस्य</span></div>
+                        <div><b>स्थानिक संघटनेची नोंदणी</b><span>संस्था नोंदणी अधिनियम १८६० अन्वये</span></div>
+                        <div><b>घटना / आवश्यक कागदपत्रे</b><span>महासंघाची मानक घटना स्वीकारणे</span></div>
+                        <div><b>MBVM सोबत MoU</b><span>मसुदा MoU दस्तऐवज विभागात उपलब्ध</span></div>
+                        <div><b>महासंघाशी संलग्नता</b><span>संलग्न संघटनांच्या यादीत समावेश</span></div>
+                    </div>
+                </div>
+
+                <div class="mt-5 pt-3">
+                    <h2 class="display-6 text-center mb-4">कोण काय करते?</h2>
+                    <div class="process-compare">
+                        <div class="card shadow-sm">
+                            <div class="card-body p-4">
+                                <h3 class="h4 mb-3">🏘️ स्थानिक संघटना</h3>
+                                <ul class="mb-0">
+                                    <li>स्थानिक नियोजन प्राधिकरण</li>
+                                    <li>महानगरपालिका / नगरपरिषद / ग्रामपंचायत</li>
+                                    <li>जिल्हा / तालुका कार्यालये</li>
+                                    <li>स्थानिक पायाभूत सुविधा</li>
+                                    <li>स्थानिक विकास समस्या</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card shadow-sm border-primary">
+                            <div class="card-body p-4">
+                                <h3 class="h4 mb-3">🏛️ MBVM — शिखर संघटना</h3>
+                                <ul class="mb-0">
+                                    <li>राज्य शासनातील प्रश्न</li>
+                                    <li>केंद्र शासनातील प्रश्न</li>
+                                    <li>संपूर्ण उद्योगाला भेडसावणारे प्रश्न</li>
+                                    <li>अनेक जिल्ह्यांना सामाईक प्रश्न</li>
+                                    <li>धोरण व नियामक निवेदने</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- <p class="text-muted text-center fs-5 mt-4 mb-0 ">
+                        संलग्न संघटनांना शासनस्तरावर महासंघ मार्गदर्शन व पाठबळ देतो.
+                    </p> --}}
+                    <div class="alert alert-light text-center border-start border-4 border-primary fs-5  mt-4 mb-0"
+                        role="note">
+                        संलग्न संघटनांना शासनस्तरावर महासंघ मार्गदर्शन व पाठबळ देतो.
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- कार्यपद्धती End -->
+
+        <!-- 5. CTA -->
+        <section class="membership-cta" aria-labelledby="membership-cta-title">
+            <div class="container">
+                <div class="membership-cta__inner">
+                    <div class="membership-cta__content">
+                        <span class="membership-cta__eyebrow">
+                            <i class="fas fa-users" aria-hidden="true"></i>
+                            महासंघाचे सदस्यत्व
+                        </span>
+                        <h2 class="membership-cta__title" id="membership-cta-title">आपल्या परिसरातील विकासकांना एकत्र आणा
+                        </h2>
+                        <p class="membership-cta__description">
+                            नोंदणी विनामूल्य आहे. आपल्या परिसरातील विकासकांची संख्या पूर्ण झाल्यावर महासंघ आपल्याशी संपर्क
+                            साधून प्रथम बैठकीचे आयोजन करेल.
+                        </p>
+                    </div>
+                    <div class="membership-cta__actions">
+                        <a class="membership-cta__button membership-cta__button--primary"
+                            href="{{ route('members.create') }}">
+                            <i class="fas fa-user-plus" aria-hidden="true"></i>
+                            सदस्यत्वासाठी नोंदणी
+                        </a>
+                        <a class="membership-cta__button membership-cta__button--secondary"
+                            href="{{ route('documents.index') }}">
+                            <i class="fas fa-file-alt" aria-hidden="true"></i>
+                            MoU व घटना पाहा
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        @include('partials._local_organizations')
+
+
+
+        @include('partials._karya', ['karyaUpdates' => $karyaUpdates])
+
+        @include('partials._sandhi')
 
         <!-- सेवा Start -->
         <div class="container-fluid logo-bg-dark my-5 py-5" id="seva">
@@ -975,6 +1292,10 @@
             </div>
         </div>
         <!-- Testimonial End -->
+
+
+
+        {{-- सदस्यत्व नोंदणी --}}
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center mx-auto mb-2 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
@@ -990,10 +1311,10 @@
                             <i class="fa fa-user-plus me-2"></i>Add Member
                         </a>
                     </div> --}}
-                    
+
                 </div>
             </div>
         </div>
-        
+
     </div>
 @endsection

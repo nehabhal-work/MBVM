@@ -27,6 +27,42 @@
         margin-bottom: 22px;
     }
 
+    .objectives {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        margin-top: 20px;
+    }
+
+    .objectives > div {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        height: 100%;
+        padding: 22px;
+        background: #fff;
+        border: 1px solid #eee;
+        border-left: 4px solid #d45d2c;
+        border-radius: 12px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, .06);
+    }
+
+    .objectives .icon {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    .objectives b {
+        color: #1d2940;
+        font-size: 18px;
+    }
+
+    .objectives small {
+        color: #555;
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
     /* =========================
        PAGE TITLE
     ========================= */
@@ -221,6 +257,10 @@
             padding: 55px 15px;
         }
 
+        .objectives {
+            grid-template-columns: 1fr;
+        }
+
         .mbvm-qr-wrapper {
             padding: 25px 20px;
         }
@@ -285,6 +325,38 @@
     </div>
 
 </div>
+
+
+{{-- =========================================================
+     महासंघाची उद्दिष्टे
+========================================================= --}}
+
+<section class="mbvm-details-section bg-soft">
+
+    <div class="container">
+
+        <div class="mbvm-page-title text-center">
+
+            <h4 class="section-title">
+                महासंघाची उद्दिष्टे
+            </h4>
+
+            <h1 class="display-5 mt-4">
+                एकसंध आणि सक्षम व्यासपीठ
+            </h1>
+
+        </div>
+
+        <div class="objectives">
+            <div><span class="icon">🤝</span><div><b>विश्वासाचे नाते</b><br><small>मराठी विकासकांचे एकसंध, विश्वासार्ह राज्यव्यापी व्यासपीठ</small></div></div>
+            <div><span class="icon">📣</span><div><b>प्रभावी प्रतिनिधित्व</b><br><small>राज्य व केंद्र शासनाकडे धोरणात्मक निवेदने व पाठपुरावा</small></div></div>
+            <div><span class="icon">⚖️</span><div><b>प्रश्न संघटितरीत्या सोडवणे</b><br><small>RERA, UDCPR, महसूल, पर्यावरण — सामाईक प्रश्नांवर एकत्रित भूमिका</small></div></div>
+            <div><span class="icon">🏗️</span><div><b>नवीन उद्योजकांना मार्गदर्शन</b><br><small>कायदेशीर, आर्थिक व तांत्रिक मार्गदर्शन आणि प्रशिक्षण</small></div></div>
+        </div>
+
+    </div>
+
+</section>
 
 
 {{-- =========================================================

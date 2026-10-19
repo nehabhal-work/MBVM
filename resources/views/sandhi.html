@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="mr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>जाहिरात / व्यावसायिक संधी — मराठी बांधकाम व्यावसायिक महासंघ</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700&family=Tiro+Devanagari+Marathi&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/logo-mark.png" alt="MBVM"><span>मराठी बांधकाम व्यावसायिक महासंघ</span></a>
+    <button class="menu-btn" aria-label="मेनू" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="index.html">मुख्यपृष्ठ</a>
+      <a href="index.html#mahasangh">महासंघाविषयी</a>
+      <a href="index.html#karyapaddhati">कार्यपद्धती</a>
+      <a href="index.html#sanghatana">स्थानिक संघटना</a>
+      <a href="karya.html">आमचे कार्य</a>
+      <a href="dastaivaj.html">दस्तऐवज</a>
+      <a href="index.html#sampark">संपर्क</a>
+      <a class="btn small" href="nondani.html">नोंदणी करा</a>
+    </nav>
+  </div>
+</header>
+<div class="page-title"><div class="wrap"><div class="breadcrumb"><a href="index.html">मुख्यपृष्ठ</a> › जाहिरात / व्यावसायिक संधी</div><h1>जाहिरात / व्यावसायिक संधी</h1><p>संयुक्त विकास (JV / JD) संधी व विकासक प्रकल्प जाहिराती</p></div></div>
+<main class="band">
+<div class="wrap">
+  <p class="notice" style="margin-bottom:24px">या सूची महासंघाने पडताळलेल्या नाहीत; व्यवहारापूर्वी स्वतंत्र कायदेशीर तपासणी करावी. महासंघ केवळ सूची प्रसिद्ध करणारे व्यासपीठ आहे, व्यवहारात मध्यस्थ नाही.</p>
+  <div class="tabs"><button type="button" class="active" data-tab="jv">संयुक्त विकास संधी (JV / JD)</button><button type="button" data-tab="ad">प्रकल्प जाहिराती</button></div>
+  <div id="tab-jv"><div class="grid c2" id="jvList"></div></div>
+  <div id="tab-ad" hidden><div class="grid c3">
+    <div class="card ad"><span class="pill ad tag">जाहिरात / प्रायोजित</span><div class="img">प्रकल्प प्रतिमा</div><b>नमुना निवासी प्रकल्प — पनवेल</b><div class="meta" style="color:var(--muted);font-size:.9rem">२ व ३ BHK · MahaRERA क्र. P5200000000</div></div>
+    <div class="card ad"><span class="pill ad tag">जाहिरात / प्रायोजित</span><div class="img">प्रकल्प प्रतिमा</div><b>नमुना व्यापारी संकुल — नाशिक</b><div class="meta" style="color:var(--muted);font-size:.9rem">दुकाने व कार्यालये · MahaRERA क्र. P5100000000</div></div>
+    <div class="card ad" style="display:grid;place-items:center;text-align:center;border-style:dashed"><div><b>जाहिरात जागा उपलब्ध</b><div class="meta" style="color:var(--muted)">शुल्क ₹<span id="adFee"></span> / महिना (प्रशासन-निर्धारित)</div></div></div>
+  </div></div>
+
+  <section id="nondava" class="band" style="padding-bottom:0">
+    <h2>संधी नोंदवा</h2>
+    <p class="lead">सूची नोंदणी शुल्क ₹<span id="jvFee"></span> — अनावश्यक व अगंभीर सूची टाळण्यासाठी. प्रक्रिया: सादर → शुल्क → महासंघ तपासणी → मान्यता → प्रसिद्धी. मान्यतेशिवाय काहीही प्रसिद्ध होत नाही.</p>
+    <form class="card" id="jvForm" style="max-width:860px;margin:0 auto">
+      <div class="form-grid">
+        <div class="field"><label for="j-name">अर्जदार / कंपनी *</label><input id="j-name" required></div>
+        <div class="field"><label for="j-mobile">मोबाईल *</label><input id="j-mobile" type="tel" inputmode="numeric" pattern="[0-9]{10}" required></div>
+        <div class="field"><label for="j-email">ई-मेल *</label><input id="j-email" type="email" required></div>
+        <div class="field"><label for="j-type">प्रस्तावाचा प्रकार *</label><select id="j-type" required><option value="">निवडा</option><option>जमीन JV/JD साठी उपलब्ध</option><option>जमीनमालक विकासक शोधत आहे</option><option>विकास भागीदार हवा</option><option>गुंतवणूकदार / विकासक संधी</option><option>पुनर्विकास संधी</option></select></div>
+        <div class="field"><label for="j-district">जिल्हा *</label><select id="j-district" required></select></div>
+        <div class="field"><label for="j-taluka">तालुका *</label><select id="j-taluka" required></select></div>
+        <div class="field full"><label for="j-loc">मालमत्तेचे ठिकाण *</label><input id="j-loc" required></div>
+        <div class="field"><label for="j-area">जमीन क्षेत्र *</label><input id="j-area" placeholder="उदा. २ एकर / ८,०९४ चौ.मी." required></div>
+        <div class="field"><label for="j-map">नकाशा लिंक <small>(Google Maps)</small></label><input id="j-map" type="url"></div>
+        <div class="field full"><label for="j-brief">थोडक्यात प्रस्ताव *</label><textarea id="j-brief" required></textarea></div>
+        <div class="field full"><label for="j-terms">अपेक्षित अटी</label><textarea id="j-terms" style="min-height:80px"></textarea></div>
+        <div class="field full"><label for="j-docs">कागदपत्रे / छायाचित्रे <small>(७/१२, नकाशा, फोटो)</small></label><input id="j-docs" type="file" multiple></div>
+        <div class="field full"><label class="check"><input type="checkbox" required id="j-agree"><span>मी सूची नियम व अटी मान्य करतो/करते; दिलेली माहिती खरी आहे.</span></label></div>
+        <div class="field full"><button class="btn" type="submit">पुढे — शुल्क भरा (₹<span id="jvFee2"></span>)</button></div>
+      </div>
+      <div class="ok" id="j-ok" hidden style="margin-top:14px">अर्ज जतन झाला (स्थिती: Submitted). शुल्क भरल्यानंतर महासंघ तपासणी करून मान्यता देईल; त्यानंतरच सूची प्रसिद्ध होईल. (नमुना — पेमेंट गेटवे विकासक जोडतील.)</div>
+    </form>
+  </section>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="cols">
+      <div><h4>पत्ता</h4>१७०२, हावरे इन्फोटेक पार्क, सेक्टर ३०ए, वाशी, नवी मुंबई – ४०० ७०५<br><br><a href="index.html#sampark">संपर्क →</a></div>
+      <div><h4>महत्त्वाचे दुवे</h4><ul><li><a href="index.html#mahasangh">महासंघाविषयी</a></li><li><a href="index.html#karyapaddhati">कार्यपद्धती</a></li><li><a href="index.html#sanghatana">स्थानिक संघटना</a></li><li><a href="karya.html">आमचे कार्य</a></li><li><a href="nondani.html">नोंदणी करा</a></li></ul></div>
+      <div><h4>दस्तऐवज व संधी</h4><ul><li><a href="dastaivaj.html">मसुदा MoU</a></li><li><a href="dastaivaj.html">मानक घटना</a></li><li><a href="sandhi.html">JV / JD संधी</a></li><li><a href="sandhi.html">जाहिरात दर</a></li><li><a href="admin.html">प्रशासन (नमुना)</a></li></ul></div>
+      <div><h4>माहिती</h4><p style="font-size:.95rem">या वेबसाइटवरील माहिती केवळ सामान्य माहितीच्या उद्देशाने आहे. अधिकृत माहितीसाठी महासंघ कार्यालयाशी संपर्क साधा.</p><ul><li><a href="#">गोपनीयता धोरण</a></li><li><a href="#">नियम व अटी</a></li></ul></div>
+    </div>
+    <div class="bottom"><span>© मराठी बांधकाम व्यावसायिक महासंघ · सर्व अधिकार सुरक्षित</span><span>संस्था नोंदणी अधिनियम १८६० अन्वये नोंदणीकृत</span></div>
+  </div>
+</footer>
+<script src="app.js"></script>
+<script>
+(function(){
+  const {q,qa,mr,data,fillDistricts,fillTalukas}=MBVM;
+  q("#jvFee").textContent=mr(data.settings.jvFee.toLocaleString("en-IN")); q("#jvFee2").textContent=mr(data.settings.jvFee.toLocaleString("en-IN")); q("#adFee").textContent=mr(data.settings.adFee.toLocaleString("en-IN"));
+  q("#jvList").innerHTML=data.listings.map(l=>`<div class="card listing"><div class="top"><span class="pill ad">${l.type}</span><span class="meta">${l.date}</span></div><b>${l.district} · ${l.taluka} · ${l.area}</b><div class="meta">${l.summary}</div><div style="margin-top:8px"><a class="btn small ghost" href="#nondava">तपशील / संपर्क विनंती</a></div></div>`).join("");
+  qa(".tabs button").forEach(b=>b.addEventListener("click",()=>{qa(".tabs button").forEach(x=>x.classList.remove("active"));b.classList.add("active");q("#tab-jv").hidden=b.dataset.tab!=="jv";q("#tab-ad").hidden=b.dataset.tab!=="ad";}));
+  const d=q("#j-district"),t=q("#j-taluka"); fillDistricts(d,true); fillTalukas(t,"",true); d.addEventListener("change",()=>fillTalukas(t,d.value,true));
+  q("#jvForm").addEventListener("submit",e=>{e.preventDefault(); if(!e.target.checkValidity()){e.target.reportValidity();return;} q("#j-ok").hidden=false; e.target.querySelector("button[type=submit]").disabled=true;});
+})();
+</script>
+
+</body>
+</html>
