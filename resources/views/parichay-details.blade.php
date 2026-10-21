@@ -11,6 +11,37 @@
         padding: 80px 0;
     }
 
+    .parichay-details-hero {
+        padding: clamp(48px, 7vw, 78px) 0;
+        color: #fff;
+        background: linear-gradient(120deg, #1d2940 0%, #33425d 48%, #d45d2c 100%);
+    }
+
+    .parichay-details-hero__breadcrumb {
+        margin-bottom: 14px;
+        color: rgba(255, 255, 255, .82);
+    }
+
+    .parichay-details-hero__breadcrumb a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .parichay-details-hero__title {
+        margin: 0 0 12px;
+        color: #fff;
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 700;
+    }
+
+    .parichay-details-hero__intro {
+        max-width: 760px;
+        margin: 0;
+        color: rgba(255, 255, 255, .9);
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+
     .mbvm-details-section.bg-soft {
         background: #f9ede7;
     }
@@ -297,34 +328,34 @@
      PAGE INTRODUCTION
 ========================================================= --}}
 
-<div class="container-xxl py-5">
-
-    <div class="container">
-
-        <div class="mbvm-page-title text-center">
-
-            <h4 class="section-title">
-                परिचय
-            </h4>
-
-            <h1 class="display-5 mt-4">
-                महासंघाबद्दल
-            </h1>
-
-        </div>
-
-
-        <div class="mbvm-content-box">
-
-            <p>
-                मराठी बांधकाम व्यवसायिक महासंघ (MBVM) ही महाराष्ट्रातील मराठी बांधकाम व्यवसायिकांची राज्यस्तरीय शिखर (Apex) संघटना आहे. महासंघाचा मुख्य उद्देश महाराष्ट्रातील प्रत्येक जिल्ह्यात तसेच CIDCO, NAINA, MMRDA, PMRDA, MIDC आणि इतर विशेष नियोजन प्राधिकरण (Special Planning Authority) क्षेत्रांमध्ये मराठी बांधकाम व्यवसायिक असोसिएशन स्थापन करून सर्व मराठी विकासकांना एका संघटनात्मक व्यासपीठावर आणणे हा आहे.
+<main>
+    <header class="parichay-details-hero">
+        <div class="container">
+            <div class="parichay-details-hero__breadcrumb">
+                <a href="{{ route('home') }}">मुख्यपृष्ठ</a>
+                <span aria-hidden="true"> / </span>
+                <span aria-current="page">परिचय</span>
+            </div>
+            <h1 class="parichay-details-hero__title">महासंघाबद्दल</h1>
+            <p class="parichay-details-hero__intro">
+                मराठी बांधकाम व्यावसायिक महासंघाची ओळख, उद्दिष्टे आणि संघटनात्मक रचना.
             </p>
+        </div>
+    </header>
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="mbvm-content-box">
+
+                <p>
+                    मराठी बांधकाम व्यवसायिक महासंघ (MBVM) ही महाराष्ट्रातील मराठी बांधकाम व्यवसायिकांची राज्यस्तरीय शिखर (Apex) संघटना आहे. महासंघाचा मुख्य उद्देश महाराष्ट्रातील प्रत्येक जिल्ह्यात तसेच CIDCO, NAINA, MMRDA, PMRDA, MIDC आणि इतर विशेष नियोजन प्राधिकरण (Special Planning Authority) क्षेत्रांमध्ये मराठी बांधकाम व्यवसायिक असोसिएशन स्थापन करून सर्व मराठी विकासकांना एका संघटनात्मक व्यासपीठावर आणणे हा आहे.
+                </p>
+
+            </div>
 
         </div>
-
     </div>
 
-</div>
 
 
 {{-- =========================================================
@@ -685,6 +716,6 @@
     </div>
 
 </section>
-
+    </main>
 
 @endsection
