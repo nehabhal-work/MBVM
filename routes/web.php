@@ -10,7 +10,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Models\District;
 use App\Models\Member;
 
-$karyaUpdates = collect([
+$karyaUpdates = [
     [
         'date' => '२८ सप्टेंबर २०२६',
         'category' => 'शासनाकडे निवेदने',
@@ -51,10 +51,12 @@ $karyaUpdates = collect([
         'authority' => '',
         'outcome' => '',
     ],
-]);
+];
 
 // ---------- STATIC PAGES ----------
 $renderHome = function (Request $request) use ($karyaUpdates) {
+    $karyaUpdates = collect($karyaUpdates);
+
     $registrationAreas = Member::query()
         ->select('jilha', 'taluka')
         ->selectRaw('COUNT(*) as registration_count')
@@ -123,6 +125,8 @@ Route::get('/', $renderHome)->name('home');
 Route::get('/home', $renderHome)->name('home.alias');
 
 Route::get('/karya', function () use ($karyaUpdates) {
+    $karyaUpdates = collect($karyaUpdates);
+
     return view('karya', compact('karyaUpdates'));
 })->name('karya.index');
 
