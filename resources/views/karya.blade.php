@@ -3,8 +3,24 @@
 @section('content')
     <style>
         .karya-page {
-            padding: 56px 0 72px;
+            padding-bottom: 72px;
             background: #f7f8fa;
+        }
+
+        .karya-page__hero {
+            padding: clamp(48px, 7vw, 78px) 0;
+            color: #fff;
+            background: linear-gradient(120deg, #1d2940 0%, #33425d 48%, #d45d2c 100%);
+        }
+
+        .karya-page__breadcrumb {
+            margin-bottom: 14px;
+            color: rgba(255, 255, 255, .82);
+        }
+
+        .karya-page__breadcrumb a {
+            color: #fff;
+            text-decoration: none;
         }
 
         .karya-page__title {
@@ -12,10 +28,26 @@
             font-weight: 700;
         }
 
+        .karya-page__hero .karya-page__title {
+            margin: 0 0 12px;
+            color: #fff;
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+
         .karya-page__intro {
             max-width: 760px;
             color: #626c7c;
             line-height: 1.7;
+        }
+
+        .karya-page__hero .karya-page__intro {
+            margin: 0;
+            color: rgba(255, 255, 255, .9);
+            font-size: 1.1rem;
+        }
+
+        .karya-page__body {
+            padding-top: 44px;
         }
 
         .karya-page__filters {
@@ -135,15 +167,21 @@
     </style>
 
     <main class="karya-page">
-        <div class="container">
-            <header class="text-center mx-auto" style="max-width:800px">
-                <span class="text-primary fw-bold">आमचे कार्य</span>
-                <h1 class="karya-page__title display-5 my-2">महासंघाचे कार्य / घडामोडी</h1>
+        <header class="karya-page__hero">
+            <div class="container">
+                <div class="karya-page__breadcrumb">
+                    <a href="{{ route('home') }}">मुख्यपृष्ठ</a>
+                    <span aria-hidden="true"> / </span>
+                    <span aria-current="page">महासंघाचे कार्य / घडामोडी</span>
+                </div>
+                <h1 class="karya-page__title">महासंघाचे कार्य / घडामोडी</h1>
                 <p class="karya-page__intro mx-auto">
                     शासनाकडे निवेदने, बैठका, धोरणात्मक प्रश्न, यश व संलग्न संघटनांचे उपक्रम.
                 </p>
-            </header>
+            </div>
+        </header>
 
+        <div class="container karya-page__body">
             <nav class="karya-page__filters" aria-label="घडामोडींचे प्रकार">
                 <button class="karya-page__filter" type="button" data-karya-filter="all" aria-pressed="true">
                     सर्व

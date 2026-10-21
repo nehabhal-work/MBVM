@@ -7,6 +7,7 @@ use App\Models\DistrictNotification;
 use App\Models\Member;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Validation\Rule;
 
 class MemberController extends Controller
 {
@@ -67,6 +68,25 @@ class MemberController extends Controller
             'taluka'       => ['required', 'string', 'max:100'],
             'city'         => ['required', 'string', 'max:100'],
             'company_name' => ['required', 'string', 'max:150'],
+            'state'        => ['required', Rule::in(['महाराष्ट्र'])],
+            'address'      => ['required', 'string', 'max:1000'],
+            'village'      => ['nullable', 'string', 'max:100'],
+            'business_type' => [
+                'required',
+                Rule::in([
+                    'विकासक / बिल्डर',
+                    'लँड डेव्हलपर',
+                    'अभियंता',
+                    'वास्तुविशारद',
+                    'कंत्राटदार',
+                    'पुरवठादार',
+                    'इतर',
+                ]),
+            ],
+            'website' => ['nullable', 'url', 'max:255'],
+            'maharera_number' => ['nullable', 'string', 'max:100'],
+            'business_details' => ['nullable', 'string', 'max:2000'],
+            'contact_consent' => ['accepted'],
         ], [
             'mobile.digits' => 'मोबाईल नंबर बरोबर १० अंकी असावा.',
             'mobile.numeric' => 'मोबाईल नंबरमध्ये फक्त आकडे असावेत.',
@@ -74,6 +94,7 @@ class MemberController extends Controller
             'email.email' => 'कृपया योग्य ई-मेल टाका.',
         ]);
 
+        $validated['contact_consent'] = true;
         Member::create($validated);
 
         $this->checkDistrictThreshold($validated['jilha']);
