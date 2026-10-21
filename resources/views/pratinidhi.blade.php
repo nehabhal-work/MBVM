@@ -2,6 +2,45 @@
 
 @section('content')
     <style>
+        .representatives-page {
+            padding-bottom: 64px;
+        }
+
+        .representatives-page__hero {
+            padding: clamp(48px, 7vw, 78px) 0;
+            color: #fff;
+            background: linear-gradient(120deg, #1d2940 0%, #33425d 48%, #d45d2c 100%);
+        }
+
+        .representatives-page__breadcrumb {
+            margin-bottom: 14px;
+            color: rgba(255, 255, 255, .82);
+        }
+
+        .representatives-page__breadcrumb a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .representatives-page__title {
+            margin: 0 0 12px;
+            color: #fff;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+        }
+
+        .representatives-page__intro {
+            max-width: 760px;
+            margin: 0;
+            color: rgba(255, 255, 255, .9);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .representatives-page__body {
+            padding-top: 44px;
+        }
+
         .representatives-page .representative-notice {
             border-left: 4px solid var(--bs-primary);
         }
@@ -54,21 +93,23 @@
         ];
     @endphp
 
-    <main class="representatives-page container-xxl py-5">
-        <div class="container">
-            <div class="mb-4">
-                <div class="mb-2">
-                    <a href="{{ route('home') }}#karyakarini">मुख्यपृष्ठ › कार्यकारिणी</a>
-                    <span aria-hidden="true"> › </span>
-                    <span>संलग्न संस्था व अधिकृत प्रतिनिधी</span>
+    <main class="representatives-page">
+        <header class="representatives-page__hero">
+            <div class="container">
+                <div class="representatives-page__breadcrumb">
+                    <a href="{{ route('home') }}#karyakarini">मुख्यपृष्ठ</a>
+                    <span aria-hidden="true"> / </span>
+                    <span aria-current="page">संलग्न संस्था व अधिकृत प्रतिनिधी</span>
                 </div>
-                <h1 class="display-5 mb-3">संलग्न संस्था व अधिकृत प्रतिनिधी</h1>
-                <p class="mb-0">
+                <h1 class="representatives-page__title">संलग्न संस्था व अधिकृत प्रतिनिधी</h1>
+                <p class="representatives-page__intro">
                     Affiliated Associations &amp; Authorized Representatives — महासंघाशी अधिकृतरीत्या
                     संलग्न स्थानिक संघटना व त्यांचे प्रतिनिधी
                 </p>
             </div>
+        </header>
 
+        <div class="container representatives-page__body">
             <div class="representative-notice alert alert-light mb-4" role="note">
                 संस्थेचा अधिकृत प्रतिनिधी असल्यामुळे संबंधित व्यक्ती महासंघाच्या कार्यकारिणीची सदस्य आपोआप होत नाही.
                 महासंघाच्या कार्यकारिणीत स्वतंत्र निवड/नियुक्ती झाली असल्यासच MBVM पदनाम दर्शवले जाते.

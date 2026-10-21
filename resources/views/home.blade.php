@@ -556,7 +556,9 @@
 
 
         <!-- परिचय Start -->
-        @include('parichay')
+        <div id="parichay">
+            @include('partials._parichay')
+        </div>
         <!-- परिचय End -->
 
         <!-- उद्देश Start -->
@@ -1257,7 +1259,7 @@
         <!-- संपर्क End -->
 
         <!-- Testimonial Start -->
-        <div class="container-xxl py-5">
+        {{-- <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h4 class="section-title">अभिप्राय</h4>
@@ -1290,7 +1292,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- Testimonial End -->
 
 
