@@ -7,6 +7,8 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\OtpController;
 use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\SandhiListingController;
+use App\Models\SandhiListing;
 use App\Models\District;
 use App\Models\Member;
 
@@ -148,9 +150,14 @@ Route::get('/dastaivaj', function () {
 
 Route::get('/sandhi', function () {
     $districts = District::query()->orderBy('name')->get(['id', 'name']);
+    $listings = SandhiListing::published()->latest()->get();
 
-    return view('sandhi', compact('districts'));
+    return view('sandhi', compact('districts', 'listings'));
 })->name('sandhi.index');
+
+Route::post('/sandhi', [SandhiListingController::class, 'store'])
+    ->middleware('throttle:5,1')
+    ->name('sandhi.store');
 
 // ---------- PUBLIC: member registration form ----------
 Route::get('/sadasyatva-form', [MemberController::class, 'create'])->name('members.create');
@@ -164,6 +171,17 @@ Route::middleware('auth')->group(function () {
 // ---------- ADMIN ONLY: registered users list ----------
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/registered-users', [UserController::class, 'index'])->name('admin.users.index');
+    Route::get('/registered-users/export', [UserController::class, 'exportMembers'])->name('admin.members.export');
+    Route::patch('/registered-users/members/{member}/status', [UserController::class, 'updateMemberStatus'])->name('admin.members.status');
+
+    Route::prefix('/registered-users/sandhi/{listing}')->name('admin.sandhi.')->group(function () {
+        Route::patch('/approve', [SandhiListingController::class, 'approve'])->name('approve');
+        Route::patch('/reject', [SandhiListingController::class, 'reject'])->name('reject');
+        Route::patch('/pause', [SandhiListingController::class, 'pause'])->name('pause');
+        Route::patch('/review', [SandhiListingController::class, 'review'])->name('review');
+        Route::patch('/paid', [SandhiListingController::class, 'markPaid'])->name('paid');
+        Route::post('/remind', [SandhiListingController::class, 'remind'])->name('remind');
+    });
 });
 Route::get('/get-talukas/{district}', function (District $district) {
     return response()->json(

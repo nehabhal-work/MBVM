@@ -294,6 +294,14 @@
             <section class="sandhi-page__panel" id="sandhi-panel-jv" role="tabpanel"
                 aria-labelledby="sandhi-tab-jv">
                 <div class="sandhi-page__grid sandhi-page__grid--two">
+                    @foreach ($listings as $listing)
+                        <article class="sandhi-page__card sandhi-page__listing">
+                            <span class="sandhi-page__tag">{{ $listing->type }}</span>
+                            <time datetime="{{ $listing->created_at->toDateString() }}">{{ $listing->created_at->format('d-m-Y') }}</time>
+                            <h3>{{ $listing->district }} · {{ $listing->taluka }} · {{ $listing->area }}</h3>
+                            <p class="sandhi-page__muted">{{ \Illuminate\Support\Str::limit($listing->brief, 160) }}</p>
+                        </article>
+                    @endforeach
                     <article class="sandhi-page__card sandhi-page__listing">
                         <span class="sandhi-page__tag">जमीन JV/JD साठी उपलब्ध</span>
                         <time datetime="2026-10-01">०१ ऑक्टोबर २०२६</time>
@@ -350,30 +358,43 @@
                     महासंघ तपासणी → मान्यता → प्रसिद्धी. मान्यतेशिवाय काहीही प्रसिद्ध होत नाही.
                 </p>
 
-                <form class="sandhi-page__card sandhi-page__form" id="sandhi-form">
+                @if (session('sandhi_success'))
+                    <div class="alert alert-success">{{ session('sandhi_success') }}</div>
+                @endif
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul class="mb-0">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                <form class="sandhi-page__card sandhi-page__form" id="sandhi-form" method="POST"
+                    action="{{ route('sandhi.store') }}" enctype="multipart/form-data">
+                    @csrf
                     <div class="sandhi-page__form-grid">
                         <div class="sandhi-page__field">
                             <label for="sandhi-name">अर्जदार / कंपनी *</label>
-                            <input id="sandhi-name" name="name" required>
+                            <input id="sandhi-name" name="name" value="{{ old('name') }}" required>
                         </div>
                         <div class="sandhi-page__field">
                             <label for="sandhi-mobile">मोबाईल *</label>
-                            <input id="sandhi-mobile" name="mobile" type="tel" inputmode="numeric"
+                            <input id="sandhi-mobile" name="mobile" value="{{ old('mobile') }}" type="tel" inputmode="numeric"
                                 pattern="[0-9]{10}" autocomplete="tel" required>
                         </div>
                         <div class="sandhi-page__field">
                             <label for="sandhi-email">ई-मेल *</label>
-                            <input id="sandhi-email" name="email" type="email" autocomplete="email" required>
+                            <input id="sandhi-email" name="email" value="{{ old('email') }}" type="email" autocomplete="email" required>
                         </div>
                         <div class="sandhi-page__field">
                             <label for="sandhi-type">प्रस्तावाचा प्रकार *</label>
                             <select id="sandhi-type" name="type" required>
                                 <option value="">निवडा</option>
-                                <option>जमीन JV/JD साठी उपलब्ध</option>
-                                <option>जमीनमालक विकासक शोधत आहे</option>
-                                <option>विकास भागीदार हवा</option>
-                                <option>गुंतवणूकदार / विकासक संधी</option>
-                                <option>पुनर्विकास संधी</option>
+                                @foreach (\App\Models\SandhiListing::TYPES as $type)
+                                    <option value="{{ $type }}" @selected(old('type') === $type)>{{ $type }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="sandhi-page__field">
@@ -383,55 +404,53 @@
                                 required>
                                 <option value="">जिल्हा निवडा</option>
                                 @foreach ($districts as $district)
-                                    <option value="{{ $district->id }}">{{ $district->name }}</option>
+                                    <option value="{{ $district->id }}" @selected(old('district') == $district->id)>{{ $district->name }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="sandhi-page__field">
                             <label for="sandhi-taluka">तालुका *</label>
-                            <select id="sandhi-taluka" name="taluka" required disabled>
+                            <select id="sandhi-taluka" name="taluka" data-old="{{ old('taluka') }}" required disabled>
                                 <option value="">आधी जिल्हा निवडा</option>
                             </select>
                         </div>
                         <div class="sandhi-page__field sandhi-page__field--full">
                             <label for="sandhi-location">मालमत्तेचे ठिकाण *</label>
-                            <input id="sandhi-location" name="location" required>
+                            <input id="sandhi-location" name="location" value="{{ old('location') }}" required>
                         </div>
                         <div class="sandhi-page__field">
                             <label for="sandhi-area">जमीन क्षेत्र *</label>
-                            <input id="sandhi-area" name="area" placeholder="उदा. २ एकर / ८,०९४ चौ.मी." required>
+                            <input id="sandhi-area" name="area" value="{{ old('area') }}" placeholder="उदा. २ एकर / ८,०९४ चौ.मी." required>
                         </div>
                         <div class="sandhi-page__field">
                             <label for="sandhi-map">नकाशा लिंक <small>(Google Maps)</small></label>
-                            <input id="sandhi-map" name="map" type="url">
+                            <input id="sandhi-map" name="map" type="url" value="{{ old('map') }}">
                         </div>
                         <div class="sandhi-page__field sandhi-page__field--full">
                             <label for="sandhi-brief">थोडक्यात प्रस्ताव *</label>
-                            <textarea id="sandhi-brief" name="brief" required></textarea>
+                            <textarea id="sandhi-brief" name="brief" required>{{ old('brief') }}</textarea>
                         </div>
                         <div class="sandhi-page__field sandhi-page__field--full">
                             <label for="sandhi-terms">अपेक्षित अटी</label>
-                            <textarea id="sandhi-terms" name="terms" style="min-height:80px"></textarea>
+                            <textarea id="sandhi-terms" name="terms" style="min-height:80px">{{ old('terms') }}</textarea>
                         </div>
                         <div class="sandhi-page__field sandhi-page__field--full">
                             <label for="sandhi-docs">कागदपत्रे / छायाचित्रे <small>(७/१२, नकाशा, फोटो)</small></label>
-                            <input id="sandhi-docs" name="documents[]" type="file" multiple>
+                            <input id="sandhi-docs" name="documents[]" type="file" multiple accept=".jpg,.jpeg,.png,.webp,.pdf">
                         </div>
                         <div class="sandhi-page__field sandhi-page__field--full">
                             <label class="sandhi-page__check" for="sandhi-agree">
-                                <input id="sandhi-agree" name="agree" type="checkbox" required>
+                                <input id="sandhi-agree" name="agree" type="checkbox" value="1" @checked(old('agree')) required>
                                 <span>मी सूची नियम व अटी मान्य करतो/करते; दिलेली माहिती खरी आहे.</span>
                             </label>
                         </div>
                         <div class="sandhi-page__field sandhi-page__field--full">
                             <button class="sandhi-page__submit" type="submit">
-                                पुढे — शुल्क भरा (प्रशासन-निर्धारित)
+                                संधी सादर करा
                             </button>
                         </div>
                     </div>
-                    <p class="sandhi-page__status" id="sandhi-status" role="status" hidden>
-                        हा नमुना फॉर्म आहे. संधी सादरीकरण व पेमेंटसाठी बॅकएंड जोडणे आवश्यक आहे.
-                    </p>
+                    <p class="sandhi-page__status" id="sandhi-status" role="status" hidden></p>
                 </form>
             </section>
         </div>
@@ -481,7 +500,9 @@
                 }
 
                 const talukas = await response.json();
-                talukas.forEach((name) => talukaSelect.add(new Option(name, name)));
+                const oldTaluka = talukaSelect.dataset.old;
+                talukas.forEach((name) => talukaSelect.add(new Option(name, name, false, name === oldTaluka)));
+                talukaSelect.dataset.old = '';
                 talukaSelect.disabled = false;
             } catch (error) {
                 talukaSelect.replaceChildren(new Option('तालुका यादी उपलब्ध नाही', ''));
@@ -490,13 +511,16 @@
             }
         });
 
-        document.getElementById('sandhi-form').addEventListener('submit', (event) => {
-            event.preventDefault();
-            if (!event.currentTarget.reportValidity()) {
-                return;
-            }
+        // After a failed submit, reload talukas for the previously chosen district
+        if (districtSelect.value) {
+            districtSelect.dispatchEvent(new Event('change'));
+        }
 
-            document.getElementById('sandhi-status').hidden = false;
+        // Prevent double submit
+        document.getElementById('sandhi-form').addEventListener('submit', (event) => {
+            const button = event.currentTarget.querySelector('[type="submit"]');
+            button.disabled = true;
+            button.textContent = 'सादर होत आहे…';
         });
     </script>
 @endpush

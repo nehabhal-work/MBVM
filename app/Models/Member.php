@@ -22,6 +22,13 @@ class Member extends Model
         'maharera_number',
         'business_details',
         'contact_consent',
+        'status',
+    ];
+
+    public const STATUSES = [
+        'pending'    => 'Pending',
+        'verified'   => 'Verified',
+        'unverified' => 'Unverified',
     ];
 
     protected $casts = [

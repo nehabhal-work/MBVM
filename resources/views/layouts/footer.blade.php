@@ -32,7 +32,7 @@
                 <a class="btn btn-link" href="{{ route('documents.index') }}">मानक घटना</a>
                 <a class="btn btn-link" href="{{ route('sandhi.index') }}">JV / JD संधी</a>
                 <a class="btn btn-link" href="{{ route('sandhi.index') }}#sandhi-panel-ad">जाहिरात दर</a>
-                <a class="btn btn-link" href="{{ route('admin.users.index') }}">प्रशासन (नमुना)</a>
+                <a class="btn btn-link" href="{{ route('admin.users.index') }}">प्रशासन</a>
             </div>
             <div class="col-lg-3 col-md-6">
                 <h3 class="text-light mb-4">बातमीपत्र</h3>

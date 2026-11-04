@@ -24,7 +24,15 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">पासवर्ड *</label>
-                    <input type="password" name="password" class="form-control" style="height:55px;" required>
+                    <div class="position-relative">
+                        <input type="password" name="password" id="login-password" class="form-control"
+                            style="height:55px; padding-right:50px;" required autocomplete="current-password">
+                        <button type="button" id="toggle-password"
+                            class="btn position-absolute top-50 end-0 translate-middle-y border-0 bg-transparent text-secondary px-3"
+                            aria-label="पासवर्ड दाखवा" title="पासवर्ड दाखवा">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
                 </div>
                 <button type="submit" class="btn btn-primary w-100 py-3">लॉगिन →</button>
             </form>
@@ -36,3 +44,21 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+    document.getElementById('toggle-password').addEventListener('click', function () {
+        const input = document.getElementById('login-password');
+        const icon = this.querySelector('i');
+        const show = input.type === 'password';
+
+        input.type = show ? 'text' : 'password';
+        icon.classList.toggle('fa-eye', !show);
+        icon.classList.toggle('fa-eye-slash', show);
+
+        const label = show ? 'पासवर्ड लपवा' : 'पासवर्ड दाखवा';
+        this.setAttribute('aria-label', label);
+        this.setAttribute('title', label);
+    });
+</script>
+@endpush
