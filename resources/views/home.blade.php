@@ -280,6 +280,15 @@
             font-weight: 400;
         }
 
+        #karyapaddhati .process-followup .process-number {
+            display: grid;
+            margin-bottom: 12px;
+            color: #fff;
+            font-weight: 600;
+            line-height: 1;
+            text-align: center;
+        }
+
         #karyapaddhati .process-followup {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1005,16 +1014,25 @@
                         </div>
 
                         <div class="process-followup">
-                            <div><b>इच्छुक विकासकांची ऑनलाइन नोंदणी</b><span>या वेबसाइटवरील नोंदणी फॉर्मद्वारे</span></div>
-                            <div><b>एकाच परिसरातील विकासकांची संख्या पूर्ण</b><span>जिल्हा / तालुका / शहरनिहाय गणना</span>
+                            <div><span class="process-number">१</span><b>इच्छुक विकासकांची ऑनलाइन नोंदणी</b><span>या
+                                    वेबसाइटवरील नोंदणी फॉर्मद्वारे</span></div>
+                            <div><span class="process-number">२</span><b>एकाच परिसरातील विकासकांची संख्या
+                                    पूर्ण</b><span>जिल्हा / तालुका / शहरनिहाय गणना</span>
                             </div>
-                            <div><b>MBVM कडून संपर्क</b><span>नोंदणी केलेल्या सर्वांशी फोन / WhatsApp</span></div>
-                            <div><b>त्या भागात प्रथम बैठक</b><span>महासंघ पदाधिकाऱ्यांच्या उपस्थितीत</span></div>
-                            <div><b>स्थानिक कमिटीची स्थापना</b><span>अध्यक्ष, सचिव, खजिनदार व सदस्य</span></div>
-                            <div><b>स्थानिक संघटनेची नोंदणी</b><span>संस्था नोंदणी अधिनियम १८६० अन्वये</span></div>
-                            <div><b>घटना / आवश्यक कागदपत्रे</b><span>महासंघाची मानक घटना स्वीकारणे</span></div>
-                            <div><b>MBVM सोबत MoU</b><span>मसुदा MoU दस्तऐवज विभागात उपलब्ध</span></div>
-                            <div><b>महासंघाशी संलग्नता</b><span>संलग्न संघटनांच्या यादीत समावेश</span></div>
+                            <div><span class="process-number">३</span><b>MBVM कडून संपर्क</b><span>नोंदणी केलेल्या सर्वांशी
+                                    फोन / WhatsApp</span></div>
+                            <div><span class="process-number">४</span><b>त्या भागात प्रथम बैठक</b><span>महासंघ
+                                    पदाधिकाऱ्यांच्या उपस्थितीत</span></div>
+                            <div><span class="process-number">५</span><b>स्थानिक कमिटीची स्थापना</b><span>अध्यक्ष, सचिव,
+                                    खजिनदार व सदस्य</span></div>
+                            <div><span class="process-number">६</span><b>स्थानिक संघटनेची नोंदणी</b><span>संस्था नोंदणी
+                                    अधिनियम १८६० अन्वये</span></div>
+                            <div><span class="process-number">७</span><b>घटना / आवश्यक कागदपत्रे</b><span>महासंघाची मानक
+                                    घटना स्वीकारणे</span></div>
+                            <div><span class="process-number">८</span><b>MBVM सोबत MoU</b><span>मसुदा MoU दस्तऐवज विभागात
+                                    उपलब्ध</span></div>
+                            <div><span class="process-number">९</span><b>महासंघाशी संलग्नता</b><span>संलग्न संघटनांच्या
+                                    यादीत समावेश</span></div>
                         </div>
                     </div>
 

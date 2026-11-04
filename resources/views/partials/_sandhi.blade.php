@@ -232,7 +232,8 @@
                             <time class="sandhi__listing-date" datetime="2026-10-01">०१ ऑक्टोबर २०२६</time>
                         </div>
                         <h3 class="sandhi__listing-title">रायगड · पनवेल · २ एकर (८,०९४ चौ.मी.)</h3>
-                        <p class="sandhi__listing-description">NAINA क्षेत्रातील निवासी/व्यापारी वापरास योग्य भूखंड; ७/१२ स्वच्छ.</p>
+                        <p class="sandhi__listing-description">NAINA क्षेत्रातील निवासी/व्यापारी वापरास योग्य भूखंड;
+                            ७/१२ स्वच्छ.</p>
                     </article>
 
                     <article class="sandhi__listing">
@@ -255,8 +256,8 @@
                 </div>
 
                 <div class="sandhi__actions">
-                    <a class="btn btn-outline-brand" href="#sandhi-opportunities">सर्व संधी पहा</a>
-                    <a class="btn btn-brand" href="{{ url('/sandhi.html#nondava') }}">संधी नोंदवा</a>
+                    <a class="btn btn-outline-brand" href="{{ route('sandhi.index') }}#sandhi-panel-jv">सर्व संधी पहा</a>
+                    <a class="btn btn-brand" href="{{ route('sandhi.index') }}#nondava">संधी नोंदवा</a>
                 </div>
             </div>
         </div>
