@@ -380,3 +380,233 @@ p {
 }
 
 /* --------navbar----------- */
+
+.mbvm-contact {
+    position: relative;
+    scroll-margin-top: 90px;
+    padding: 18px 24px 48px;
+    background: #fff;
+    color: #1d2940;
+}
+
+.mbvm-contact__anchor {
+    position: absolute;
+    top: 0;
+}
+
+.mbvm-contact__container {
+    width: min(100%, 1120px);
+    margin: 0 auto;
+}
+
+.mbvm-contact__heading {
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.mbvm-contact__eyebrow {
+    color: #d45d2c;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.mbvm-contact__heading h2 {
+    margin: 2px 0 0;
+    color: #1d2940;
+    font-size: 32px;
+}
+
+.mbvm-contact__layout {
+    display: grid;
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    gap: 28px;
+}
+
+.mbvm-contact__offices {
+    display: grid;
+    align-content: start;
+    gap: 16px;
+}
+
+.mbvm-contact__office,
+.mbvm-contact__details,
+.mbvm-contact__enquiry {
+    overflow: hidden;
+    border: 1px solid #eee;
+    border-radius: 11px;
+    background: #fff;
+}
+
+.mbvm-contact__office header {
+    padding: 9px 16px 10px;
+    background: #d45d2c;
+    color: #fff;
+    text-align: center;
+}
+
+.mbvm-contact__office header h3 {
+    margin: 0;
+    color: inherit;
+    font-size: 19px;
+}
+
+.mbvm-contact__office header span {
+    font-size: 14px;
+}
+
+.mbvm-contact__office-body {
+    padding: 15px 18px 17px;
+}
+
+.mbvm-contact__office-body p,
+.mbvm-contact__details p {
+    margin: 0;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.mbvm-contact__office-body a,
+.mbvm-contact__notice a {
+    color: #d45d2c;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.mbvm-contact__details {
+    padding: 20px 22px;
+    background: #f8f9fa;
+}
+
+.mbvm-contact__details > p:not(.mbvm-contact__note) {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 22px;
+}
+
+.mbvm-contact__copy {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 10px;
+    border: 1px solid #eee;
+    border-radius: 7px;
+}
+
+.mbvm-contact__copy button {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #d45d2c;
+    font: inherit;
+}
+
+.mbvm-contact__details .mbvm-contact__note {
+    color: #6c757d;
+    font-size: 13px;
+}
+
+.mbvm-contact__enquiry {
+    padding: 16px 22px 24px;
+}
+
+.mbvm-contact__enquiry > h3 {
+    margin: 0 0 8px;
+    color: #1d2940;
+    font-size: 20px;
+}
+
+.mbvm-contact__notice {
+    margin: 0 0 14px;
+    padding: 11px 15px;
+    border-left: 4px solid #d45d2c;
+    border-radius: 5px;
+    background: #f9ede7;
+    color: #555;
+    font-size: 14px;
+}
+
+.mbvm-contact__form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 14px;
+}
+
+.mbvm-contact__field {
+    display: grid;
+    gap: 5px;
+    min-width: 0;
+}
+
+.mbvm-contact__field--full {
+    grid-column: 1 / -1;
+}
+
+.mbvm-contact__field label {
+    color: #1d2940;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.mbvm-contact__field input,
+.mbvm-contact__field textarea {
+    width: 100%;
+    min-height: 50px;
+    padding: 10px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    outline: none;
+    background: #fff;
+    color: #1d2940;
+    font: inherit;
+}
+
+.mbvm-contact__field textarea {
+    min-height: 108px;
+    resize: vertical;
+}
+
+.mbvm-contact__field input:focus,
+.mbvm-contact__field textarea:focus {
+    border-color: #d45d2c;
+    box-shadow: 0 0 0 2px rgb(212 93 44 / 20%);
+}
+
+.mbvm-contact__submit {
+    margin-top: 18px;
+    padding: 12px 23px;
+    border: 0;
+    border-radius: 30px;
+    background: #d45d2c;
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+}
+
+.mbvm-contact__status {
+    min-height: 1px;
+    margin: 0;
+    color: #555;
+    font-size: 13px;
+}
+
+@media (max-width: 767.98px) {
+    .mbvm-contact {
+        padding: 24px 16px 36px;
+    }
+
+    .mbvm-contact__heading h2 {
+        font-size: 27px;
+    }
+
+    .mbvm-contact__layout {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .mbvm-contact__enquiry {
+        padding: 16px;
+    }
+}

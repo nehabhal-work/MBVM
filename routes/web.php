@@ -146,6 +146,12 @@ Route::get('/dastaivaj', function () {
     return view('dastaivaj');
 })->name('documents.index');
 
+Route::get('/sandhi', function () {
+    $districts = District::query()->orderBy('name')->get(['id', 'name']);
+
+    return view('sandhi', compact('districts'));
+})->name('sandhi.index');
+
 // ---------- PUBLIC: member registration form ----------
 Route::get('/sadasyatva-form', [MemberController::class, 'create'])->name('members.create');
 Route::post('/sadasyatva-form', [MemberController::class, 'store'])->name('members.store');

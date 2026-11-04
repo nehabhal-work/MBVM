@@ -4,7 +4,8 @@
         <div class="row g-5">
             <div class="col-lg-3 col-md-6 ">
                 <h3 class="text-light mb-4">पत्ता</h3>
-                <p class="mb-2 footcolor"><i class="fa fa-map-marker-alt text-primary me-3"></i>१७०२, हावरे इन्फोटेक पार्क,
+                <p class="mb-2 footcolor"><i class="fa fa-map-marker-alt text-primary me-3"></i>१७०२, हावरे इन्फोटेक
+                    पार्क,
                     सेक्टर ३०ए, वाशी, नवी मुंबई - ४००७०३
                 </p>
                 <p class="mb-2 footcolor"><i class="fa fa-phone-alt text-primary me-3"></i>+०१२ ३४५ ६७८९</p>
@@ -18,32 +19,34 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
-                <h3 class="text-light mb-4">सेवा</h3>
-                <a class="btn btn-link" href="">शासन समन्वय</a>
-                <a class="btn btn-link" href="">कायदेशीर मार्गदर्शन</a>
-                <a class="btn btn-link" href="">माहिती व नेटवर्किंग</a>
+                <h3 class="text-light mb-4">महत्त्वाचे दुवे</h3>
+                <a class="btn btn-link" href="{{ route('home') }}#parichay">महासंघाविषयी</a>
+                <a class="btn btn-link" href="{{ route('home') }}#karyapaddhati">कार्यपद्धती</a>
+                <a class="btn btn-link" href="{{ route('home') }}#jilha-asociation">स्थानिक संघटना</a>
+                <a class="btn btn-link" href="{{ route('karya.index') }}">आमचे कार्य</a>
+                <a class="btn btn-link" href="{{ route('members.create') }}">नोंदणी करा</a>
             </div>
             <div class="col-lg-3 col-md-6">
-                <h3 class="text-light mb-4">महत्त्वाचे दुवे</h3>
-                <a href="#parichay" class="btn btn-link">परिचय</a>
-                <a href="#sadasyatva" class="btn btn-link">सदस्यत्व</a>
-                <a href="#jilha-asociation" class="btn btn-link">जिल्हा असोसिएशन</a>
-                <a href="#karyakarini" class="btn btn-link">कार्यकारिणी</a>
-                <a href="#seva" class="btn btn-link">सेवा</a>
-                <a href="#sampark" class="btn btn-link">संपर्क</a>
+                <h3 class="text-light mb-4">दस्तऐवज व संधी</h3>
+                <a class="btn btn-link" href="{{ route('documents.index') }}">मसुदा MoU</a>
+                <a class="btn btn-link" href="{{ route('documents.index') }}">मानक घटना</a>
+                <a class="btn btn-link" href="{{ route('sandhi.index') }}">JV / JD संधी</a>
+                <a class="btn btn-link" href="{{ route('sandhi.index') }}#sandhi-panel-ad">जाहिरात दर</a>
+                <a class="btn btn-link" href="{{ route('admin.users.index') }}">प्रशासन (नमुना)</a>
             </div>
             <div class="col-lg-3 col-md-6">
                 <h3 class="text-light mb-4">बातमीपत्र</h3>
-                <p class="footcolor">सूचना: या वेबसाइटवरील माहिती केवळ सामान्य माहितीच्या उद्देशाने आहे. अधिकृत माहिती साठी कृपया
+                <p class="footcolor">सूचना: या वेबसाइटवरील माहिती केवळ सामान्य माहितीच्या उद्देशाने आहे. अधिकृत माहिती
+                    साठी कृपया
                     आमच्याशी संपर्क साधा.</p>
-                <div class="position-relative mx-auto" style="max-width: 400px;">
+                {{-- <div class="position-relative mx-auto" style="max-width: 400px;">
                     <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
                         placeholder="तुमचा ई-मेल">
                     <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">साइन
                         अप</button>
-                </div>
+                </div> --}}
             </div>
-            
+
         </div>
     </div>
     <div class="container-fluid copyright">

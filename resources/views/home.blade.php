@@ -44,8 +44,20 @@
 
         #karyakarini .permanent-trustees__grid {
             display: grid;
-            grid-template-columns: repeat(5, minmax(0, 1fr));
+            grid-template-columns: repeat(6, minmax(0, 1fr));
             gap: 16px;
+        }
+
+        #karyakarini .permanent-trustee:nth-child(-n + 3) {
+            grid-column: span 2;
+        }
+
+        #karyakarini .permanent-trustee:nth-child(4) {
+            grid-column: 2 / span 2;
+        }
+
+        #karyakarini .permanent-trustee:nth-child(5) {
+            grid-column: 4 / span 2;
         }
 
         #karyakarini .permanent-trustee {
@@ -318,7 +330,7 @@
 
         @media (max-width: 991px) {
             #karyakarini .permanent-trustees__grid {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
+                grid-template-columns: repeat(6, minmax(0, 1fr));
             }
 
             #karyakarini .exec-layout {
@@ -343,6 +355,16 @@
             #karyakarini .permanent-trustees__grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
                 gap: 10px;
+            }
+
+            #karyakarini .permanent-trustee:nth-child(-n + 4) {
+                grid-column: auto;
+            }
+
+            #karyakarini .permanent-trustee:nth-child(5) {
+                grid-column: 1 / -1;
+                width: calc(50% - 5px);
+                justify-self: center;
             }
 
             #karyakarini .permanent-trustee {
@@ -924,114 +946,117 @@
 
 
         <!-- कार्यपद्धती Start -->
-        <section class="ccontainer-fluid logo-bg-dark my-5 py-5" id="karyapaddhati">
-            <div class="container">
-                <div class="text-center mx-auto mb-5">
-                    <h4 class="section-title">कार्यपद्धती</h4>
-                    <h2 class="display-5 mb-3">अशी होते संघटना — स्थानिक विकासक ते शिखर संघटना</h2>
-                    <p class="text-muted fs-5 mb-0">
-                        एकाच भागातील मराठी विकासक एकत्र येतात, “मराठी बांधकाम व्यावसायिक संघटना,
-                        [जिल्हा / शहर / तालुका]” या नावाने स्थानिक संघटना स्थापन करतात आणि ती महासंघाशी संलग्न होते.
-                    </p>
-                </div>
-
-                <div class="process-chain">
-                    <div class="process-step process-step--main">
-                        <span class="process-number">१</span>
-                        <span>इच्छुक विकासकांची नोंदणी</span>
-                    </div>
-                    <div class="process-arrow" aria-hidden="true">↓</div>
-                    <div class="process-step">
-                        <span class="process-number">२</span>
-                        <span>१० / १५ / २५ / ५० / १०० स्थानिक विकासक</span>
-                    </div>
-                    <div class="process-arrow" aria-hidden="true">↓</div>
-                    <div class="process-step">
-                        <span class="process-number">३</span>
-                        <span>स्थानिक संघटनेची स्थापना</span>
-                    </div>
-                    <div class="process-arrow" aria-hidden="true">↓</div>
-                    <div class="process-step">
-                        <span class="process-number">४</span>
-                        <span>कार्यकारिणी + नोंदणी + घटना</span>
-                    </div>
-                    <div class="process-arrow" aria-hidden="true">↓</div>
-                    <div class="process-step process-step--main">
-                        <span class="process-number">५</span>
-                        <span>MBVM सोबत MoU / संलग्नता</span>
-                    </div>
-                    <div class="process-arrow" aria-hidden="true">↓</div>
-                    <div class="process-split">
-                        <div class="process-step">
-                            <small>स्थानिक प्रश्न</small>
-                            → स्थानिक संघटना
-                        </div>
-                        <div class="process-step">
-                            <small>राज्य / केंद्र प्रश्न</small>
-                            → MBVM शिखर संघटना
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-5 pt-3">
-                    <div class="text-center mx-auto mb-4" style="max-width: 760px">
-                        <h2 class="display-6 mb-3">पुरेसे सदस्य नोंदल्यानंतर काय होते?</h2>
+        <div id="karyapaddhati">
+            <section class="ccontainer-fluid logo-bg-dark my-5 py-5">
+                <div class="container">
+                    <div class="text-center mx-auto mb-5">
+                        <h4 class="section-title">कार्यपद्धती</h4>
+                        <h2 class="display-5 mb-3">अशी होते संघटना — स्थानिक विकासक ते शिखर संघटना</h2>
                         <p class="text-muted fs-5 mb-0">
-                            प्रथम बैठकीत महासंघाचे पदाधिकारी सहभागी होऊन संघटना स्थापनेसाठी मार्गदर्शन करतात.
+                            एकाच भागातील मराठी विकासक एकत्र येतात, “मराठी बांधकाम व्यावसायिक संघटना,
+                            [जिल्हा / शहर / तालुका]” या नावाने स्थानिक संघटना स्थापन करतात आणि ती महासंघाशी संलग्न होते.
                         </p>
                     </div>
 
-                    <div class="process-followup">
-                        <div><b>इच्छुक विकासकांची ऑनलाइन नोंदणी</b><span>या वेबसाइटवरील नोंदणी फॉर्मद्वारे</span></div>
-                        <div><b>एकाच परिसरातील विकासकांची संख्या पूर्ण</b><span>जिल्हा / तालुका / शहरनिहाय गणना</span></div>
-                        <div><b>MBVM कडून संपर्क</b><span>नोंदणी केलेल्या सर्वांशी फोन / WhatsApp</span></div>
-                        <div><b>त्या भागात प्रथम बैठक</b><span>महासंघ पदाधिकाऱ्यांच्या उपस्थितीत</span></div>
-                        <div><b>स्थानिक कमिटीची स्थापना</b><span>अध्यक्ष, सचिव, खजिनदार व सदस्य</span></div>
-                        <div><b>स्थानिक संघटनेची नोंदणी</b><span>संस्था नोंदणी अधिनियम १८६० अन्वये</span></div>
-                        <div><b>घटना / आवश्यक कागदपत्रे</b><span>महासंघाची मानक घटना स्वीकारणे</span></div>
-                        <div><b>MBVM सोबत MoU</b><span>मसुदा MoU दस्तऐवज विभागात उपलब्ध</span></div>
-                        <div><b>महासंघाशी संलग्नता</b><span>संलग्न संघटनांच्या यादीत समावेश</span></div>
+                    <div class="process-chain">
+                        <div class="process-step process-step--main">
+                            <span class="process-number">१</span>
+                            <span>इच्छुक विकासकांची नोंदणी</span>
+                        </div>
+                        <div class="process-arrow" aria-hidden="true">↓</div>
+                        <div class="process-step">
+                            <span class="process-number">२</span>
+                            <span>१० / १५ / २५ / ५० / १०० स्थानिक विकासक</span>
+                        </div>
+                        <div class="process-arrow" aria-hidden="true">↓</div>
+                        <div class="process-step">
+                            <span class="process-number">३</span>
+                            <span>स्थानिक संघटनेची स्थापना</span>
+                        </div>
+                        <div class="process-arrow" aria-hidden="true">↓</div>
+                        <div class="process-step">
+                            <span class="process-number">४</span>
+                            <span>कार्यकारिणी + नोंदणी + घटना</span>
+                        </div>
+                        <div class="process-arrow" aria-hidden="true">↓</div>
+                        <div class="process-step process-step--main">
+                            <span class="process-number">५</span>
+                            <span>MBVM सोबत MoU / संलग्नता</span>
+                        </div>
+                        <div class="process-arrow" aria-hidden="true">↓</div>
+                        <div class="process-split">
+                            <div class="process-step">
+                                <small>स्थानिक प्रश्न</small>
+                                → स्थानिक संघटना
+                            </div>
+                            <div class="process-step">
+                                <small>राज्य / केंद्र प्रश्न</small>
+                                → MBVM शिखर संघटना
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="mt-5 pt-3">
-                    <h2 class="display-6 text-center mb-4">कोण काय करते?</h2>
-                    <div class="process-compare">
-                        <div class="card shadow-sm">
-                            <div class="card-body p-4">
-                                <h3 class="h4 mb-3">🏘️ स्थानिक संघटना</h3>
-                                <ul class="mb-0">
-                                    <li>स्थानिक नियोजन प्राधिकरण</li>
-                                    <li>महानगरपालिका / नगरपरिषद / ग्रामपंचायत</li>
-                                    <li>जिल्हा / तालुका कार्यालये</li>
-                                    <li>स्थानिक पायाभूत सुविधा</li>
-                                    <li>स्थानिक विकास समस्या</li>
-                                </ul>
-                            </div>
+                    <div class="mt-5 pt-3">
+                        <div class="text-center mx-auto mb-4" style="max-width: 760px">
+                            <h2 class="display-6 mb-3">पुरेसे सदस्य नोंदल्यानंतर काय होते?</h2>
+                            <p class="text-muted fs-5 mb-0">
+                                प्रथम बैठकीत महासंघाचे पदाधिकारी सहभागी होऊन संघटना स्थापनेसाठी मार्गदर्शन करतात.
+                            </p>
                         </div>
-                        <div class="card shadow-sm border-primary">
-                            <div class="card-body p-4">
-                                <h3 class="h4 mb-3">🏛️ MBVM — शिखर संघटना</h3>
-                                <ul class="mb-0">
-                                    <li>राज्य शासनातील प्रश्न</li>
-                                    <li>केंद्र शासनातील प्रश्न</li>
-                                    <li>संपूर्ण उद्योगाला भेडसावणारे प्रश्न</li>
-                                    <li>अनेक जिल्ह्यांना सामाईक प्रश्न</li>
-                                    <li>धोरण व नियामक निवेदने</li>
-                                </ul>
+
+                        <div class="process-followup">
+                            <div><b>इच्छुक विकासकांची ऑनलाइन नोंदणी</b><span>या वेबसाइटवरील नोंदणी फॉर्मद्वारे</span></div>
+                            <div><b>एकाच परिसरातील विकासकांची संख्या पूर्ण</b><span>जिल्हा / तालुका / शहरनिहाय गणना</span>
                             </div>
+                            <div><b>MBVM कडून संपर्क</b><span>नोंदणी केलेल्या सर्वांशी फोन / WhatsApp</span></div>
+                            <div><b>त्या भागात प्रथम बैठक</b><span>महासंघ पदाधिकाऱ्यांच्या उपस्थितीत</span></div>
+                            <div><b>स्थानिक कमिटीची स्थापना</b><span>अध्यक्ष, सचिव, खजिनदार व सदस्य</span></div>
+                            <div><b>स्थानिक संघटनेची नोंदणी</b><span>संस्था नोंदणी अधिनियम १८६० अन्वये</span></div>
+                            <div><b>घटना / आवश्यक कागदपत्रे</b><span>महासंघाची मानक घटना स्वीकारणे</span></div>
+                            <div><b>MBVM सोबत MoU</b><span>मसुदा MoU दस्तऐवज विभागात उपलब्ध</span></div>
+                            <div><b>महासंघाशी संलग्नता</b><span>संलग्न संघटनांच्या यादीत समावेश</span></div>
                         </div>
                     </div>
-                    {{-- <p class="text-muted text-center fs-5 mt-4 mb-0 ">
-                        संलग्न संघटनांना शासनस्तरावर महासंघ मार्गदर्शन व पाठबळ देतो.
-                    </p> --}}
-                    <div class="alert alert-light text-center border-start border-4 border-primary fs-5  mt-4 mb-0"
-                        role="note">
-                        संलग्न संघटनांना शासनस्तरावर महासंघ मार्गदर्शन व पाठबळ देतो.
+
+                    <div class="mt-5 pt-3">
+                        <h2 class="display-6 text-center mb-4">कोण काय करते?</h2>
+                        <div class="process-compare">
+                            <div class="card shadow-sm">
+                                <div class="card-body p-4">
+                                    <h3 class="h4 mb-3">🏘️ स्थानिक संघटना</h3>
+                                    <ul class="mb-0">
+                                        <li>स्थानिक नियोजन प्राधिकरण</li>
+                                        <li>महानगरपालिका / नगरपरिषद / ग्रामपंचायत</li>
+                                        <li>जिल्हा / तालुका कार्यालये</li>
+                                        <li>स्थानिक पायाभूत सुविधा</li>
+                                        <li>स्थानिक विकास समस्या</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card shadow-sm border-primary">
+                                <div class="card-body p-4">
+                                    <h3 class="h4 mb-3">🏛️ MBVM — शिखर संघटना</h3>
+                                    <ul class="mb-0">
+                                        <li>राज्य शासनातील प्रश्न</li>
+                                        <li>केंद्र शासनातील प्रश्न</li>
+                                        <li>संपूर्ण उद्योगाला भेडसावणारे प्रश्न</li>
+                                        <li>अनेक जिल्ह्यांना सामाईक प्रश्न</li>
+                                        <li>धोरण व नियामक निवेदने</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- <p class="text-muted text-center fs-5 mt-4 mb-0 ">
+                            संलग्न संघटनांना शासनस्तरावर महासंघ मार्गदर्शन व पाठबळ देतो.
+                        </p> --}}
+                        <div class="alert alert-light text-center border-start border-4 border-primary fs-5  mt-4 mb-0"
+                            role="note">
+                            संलग्न संघटनांना शासनस्तरावर महासंघ मार्गदर्शन व पाठबळ देतो.
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
         <!-- कार्यपद्धती End -->
 
         <!-- 5. CTA -->
@@ -1156,107 +1181,6 @@
         <!-- Appointment Start -->
         @include('contact')
         <!-- Appointment End -->
-
-        <!-- संपर्क Start -->
-        <div class="container-fluid logo-bg-dark my-5 py-5" id="sampark">
-            <div class="container">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h4 class="section-title">संपर्क</h4>
-                    <h1 class="display-5 mb-3 mt-4">आमची कार्यालये</h1>
-
-                </div>
-                <div class="row g-4">
-
-                    <!-- Registered Office -->
-                    <div class="col-lg-6">
-                        <div class="card border-0 shadow-lg h-100 " style="border-radius: 18px;">
-
-                            <div class="card-header bg-primary text-white text-center py-4 rounded-top-4 border-0"
-                                style="border-radius: 18px;">
-                                <i class="fa-solid fa-building fa-2x mb-3"></i>
-                                <h3 class="mb-1 text-white">नोंदणीकृत कार्यालय</h3>
-                                <small><i class="fa-solid fa-location-dot me-1"></i> वाशी, नवी मुंबई</small>
-                            </div>
-
-                            <div class="card-body p-4">
-
-                                <div class="d-flex align-items-start">
-                                    <div class="me-3">
-                                        <i class="fa-solid fa-map-location-dot text-primary fs-2"></i>
-                                    </div>
-
-                                    <div>
-                                        <h5 class="fw-bold mb-3">पत्ता</h5>
-
-                                        <p class="text-muted mb-4">
-                                            १७०२, हावरे इन्फोटेक पार्क,
-                                            प्लॉट क्र. ३९–०३,
-                                            फोर पॉईंट हॉटेलसमोर,
-                                            सेक्टर–३०ए, वाशी,
-                                            नवी मुंबई – ४०० ७०५.
-                                        </p>
-
-                                        <a href="https://maps.app.goo.gl/9s1qmKS3w3kvSVYCA"
-                                            class="btn btn-outline-primary rounded-pill" target="_blank">
-                                            <i class="fa-solid fa-location-arrow me-2"></i>
-                                            नकाशावर पहा
-                                        </a>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- Pune Office -->
-                    <div class="col-lg-6 ">
-                        <div class="card border-0 shadow-lg h-100 " style="border-radius: 18px;">
-
-                            <div class="card-header bg-primary text-white text-center py-4 rounded-top-4 border-0"
-                                style="border-radius: 18px;">
-                                <i class="fa-solid fa-briefcase fa-2x mb-3"></i>
-                                <h3 class="mb-1 text-white">कार्यालय</h3>
-                                <small><i class="fa-solid fa-location-dot me-1"></i> पुणे</small>
-                            </div>
-
-                            <div class="card-body p-4">
-
-                                <div class="d-flex align-items-start">
-                                    <div class="me-3">
-                                        <i class="fa-solid fa-map-location-dot text-primary fs-2"></i>
-                                    </div>
-
-                                    <div>
-                                        <h5 class="fw-bold mb-3">पत्ता</h5>
-
-                                        <p class="text-muted mb-4">
-                                            ऑफिस क्र. २०१, २रा मजला,
-                                            प्रो–वन बिझनेस सेंटर,
-                                            रत्ना हॉस्पिटलसमोर,
-                                            सेनापती बापट रोड,
-                                            पुणे – ४११ ०१६.
-                                        </p>
-
-                                        <a href="https://maps.app.goo.gl/fSTqoMu316xnjyah9"
-                                            class="btn btn-outline-primary rounded-pill" target="_blank">
-                                            <i class="fa-solid fa-location-arrow me-2"></i>
-                                            नकाशावर पहा
-                                        </a>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-        <!-- संपर्क End -->
 
         <!-- Testimonial Start -->
         {{-- <div class="container-xxl py-5">

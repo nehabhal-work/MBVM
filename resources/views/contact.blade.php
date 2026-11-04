@@ -1,110 +1,108 @@
-<div id="contact" class="container-xxl py-5">
-    <div class="container">
-        <div class="row g-5">
-            <div class="col-lg-6">
-                <div class="wow fadeInUp" data-wow-delay="0.1s">
-                    <h4 class="section-title">सदस्य नोंदणी</h4>
-                    <h1 class="display-5 mb-3 mt-4">आजच महासंघाशी जोडा</h1>
-                    <p class="mb-4">खालील माहिती भरा. नोंदणीनंतर महासंघाकडून तुमच्याशी संपर्क साधला जाईल आणि तुमच्या
-                        जिल्ह्यातील स्थापना प्रक्रियेची माहिती दिली जाईल.</p>
-                </div>
-                <div class="row g-4">
-                    <div class="col-12">
-                        <div class="d-flex">
-                            <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-light"
-                                style="width: 65px; height: 65px;">
-                                <i class="fa fa-2x fa-phone-alt text-primary"></i>
-                            </div>
-                            <div class="ms-4">
-                                <p class="mb-2">आता कॉल करा</p>
-                                <h3 class="mb-0">+०१२ ३४५ ६७८९</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="d-flex">
-                            <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-light"
-                                style="width: 65px; height: 65px;">
-                                <i class="fa fa-2x fa-envelope-open text-primary"></i>
-                            </div>
-                            <div class="ms-4">
-                                <p class="mb-2">आता मेल करा</p>
-                                <h3 class="mb-0">info@example.com</h3>
-                            </div>
-                        </div>
-                    </div>
+<section class="mbvm-contact" id="sampark">
+    <span class="mbvm-contact__anchor" id="contact"></span>
+    <div class="mbvm-contact__container">
+        <div class="mbvm-contact__heading">
+            <span class="mbvm-contact__eyebrow">संपर्क</span>
+            <h2>आमची कार्यालये व सामान्य चौकशी</h2>
+        </div>
 
-                    <div class="qrcodec d-flex flex-column flex-sm-row align-items-center text-center text-sm-start gap-2">
-                        {!! QrCode::size(120)->generate('https://mbvm.in/#contact') !!}
-                        <span class="mx-sm-3 fw-bold">नोंदणीसाठी स्कॅन करा</span>
+        <div class="mbvm-contact__layout">
+            <div class="mbvm-contact__offices" aria-label="कार्यालयांची माहिती">
+                <article class="mbvm-contact__office">
+                    <header>
+                        <h3>नोंदणीकृत कार्यालय</h3>
+                        <span>वाशी, नवी मुंबई</span>
+                    </header>
+                    <div class="mbvm-contact__office-body">
+                        <p>१७०२, हावरे इन्फोटेक पार्क, फोर पॉईंट हॉटेलसमोर, सेक्टर ३०ए, वाशी, नवी मुंबई – ४०० ७०५</p>
+                        <a href="https://www.google.com/maps/search/Haware+Infotech+Park+Vashi" target="_blank"
+                            rel="noopener noreferrer">नकाशावर पहा ↗</a>
                     </div>
+                </article>
+
+                <article class="mbvm-contact__office">
+                    <header>
+                        <h3>कार्यालय</h3>
+                        <span>पुणे</span>
+                    </header>
+                    <div class="mbvm-contact__office-body">
+                        <p>ऑफिस क्र. २०१, २रा मजला, प्रो-वन बिझनेस सेंटर, रत्ना हॉस्पिटलसमोर, सेनापती बापट रोड, पुणे –
+                            ४११ ०१६</p>
+                        <a href="https://www.google.com/maps/search/Senapati+Bapat+Road+Pune" target="_blank"
+                            rel="noopener noreferrer">नकाशावर पहा ↗</a>
+                    </div>
+                </article>
+
+                <div class="mbvm-contact__details">
+                    <p>
+                        <strong>फोन</strong>
+                        <span class="mbvm-contact__copy">[कार्यालय क्रमांक]
+                            <button type="button" data-copy="[कार्यालय क्रमांक]">कॉपी</button>
+                        </span>
+                    </p>
+                    <p>
+                        <strong>ई-मेल</strong>
+                        <span class="mbvm-contact__copy">[ई-मेल @mbvm.in]
+                            <button type="button" data-copy="[ई-मेल]">कॉपी</button>
+                        </span>
+                    </p>
+                    <p class="mbvm-contact__note">प्रत्यक्ष क्रमांक व ई-मेल प्रशासनाकडून भरले जातील.</p>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="row g-3">
-                    <div class="col-12 col-sm-6">
-                        <input type="text" class="form-control" placeholder="पूर्ण नाव" style="height: 55px;">
-                    </div>
-                    <div class="col-12 col-sm-6">
-                        <input type="email" class="form-control" placeholder="तुमचा ई-मेल" style="height: 55px;">
-                    </div>
-                    <div class="col-12 col-sm-6">
-                        <input type="text" class="form-control" placeholder="तुमचा मोबाइल" style="height: 55px;">
-                    </div>
-                    <div class="col-12 col-sm-6">
-                        <select class="form-select" style="height: 55px;">
-                            <option selected>जिल्हा</option>
-                            <option value="1">जिल्हा 1</option>
-                            <option value="2">जिल्हा 2</option>
-                            <option value="3">जिल्हा 3</option>
-                        </select>
-                    </div>
 
-                    <div class="col-12 col-sm-6">
-                        <div class="field">
-                            <select class="form-select" style="height: 55px;">
-                                <option value="">— निवडा सदस्यत्व प्रकार —</option>
-                                <option>संस्थात्मक सभासद (असोसिएशन)</option>
-                                <option>विशेष सभासद</option>
-                                <option>हितचिंतक सभासद</option>
-                                <option>सह्योगी सभासद</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6">
-                        <div class="field">
-                            <select class="form-select" style="height: 55px;">
-                                <option value="">— निवडा व्यवसाय / भूमिका —</option>
-                                <option>विकासक / बिल्डर</option>
-                                <option>लँड डेव्हलपर</option>
-                                <option>अभियंता</option>
-                                <option>वास्तुविशारद</option>
-                                <option>कंत्राटदार</option>
-                                <option>पुरवठादार</option>
-                                <option>इतर</option>
-                            </select>
-                        </div>
-                    </div>
+            <div class="mbvm-contact__enquiry">
+                <h3>सामान्य चौकशी / संदेश</h3>
+                <p class="mbvm-contact__notice">सदस्य नोंदणीसाठी हा फॉर्म नाही —
+                    <a href="{{ route('register.show') }}">नोंदणी करा</a>
+                </p>
 
-                    <div class="col-12">
-                        <textarea class="form-control" rows="5"
-                            placeholder="संदेश (ऐच्छिक) - तुमच्या जिल्ह्यातील असोसिएशनबद्दल किंवा इतर माहिती"></textarea>
+                <div class="mbvm-contact__form-grid">
+                    <div class="mbvm-contact__field">
+                        <label for="enquiry-name">नाव</label>
+                        <input id="enquiry-name" name="name" autocomplete="name">
                     </div>
-
-                    <div class="form-foot">
-                        <p class="privacy-mini">नोंदणीतील वैयक्तिक माहिती फक्त महासंघाच्या कामकाजासाठी वापरली जाईल
-                            व संमतीशिवाय सार्वजनिक केली जाणार नाही.</p>
-                        <div class="col-12">
-                            <button class="btn btn-primary w-100 py-3" type="submit">नोंदणी पाठवा →</button>
-                        </div>
+                    <div class="mbvm-contact__field">
+                        <label for="enquiry-mobile">मोबाईल</label>
+                        <input id="enquiry-mobile" name="mobile" type="tel" inputmode="numeric"
+                            pattern="[0-9]{10}" autocomplete="tel">
                     </div>
-                    <div class="ok-msg" id="okMsg">✓ तुमची नोंदणी नोंदवली गेली आहे. महासंघाकडून लवकरच
-                        तुमच्याशी संपर्क साधला जाईल.
-                        <em style="color:#8fbfa3">(हा नमुना फॉर्म आहे — प्रत्यक्ष नोंदणीसाठी बॅकएंड जोडावे
-                            लागेल.)</em>
+                    <div class="mbvm-contact__field">
+                        <label for="enquiry-email">ई-मेल</label>
+                        <input id="enquiry-email" name="email" type="email" autocomplete="email">
+                    </div>
+                    <div class="mbvm-contact__field">
+                        <label for="enquiry-organization">कंपनी / संस्था</label>
+                        <input id="enquiry-organization" name="organization" autocomplete="organization">
+                    </div>
+                    <div class="mbvm-contact__field mbvm-contact__field--full">
+                        <label for="enquiry-subject">विषय</label>
+                        <input id="enquiry-subject" name="subject">
+                    </div>
+                    <div class="mbvm-contact__field mbvm-contact__field--full">
+                        <label for="enquiry-message">संदेश</label>
+                        <textarea id="enquiry-message" name="message" rows="4"></textarea>
                     </div>
                 </div>
+                <button class="mbvm-contact__submit" type="button">संदेश पाठवा</button>
             </div>
         </div>
+        <p class="mbvm-contact__status" id="contact-copy-status" aria-live="polite"></p>
     </div>
-</div>
+</section>
+
+@push('scripts')
+    <script>
+        document.querySelectorAll('.mbvm-contact [data-copy]').forEach((button) => {
+            button.addEventListener('click', async () => {
+                const status = document.getElementById('contact-copy-status');
+
+                try {
+                    await navigator.clipboard.writeText(button.dataset.copy);
+                    status.textContent = 'मजकूर कॉपी केला.';
+                } catch {
+                    status.textContent = 'मजकूर कॉपी करता आला नाही.';
+                }
+            });
+        });
+    </script>
+@endpush
