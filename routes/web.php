@@ -141,7 +141,7 @@ Route::get('/parichay-details', function () {
 })->name('parichay-details');
 
 Route::get('/pratinidhi', function () {
-    return view('home#karyapaddhati');
+    return view('pratinidhi');
 })->name('pratinidhi');
 
 Route::get('/dastaivaj', function () {
