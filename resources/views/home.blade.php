@@ -1118,7 +1118,7 @@
         @include('partials._sandhi')
 
         <!-- सेवा Start -->
-        <div class="container-fluid logo-bg-dark my-5 py-5" id="seva">
+        {{-- <div class="container-fluid logo-bg-dark my-5 py-5" id="seva">
             <div class="container pt-5">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h4 class="section-title">सेवा</h4>
@@ -1193,7 +1193,7 @@
 
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- सेवा End -->
 
         <!-- Appointment Start -->

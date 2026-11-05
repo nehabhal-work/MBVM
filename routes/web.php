@@ -99,11 +99,11 @@ $renderHome = function (Request $request) use ($karyaUpdates) {
     }
 
     $visibleDistricts = $districtDirectory
-        ->when($selectedDistrict !== '', fn ($districts) => $districts->where('name', $selectedDistrict))
-        ->when($selectedTaluka !== '', fn ($districts) => $districts->filter(
-            fn ($district) => $district['talukas']->contains($selectedTaluka)
+        ->when($selectedDistrict !== '', fn($districts) => $districts->where('name', $selectedDistrict))
+        ->when($selectedTaluka !== '', fn($districts) => $districts->filter(
+            fn($district) => $district['talukas']->contains($selectedTaluka)
         ))
-        ->when($selectedStatus !== '', fn ($districts) => $districts->where('status', $selectedStatus))
+        ->when($selectedStatus !== '', fn($districts) => $districts->where('status', $selectedStatus))
         ->values();
 
     $districtOptions = $districtDirectory->pluck('name');
@@ -132,16 +132,16 @@ Route::get('/karya', function () use ($karyaUpdates) {
     return view('karya', compact('karyaUpdates'));
 })->name('karya.index');
 
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
+// Route::get('/about', function () {
+//     return view('about');
+// })->name('about');
 
 Route::get('/parichay-details', function () {
     return view('parichay-details');
 })->name('parichay-details');
 
 Route::get('/pratinidhi', function () {
-    return view('pratinidhi');
+    return view('home#karyapaddhati');
 })->name('pratinidhi');
 
 Route::get('/dastaivaj', function () {
@@ -198,7 +198,7 @@ Route::get('/get-cities/{district}', function (District $district) {
 // ---------- GUEST-ONLY: register / login / password reset ----------
 Route::get('/register', [AuthController::class, 'showRegister'])->name('register.show');
 Route::post('/register', [AuthController::class, 'register'])->name('register.store');
-Route::middleware('guest')->group(function  () {
+Route::middleware('guest')->group(function () {
 
     Route::get('/login', [AuthController::class, 'showLogin'])->name('login.show');
     Route::post('/login', [AuthController::class, 'login'])->name('login.store');

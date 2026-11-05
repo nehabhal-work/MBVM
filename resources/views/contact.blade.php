@@ -1,4 +1,4 @@
-<section class="mbvm-contact" id="sampark">
+<section class="mbvm-contact logo-bg-dark" id="sampark">
     <span class="mbvm-contact__anchor" id="contact"></span>
     <div class="mbvm-contact__container">
         <div class="mbvm-contact__heading">
@@ -63,8 +63,8 @@
                     </div>
                     <div class="mbvm-contact__field">
                         <label for="enquiry-mobile">मोबाईल</label>
-                        <input id="enquiry-mobile" name="mobile" type="tel" inputmode="numeric"
-                            pattern="[0-9]{10}" autocomplete="tel">
+                        <input id="enquiry-mobile" name="mobile" type="tel" inputmode="numeric" pattern="[0-9]{10}"
+                            autocomplete="tel">
                     </div>
                     <div class="mbvm-contact__field">
                         <label for="enquiry-email">ई-मेल</label>

@@ -31,26 +31,35 @@
             <!-- Navigation Links -->
             <div class="navbar-nav ms-auto align-items-lg-center">
 
-                <a href="#parichay" class="nav-item nav-link">
+                <a href="{{ route('parichay-details') }}" class="nav-item nav-link">
                     महासंघाविषयी
                 </a>
 
-                <a href="#karyapaddhati" class="nav-item nav-link">
+                <a href="{{ route('home') }}#karyapaddhati" class="nav-item nav-link">
                     कार्यपद्धती
                 </a>
 
-                <a href="#sadasyatva" class="nav-item nav-link">
+                <a href="{{ route('home') }}#sanghatana" class="nav-item nav-link">
+                    स्थानिक संघटना
+                </a>
+                <a href="{{ route('karya.index') }}" class="nav-item nav-link">
+                    आमचे कार्य
+                </a>
+                <a href="{{ route('documents.index') }}" class="nav-item nav-link">
+                    दस्तऐवज
+                </a>
+                {{-- <a href="#sadasyatva" class="nav-item nav-link">
                     सदस्यत्व
                 </a>
 
                 <a href="#jilha-asociation" class="nav-item nav-link">
                     जिल्हा असोसिएशन
-                </a>
+                </a> --}}
 
 
-                <a href="#seva" class="nav-item nav-link">
+                {{-- <a href="#seva" class="nav-item nav-link">
                     सेवा
-                </a>
+                </a> --}}
 
                 <a href="#sampark" class="nav-item nav-link">
                     संपर्क
