@@ -77,20 +77,9 @@
                         लॉगिन
                     </a>
                 @else
-                    <a href="{{ route('members.index') }}" class="btn mbvm-btn">
-                        सदस्य यादी
-                    </a>
-
-                    <form method="POST" action="{{ route('logout') }}" class="d-inline m-0">
-
-                        @csrf
-
-                        <button type="submit" class="btn mbvm-btn">
-                            लॉगआऊट
-                        </button>
-
-                    </form>
-
+                    @if (auth()->user()->isAdmin())
+                        <a href="{{ route('admin.users.index', ['tab' => 'dashboard']) }}" class="btn mbvm-btn">ERP</a>
+                    @endif
                 @endguest
 
 

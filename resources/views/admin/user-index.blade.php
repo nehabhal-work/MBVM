@@ -1,4 +1,31 @@
-@extends('layouts.master')
+@extends('layouts.erp')
+
+@section('title', $tabs[$tab] ?? 'डॅशबोर्ड')
+
+@section('sidebar')
+    @php
+        $tabIcons = [
+            'dashboard' => 'fa-house',
+            'members'   => 'fa-address-card',
+            'districts' => 'fa-map-location-dot',
+            'sandhi'    => 'fa-bullhorn',
+            'banners'   => 'fa-images',
+            'documents' => 'fa-file-lines',
+            'settings'  => 'fa-users-gear',
+        ];
+    @endphp
+    @foreach ($tabs as $key => $label)
+        @if ($key === 'banners')
+            <div class="erp-side__sep">वेबसाइट मजकूर</div>
+        @elseif ($key === 'settings')
+            <div class="erp-side__sep">प्रशासन</div>
+        @endif
+        <a href="{{ route('admin.users.index', ['tab' => $key]) }}" title="{{ $label }}"
+            class="erp-side__link {{ $tab === $key ? 'is-active' : '' }}">
+            <i class="fas {{ $tabIcons[$key] ?? 'fa-circle' }}"></i><span>{{ $label }}</span>
+        </a>
+    @endforeach
+@endsection
 
 @section('content')
     <style>
@@ -32,7 +59,7 @@
         }
 
         .adm {
-            padding: 36px 0 72px;
+            padding: 0;
             color: #1d2940;
         }
 
@@ -278,33 +305,19 @@
         }
     </style>
 
-    {{-- Hero --}}
-    <section class="adm-hero">
-        <div class="container">
-            <div class="adm-hero__crumb"><a href="{{ route('home') }}">मुख्यपृष्ठ</a> › प्रशासन पॅनेल (नमुना)</div>
-            <h1>प्रशासन पॅनेल (नमुना)
-            </h1>
-            <p>नोंदण्या, भागनिहाय गणना, संघटना, सूची व सेटिंग्ज
-
-            </p>
-        </div>
-    </section>
-
     <section class="adm">
-        <div class="container">
-            <div class="adm__notice">
-                नमुना प्रशासन पॅनेल — विकासकासाठी लक्ष्य-आराखडा. या पानावर दिसणाऱ्या नोंदी या ब्राउझरमधून केलेल्या नमुना
-                नोंदण्या + नमुना डेटा आहेत.
-
-            </div>
-
-            {{-- Tabs --}}
-            <nav class="adm__tabs">
-                @foreach (\App\Http\Controllers\Admin\UserController::TABS as $key => $label)
-                    <a href="{{ route('admin.users.index', ['tab' => $key]) }}"
-                        class="adm__tab {{ $tab === $key ? 'is-active' : '' }}">{{ $label }}</a>
-                @endforeach
-            </nav>
+        <div>
+            @if (in_array($tab, ['banners', 'documents', 'settings', 'dashboard', 'districts']))
+                @if (session('success'))
+                    <div class="alert alert-success py-2">{{ session('success') }}</div>
+                @endif
+                @if (session('error'))
+                    <div class="alert alert-danger py-2">{{ session('error') }}</div>
+                @endif
+                @if ($errors->any())
+                    <div class="alert alert-danger py-2">{{ $errors->first() }}</div>
+                @endif
+            @endif
 
             {{-- ================= DASHBOARD ================= --}}
             @if ($tab === 'dashboard')
@@ -320,6 +333,29 @@
                     </div>
                     <div class="col-6 col-lg-3">
                         <div class="adm__stat"><b>{{ $stats['pending'] }}</b><span>प्रलंबित सूची</span></div>
+                    </div>
+                </div>
+
+                <div class="row g-3 adm__stats">
+                    <div class="col-6 col-lg-3">
+                        <a href="{{ route('admin.users.index', ['tab' => 'districts']) }}" class="text-reset text-decoration-none">
+                            <div class="adm__stat"><b>{{ $organizationStats['districts'] }}</b><span>नोंदणी असलेले जिल्हे</span></div>
+                        </a>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <a href="{{ route('admin.users.index', ['tab' => 'sandhi']) }}" class="text-reset text-decoration-none">
+                            <div class="adm__stat"><b>{{ $contentStats['sandhi_live'] }}</b><span>होम पेजवरील संधी (प्रलंबित {{ $contentStats['sandhi_pending'] }})</span></div>
+                        </a>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <a href="{{ route('admin.users.index', ['tab' => 'banners']) }}" class="text-reset text-decoration-none">
+                            <div class="adm__stat"><b>{{ $contentStats['banners_active'] }} / {{ $contentStats['banners_total'] }}</b><span>सक्रिय होम बॅनर</span></div>
+                        </a>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <a href="{{ route('admin.users.index', ['tab' => 'documents']) }}" class="text-reset text-decoration-none">
+                            <div class="adm__stat"><b>{{ $contentStats['documents_active'] }} / {{ $contentStats['documents_total'] }}</b><span>प्रसिद्ध दस्तऐवज</span></div>
+                        </a>
                     </div>
                 </div>
 
@@ -463,6 +499,25 @@
                     ];
                     $currentState = request('state');
                 @endphp
+
+                <div class="row g-3 adm__stats">
+                    <div class="col-6 col-lg-3">
+                        <div class="adm__stat"><b>{{ $organizationStats['districts'] }}</b><span>नोंदणी असलेले जिल्हे</span></div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="adm__stat"><b>{{ $organizationStats['threshold_reached'] }}</b><span>नोंदणीचा टप्पा पूर्ण</span></div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="adm__stat"><b>{{ $organizationStats['registering'] }}</b><span>नोंदणी सुरू असलेले जिल्हे</span></div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="adm__stat"><b>{{ $organizationStats['registrations'] }}</b><span>एकूण सदस्य नोंदणी</span></div>
+                    </div>
+                </div>
+                <p class="text-muted small mb-3">
+                    वरील आकडे मुख्यपृष्ठावरील “स्थानिक संघटना” विभागात जसेच्या तसे दिसतात (सदस्य नोंदणीवरून आपोआप मोजले जातात).
+                    <a href="{{ route('home') }}#sanghatana" target="_blank">होम पेजवर पहा ↗</a>
+                </p>
 
                 <div class="adm__panel">
                     <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
@@ -649,7 +704,7 @@
                                                 @if (in_array($l->status, ['submitted', 'under_review', 'paused']))
                                                     <form method="POST" action="{{ route('admin.sandhi.approve', $l) }}">
                                                         @csrf @method('PATCH')
-                                                        <button class="adm__act adm__act--solid">{{ $l->status === 'paused' ? 'पुन्हा सुरू' : 'मान्यता' }}</button>
+                                                        <button class="adm__act adm__act--solid">{{ $l->status === 'paused' ? 'पुन्हा Active करा' : 'मान्यता (होमवर दाखवा)' }}</button>
                                                     </form>
                                                 @endif
                                                 @if (in_array($l->status, ['submitted', 'under_review']))
@@ -662,7 +717,7 @@
                                                 @if ($l->status === 'approved')
                                                     <form method="POST" action="{{ route('admin.sandhi.pause', $l) }}">
                                                         @csrf @method('PATCH')
-                                                        <button class="adm__act">थांबवा</button>
+                                                        <button class="adm__act" title="होम पेज व संधी पानावरून काढा">Inactive करा</button>
                                                     </form>
                                                 @endif
                                                 @if (!$l->isPaid() && $l->status !== 'rejected')
@@ -729,40 +784,350 @@
                 </div>
             @endif
 
-            {{-- ================= SETTINGS (users) ================= --}}
+            {{-- ================= HOME BANNERS ================= --}}
+            @if ($tab === 'banners')
+                <div class="adm__panel mb-4">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                        <div class="adm__h mb-0">नवीन होम बॅनर जोडा</div>
+                        <a href="{{ route('home') }}" target="_blank" class="adm__btn adm__btn--ghost">होम पेज पहा ↗</a>
+                    </div>
+                    <form method="POST" action="{{ route('admin.banners.store') }}" enctype="multipart/form-data"
+                        class="row g-3 align-items-end">
+                        @csrf
+                        <div class="col-lg-5">
+                            <label class="form-label fw-semibold">बॅनर हेडिंग *</label>
+                            <input type="text" name="heading" class="form-control" maxlength="255" required
+                                value="{{ old('heading') }}" placeholder="उदा. एकत्रित बळ, एकत्रित आवाज">
+                        </div>
+                        <div class="col-lg-4">
+                            <label class="form-label fw-semibold">बॅनर प्रतिमा * <small class="text-muted">(JPG/PNG/WEBP, ५ MB, शिफारस 1920×800)</small></label>
+                            <input type="file" name="image" class="form-control" accept=".jpg,.jpeg,.png,.webp" required>
+                        </div>
+                        <div class="col-6 col-lg-1">
+                            <label class="form-label fw-semibold">क्रम</label>
+                            <input type="number" name="sort_order" class="form-control" min="0" max="999"
+                                value="{{ old('sort_order') }}" placeholder="—">
+                        </div>
+                        <div class="col-6 col-lg-2">
+                            <button type="submit" class="adm__btn w-100">+ बॅनर जोडा</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="adm__panel">
+                    <div class="adm__h">सर्व बॅनर <small class="text-muted fw-normal">— फक्त Active बॅनर मुख्यपृष्ठावर (क्रमानुसार) दिसतात</small></div>
+                    <div class="table-responsive">
+                        <table class="table adm__table align-middle">
+                            <thead>
+                                <tr>
+                                    <th>क्रम</th>
+                                    <th>प्रतिमा</th>
+                                    <th>हेडिंग</th>
+                                    <th>स्थिती</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @forelse ($banners as $banner)
+                                    <tr>
+                                        <td>{{ $banner->sort_order }}</td>
+                                        <td>
+                                            <img src="{{ $banner->image_url }}" alt=""
+                                                style="width:140px;height:60px;object-fit:cover;border-radius:8px">
+                                        </td>
+                                        <td style="max-width:420px">{{ $banner->heading }}</td>
+                                        <td>
+                                            <span class="adm__badge {{ $banner->is_active ? 'adm__badge--ok' : 'adm__badge--muted' }}">
+                                                {{ $banner->is_active ? 'Active' : 'Inactive' }}
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div class="adm__actions">
+                                                <form method="POST" action="{{ route('admin.banners.toggle', $banner) }}">
+                                                    @csrf @method('PATCH')
+                                                    <button class="adm__act {{ $banner->is_active ? '' : 'adm__act--solid' }}">
+                                                        {{ $banner->is_active ? 'Inactive करा' : 'Active करा' }}
+                                                    </button>
+                                                </form>
+                                                <button type="button" class="adm__act" data-bs-toggle="collapse"
+                                                    data-bs-target="#banner-edit-{{ $banner->id }}">बदला</button>
+                                                <form method="POST" action="{{ route('admin.banners.destroy', $banner) }}"
+                                                    onsubmit="return confirm('हा बॅनर कायमचा हटवायचा?')">
+                                                    @csrf @method('DELETE')
+                                                    <button class="adm__act adm__act--link">हटवा</button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="collapse" id="banner-edit-{{ $banner->id }}">
+                                        <td colspan="5" class="adm__detail">
+                                            <form method="POST" action="{{ route('admin.banners.update', $banner) }}"
+                                                enctype="multipart/form-data" class="row g-2 align-items-end">
+                                                @csrf @method('PUT')
+                                                <div class="col-lg-5">
+                                                    <label class="form-label">हेडिंग</label>
+                                                    <input type="text" name="heading" class="form-control" maxlength="255" required
+                                                        value="{{ $banner->heading }}">
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label class="form-label">नवीन प्रतिमा (बदलायची असल्यास)</label>
+                                                    <input type="file" name="image" class="form-control" accept=".jpg,.jpeg,.png,.webp">
+                                                </div>
+                                                <div class="col-6 col-lg-1">
+                                                    <label class="form-label">क्रम</label>
+                                                    <input type="number" name="sort_order" class="form-control" min="0" max="999"
+                                                        value="{{ $banner->sort_order }}">
+                                                </div>
+                                                <div class="col-6 col-lg-2">
+                                                    <button type="submit" class="adm__btn w-100">जतन करा</button>
+                                                </div>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="5" class="adm__empty">अद्याप बॅनर नाही. वर नवीन बॅनर जोडा.</td>
+                                    </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            @endif
+
+            {{-- ================= DOCUMENTS (दस्तऐवज) ================= --}}
+            @if ($tab === 'documents')
+                <div class="adm__panel mb-4">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                        <div class="adm__h mb-0">नवीन दस्तऐवज जोडा</div>
+                        <a href="{{ route('documents.index') }}" target="_blank" class="adm__btn adm__btn--ghost">दस्तऐवज पान पहा ↗</a>
+                    </div>
+                    <form method="POST" action="{{ route('admin.documents.store') }}" enctype="multipart/form-data"
+                        class="row g-3">
+                        @csrf
+                        <div class="col-lg-4">
+                            <label class="form-label fw-semibold">शीर्षक *</label>
+                            <input type="text" name="title" class="form-control" maxlength="255" required value="{{ old('title') }}">
+                        </div>
+                        <div class="col-lg-3">
+                            <label class="form-label fw-semibold">प्रकार (आयकॉन)</label>
+                            <select name="icon" class="form-select">
+                                @foreach (\App\Models\Document::ICONS as $icon => $label)
+                                    <option value="{{ $icon }}" @selected(old('icon') === $icon)>{{ $label }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-lg-3">
+                            <label class="form-label fw-semibold">फाईल <small class="text-muted">(PDF/DOC, १० MB)</small></label>
+                            <input type="file" name="file" class="form-control" accept=".pdf,.doc,.docx">
+                        </div>
+                        <div class="col-lg-2">
+                            <label class="form-label fw-semibold">क्रम</label>
+                            <input type="number" name="sort_order" class="form-control" min="0" max="999" value="{{ old('sort_order') }}">
+                        </div>
+                        <div class="col-lg-7">
+                            <label class="form-label fw-semibold">थोडक्यात माहिती</label>
+                            <textarea name="description" class="form-control" rows="2" maxlength="1000">{{ old('description') }}</textarea>
+                        </div>
+                        <div class="col-lg-3">
+                            <label class="form-label fw-semibold">फाईल नसल्यास दाखवायचा मजकूर</label>
+                            <input type="text" name="pending_label" class="form-control" maxlength="100"
+                                value="{{ old('pending_label', 'मंजुरीनंतर उपलब्ध') }}">
+                        </div>
+                        <div class="col-lg-2 d-flex align-items-end">
+                            <button type="submit" class="adm__btn w-100">+ जोडा</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="adm__panel">
+                    <div class="adm__h">सर्व दस्तऐवज <small class="text-muted fw-normal">— फक्त Active दस्तऐवज “दस्तऐवज” पानावर दिसतात</small></div>
+                    <div class="table-responsive">
+                        <table class="table adm__table align-middle">
+                            <thead>
+                                <tr>
+                                    <th>क्रम</th>
+                                    <th>शीर्षक</th>
+                                    <th>फाईल</th>
+                                    <th>स्थिती</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @forelse ($documents as $doc)
+                                    <tr>
+                                        <td>{{ $doc->sort_order }}</td>
+                                        <td>
+                                            <i class="fas {{ $doc->icon }} me-1 text-muted"></i> {{ $doc->title }}
+                                            <span class="adm__sub">{{ \Illuminate\Support\Str::limit($doc->description, 90) }}</span>
+                                        </td>
+                                        <td>
+                                            @if ($doc->file)
+                                                <a href="{{ $doc->file_url }}" target="_blank" rel="noopener">फाईल पहा ↗</a>
+                                            @else
+                                                <span class="adm__badge adm__badge--wait">{{ $doc->pending_label }}</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <span class="adm__badge {{ $doc->is_active ? 'adm__badge--ok' : 'adm__badge--muted' }}">
+                                                {{ $doc->is_active ? 'Active' : 'Inactive' }}
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div class="adm__actions">
+                                                <form method="POST" action="{{ route('admin.documents.toggle', $doc) }}">
+                                                    @csrf @method('PATCH')
+                                                    <button class="adm__act {{ $doc->is_active ? '' : 'adm__act--solid' }}">
+                                                        {{ $doc->is_active ? 'Inactive करा' : 'Active करा' }}
+                                                    </button>
+                                                </form>
+                                                <button type="button" class="adm__act" data-bs-toggle="collapse"
+                                                    data-bs-target="#doc-edit-{{ $doc->id }}">बदला</button>
+                                                <form method="POST" action="{{ route('admin.documents.destroy', $doc) }}"
+                                                    onsubmit="return confirm('हा दस्तऐवज कायमचा हटवायचा?')">
+                                                    @csrf @method('DELETE')
+                                                    <button class="adm__act adm__act--link">हटवा</button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="collapse" id="doc-edit-{{ $doc->id }}">
+                                        <td colspan="5" class="adm__detail">
+                                            <form method="POST" action="{{ route('admin.documents.update', $doc) }}"
+                                                enctype="multipart/form-data" class="row g-2">
+                                                @csrf @method('PUT')
+                                                <div class="col-lg-4">
+                                                    <label class="form-label">शीर्षक</label>
+                                                    <input type="text" name="title" class="form-control" maxlength="255" required value="{{ $doc->title }}">
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <label class="form-label">प्रकार (आयकॉन)</label>
+                                                    <select name="icon" class="form-select">
+                                                        @foreach (\App\Models\Document::ICONS as $icon => $label)
+                                                            <option value="{{ $icon }}" @selected($doc->icon === $icon)>{{ $label }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <label class="form-label">नवीन फाईल</label>
+                                                    <input type="file" name="file" class="form-control" accept=".pdf,.doc,.docx">
+                                                    @if ($doc->file)
+                                                        <label class="small mt-1"><input type="checkbox" name="remove_file" value="1"> सध्याची फाईल काढा</label>
+                                                    @endif
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <label class="form-label">क्रम</label>
+                                                    <input type="number" name="sort_order" class="form-control" min="0" max="999" value="{{ $doc->sort_order }}">
+                                                </div>
+                                                <div class="col-lg-7">
+                                                    <label class="form-label">थोडक्यात माहिती</label>
+                                                    <textarea name="description" class="form-control" rows="2" maxlength="1000">{{ $doc->description }}</textarea>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <label class="form-label">फाईल नसल्यास मजकूर</label>
+                                                    <input type="text" name="pending_label" class="form-control" maxlength="100" value="{{ $doc->pending_label }}">
+                                                </div>
+                                                <div class="col-lg-2 d-flex align-items-end">
+                                                    <button type="submit" class="adm__btn w-100">जतन करा</button>
+                                                </div>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="5" class="adm__empty">अद्याप दस्तऐवज नाही.</td>
+                                    </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            @endif
+
+            {{-- ================= SETTINGS: users & staff (super admin only) ================= --}}
             @if ($tab === 'settings')
+                <div class="adm__panel mb-4">
+                    <div class="adm__h">नवीन ERP लॉगिन तयार करा <small class="text-muted fw-normal">— प्रत्येक स्टाफ सदस्याला स्वतःचा ID (ई-मेल) व पासवर्ड</small></div>
+                    <form method="POST" action="{{ route('admin.staff.store') }}" class="row g-3 align-items-end" autocomplete="off">
+                        @csrf
+                        <div class="col-lg-3">
+                            <label class="form-label fw-semibold">नाव *</label>
+                            <input type="text" name="name" class="form-control" required maxlength="150" value="{{ old('name') }}">
+                        </div>
+                        <div class="col-lg-3">
+                            <label class="form-label fw-semibold">लॉगिन ID (ई-मेल) *</label>
+                            <input type="email" name="email" class="form-control" required maxlength="150" value="{{ old('email') }}">
+                        </div>
+                        <div class="col-lg-2">
+                            <label class="form-label fw-semibold">पासवर्ड * <small class="text-muted">(किमान ८)</small></label>
+                            <input type="password" name="password" class="form-control" required minlength="8" autocomplete="new-password">
+                        </div>
+                        <div class="col-lg-2">
+                            <label class="form-label fw-semibold">भूमिका</label>
+                            <select name="role" class="form-select">
+                                @foreach (\App\Models\User::ROLES as $key => $label)
+                                    <option value="{{ $key }}" @selected(old('role', 'admin') === $key)>{{ $label }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-lg-2">
+                            <button type="submit" class="adm__btn w-100">+ लॉगिन तयार करा</button>
+                        </div>
+                    </form>
+                    <p class="text-muted small mt-3 mb-0">
+                        <b>सुपर अ‍ॅडमिन</b> — संपूर्ण ERP + लॉगिन/भूमिका व्यवस्थापन ·
+                        <b>अ‍ॅडमिन (स्टाफ)</b> — नोंदण्या, संघटना, संधी, बॅनर, दस्तऐवज ·
+                        <b>सदस्य</b> — फक्त वेबसाइट (ERP प्रवेश नाही)
+                    </p>
+                </div>
+
                 <div class="adm__panel">
                     <div class="adm__h">लॉगिन वापरकर्ते</div>
                     <form method="GET" action="{{ route('admin.users.index') }}" class="d-flex flex-wrap gap-2 mb-3">
                         <input type="hidden" name="tab" value="settings">
                         <input type="text" name="search" value="{{ request('search') }}" class="form-control"
-                            style="max-width:360px;height:48px;border-radius:10px" placeholder="नाव / ई-मेल शोधा">
+                            style="max-width:320px;height:48px;border-radius:10px" placeholder="नाव / ई-मेल शोधा">
+                        <select name="role" class="form-select" style="max-width:220px;height:48px;border-radius:10px">
+                            <option value="">सर्व भूमिका</option>
+                            @foreach (\App\Models\User::ROLES as $key => $label)
+                                <option value="{{ $key }}" @selected(request('role') === $key)>{{ $label }}</option>
+                            @endforeach
+                        </select>
                         <button type="submit" class="adm__btn">शोधा</button>
                     </form>
 
                     <div class="table-responsive">
-                        <table class="table adm__table">
+                        <table class="table adm__table align-middle">
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>नाव</th>
-                                    <th>ई-मेल</th>
+                                    <th>नाव / लॉगिन ID</th>
                                     <th>भूमिका</th>
                                     <th>ई-मेल पडताळणी</th>
                                     <th>नोंदणी दिनांक</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @forelse ($users as $i => $user)
+                                    @php $isSelf = $user->is(auth()->user()); @endphp
                                     <tr>
                                         <td>{{ $users->firstItem() + $i }}</td>
-                                        <td>{{ $user->name }}</td>
-                                        <td>{{ $user->email }}</td>
                                         <td>
-                                            <span
-                                                class="adm__badge {{ $user->role === 'admin' ? 'adm__badge--ok' : 'adm__badge--muted' }}">
-                                                {{ $user->role === 'admin' ? 'अ‍ॅडमिन' : 'सदस्य' }}
-                                            </span>
+                                            {{ $user->name }} @if ($isSelf)<small class="text-muted">(तुम्ही)</small>@endif
+                                            <span class="adm__sub">{{ $user->email }}</span>
+                                        </td>
+                                        <td>
+                                            <form method="POST" action="{{ route('admin.staff.role', $user) }}" class="m-0">
+                                                @csrf @method('PATCH')
+                                                <select name="role" class="form-select form-select-sm" style="min-width:170px"
+                                                    onchange="if (confirm(@js($user->name . ' ची भूमिका बदलायची?'))) this.form.submit(); else this.value='{{ $user->role }}';"
+                                                    @disabled($isSelf)>
+                                                    @foreach (\App\Models\User::ROLES as $key => $label)
+                                                        <option value="{{ $key }}" @selected($user->role === $key)>{{ $label }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </form>
                                         </td>
                                         <td>
                                             @if ($user->email_verified_at)
@@ -772,6 +1137,30 @@
                                             @endif
                                         </td>
                                         <td>{{ $user->created_at?->format('d-m-Y H:i') }}</td>
+                                        <td>
+                                            <div class="adm__actions">
+                                                <button type="button" class="adm__act" data-bs-toggle="collapse"
+                                                    data-bs-target="#pw-{{ $user->id }}">पासवर्ड बदला</button>
+                                                @unless ($isSelf)
+                                                    <form method="POST" action="{{ route('admin.staff.destroy', $user) }}"
+                                                        onsubmit="return confirm(@js($user->name . ' चे लॉगिन हटवायचे?'))">
+                                                        @csrf @method('DELETE')
+                                                        <button class="adm__act adm__act--link">हटवा</button>
+                                                    </form>
+                                                @endunless
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="collapse" id="pw-{{ $user->id }}">
+                                        <td colspan="6" class="adm__detail">
+                                            <form method="POST" action="{{ route('admin.staff.password', $user) }}"
+                                                class="d-flex flex-wrap gap-2 align-items-center" autocomplete="off">
+                                                @csrf @method('PATCH')
+                                                <input type="password" name="password" class="form-control" style="max-width:260px"
+                                                    minlength="8" required placeholder="नवीन पासवर्ड (किमान ८)" autocomplete="new-password">
+                                                <button type="submit" class="adm__btn">जतन करा</button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 @empty
                                     <tr>

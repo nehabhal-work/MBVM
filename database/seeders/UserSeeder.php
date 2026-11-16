@@ -16,10 +16,10 @@ class UserSeeder extends Seeder
     {
         $users = [
             [
-                'name'     => 'Admin',
+                'name'     => 'Super Admin',
                 'email'    => 'admin@mbvm.in',
                 'password' => 'password',
-                'role'     => 'admin',
+                'role'     => 'superadmin',
             ],
             [
                 'name'     => 'User',

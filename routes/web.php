@@ -7,6 +7,12 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\OtpController;
 use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\BannerController;
+use App\Http\Controllers\Admin\DocumentController;
+use App\Http\Controllers\Admin\StaffController;
+use App\Models\Banner;
+use App\Models\Document;
+use App\Support\OrganizationDirectory;
 use App\Http\Controllers\SandhiListingController;
 use App\Models\SandhiListing;
 use App\Models\District;
@@ -59,36 +65,9 @@ $karyaUpdates = [
 $renderHome = function (Request $request) use ($karyaUpdates) {
     $karyaUpdates = collect($karyaUpdates);
 
-    $registrationAreas = Member::query()
-        ->select('jilha', 'taluka')
-        ->selectRaw('COUNT(*) as registration_count')
-        ->groupBy('jilha', 'taluka')
-        ->orderBy('jilha')
-        ->orderBy('taluka')
-        ->get();
-
-    $districtDirectory = $registrationAreas
-        ->groupBy('jilha')
-        ->map(function ($areas, $district) {
-            $registrationCount = (int) $areas->sum('registration_count');
-
-            return [
-                'name' => $district,
-                'talukas' => $areas->pluck('taluka')->filter()->unique()->values(),
-                'registration_count' => $registrationCount,
-                'status' => $registrationCount >= MemberController::DISTRICT_THRESHOLD
-                    ? 'threshold-reached'
-                    : 'registering',
-            ];
-        })
-        ->values();
-
-    $organizationStats = [
-        'districts' => $districtDirectory->count(),
-        'threshold_reached' => $districtDirectory->where('status', 'threshold-reached')->count(),
-        'registering' => $districtDirectory->where('status', 'registering')->count(),
-        'registrations' => $districtDirectory->sum('registration_count'),
-    ];
+    $registrationAreas = OrganizationDirectory::areas();
+    $districtDirectory = OrganizationDirectory::districts($registrationAreas);
+    $organizationStats = OrganizationDirectory::stats($districtDirectory);
 
     $selectedDistrict = (string) $request->query('district', '');
     $selectedTaluka = (string) $request->query('taluka', '');
@@ -98,16 +77,23 @@ $renderHome = function (Request $request) use ($karyaUpdates) {
         $selectedStatus = '';
     }
 
-    $visibleDistricts = $districtDirectory
-        ->when($selectedDistrict !== '', fn($districts) => $districts->where('name', $selectedDistrict))
-        ->when($selectedTaluka !== '', fn($districts) => $districts->filter(
-            fn($district) => $district['talukas']->contains($selectedTaluka)
-        ))
-        ->when($selectedStatus !== '', fn($districts) => $districts->where('status', $selectedStatus))
-        ->values();
+    $visibleDistricts = OrganizationDirectory::filter($districtDirectory, $selectedDistrict, $selectedTaluka, $selectedStatus);
 
     $districtOptions = $districtDirectory->pluck('name');
-    $talukaOptions = $registrationAreas->pluck('taluka')->filter()->unique()->sort()->values();
+    // Each taluka keeps its district, so the taluka dropdown can follow the selected district
+    $talukaOptions = $registrationAreas
+        ->filter(fn($area) => filled($area->taluka))
+        ->unique(fn($area) => $area->jilha . '|' . $area->taluka)
+        ->sortBy('taluka')
+        ->map(fn($area) => ['name' => $area->taluka, 'district' => $area->jilha])
+        ->values();
+
+    $banners = Banner::active()->get();
+    $sandhiListings = SandhiListing::published()->latest()->take(3)->get();
+    // Featured ad card: newest approved listing that has an image attached
+    $sandhiFeatured = SandhiListing::published()->latest()->get()->first(
+        fn($listing) => collect($listing->documents)->contains(fn($path) => preg_match('/\.(jpe?g|png|webp)$/i', $path))
+    );
 
     return view('home', compact(
         'districtDirectory',
@@ -118,7 +104,10 @@ $renderHome = function (Request $request) use ($karyaUpdates) {
         'selectedDistrict',
         'selectedTaluka',
         'selectedStatus',
-        'karyaUpdates'
+        'karyaUpdates',
+        'banners',
+        'sandhiListings',
+        'sandhiFeatured'
     ));
 };
 
@@ -145,7 +134,9 @@ Route::get('/pratinidhi', function () {
 })->name('pratinidhi');
 
 Route::get('/dastaivaj', function () {
-    return view('dastaivaj');
+    $documents = Document::active()->get();
+
+    return view('dastaivaj', compact('documents'));
 })->name('documents.index');
 
 Route::get('/sandhi', function () {
@@ -182,6 +173,26 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::patch('/paid', [SandhiListingController::class, 'markPaid'])->name('paid');
         Route::post('/remind', [SandhiListingController::class, 'remind'])->name('remind');
     });
+
+    // Home page banners
+    Route::post('/erp/banners', [BannerController::class, 'store'])->name('admin.banners.store');
+    Route::put('/erp/banners/{banner}', [BannerController::class, 'update'])->name('admin.banners.update');
+    Route::patch('/erp/banners/{banner}/toggle', [BannerController::class, 'toggle'])->name('admin.banners.toggle');
+    Route::delete('/erp/banners/{banner}', [BannerController::class, 'destroy'])->name('admin.banners.destroy');
+
+    // दस्तऐवज
+    Route::post('/erp/documents', [DocumentController::class, 'store'])->name('admin.documents.store');
+    Route::put('/erp/documents/{document}', [DocumentController::class, 'update'])->name('admin.documents.update');
+    Route::patch('/erp/documents/{document}/toggle', [DocumentController::class, 'toggle'])->name('admin.documents.toggle');
+    Route::delete('/erp/documents/{document}', [DocumentController::class, 'destroy'])->name('admin.documents.destroy');
+});
+
+// ---------- SUPER ADMIN ONLY: staff logins & roles ----------
+Route::middleware(['auth', 'superadmin'])->group(function () {
+    Route::post('/erp/staff', [StaffController::class, 'store'])->name('admin.staff.store');
+    Route::patch('/erp/staff/{user}/role', [StaffController::class, 'updateRole'])->name('admin.staff.role');
+    Route::patch('/erp/staff/{user}/password', [StaffController::class, 'resetPassword'])->name('admin.staff.password');
+    Route::delete('/erp/staff/{user}', [StaffController::class, 'destroy'])->name('admin.staff.destroy');
 });
 Route::get('/get-talukas/{district}', function (District $district) {
     return response()->json(

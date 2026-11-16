@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\MemberController;
+use App\Models\Banner;
 use App\Models\District;
+use App\Models\Document;
+use App\Support\OrganizationDirectory;
 use App\Models\Member;
 use App\Models\SandhiListing;
 use App\Models\User;
@@ -19,12 +22,25 @@ class UserController extends Controller
         'members'   => 'नोंदण्या',
         'districts' => 'स्थानिक संघटना',
         'sandhi'    => 'संधी व जाहिराती',
-        'settings'  => 'सेटिंग्ज',
+        'banners'   => 'होम बॅनर',
+        'documents' => 'दस्तऐवज',
+        'settings'  => 'वापरकर्ते व स्टाफ',
     ];
+
+    /** Tabs only a super admin can see. */
+    public const SUPERADMIN_TABS = ['settings'];
+
+    public static function tabsFor(?User $user): array
+    {
+        return $user?->isSuperAdmin()
+            ? self::TABS
+            : array_diff_key(self::TABS, array_flip(self::SUPERADMIN_TABS));
+    }
 
     public function index(Request $request)
     {
-        $tab = array_key_exists($request->query('tab'), self::TABS) ? $request->query('tab') : 'members';
+        $tabs = self::tabsFor($request->user());
+        $tab = array_key_exists((string) $request->query('tab'), $tabs) ? $request->query('tab') : 'dashboard';
         $threshold = MemberController::DISTRICT_THRESHOLD;
 
         // District-wise counts (used by dashboard + local organisations tab)
@@ -43,9 +59,20 @@ class UserController extends Controller
             'pending'           => Member::where('status', 'pending')->count(),
         ];
 
-        $data = compact('tab', 'threshold', 'districtCounts', 'stats');
+        // Same numbers the public home page shows in "स्थानिक संघटना"
+        $organizationStats = OrganizationDirectory::stats();
+
+        $data = compact('tab', 'tabs', 'threshold', 'districtCounts', 'stats', 'organizationStats');
 
         if ($tab === 'dashboard') {
+            $data['contentStats'] = [
+                'banners_active'   => Banner::where('is_active', true)->count(),
+                'banners_total'    => Banner::count(),
+                'sandhi_live'      => SandhiListing::published()->count(),
+                'sandhi_pending'   => SandhiListing::whereIn('status', ['submitted', 'under_review'])->count(),
+                'documents_active' => Document::where('is_active', true)->count(),
+                'documents_total'  => Document::count(),
+            ];
             $data['recentMembers'] = Member::latest()->take(5)->get();
             $data['businessTypeCounts'] = Member::selectRaw('business_type, COUNT(*) as total')
                 ->groupBy('business_type')
@@ -121,14 +148,23 @@ class UserController extends Controller
                 ->withQueryString();
         }
 
+        if ($tab === 'banners') {
+            $data['banners'] = Banner::orderByDesc('is_active')->orderBy('sort_order')->orderBy('id')->get();
+        }
+
+        if ($tab === 'documents') {
+            $data['documents'] = Document::orderByDesc('is_active')->orderBy('sort_order')->orderBy('id')->get();
+        }
+
         if ($tab === 'settings') {
-            $users = User::query();
+            $users = User::query()
+                ->when(array_key_exists((string) $request->role, User::ROLES), fn ($q) => $q->where('role', $request->role));
             if ($request->filled('search')) {
                 $search = $request->search;
                 $users->where(fn ($q) => $q->where('name', 'like', "%{$search}%")
                     ->orWhere('email', 'like', "%{$search}%"));
             }
-            $data['users'] = $users->latest()->paginate(20)->withQueryString();
+            $data['users'] = $users->orderByRaw("CASE role WHEN 'superadmin' THEN 0 WHEN 'admin' THEN 1 ELSE 2 END")->latest()->paginate(20)->withQueryString();
         }
 
         return view('admin.user-index', $data);

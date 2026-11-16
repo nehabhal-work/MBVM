@@ -266,7 +266,8 @@
                 </a>
             </div>
 
-            <form class="organization-filters" method="GET" action="{{ route('home') }}"
+            <form class="organization-filters" method="GET" action="{{ route('home') }}#sanghatana"
+                id="organization-filter-form"
                 aria-label="जिल्हानिहाय नोंदणी फिल्टर">
                 <div class="organization-filter">
                     <label for="organization-district">जिल्हा</label>
@@ -284,8 +285,9 @@
                     <select class="form-select" id="organization-taluka" name="taluka">
                         <option value="">सर्व तालुके</option>
                         @foreach ($talukaOptions as $talukaOption)
-                            <option value="{{ $talukaOption }}" @selected($selectedTaluka === $talukaOption)>
-                                {{ $talukaOption }}
+                            <option value="{{ $talukaOption['name'] }}" data-district="{{ $talukaOption['district'] }}"
+                                @selected($selectedTaluka === $talukaOption['name'])>
+                                {{ $talukaOption['name'] }}
                             </option>
                         @endforeach
                     </select>
@@ -302,7 +304,12 @@
                         </option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary rounded-pill px-4">शोधा</button>
+                <div class="d-flex flex-column justify-content-end gap-1">
+                    <button type="submit" class="btn btn-primary rounded-pill px-4">शोधा</button>
+                    @if ($selectedDistrict !== '' || $selectedTaluka !== '' || $selectedStatus !== '')
+                        <a href="{{ route('home') }}#sanghatana" class="small text-center">फिल्टर काढा</a>
+                    @endif
+                </div>
             </form>
 
             <div class="organization-directory__meta">
@@ -363,3 +370,26 @@
         </div>
     </div>
 </section>
+
+<script>
+    // तालुका list follows the selected जिल्हा
+    (function () {
+        var district = document.getElementById('organization-district');
+        var taluka = document.getElementById('organization-taluka');
+        if (!district || !taluka) return;
+
+        function syncTalukas() {
+            var selected = district.value;
+            Array.prototype.forEach.call(taluka.options, function (option) {
+                if (!option.value) return;
+                var match = !selected || option.dataset.district === selected;
+                option.hidden = !match;
+                option.disabled = !match;
+                if (!match && option.selected) taluka.value = '';
+            });
+        }
+
+        district.addEventListener('change', syncTalukas);
+        syncTalukas();
+    })();
+</script>

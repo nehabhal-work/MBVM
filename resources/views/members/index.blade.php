@@ -18,7 +18,7 @@
             </div>
 
             {{-- Admin-only quick actions --}}
-            @if (auth()->user()->role === 'admin')
+            @if (auth()->user()->isAdmin())
                 <div class="d-flex flex-wrap gap-2 mb-4">
                     <a href="{{ route('register.show') }}" class="btn btn-primary">
                         <i class="fa fa-user-plus me-2"></i>नवीन वापरकर्ता नोंदणी करा

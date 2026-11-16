@@ -182,74 +182,47 @@
                 </div>
             </div>
 
+            {{-- Managed from ERP → दस्तऐवज (only Active documents show here) --}}
             <div class="documents-page__grid">
-                <article class="documents-page__card">
-                    <div class="documents-page__icon"><i class="fas fa-handshake" aria-hidden="true"></i></div>
-                    <h2>मसुदा MoU</h2>
-                    <p>स्थानिक संघटना आणि महासंघ यांच्यातील संलग्नता, समन्वय आणि जबाबदाऱ्या स्पष्ट करणारा सामंजस्य करार.</p>
-                    <span class="documents-page__status">
-                        <i class="fas fa-clock" aria-hidden="true"></i>
-                        मंजुरीनंतर उपलब्ध
-                    </span>
-                    <div>
-                        <button class="documents-page__download" type="button" disabled
-                            aria-label="मसुदा MoU PDF मंजुरीनंतर उपलब्ध होईल">
-                            <i class="fas fa-file-pdf" aria-hidden="true"></i>
-                            PDF डाउनलोड
-                        </button>
-                    </div>
-                </article>
-
-                <article class="documents-page__card">
-                    <div class="documents-page__icon"><i class="fas fa-book-open" aria-hidden="true"></i></div>
-                    <h2>मानक घटना</h2>
-                    <p>स्थानिक संघटनेची रचना, पदाधिकारी, सदस्यत्व आणि कार्यपद्धती यांसाठीचा मानक घटनामसुदा.</p>
-                    <span class="documents-page__status">
-                        <i class="fas fa-clock" aria-hidden="true"></i>
-                        मंजुरीनंतर उपलब्ध
-                    </span>
-                    <div>
-                        <button class="documents-page__download" type="button" disabled
-                            aria-label="मानक घटना PDF मंजुरीनंतर उपलब्ध होईल">
-                            <i class="fas fa-file-pdf" aria-hidden="true"></i>
-                            PDF डाउनलोड
-                        </button>
-                    </div>
-                </article>
-
-                <article class="documents-page__card">
-                    <div class="documents-page__icon"><i class="fas fa-building" aria-hidden="true"></i></div>
-                    <h2>संघटना स्थापना मार्गदर्शिका</h2>
-                    <p>स्थानिक संघटनेची स्थापना आणि नोंदणी प्रक्रियेबाबत आवश्यक टप्पे व मार्गदर्शन.</p>
-                    <span class="documents-page__status">
-                        <i class="fas fa-clock" aria-hidden="true"></i>
-                        तयारीत
-                    </span>
-                    <div>
-                        <button class="documents-page__download" type="button" disabled
-                            aria-label="संघटना स्थापना मार्गदर्शिका PDF उपलब्ध झाल्यावर डाउनलोड करा">
-                            <i class="fas fa-file-pdf" aria-hidden="true"></i>
-                            PDF डाउनलोड
-                        </button>
-                    </div>
-                </article>
-
-                <article class="documents-page__card">
-                    <div class="documents-page__icon"><i class="fas fa-file-signature" aria-hidden="true"></i></div>
-                    <h2>अर्ज नमुने</h2>
-                    <p>संलग्नता आणि संघटना स्थापनेसाठी आवश्यक अर्ज व नमुना कागदपत्रे.</p>
-                    <span class="documents-page__status">
-                        <i class="fas fa-clock" aria-hidden="true"></i>
-                        तयारीत
-                    </span>
-                    <div>
-                        <button class="documents-page__download" type="button" disabled
-                            aria-label="अर्ज नमुने PDF उपलब्ध झाल्यावर डाउनलोड करा">
-                            <i class="fas fa-file-pdf" aria-hidden="true"></i>
-                            PDF डाउनलोड
-                        </button>
-                    </div>
-                </article>
+                @forelse ($documents as $document)
+                    <article class="documents-page__card">
+                        <div class="documents-page__icon"><i class="fas {{ $document->icon }}" aria-hidden="true"></i></div>
+                        <h2>{{ $document->title }}</h2>
+                        @if ($document->description)
+                            <p>{{ $document->description }}</p>
+                        @endif
+                        @if ($document->file)
+                            <span class="documents-page__status" style="color:#176344;background:#e8f6ef">
+                                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                उपलब्ध
+                            </span>
+                            <div>
+                                <a class="documents-page__download text-decoration-none" style="opacity:1;cursor:pointer"
+                                    href="{{ $document->file_url }}" target="_blank" rel="noopener" download>
+                                    <i class="fas fa-file-download" aria-hidden="true"></i>
+                                    डाउनलोड
+                                </a>
+                            </div>
+                        @else
+                            <span class="documents-page__status">
+                                <i class="fas fa-clock" aria-hidden="true"></i>
+                                {{ $document->pending_label }}
+                            </span>
+                            <div>
+                                <button class="documents-page__download" type="button" disabled
+                                    aria-label="{{ $document->title }} — {{ $document->pending_label }}">
+                                    <i class="fas fa-file-pdf" aria-hidden="true"></i>
+                                    PDF डाउनलोड
+                                </button>
+                            </div>
+                        @endif
+                    </article>
+                @empty
+                    <article class="documents-page__card" style="grid-column:1/-1">
+                        <h2>दस्तऐवज लवकरच उपलब्ध होतील</h2>
+                        <p class="mb-0">मंजूर दस्तऐवज या पृष्ठावर प्रकाशित केले जातील.</p>
+                    </article>
+                @endforelse
             </div>
 
             <div class="documents-page__cta">

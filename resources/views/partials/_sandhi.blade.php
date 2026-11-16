@@ -206,18 +206,35 @@
             </h2>
         </header>
 
+        {{-- Only listings approved from ERP → संधी व जाहिराती (and not expired / Inactive) appear here --}}
+        @php
+            $sandhiListings = $sandhiListings ?? collect();
+            $sandhiFeatured = $sandhiFeatured ?? null;
+            $featuredImage = $sandhiFeatured
+                ? collect($sandhiFeatured->documents)->first(fn ($p) => preg_match('/\.(jpe?g|png|webp)$/i', $p))
+                : null;
+        @endphp
         <div class="sandhi__layout">
             <div>
                 <article class="sandhi__ad-card">
                     <span class="sandhi__ad-label">जाहिरात / प्रायोजित</span>
-                    <div class="sandhi__ad-visual">
-                        <div>
-                            <i class="fas fa-city" aria-hidden="true"></i>
-                            <span>प्रकल्प प्रतिमा</span>
+                    @if ($featuredImage)
+                        <div class="sandhi__ad-visual p-0 overflow-hidden">
+                            <img src="{{ asset('storage/' . $featuredImage) }}" alt="{{ $sandhiFeatured->type }}"
+                                style="width:100%;height:100%;object-fit:cover">
                         </div>
-                    </div>
-                    <h3 class="sandhi__ad-title">नमुना निवासी प्रकल्प — पनवेल</h3>
-                    <p class="sandhi__ad-meta">२ व ३ BHK · MahaRERA क्र. P5200000000</p>
+                        <h3 class="sandhi__ad-title">{{ $sandhiFeatured->type }} — {{ $sandhiFeatured->taluka }}</h3>
+                        <p class="sandhi__ad-meta">{{ $sandhiFeatured->district }} · {{ $sandhiFeatured->area }}</p>
+                    @else
+                        <div class="sandhi__ad-visual">
+                            <div>
+                                <i class="fas fa-city" aria-hidden="true"></i>
+                                <span>प्रकल्प प्रतिमा</span>
+                            </div>
+                        </div>
+                        <h3 class="sandhi__ad-title">आपली जाहिरात येथे</h3>
+                        <p class="sandhi__ad-meta">महासंघाच्या मान्यतेनंतर प्रसिद्ध</p>
+                    @endif
                 </article>
                 <p class="sandhi__disclaimer">
                     जाहिरात जागा — महासंघाच्या मान्यतेनंतरच प्रसिद्ध.
@@ -226,33 +243,25 @@
 
             <div id="sandhi-opportunities">
                 <div class="sandhi__list">
-                    <article class="sandhi__listing">
-                        <div class="sandhi__listing-header">
-                            <span class="sandhi__listing-type">जमीन JV/JD साठी उपलब्ध</span>
-                            <time class="sandhi__listing-date" datetime="2026-10-01">०१ ऑक्टोबर २०२६</time>
-                        </div>
-                        <h3 class="sandhi__listing-title">रायगड · पनवेल · २ एकर (८,०९४ चौ.मी.)</h3>
-                        <p class="sandhi__listing-description">NAINA क्षेत्रातील निवासी/व्यापारी वापरास योग्य भूखंड;
-                            ७/१२ स्वच्छ.</p>
-                    </article>
-
-                    <article class="sandhi__listing">
-                        <div class="sandhi__listing-header">
-                            <span class="sandhi__listing-type">पुनर्विकास संधी</span>
-                            <time class="sandhi__listing-date" datetime="2026-09-24">२४ सप्टेंबर २०२६</time>
-                        </div>
-                        <h3 class="sandhi__listing-title">मुंबई उपनगर · बोरिवली · १,१०० चौ.मी.</h3>
-                        <p class="sandhi__listing-description">२८ सदनिकांची गृहनिर्माण संस्था; सभासदांचा ठराव मंजूर.</p>
-                    </article>
-
-                    <article class="sandhi__listing">
-                        <div class="sandhi__listing-header">
-                            <span class="sandhi__listing-type">विकास भागीदार हवा</span>
-                            <time class="sandhi__listing-date" datetime="2026-09-18">१८ सप्टेंबर २०२६</time>
-                        </div>
-                        <h3 class="sandhi__listing-title">पुणे · हवेली · १.५ एकर</h3>
-                        <p class="sandhi__listing-description">रिंग रोडलगत प्लॉटेड/रो-हाऊस प्रकल्पासाठी भागीदार.</p>
-                    </article>
+                    @forelse ($sandhiListings as $listing)
+                        <article class="sandhi__listing">
+                            <div class="sandhi__listing-header">
+                                <span class="sandhi__listing-type">{{ $listing->type }}</span>
+                                <time class="sandhi__listing-date" datetime="{{ $listing->created_at->toDateString() }}">
+                                    {{ $listing->created_at->format('d-m-Y') }}
+                                </time>
+                            </div>
+                            <h3 class="sandhi__listing-title">{{ $listing->district }} · {{ $listing->taluka }} · {{ $listing->area }}</h3>
+                            <p class="sandhi__listing-description">{{ \Illuminate\Support\Str::limit($listing->brief, 140) }}</p>
+                        </article>
+                    @empty
+                        <article class="sandhi__listing">
+                            <h3 class="sandhi__listing-title">सध्या कोणतीही संधी प्रसिद्ध नाही</h3>
+                            <p class="sandhi__listing-description">
+                                आपली JV / JD, पुनर्विकास किंवा भागीदारी संधी नोंदवा — महासंघाच्या मान्यतेनंतर ती येथे दिसेल.
+                            </p>
+                        </article>
+                    @endforelse
                 </div>
 
                 <div class="sandhi__actions">

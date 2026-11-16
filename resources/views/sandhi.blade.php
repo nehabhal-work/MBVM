@@ -294,34 +294,20 @@
             <section class="sandhi-page__panel" id="sandhi-panel-jv" role="tabpanel"
                 aria-labelledby="sandhi-tab-jv">
                 <div class="sandhi-page__grid sandhi-page__grid--two">
-                    @foreach ($listings as $listing)
+                    @forelse ($listings as $listing)
                         <article class="sandhi-page__card sandhi-page__listing">
                             <span class="sandhi-page__tag">{{ $listing->type }}</span>
                             <time datetime="{{ $listing->created_at->toDateString() }}">{{ $listing->created_at->format('d-m-Y') }}</time>
                             <h3>{{ $listing->district }} · {{ $listing->taluka }} · {{ $listing->area }}</h3>
                             <p class="sandhi-page__muted">{{ \Illuminate\Support\Str::limit($listing->brief, 160) }}</p>
                         </article>
-                    @endforeach
-                    <article class="sandhi-page__card sandhi-page__listing">
-                        <span class="sandhi-page__tag">जमीन JV/JD साठी उपलब्ध</span>
-                        <time datetime="2026-10-01">०१ ऑक्टोबर २०२६</time>
-                        <h3>रायगड · पनवेल · २ एकर (८,०९४ चौ.मी.)</h3>
-                        <p class="sandhi-page__muted">NAINA क्षेत्रातील निवासी/व्यापारी वापरास योग्य भूखंड; ७/१२ स्वच्छ.</p>
-                    </article>
-                    <article class="sandhi-page__card sandhi-page__listing">
-                        <span class="sandhi-page__tag">पुनर्विकास संधी</span>
-                        <time datetime="2026-09-24">२४ सप्टेंबर २०२६</time>
-                        <h3>मुंबई उपनगर · बोरिवली · १,१०० चौ.मी.</h3>
-                        <p class="sandhi-page__muted">२८ सदनिकांची गृहनिर्माण संस्था; सभासदांचा ठराव मंजूर.</p>
-                    </article>
-                    <article class="sandhi-page__card sandhi-page__listing">
-                        <span class="sandhi-page__tag">विकास भागीदार हवा</span>
-                        <time datetime="2026-09-18">१८ सप्टेंबर २०२६</time>
-                        <h3>पुणे · हवेली · १.५ एकर</h3>
-                        <p class="sandhi-page__muted">रिंग रोडलगत प्लॉटेड/रो-हाऊस प्रकल्पासाठी भागीदार.</p>
-                    </article>
+                    @empty
+                        <article class="sandhi-page__card sandhi-page__listing">
+                            <h3>सध्या कोणतीही संधी प्रसिद्ध नाही</h3>
+                            <p class="sandhi-page__muted">आपली संधी नोंदवा — महासंघाच्या मान्यतेनंतर ती येथे दिसेल.</p>
+                        </article>
+                    @endforelse
                 </div>
-                <p class="sandhi-page__muted mt-3">वरील संधी नमुना स्वरूपात आहेत.</p>
                 <a class="sandhi-page__submit d-inline-block text-decoration-none mt-3" href="#nondava">
                     संधी नोंदवा
                 </a>

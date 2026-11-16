@@ -20,7 +20,7 @@ class SandhiListing extends Model
         'under_review' => 'Under review',
         'approved'     => 'Approved',
         'rejected'     => 'Rejected',
-        'paused'       => 'Paused',
+        'paused'       => 'Inactive',
     ];
 
     /** How long an approved listing stays published. */

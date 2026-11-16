@@ -522,65 +522,29 @@
         <!-- Carousel Start -->
         <div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
             <div class="owl-carousel header-carousel position-relative">
-                <div class="owl-carousel-item position-relative" data-dot="<img src='img/MBVM_Hero_First_4.webp'>">
-                    <img class="img-fluid" src="img/MBVM_Hero_First_4.webp" alt="">
-                    <div class="owl-carousel-inner">
-                        <div class="container">
-                            <div class="row justify-content-start">
-                                <div class="col-10 col-lg-8 homebannerhead">
-                                    <h4 class="display-1 text-white animated slideInDown ">
-                                        महाराष्ट्रातील मराठी बांधकाम व्यावसायिकांची राज्यस्तरीय शिखर संघटना
-                                        {{-- महाराष्ट्रातील मराठी विकासकांना एकत्र आणणारे व्यासपीठ old  --}}
-                                    </h4>
-                                    {{-- <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor
-                                        at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea
-                                        elitr.</p> --}}
-                                    <a href="#contact" class="btn btn-primary py-3 mt-3 px-5 animated slideInLeft">
-                                        आपल्या भागातील संघटनेत सहभागी व्हा
-                                    </a>
+                {{-- Banners are managed from ERP → होम बॅनर (only Active ones show here) --}}
+                @php
+                    $homeBanners = $banners->isNotEmpty()
+                        ? $banners
+                        : collect([(object) ['heading' => 'महाराष्ट्रातील मराठी बांधकाम व्यावसायिकांची राज्यस्तरीय शिखर संघटना', 'image_url' => asset('img/MBVM_Hero_First_4.webp')]]);
+                @endphp
+                @foreach ($homeBanners as $banner)
+                    <div class="owl-carousel-item position-relative" data-dot="<img src='{{ $banner->image_url }}'>">
+                        <img class="img-fluid" src="{{ $banner->image_url }}" alt="{{ $banner->heading }}">
+                        <div class="owl-carousel-inner">
+                            <div class="container">
+                                <div class="row justify-content-start">
+                                    <div class="col-10 col-lg-8 homebannerhead">
+                                        <h4 class="display-1 text-white animated slideInDown">{{ $banner->heading }}</h4>
+                                        <a href="#contact" class="btn btn-primary py-3 mt-3 px-5 animated slideInLeft">
+                                            आपल्या भागातील संघटनेत सहभागी व्हा
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="owl-carousel-item position-relative" data-dot="<img src='img/MBVM_Hero_Second.webp'>">
-                    <img class="img-fluid" src="img/MBVM_Hero_Second.webp" alt="">
-                    <div class="owl-carousel-inner">
-                        <div class="container">
-                            <div class="row justify-content-start">
-                                <div class="col-10 col-lg-8 homebannerhead">
-                                    <h4 class="display-1 text-white animated slideInDown">
-                                        महाराष्ट्रातील मराठी विकासकांना एकत्र आणणारे व्यासपीठ
-                                        {{-- मराठी सारे एकत्र येऊ… सर्वसामान्यांना घर देऊ…  --}}
-                                    </h4>
-                                    {{-- <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor
-                                        at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea
-                                        elitr.</p> --}}
-                                    <a href="#contact" class="btn btn-primary py-3 mt-3 px-5 animated slideInLeft">आपल्या
-                                        भागातील संघटनेत सहभागी व्हा</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="owl-carousel-item position-relative" data-dot="<img src='img/MBVM_Hero_Third.webp'>">
-                    <img class="img-fluid" src="img/MBVM_Hero_Third.webp" alt="">
-                    <div class="owl-carousel-inner">
-                        <div class="container">
-                            <div class="row justify-content-start">
-                                <div class="col-10 col-lg-8 homebannerhead">
-                                    <h4 class="display-1 text-white animated slideInDown">एकत्रित बळ, एकत्रित आवाज
-                                    </h4>
-                                    {{-- <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor
-                                        at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea
-                                        elitr.</p> --}}
-                                    <a href="#contact" class="btn btn-primary py-3 mt-3 px-5 animated slideInLeft">आपल्या
-                                        भागातील संघटनेत सहभागी व्हा</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
         <!-- Carousel End -->

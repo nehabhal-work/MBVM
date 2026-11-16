@@ -49,7 +49,7 @@ class OtpController extends Controller
             Auth::login($user);
             session()->forget(['otp_email', 'otp_purpose']);
 
-            $redirectTo = $user->role === 'admin' ? route('admin.users.index', ['tab' => 'dashboard']) : route('home');
+            $redirectTo = $user->homeRoute();
 
             return redirect($redirectTo)
                 ->with('success', 'नोंदणी यशस्वी! तुम्ही आता लॉगिन आहात.');
