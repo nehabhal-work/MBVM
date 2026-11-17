@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\EnquiryController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\OtpController;
 use App\Http\Controllers\Auth\PasswordResetController;
@@ -150,6 +151,11 @@ Route::post('/sandhi', [SandhiListingController::class, 'store'])
     ->middleware('throttle:5,1')
     ->name('sandhi.store');
 
+// ---------- PUBLIC: contact (संपर्क) enquiry form ----------
+Route::post('/sampark', [EnquiryController::class, 'store'])
+    ->middleware('throttle:5,1')
+    ->name('enquiries.store');
+
 // ---------- PUBLIC: member registration form ----------
 Route::get('/sadasyatva-form', [MemberController::class, 'create'])->name('members.create');
 Route::post('/sadasyatva-form', [MemberController::class, 'store'])->name('members.store');
@@ -179,6 +185,10 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::put('/erp/banners/{banner}', [BannerController::class, 'update'])->name('admin.banners.update');
     Route::patch('/erp/banners/{banner}/toggle', [BannerController::class, 'toggle'])->name('admin.banners.toggle');
     Route::delete('/erp/banners/{banner}', [BannerController::class, 'destroy'])->name('admin.banners.destroy');
+
+    // संपर्क चौकशी
+    Route::patch('/erp/enquiries/{enquiry}/status', [EnquiryController::class, 'updateStatus'])->name('admin.enquiries.status');
+    Route::delete('/erp/enquiries/{enquiry}', [EnquiryController::class, 'destroy'])->name('admin.enquiries.destroy');
 
     // दस्तऐवज
     Route::post('/erp/documents', [DocumentController::class, 'store'])->name('admin.documents.store');

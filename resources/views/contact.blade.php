@@ -50,7 +50,8 @@
                 </div>
             </div>
 
-            <div class="mbvm-contact__enquiry">
+            <form class="mbvm-contact__enquiry" id="enquiry-form" method="POST" action="{{ route('enquiries.store') }}">
+                @csrf
                 <h3>सामान्य चौकशी / संदेश</h3>
                 <p class="mbvm-contact__notice">सदस्य नोंदणीसाठी हा फॉर्म नाही —
                     <a href="{{ route('register.show') }}">नोंदणी करा</a>
@@ -58,33 +59,45 @@
 
                 <div class="mbvm-contact__form-grid">
                     <div class="mbvm-contact__field">
-                        <label for="enquiry-name">नाव</label>
-                        <input id="enquiry-name" name="name" autocomplete="name">
+                        <label for="enquiry-name">नाव *</label>
+                        <input id="enquiry-name" name="name" autocomplete="name" required maxlength="255"
+                            value="{{ old('name') }}">
                     </div>
                     <div class="mbvm-contact__field">
-                        <label for="enquiry-mobile">मोबाईल</label>
+                        <label for="enquiry-mobile">मोबाईल *</label>
                         <input id="enquiry-mobile" name="mobile" type="tel" inputmode="numeric" pattern="[0-9]{10}"
-                            autocomplete="tel">
+                            maxlength="10" title="१० अंकी मोबाईल क्रमांक" autocomplete="tel" required
+                            value="{{ old('mobile') }}">
                     </div>
                     <div class="mbvm-contact__field">
                         <label for="enquiry-email">ई-मेल</label>
-                        <input id="enquiry-email" name="email" type="email" autocomplete="email">
+                        <input id="enquiry-email" name="email" type="email" autocomplete="email"
+                            value="{{ old('email') }}">
                     </div>
                     <div class="mbvm-contact__field">
                         <label for="enquiry-organization">कंपनी / संस्था</label>
-                        <input id="enquiry-organization" name="organization" autocomplete="organization">
+                        <input id="enquiry-organization" name="organization" autocomplete="organization"
+                            value="{{ old('organization') }}">
                     </div>
                     <div class="mbvm-contact__field mbvm-contact__field--full">
                         <label for="enquiry-subject">विषय</label>
-                        <input id="enquiry-subject" name="subject">
+                        <input id="enquiry-subject" name="subject" maxlength="255" value="{{ old('subject') }}">
                     </div>
                     <div class="mbvm-contact__field mbvm-contact__field--full">
-                        <label for="enquiry-message">संदेश</label>
-                        <textarea id="enquiry-message" name="message" rows="4"></textarea>
+                        <label for="enquiry-message">संदेश *</label>
+                        <textarea id="enquiry-message" name="message" rows="4" required maxlength="3000">{{ old('message') }}</textarea>
                     </div>
                 </div>
-                <button class="mbvm-contact__submit" type="button">संदेश पाठवा</button>
-            </div>
+                <button class="mbvm-contact__submit" type="submit">संदेश पाठवा</button>
+                <p class="mbvm-contact__status" id="enquiry-status" role="status" aria-live="polite"
+                    style="{{ $errors->any() ? 'color:#b42318' : '' }}">
+                    @if (session('enquiry_success'))
+                        {{ session('enquiry_success') }}
+                    @elseif ($errors->any())
+                        {{ $errors->first() }}
+                    @endif
+                </p>
+            </form>
         </div>
         <p class="mbvm-contact__status" id="contact-copy-status" aria-live="polite"></p>
     </div>
@@ -104,5 +117,51 @@
                 }
             });
         });
+
+        // Send the enquiry without reloading the page; it is saved and listed in ERP → संपर्क चौकशी
+        (() => {
+            const form = document.getElementById('enquiry-form');
+            if (!form || !window.fetch) return;
+
+            const status = document.getElementById('enquiry-status');
+            const button = form.querySelector('button[type="submit"]');
+
+            const show = (text, isError) => {
+                status.textContent = text;
+                status.style.color = isError ? '#b42318' : '';
+            };
+
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                button.disabled = true;
+                show('पाठवत आहे…', false);
+
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        headers: { 'Accept': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+                        body: new FormData(form),
+                    });
+                    const data = await response.json().catch(() => ({}));
+
+                    if (response.ok) {
+                        form.reset();
+                        show(data.message || 'आपला संदेश मिळाला.', false);
+                    } else if (response.status === 422 && data.errors) {
+                        show(Object.values(data.errors)[0][0], true);
+                    } else if (response.status === 429) {
+                        show('खूप वेळा प्रयत्न झाले. कृपया थोड्या वेळाने पुन्हा प्रयत्न करा.', true);
+                    } else if (response.status === 419) {
+                        show('पानाची वेळ संपली. कृपया पान रिफ्रेश करून पुन्हा पाठवा.', true);
+                    } else {
+                        show('संदेश पाठवता आला नाही. कृपया पुन्हा प्रयत्न करा.', true);
+                    }
+                } catch {
+                    show('संदेश पाठवता आला नाही. कृपया इंटरनेट तपासून पुन्हा प्रयत्न करा.', true);
+                } finally {
+                    button.disabled = false;
+                }
+            });
+        })();
     </script>
 @endpush

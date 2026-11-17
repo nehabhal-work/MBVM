@@ -9,6 +9,7 @@
             'members'   => 'fa-address-card',
             'districts' => 'fa-map-location-dot',
             'sandhi'    => 'fa-bullhorn',
+            'enquiries' => 'fa-envelope-open-text',
             'banners'   => 'fa-images',
             'documents' => 'fa-file-lines',
             'settings'  => 'fa-users-gear',
@@ -23,6 +24,9 @@
         <a href="{{ route('admin.users.index', ['tab' => $key]) }}" title="{{ $label }}"
             class="erp-side__link {{ $tab === $key ? 'is-active' : '' }}">
             <i class="fas {{ $tabIcons[$key] ?? 'fa-circle' }}"></i><span>{{ $label }}</span>
+            @if ($key === 'enquiries' && ($newEnquiries ?? 0) > 0)
+                <span class="badge rounded-pill bg-danger ms-auto" title="नवीन चौकशी">{{ $newEnquiries }}</span>
+            @endif
         </a>
     @endforeach
 @endsection
@@ -307,7 +311,7 @@
 
     <section class="adm">
         <div>
-            @if (in_array($tab, ['banners', 'documents', 'settings', 'dashboard', 'districts']))
+            @if (in_array($tab, ['banners', 'documents', 'settings', 'dashboard', 'districts', 'enquiries']))
                 @if (session('success'))
                     <div class="alert alert-success py-2">{{ session('success') }}</div>
                 @endif
@@ -781,6 +785,120 @@
                     </div>
 
                     <div class="mt-3">{{ $listings->links() }}</div>
+                </div>
+            @endif
+
+            {{-- ================= CONTACT ENQUIRIES (संपर्क चौकशी) ================= --}}
+            @if ($tab === 'enquiries')
+                <div class="row g-3 adm__stats">
+                    <div class="col-6 col-lg-3">
+                        <a href="{{ route('admin.users.index', ['tab' => 'enquiries']) }}" class="text-reset text-decoration-none">
+                            <div class="adm__stat"><b>{{ $enquiryCounts->sum() }}</b><span>एकूण चौकशी</span></div>
+                        </a>
+                    </div>
+                    @foreach (\App\Models\Enquiry::STATUSES as $key => $label)
+                        <div class="col-6 col-lg-3">
+                            <a href="{{ route('admin.users.index', ['tab' => 'enquiries', 'status' => $key]) }}" class="text-reset text-decoration-none">
+                                <div class="adm__stat"><b>{{ $enquiryCounts[$key] ?? 0 }}</b><span>{{ $label }}</span></div>
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
+
+                <div class="adm__panel">
+                    <form method="GET" action="{{ route('admin.users.index') }}" class="d-flex flex-wrap gap-2 mb-3">
+                        <input type="hidden" name="tab" value="enquiries">
+                        <input type="search" name="q" value="{{ request('q') }}" class="form-control"
+                            style="max-width:280px" placeholder="नाव / मोबाईल / ई-मेल / विषय">
+                        <select name="status" class="form-select" onchange="this.form.submit()" style="max-width:180px">
+                            <option value="">सर्व स्थिती</option>
+                            @foreach (\App\Models\Enquiry::STATUSES as $key => $label)
+                                <option value="{{ $key }}" @selected(request('status') === $key)>{{ $label }}</option>
+                            @endforeach
+                        </select>
+                        <button class="adm__btn">शोधा</button>
+                        @if (request()->filled('q') || request()->filled('status'))
+                            <a href="{{ route('admin.users.index', ['tab' => 'enquiries']) }}" class="align-self-center">फिल्टर काढा</a>
+                        @endif
+                    </form>
+
+                    <div class="table-responsive">
+                        <table class="table adm__table">
+                            <thead>
+                                <tr>
+                                    <th>नाव</th>
+                                    <th>संपर्क</th>
+                                    <th>विषय</th>
+                                    <th>दिनांक</th>
+                                    <th>स्थिती</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @forelse ($enquiries as $e)
+                                    @php
+                                        $badge = match ($e->status) {
+                                            'new' => 'adm__badge--bad',
+                                            'in_progress' => 'adm__badge--wait',
+                                            default => 'adm__badge--ok',
+                                        };
+                                    @endphp
+                                    <tr>
+                                        <td>
+                                            {{ $e->name }}
+                                            @if ($e->organization)
+                                                <span class="adm__sub">{{ $e->organization }}</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <a href="tel:{{ $e->mobile }}">{{ $e->mobile }}</a>
+                                            @if ($e->email)
+                                                <span class="adm__sub"><a href="mailto:{{ $e->email }}">{{ $e->email }}</a></span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            {{ $e->subject ?: '—' }}
+                                            <span class="adm__sub">{{ \Illuminate\Support\Str::limit($e->message, 70) }}</span>
+                                        </td>
+                                        <td>{{ $e->created_at->format('d-m-Y H:i') }}</td>
+                                        <td>
+                                            <span class="adm__badge {{ $badge }}">{{ \App\Models\Enquiry::STATUSES[$e->status] ?? $e->status }}</span>
+                                        </td>
+                                        <td>
+                                            <div class="adm__actions">
+                                                <form method="POST" action="{{ route('admin.enquiries.status', $e) }}">
+                                                    @csrf @method('PATCH')
+                                                    <select name="status" class="form-select form-select-sm" onchange="this.form.submit()">
+                                                        @foreach (\App\Models\Enquiry::STATUSES as $key => $label)
+                                                            <option value="{{ $key }}" @selected($e->status === $key)>{{ $label }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </form>
+                                                <button type="button" class="adm__act adm__act--link" data-bs-toggle="collapse"
+                                                    data-bs-target="#enquiry-{{ $e->id }}">संदेश</button>
+                                                <form method="POST" action="{{ route('admin.enquiries.destroy', $e) }}"
+                                                    onsubmit="return confirm('ही चौकशी हटवायची?')">
+                                                    @csrf @method('DELETE')
+                                                    <button class="adm__act">हटवा</button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="collapse" id="enquiry-{{ $e->id }}">
+                                        <td colspan="6" class="adm__detail">
+                                            <div style="white-space:pre-line">{{ $e->message }}</div>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="6" class="adm__empty">अद्याप कोणतीही चौकशी आलेली नाही.</td>
+                                    </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="mt-3">{{ $enquiries->links() }}</div>
                 </div>
             @endif
 

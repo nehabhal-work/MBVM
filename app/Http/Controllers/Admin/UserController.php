@@ -7,6 +7,7 @@ use App\Http\Controllers\MemberController;
 use App\Models\Banner;
 use App\Models\District;
 use App\Models\Document;
+use App\Models\Enquiry;
 use App\Support\OrganizationDirectory;
 use App\Models\Member;
 use App\Models\SandhiListing;
@@ -22,6 +23,7 @@ class UserController extends Controller
         'members'   => 'नोंदण्या',
         'districts' => 'स्थानिक संघटना',
         'sandhi'    => 'संधी व जाहिराती',
+        'enquiries' => 'संपर्क चौकशी',
         'banners'   => 'होम बॅनर',
         'documents' => 'दस्तऐवज',
         'settings'  => 'वापरकर्ते व स्टाफ',
@@ -62,7 +64,10 @@ class UserController extends Controller
         // Same numbers the public home page shows in "स्थानिक संघटना"
         $organizationStats = OrganizationDirectory::stats();
 
-        $data = compact('tab', 'tabs', 'threshold', 'districtCounts', 'stats', 'organizationStats');
+        // Unread contact enquiries — shown as a badge in the sidebar
+        $newEnquiries = Enquiry::where('status', 'new')->count();
+
+        $data = compact('tab', 'tabs', 'threshold', 'districtCounts', 'stats', 'organizationStats', 'newEnquiries');
 
         if ($tab === 'dashboard') {
             $data['contentStats'] = [
@@ -143,6 +148,26 @@ class UserController extends Controller
                 ->when(array_key_exists((string) $request->status, SandhiListing::STATUSES),
                     fn ($q) => $q->where('status', $request->status))
                 ->orderByRaw("FIELD(status, 'under_review', 'submitted', 'approved', 'paused', 'rejected')")
+                ->latest()
+                ->paginate(20)
+                ->withQueryString();
+        }
+
+        if ($tab === 'enquiries') {
+            $data['enquiryCounts'] = Enquiry::selectRaw('status, COUNT(*) as total')->groupBy('status')->pluck('total', 'status');
+            $enquiries = Enquiry::query()
+                ->when(array_key_exists((string) $request->status, Enquiry::STATUSES),
+                    fn ($q) => $q->where('status', $request->status));
+            if ($request->filled('q')) {
+                $s = $request->q;
+                $enquiries->where(fn ($w) => $w->where('name', 'like', "%{$s}%")
+                    ->orWhere('mobile', 'like', "%{$s}%")
+                    ->orWhere('email', 'like', "%{$s}%")
+                    ->orWhere('organization', 'like', "%{$s}%")
+                    ->orWhere('subject', 'like', "%{$s}%"));
+            }
+            $data['enquiries'] = $enquiries
+                ->orderByRaw("FIELD(status, 'new', 'in_progress', 'closed')")
                 ->latest()
                 ->paginate(20)
                 ->withQueryString();
