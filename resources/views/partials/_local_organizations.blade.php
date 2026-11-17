@@ -304,14 +304,16 @@
                         </option>
                     </select>
                 </div>
-                <div class="d-flex flex-column justify-content-end gap-1">
+                <div class="d-flex flex-column justify-content-end gap-1" id="organization-filter-actions">
                     <button type="submit" class="btn btn-primary rounded-pill px-4">शोधा</button>
                     @if ($selectedDistrict !== '' || $selectedTaluka !== '' || $selectedStatus !== '')
-                        <a href="{{ route('home') }}#sanghatana" class="small text-center">फिल्टर काढा</a>
+                        <a href="{{ route('home') }}#sanghatana" class="small text-center"
+                            data-organization-clear>फिल्टर काढा</a>
                     @endif
                 </div>
             </form>
 
+            <div id="organization-directory-results">
             <div class="organization-directory__meta">
                 <span>नोंदणीची माहिती जिल्हा व तालुकानिहाय एकत्रित स्वरूपात दाखवली आहे.</span>
                 <span aria-live="polite">{{ number_format($visibleDistricts->count()) }} जिल्हे</span>
@@ -360,6 +362,7 @@
                     </div>
                 @endforelse
             </div>
+            </div>
 
             <div class="organization-websites">
                 <h3>संलग्न स्थानिक संघटनांच्या वेबसाइट्स</h3>
@@ -391,5 +394,69 @@
 
         district.addEventListener('change', syncTalukas);
         syncTalukas();
+
+        // Filter without reloading the whole page: fetch the filtered page
+        // and swap only the results + filter actions of this section.
+        var form = document.getElementById('organization-filter-form');
+        var results = document.getElementById('organization-directory-results');
+        var actions = document.getElementById('organization-filter-actions');
+        var status = document.getElementById('organization-status');
+        if (!form || !results || !actions || !window.fetch || !window.DOMParser) return;
+
+        var baseUrl = form.getAttribute('action').split('#')[0];
+        var pending = null;
+
+        function load(url, fallback) {
+            if (pending) pending.abort();
+            pending = window.AbortController ? new AbortController() : null;
+            results.style.opacity = '.5';
+            results.setAttribute('aria-busy', 'true');
+
+            fetch(url, {
+                headers: { 'X-Requested-With': 'XMLHttpRequest' },
+                signal: pending ? pending.signal : undefined
+            })
+                .then(function (response) {
+                    if (!response.ok) throw new Error('HTTP ' + response.status);
+                    return response.text();
+                })
+                .then(function (html) {
+                    var doc = new DOMParser().parseFromString(html, 'text/html');
+                    var newResults = doc.getElementById('organization-directory-results');
+                    var newActions = doc.getElementById('organization-filter-actions');
+                    if (!newResults || !newActions) throw new Error('Section not found');
+
+                    results.innerHTML = newResults.innerHTML;
+                    actions.innerHTML = newActions.innerHTML;
+                    results.style.opacity = '';
+                    results.removeAttribute('aria-busy');
+                    history.replaceState(null, '', url + '#sanghatana');
+                })
+                .catch(function (error) {
+                    if (error && error.name === 'AbortError') return;
+                    fallback();
+                });
+        }
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            var params = new URLSearchParams();
+            new FormData(form).forEach(function (value, key) {
+                if (value !== '') params.append(key, value);
+            });
+            var query = params.toString();
+            load(baseUrl + (query ? '?' + query : ''), function () { form.submit(); });
+        });
+
+        actions.addEventListener('click', function (event) {
+            var link = event.target.closest('[data-organization-clear]');
+            if (!link) return;
+            event.preventDefault();
+            district.value = '';
+            taluka.value = '';
+            if (status) status.value = '';
+            syncTalukas();
+            load(baseUrl, function () { window.location.href = link.href; });
+        });
     })();
 </script>
