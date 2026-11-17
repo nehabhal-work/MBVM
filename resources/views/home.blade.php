@@ -160,6 +160,18 @@
             width: 92px;
         }
 
+        #karyakarini .person .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        #karyakarini .person .photo:has(img) {
+            overflow: hidden;
+            border: 3px solid #d45d2c;
+        }
+
         #karyakarini .person b,
         #karyakarini .person span,
         #karyakarini .person small {
@@ -820,7 +832,8 @@
                             (नियमावलीनुसार २ वर्षे) · कार्यकारिणी सदस्यसंख्या ९ ते २५</p>
 
                         <div class="person president">
-                            <div class="photo">फोटो</div>
+                            <div class="photo"><img src="{{ asset('img/smiling-man.avif') }}"
+                                    alt="श्री. प्रकाश भीमराव बाविस्कर" loading="lazy"></div>
                             <b>श्री. प्रकाश भीमराव बाविस्कर</b>
                             <span>अध्यक्ष / President</span>
                             <small>नवी मुंबई</small>
