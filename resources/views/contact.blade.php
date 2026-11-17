@@ -148,9 +148,11 @@
                 const modalEl = document.getElementById('enquiry-success-modal');
                 if (text) document.getElementById('enquiry-success-text').textContent = text;
 
-                if (modalEl && window.bootstrap) {
-                    bootstrap.Modal.getOrCreateInstance(modalEl).show();
-                } else {
+                try {
+                    // Bootstrap 5.0.0 has no getOrCreateInstance — reuse or create the instance ourselves
+                    const modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
+                    modal.show();
+                } catch {
                     alert(text || 'आपला संदेश मिळाला. आम्ही लवकरच आपल्याशी संपर्क साधू.');
                 }
             };
@@ -176,7 +178,8 @@
                     if (response.ok) {
                         form.reset();
                         show('', false);
-                        showSuccess(data.message);
+                        // Saved — show the popup outside the try so a popup problem is never reported as "not sent"
+                        setTimeout(() => showSuccess(data.message), 0);
                     } else if (response.status === 422 && data.errors) {
                         show(Object.values(data.errors)[0][0], true);
                     } else if (response.status === 429) {
