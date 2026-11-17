@@ -18,53 +18,13 @@ use App\Http\Controllers\SandhiListingController;
 use App\Models\SandhiListing;
 use App\Models\District;
 use App\Models\Member;
-
-$karyaUpdates = [
-    [
-        'date' => '२८ सप्टेंबर २०२६',
-        'category' => 'शासनाकडे निवेदने',
-        'title' => 'UDCPR मधील TDR वापर मर्यादेबाबत नगरविकास विभागाकडे निवेदन',
-        'excerpt' => 'राज्यातील विकासकांच्या अडचणी मांडणारे सविस्तर निवेदन; बैठक ऑक्टोबरमध्ये अपेक्षित.',
-        'authority' => 'नगरविकास विभाग, मंत्रालय',
-        'outcome' => 'सादर',
-    ],
-    [
-        'date' => '१५ सप्टेंबर २०२६',
-        'category' => 'प्राधिकरणांशी बैठका',
-        'title' => 'MahaRERA सोबत प्रकल्प नोंदणी प्रक्रियेवर चर्चा',
-        'excerpt' => 'नोंदणी अर्जातील त्रुटी-सूचना वेळेत मिळाव्यात यासाठी महासंघाची मागणी.',
-        'authority' => 'MahaRERA, मुंबई',
-        'outcome' => 'बैठक झाली',
-    ],
-    [
-        'date' => '२२ जून २०२६',
-        'category' => 'कार्यक्रम',
-        'title' => 'पुणे येथे आशियाना बैठक — जिल्हा संघटना बळकटीकरण',
-        'excerpt' => 'पुणे जिल्हा संघटनेच्या कार्यकारिणीसोबत महासंघ पदाधिकाऱ्यांची बैठक.',
-        'authority' => '',
-        'outcome' => '',
-    ],
-    [
-        'date' => '०५ जून २०२६',
-        'category' => 'नियामक बाबी',
-        'title' => 'पर्यावरण परवानगी प्रक्रियेतील विलंबाबाबत निवेदन',
-        'excerpt' => 'मोठ्या प्रकल्पांसाठी पर्यावरण परवानगी प्रक्रियेतील विलंब कमी करण्याची मागणी.',
-        'authority' => 'पर्यावरण विभाग',
-        'outcome' => 'सादर',
-    ],
-    [
-        'date' => '१८ मे २०२६',
-        'category' => 'स्थानिक संघटना उपक्रम',
-        'title' => 'नागपूर संघटनेच्या उपक्रमांचा आढावा',
-        'excerpt' => 'स्थानिक विकासकांच्या प्रश्नांवर चर्चा करून पुढील कामाचे नियोजन.',
-        'authority' => '',
-        'outcome' => '',
-    ],
-];
+use App\Models\KaryaUpdate;
+use App\Http\Controllers\Admin\KaryaUpdateController;
 
 // ---------- STATIC PAGES ----------
-$renderHome = function (Request $request) use ($karyaUpdates) {
-    $karyaUpdates = collect($karyaUpdates);
+$renderHome = function (Request $request) {
+    // "आमचे कार्य" — the updates chosen in ERP to show on the home page
+    $karyaUpdates = KaryaUpdate::forHome();
 
     $registrationAreas = OrganizationDirectory::areas();
     $districtDirectory = OrganizationDirectory::districts($registrationAreas);
@@ -116,8 +76,8 @@ Route::get('/', $renderHome)->name('home');
 
 Route::get('/home', $renderHome)->name('home.alias');
 
-Route::get('/karya', function () use ($karyaUpdates) {
-    $karyaUpdates = collect($karyaUpdates);
+Route::get('/karya', function () {
+    $karyaUpdates = KaryaUpdate::active()->get();
 
     return view('karya', compact('karyaUpdates'));
 })->name('karya.index');
@@ -185,6 +145,13 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::put('/erp/banners/{banner}', [BannerController::class, 'update'])->name('admin.banners.update');
     Route::patch('/erp/banners/{banner}/toggle', [BannerController::class, 'toggle'])->name('admin.banners.toggle');
     Route::delete('/erp/banners/{banner}', [BannerController::class, 'destroy'])->name('admin.banners.destroy');
+
+    // आमचे कार्य (karya page + home page section)
+    Route::post('/erp/karya', [KaryaUpdateController::class, 'store'])->name('admin.karya.store');
+    Route::put('/erp/karya/{karya}', [KaryaUpdateController::class, 'update'])->name('admin.karya.update');
+    Route::patch('/erp/karya/{karya}/toggle', [KaryaUpdateController::class, 'toggle'])->name('admin.karya.toggle');
+    Route::patch('/erp/karya/{karya}/home', [KaryaUpdateController::class, 'toggleHome'])->name('admin.karya.home');
+    Route::delete('/erp/karya/{karya}', [KaryaUpdateController::class, 'destroy'])->name('admin.karya.destroy');
 
     // संपर्क चौकशी
     Route::patch('/erp/enquiries/{enquiry}/status', [EnquiryController::class, 'updateStatus'])->name('admin.enquiries.status');

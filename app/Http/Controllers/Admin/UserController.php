@@ -8,6 +8,7 @@ use App\Models\Banner;
 use App\Models\District;
 use App\Models\Document;
 use App\Models\Enquiry;
+use App\Models\KaryaUpdate;
 use App\Support\OrganizationDirectory;
 use App\Models\Member;
 use App\Models\SandhiListing;
@@ -25,6 +26,7 @@ class UserController extends Controller
         'sandhi'    => 'संधी व जाहिराती',
         'enquiries' => 'संपर्क चौकशी',
         'banners'   => 'होम बॅनर',
+        'karya'     => 'आमचे कार्य',
         'documents' => 'दस्तऐवज',
         'settings'  => 'वापरकर्ते व स्टाफ',
     ];
@@ -175,6 +177,15 @@ class UserController extends Controller
 
         if ($tab === 'banners') {
             $data['banners'] = Banner::orderByDesc('is_active')->orderBy('sort_order')->orderBy('id')->get();
+        }
+
+        if ($tab === 'karya') {
+            $data['karyaUpdates'] = KaryaUpdate::query()
+                ->orderByDesc('show_on_home')->orderBy('home_order')
+                ->orderByDesc('event_date')->orderByDesc('id')
+                ->get();
+            $data['karyaCategories'] = collect(array_keys(KaryaUpdate::CATEGORIES))
+                ->merge($data['karyaUpdates']->pluck('category'))->unique()->values();
         }
 
         if ($tab === 'documents') {

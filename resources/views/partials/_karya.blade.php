@@ -143,16 +143,11 @@
         </header>
 
         <div class="karya-grid">
-            @foreach ($karyaUpdates->take(3) as $update)
+            @foreach ($karyaUpdates->take(\App\Models\KaryaUpdate::HOME_LIMIT) as $update)
                 <a class="karya-card" href="{{ route('karya.index') }}">
                     <div class="karya-card__cover">
                         <div>
-                            <i class="fas {{ match ($update['category']) {
-                                'शासनाकडे निवेदने' => 'fa-landmark',
-                                'प्राधिकरणांशी बैठका' => 'fa-handshake',
-                                'कार्यक्रम' => 'fa-people-group',
-                                default => 'fa-newspaper',
-                            } }}" aria-hidden="true"></i>
+                            <i class="fas {{ $update->icon }}" aria-hidden="true"></i>
                             <span>{{ $update['category'] }}</span>
                         </div>
                     </div>

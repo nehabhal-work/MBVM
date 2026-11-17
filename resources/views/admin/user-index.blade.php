@@ -11,6 +11,7 @@
             'sandhi'    => 'fa-bullhorn',
             'enquiries' => 'fa-envelope-open-text',
             'banners'   => 'fa-images',
+            'karya'     => 'fa-newspaper',
             'documents' => 'fa-file-lines',
             'settings'  => 'fa-users-gear',
         ];
@@ -311,7 +312,7 @@
 
     <section class="adm">
         <div>
-            @if (in_array($tab, ['banners', 'documents', 'settings', 'dashboard', 'districts', 'enquiries']))
+            @if (in_array($tab, ['banners', 'documents', 'settings', 'dashboard', 'districts', 'enquiries', 'karya']))
                 @if (session('success'))
                     <div class="alert alert-success py-2">{{ session('success') }}</div>
                 @endif
@@ -1005,6 +1006,196 @@
                                 @empty
                                     <tr>
                                         <td colspan="5" class="adm__empty">अद्याप बॅनर नाही. वर नवीन बॅनर जोडा.</td>
+                                    </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            @endif
+
+            {{-- ================= KARYA (आमचे कार्य) ================= --}}
+            @if ($tab === 'karya')
+                @php
+                    $homeLimit = \App\Models\KaryaUpdate::HOME_LIMIT;
+                    $onHome = $karyaUpdates->where('show_on_home', true)->where('is_active', true)->count();
+                @endphp
+                <datalist id="karya-categories">
+                    @foreach ($karyaCategories as $category)
+                        <option value="{{ $category }}">
+                    @endforeach
+                </datalist>
+                <datalist id="karya-outcomes">
+                    @foreach (\App\Models\KaryaUpdate::OUTCOMES as $outcome)
+                        <option value="{{ $outcome }}">
+                    @endforeach
+                </datalist>
+
+                <div class="adm__panel mb-4">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                        <div class="adm__h mb-0">नवीन घडामोड जोडा</div>
+                        <div class="d-flex gap-2">
+                            <a href="{{ route('karya.index') }}" target="_blank" class="adm__btn adm__btn--ghost">कार्य पान पहा ↗</a>
+                            <a href="{{ route('home') }}#karya" target="_blank" class="adm__btn adm__btn--ghost">होम पेज पहा ↗</a>
+                        </div>
+                    </div>
+                    <form method="POST" action="{{ route('admin.karya.store') }}" class="row g-3">
+                        @csrf
+                        <div class="col-lg-2">
+                            <label class="form-label fw-semibold">दिनांक *</label>
+                            <input type="date" name="event_date" class="form-control" required
+                                value="{{ old('event_date', now()->toDateString()) }}">
+                        </div>
+                        <div class="col-lg-3">
+                            <label class="form-label fw-semibold">प्रकार *</label>
+                            <input type="text" name="category" class="form-control" list="karya-categories" maxlength="100"
+                                required value="{{ old('category') }}" placeholder="यादीतून निवडा किंवा नवीन लिहा">
+                        </div>
+                        <div class="col-lg-7">
+                            <label class="form-label fw-semibold">शीर्षक *</label>
+                            <input type="text" name="title" class="form-control" maxlength="255" required value="{{ old('title') }}">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label fw-semibold">थोडक्यात माहिती</label>
+                            <textarea name="excerpt" class="form-control" rows="2" maxlength="1000">{{ old('excerpt') }}</textarea>
+                        </div>
+                        <div class="col-lg-4">
+                            <label class="form-label fw-semibold">प्राधिकरण <small class="text-muted">(निवेदन असल्यास)</small></label>
+                            <input type="text" name="authority" class="form-control" maxlength="255"
+                                value="{{ old('authority') }}" placeholder="उदा. नगरविकास विभाग, मंत्रालय">
+                        </div>
+                        <div class="col-lg-3">
+                            <label class="form-label fw-semibold">स्थिती</label>
+                            <input type="text" name="outcome" class="form-control" list="karya-outcomes" maxlength="100"
+                                value="{{ old('outcome') }}" placeholder="उदा. सादर / बैठक झाली">
+                        </div>
+                        <div class="col-lg-3 d-flex align-items-end">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" name="show_on_home" value="1" id="karya-new-home"
+                                    @checked(old('show_on_home'))>
+                                <label class="form-check-label" for="karya-new-home">
+                                    होम पेजवर दाखवा <small class="text-muted">({{ $onHome }}/{{ $homeLimit }})</small>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 d-flex align-items-end">
+                            <button type="submit" class="adm__btn w-100">+ जोडा</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="adm__panel">
+                    <div class="adm__h">सर्व घडामोडी
+                        <small class="text-muted fw-normal">— Active घडामोडी <a href="{{ route('karya.index') }}" target="_blank">कार्य पानावर</a> दिसतात;
+                            "होम" निवडलेल्या {{ $homeLimit }} (होम क्रमानुसार) होम पेजवर दिसतात. कमी निवडल्यास नवीनतम घडामोडी आपोआप दाखवल्या जातात.</small>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table adm__table align-middle">
+                            <thead>
+                                <tr>
+                                    <th>दिनांक</th>
+                                    <th>घडामोड</th>
+                                    <th>प्राधिकरण / स्थिती</th>
+                                    <th>होम पेज</th>
+                                    <th>स्थिती</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @forelse ($karyaUpdates as $k)
+                                    <tr>
+                                        <td class="text-nowrap">{{ $k->event_date->format('d-m-Y') }}</td>
+                                        <td style="max-width:420px">
+                                            {{ $k->title }}
+                                            <span class="adm__sub">{{ $k->category }}</span>
+                                        </td>
+                                        <td>
+                                            {{ $k->authority ?: '—' }}
+                                            @if ($k->outcome)
+                                                <span class="adm__sub">{{ $k->outcome }}</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if ($k->show_on_home && $k->is_active)
+                                                <span class="adm__badge adm__badge--wait">होम · क्रम {{ $k->home_order }}</span>
+                                            @else
+                                                <span class="text-muted">—</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <span class="adm__badge {{ $k->is_active ? 'adm__badge--ok' : 'adm__badge--muted' }}">
+                                                {{ $k->is_active ? 'Active' : 'Inactive' }}
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div class="adm__actions">
+                                                <form method="POST" action="{{ route('admin.karya.home', $k) }}">
+                                                    @csrf @method('PATCH')
+                                                    <button class="adm__act {{ $k->show_on_home ? '' : 'adm__act--solid' }}">
+                                                        {{ $k->show_on_home ? 'होम पेजवरून काढा' : 'होम पेजवर दाखवा' }}
+                                                    </button>
+                                                </form>
+                                                <form method="POST" action="{{ route('admin.karya.toggle', $k) }}">
+                                                    @csrf @method('PATCH')
+                                                    <button class="adm__act">{{ $k->is_active ? 'Inactive करा' : 'Active करा' }}</button>
+                                                </form>
+                                                <button type="button" class="adm__act" data-bs-toggle="collapse"
+                                                    data-bs-target="#karya-edit-{{ $k->id }}">बदला</button>
+                                                <form method="POST" action="{{ route('admin.karya.destroy', $k) }}"
+                                                    onsubmit="return confirm('ही घडामोड कायमची हटवायची?')">
+                                                    @csrf @method('DELETE')
+                                                    <button class="adm__act adm__act--link">हटवा</button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="collapse" id="karya-edit-{{ $k->id }}">
+                                        <td colspan="6" class="adm__detail">
+                                            <form method="POST" action="{{ route('admin.karya.update', $k) }}" class="row g-2">
+                                                @csrf @method('PUT')
+                                                <div class="col-lg-2">
+                                                    <label class="form-label">दिनांक</label>
+                                                    <input type="date" name="event_date" class="form-control" required
+                                                        value="{{ $k->event_date->toDateString() }}">
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <label class="form-label">प्रकार</label>
+                                                    <input type="text" name="category" class="form-control" list="karya-categories"
+                                                        maxlength="100" required value="{{ $k->category }}">
+                                                </div>
+                                                <div class="col-lg-7">
+                                                    <label class="form-label">शीर्षक</label>
+                                                    <input type="text" name="title" class="form-control" maxlength="255" required
+                                                        value="{{ $k->title }}">
+                                                </div>
+                                                <div class="col-12">
+                                                    <label class="form-label">थोडक्यात माहिती</label>
+                                                    <textarea name="excerpt" class="form-control" rows="2" maxlength="1000">{{ $k->excerpt }}</textarea>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label class="form-label">प्राधिकरण</label>
+                                                    <input type="text" name="authority" class="form-control" maxlength="255"
+                                                        value="{{ $k->authority }}">
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <label class="form-label">स्थिती</label>
+                                                    <input type="text" name="outcome" class="form-control" list="karya-outcomes"
+                                                        maxlength="100" value="{{ $k->outcome }}">
+                                                </div>
+                                                <div class="col-6 col-lg-2">
+                                                    <label class="form-label">होम क्रम</label>
+                                                    <input type="number" name="home_order" class="form-control" min="0" max="999"
+                                                        value="{{ $k->home_order }}">
+                                                </div>
+                                                <div class="col-6 col-lg-3 d-flex align-items-end">
+                                                    <button type="submit" class="adm__btn w-100">जतन करा</button>
+                                                </div>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="6" class="adm__empty">अद्याप घडामोड नाही. वर नवीन घडामोड जोडा.</td>
                                     </tr>
                                 @endforelse
                             </tbody>

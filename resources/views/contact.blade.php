@@ -91,9 +91,7 @@
                 <button class="mbvm-contact__submit" type="submit">संदेश पाठवा</button>
                 <p class="mbvm-contact__status" id="enquiry-status" role="status" aria-live="polite"
                     style="{{ $errors->any() ? 'color:#b42318' : '' }}">
-                    @if (session('enquiry_success'))
-                        {{ session('enquiry_success') }}
-                    @elseif ($errors->any())
+                    @if ($errors->any())
                         {{ $errors->first() }}
                     @endif
                 </p>
@@ -102,6 +100,20 @@
         <p class="mbvm-contact__status" id="contact-copy-status" aria-live="polite"></p>
     </div>
 </section>
+
+{{-- Success popup after the enquiry is saved --}}
+<div class="modal fade" id="enquiry-success-modal" tabindex="-1" aria-labelledby="enquiry-success-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center" style="border-radius:16px;border:0">
+            <div class="modal-body p-4">
+                <i class="fas fa-check-circle mb-3" style="font-size:3rem;color:#1a7f4b" aria-hidden="true"></i>
+                <h5 class="mb-2" id="enquiry-success-title" style="color:#1d2940;font-weight:700">धन्यवाद!</h5>
+                <p class="mb-4" id="enquiry-success-text">आपला संदेश मिळाला. आम्ही लवकरच आपल्याशी संपर्क साधू.</p>
+                <button type="button" class="btn btn-primary rounded-pill px-5" data-bs-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 @push('scripts')
     <script>
@@ -131,6 +143,23 @@
                 status.style.color = isError ? '#b42318' : '';
             };
 
+            // Popup with the success message; closes on OK
+            const showSuccess = (text) => {
+                const modalEl = document.getElementById('enquiry-success-modal');
+                if (text) document.getElementById('enquiry-success-text').textContent = text;
+
+                if (modalEl && window.bootstrap) {
+                    bootstrap.Modal.getOrCreateInstance(modalEl).show();
+                } else {
+                    alert(text || 'आपला संदेश मिळाला. आम्ही लवकरच आपल्याशी संपर्क साधू.');
+                }
+            };
+
+            // Without JS fetch the page reloads with a flash message — show the same popup then
+            @if (session('enquiry_success'))
+                document.addEventListener('DOMContentLoaded', () => showSuccess(@json(session('enquiry_success'))));
+            @endif
+
             form.addEventListener('submit', async (event) => {
                 event.preventDefault();
                 button.disabled = true;
@@ -146,7 +175,8 @@
 
                     if (response.ok) {
                         form.reset();
-                        show(data.message || 'आपला संदेश मिळाला.', false);
+                        show('', false);
+                        showSuccess(data.message);
                     } else if (response.status === 422 && data.errors) {
                         show(Object.values(data.errors)[0][0], true);
                     } else if (response.status === 429) {
